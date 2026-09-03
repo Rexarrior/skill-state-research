@@ -46,13 +46,13 @@ bounded structured observation window containing action, input, status, comment,
 From `opencode/packages/opencode`:
 
 ```bash
-OPENCODE_EXPERIMENTAL_SKILL_STATE=true \
-OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE=paper \
+OPENCODE_SKILL_STATE_MODE=paper \
 bun run --conditions=browser ./src/index.ts run "Implement the requested task"
 ```
 
-Use `OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE=v2` for the extended protocol. Omitting the mode also selects `v2` for
-backward compatibility. `OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW` has no effect in paper mode.
+Use `OPENCODE_SKILL_STATE_MODE=v2` for the extended protocol or `baseline` for the native transcript loop. Omitting the
+variable selects `baseline`. The older `OPENCODE_EXPERIMENTAL_SKILL_STATE*` variables remain compatibility aliases for
+recorded experiments. `OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW` has no effect in paper mode.
 
 ## Codex CLI
 
@@ -62,8 +62,8 @@ Build the research CLI from `codex/codex-rs`, then run:
 CODEX_SKILL_STATE_MODE=paper ./target/debug/codex exec "Implement the requested task"
 ```
 
-Use `CODEX_SKILL_STATE_MODE=v2` for the extended protocol. Omitting the variable selects `v2` so the existing benchmark
-commands remain reproducible. Any other value fails before a session starts.
+Use `CODEX_SKILL_STATE_MODE=v2` for the extended protocol or `baseline` for the native transcript loop. Omitting the
+variable selects `baseline`. Any other value fails before a session starts.
 
 ## Audit identifiers
 

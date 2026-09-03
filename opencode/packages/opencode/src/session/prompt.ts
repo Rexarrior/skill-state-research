@@ -1087,6 +1087,9 @@ const layer = Layer.effect(
         let structured: unknown
         let step = 0
         const session = yield* sessions.get(sessionID).pipe(Effect.orDie)
+        const configuredSkillMode = SkillState.parseMode(flags.skillStateMode)
+        const skillMode = configuredSkillMode === "baseline" ? undefined : configuredSkillMode
+        const skillStateEnabled = skillMode !== undefined
 
         while (true) {
           yield* status.set(sessionID, { type: "busy" })
@@ -1162,7 +1165,7 @@ const layer = Layer.effect(
           }
 
           if (
-            !flags.experimentalSkillState &&
+            !skillStateEnabled &&
             lastFinished &&
             lastFinished.summary !== true &&
             (yield* compaction.isOverflow({ tokens: lastFinished.tokens, model }))
@@ -1181,7 +1184,7 @@ const layer = Layer.effect(
           }
           const maxSteps = agent.steps ?? Infinity
           const isLastStep = step >= maxSteps
-          if (!flags.experimentalSkillState) {
+          if (!skillStateEnabled) {
             msgs = yield* SessionReminders.apply({ messages: msgs, agent, session }).pipe(
               Effect.provideService(RuntimeFlags.Service, flags),
               Effect.provideService(FSUtil.Service, fsys),
@@ -1221,7 +1224,7 @@ const layer = Layer.effect(
               assistantMessage: msg,
               sessionID,
               model,
-              skillState: flags.experimentalSkillState,
+              skillState: skillStateEnabled,
             })
             .pipe(Effect.onInterrupt(() => finalizeInterruptedAssistant))
 
@@ -1256,14 +1259,11 @@ const layer = Layer.effect(
               })
             }
 
-            if (step === 1 && !flags.experimentalSkillState)
+            if (step === 1 && !skillStateEnabled)
               yield* summary.summarize({ sessionID, messageID: lastUser.id }).pipe(Effect.ignore, Effect.forkIn(scope))
 
             yield* plugin.trigger("experimental.chat.messages.transform", {}, { messages: msgs })
 
-            const skillMode = flags.experimentalSkillState
-              ? SkillState.parseMode(flags.experimentalSkillStateMode)
-              : undefined
             const skillContext = skillMode
               ? SkillState.context(msgs, flags.experimentalSkillStateObservationWindow, skillMode)
               : undefined
@@ -1500,7 +1500,7 @@ const layer = Layer.effect(
           continue
         }
 
-        if (!flags.experimentalSkillState) {
+        if (!skillStateEnabled) {
           yield* compaction.prune({ sessionID }).pipe(Effect.ignore, Effect.forkIn(scope))
         }
         return yield* lastAssistant(sessionID)

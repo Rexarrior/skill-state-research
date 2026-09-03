@@ -4,6 +4,9 @@ This document describes the extended v2 protocol. The same core now also contain
 documented in [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md); the two provider contracts are selected explicitly and do
 not share model-visible transition fields.
 
+The compiled CLI also retains the upstream transcript loop. `CODEX_SKILL_STATE_MODE=baseline|paper|v2` selects the
+runtime path, and an unset variable is equivalent to `baseline`.
+
 ## Goal
 
 Test the paper's actual runtime contract in Codex without asking the model to read or maintain an external state file.

@@ -1,6 +1,8 @@
 #![cfg(not(target_os = "windows"))]
 #![allow(clippy::unwrap_used)]
 
+use core_test_support::responses::ResponsesRequest;
+use core_test_support::responses::ev_assistant_message;
 use core_test_support::responses::ev_completed;
 use core_test_support::responses::ev_function_call;
 use core_test_support::responses::ev_response_created;
@@ -10,6 +12,27 @@ use core_test_support::responses::start_mock_server;
 use core_test_support::test_codex_exec::test_codex_exec;
 use serde_json::Value;
 use serde_json::json;
+
+fn declared_tool_names(request: &ResponsesRequest) -> Vec<String> {
+    let body = request.body_json();
+    let mut names = body["tools"]
+        .as_array()
+        .into_iter()
+        .flatten()
+        .filter_map(|tool| tool["name"].as_str().map(str::to_owned))
+        .collect::<Vec<_>>();
+    names.extend(
+        request
+            .input()
+            .iter()
+            .filter_map(|item| item["tools"].as_array())
+            .flatten()
+            .filter_map(|namespace| namespace["tools"].as_array())
+            .flatten()
+            .filter_map(|tool| tool["name"].as_str().map(str::to_owned)),
+    );
+    names
+}
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn exec_rebuilds_each_request_as_p_sigma_and_bounded_observations() -> anyhow::Result<()> {
@@ -59,6 +82,7 @@ async fn exec_rebuilds_each_request_as_p_sigma_and_bounded_observations() -> any
 
     let output = test
         .cmd_with_server(&server)
+        .env("CODEX_SKILL_STATE_MODE", "v2")
         .arg("--skip-git-repo-check")
         .arg("-s")
         .arg("danger-full-access")
@@ -131,6 +155,102 @@ async fn exec_rebuilds_each_request_as_p_sigma_and_bounded_observations() -> any
             Some("function_call" | "function_call_output" | "reasoning")
         )
     }));
+
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn exec_baseline_mode_keeps_the_native_transcript_loop() -> anyhow::Result<()> {
+    let test = test_codex_exec();
+    let server = start_mock_server().await;
+    let mock = mount_sse_sequence(
+        &server,
+        vec![
+            sse(vec![
+                ev_response_created("baseline-resp-1"),
+                ev_function_call(
+                    "baseline-step-1",
+                    "exec_command",
+                    &json!({"cmd": "pwd"}).to_string(),
+                ),
+                ev_completed("baseline-resp-1"),
+            ]),
+            sse(vec![
+                ev_response_created("baseline-resp-2"),
+                ev_assistant_message("baseline-message", "Baseline integration succeeded."),
+                ev_completed("baseline-resp-2"),
+            ]),
+        ],
+    )
+    .await;
+
+    let output = test
+        .cmd_with_server(&server)
+        .env("CODEX_SKILL_STATE_MODE", "baseline")
+        .arg("--skip-git-repo-check")
+        .arg("--dangerously-bypass-approvals-and-sandbox")
+        .arg("Implement the baseline fixture")
+        .output()?;
+
+    assert!(
+        output.status.success(),
+        "codex exec failed\nstdout:\n{}\nstderr:\n{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let requests = mock.requests();
+    assert_eq!(requests.len(), 2);
+    let first_tools = declared_tool_names(&requests[0]);
+    assert!(first_tools.iter().all(|name| name != "skill_step"));
+    let second_input: Vec<Value> = requests[1].input();
+    assert!(
+        second_input
+            .iter()
+            .any(|item| item["type"] == "function_call")
+    );
+    assert!(
+        second_input
+            .iter()
+            .any(|item| item["type"] == "function_call_output")
+    );
+
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn exec_defaults_to_the_native_transcript_loop() -> anyhow::Result<()> {
+    let test = test_codex_exec();
+    let server = start_mock_server().await;
+    let mock = mount_sse_sequence(
+        &server,
+        vec![sse(vec![
+            ev_response_created("default-resp"),
+            ev_assistant_message("default-message", "Default baseline succeeded."),
+            ev_completed("default-resp"),
+        ])],
+    )
+    .await;
+
+    let output = test
+        .cmd_with_server(&server)
+        .env_remove("CODEX_SKILL_STATE_MODE")
+        .arg("--skip-git-repo-check")
+        .arg("--dangerously-bypass-approvals-and-sandbox")
+        .arg("Implement the default baseline fixture")
+        .output()?;
+
+    assert!(
+        output.status.success(),
+        "codex exec failed\nstdout:\n{}\nstderr:\n{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let requests = mock.requests();
+    assert_eq!(requests.len(), 1);
+    let first_tools = declared_tool_names(&requests[0]);
+    assert!(first_tools.iter().all(|name| name != "skill_step"));
+    assert!(!requests[0].body_contains_text("Skill Execution State:"));
+    assert!(!requests[0].body_contains_text("Recent Observations"));
 
     Ok(())
 }

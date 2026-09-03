@@ -11,6 +11,13 @@ const options: ToolExecutionOptions = {
 }
 
 describe("core SKILL.state protocol", () => {
+  test("parses all runtime modes and rejects unknown values", () => {
+    expect(SkillState.parseMode("baseline")).toBe("baseline")
+    expect(SkillState.parseMode("paper")).toBe("paper")
+    expect(SkillState.parseMode("v2")).toBe("v2")
+    expect(() => SkillState.parseMode("unknown")).toThrow("expected baseline, paper, or v2")
+  })
+
   test("builds a single bounded model message from specification, state, and a recent observation window", () => {
     const value = SkillState.context(
       [

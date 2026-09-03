@@ -168,12 +168,11 @@ const blockingProcessor = Layer.succeed(
 const runtimeFlags = RuntimeFlags.layer({ experimentalEventSystem: true })
 const skillStateRuntimeFlags = RuntimeFlags.layer({
   experimentalEventSystem: true,
-  experimentalSkillState: true,
+  skillStateMode: "v2",
 })
 const paperSkillStateRuntimeFlags = RuntimeFlags.layer({
   experimentalEventSystem: true,
-  experimentalSkillState: true,
-  experimentalSkillStateMode: "paper",
+  skillStateMode: "paper",
 })
 
 const testLLMServerNode = LayerNode.make({ service: TestLLMServer, layer: TestLLMServer.layer, deps: [] })

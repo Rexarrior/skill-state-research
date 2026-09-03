@@ -89,13 +89,32 @@ describe("RuntimeFlags", () => {
     }),
   )
 
-  it.effect("parses the SKILL.state protocol mode", () =>
+  it.effect("parses the canonical SKILL.state runtime mode", () =>
     Effect.gen(function* () {
       const flags = yield* readFlags.pipe(
-        Effect.provide(fromConfig({ OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE: "paper" })),
+        Effect.provide(fromConfig({ OPENCODE_SKILL_STATE_MODE: "paper" })),
       )
 
-      expect(flags.experimentalSkillStateMode).toBe("paper")
+      expect(flags.skillStateMode).toBe("paper")
+    }),
+  )
+
+  it.effect("maps the legacy SKILL.state flags to v2 and paper", () =>
+    Effect.gen(function* () {
+      const v2 = yield* readFlags.pipe(
+        Effect.provide(fromConfig({ OPENCODE_EXPERIMENTAL_SKILL_STATE: "true" })),
+      )
+      const paper = yield* readFlags.pipe(
+        Effect.provide(
+          fromConfig({
+            OPENCODE_EXPERIMENTAL_SKILL_STATE: "true",
+            OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE: "paper",
+          }),
+        ),
+      )
+
+      expect(v2.skillStateMode).toBe("v2")
+      expect(paper.skillStateMode).toBe("paper")
     }),
   )
 
@@ -139,7 +158,7 @@ describe("RuntimeFlags", () => {
       expect(flags.outputTokenMax).toBeUndefined()
       expect(flags.bashDefaultTimeoutMs).toBe(1_000)
       expect(flags.experimentalSkillStateObservationWindow).toBeUndefined()
-      expect(flags.experimentalSkillStateMode).toBe("v2")
+      expect(flags.skillStateMode).toBe("baseline")
       expect(flags.enableExperimentalModels).toBe(false)
       expect(flags.client).toBe("cli")
     }),

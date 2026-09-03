@@ -93,12 +93,15 @@ bun install
 # Full Terra A/B suite with three recent observations
 OPENCODE_SKILL_STATE_MODEL=openai-yandex-team/gpt-5.6-terra \
 OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW=3 \
-bun ../experiments/skill-state/scripts/run.ts all
+bun ../experiments/skill-state/scripts/run.ts all baseline v2
 
 # Full GLM-5.2 A/B suite
 OPENCODE_SKILL_STATE_MODEL=openrouter-yandex-team/z-ai/glm-5.2 \
 OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW=3 \
-bun ../experiments/skill-state/scripts/run.ts all
+bun ../experiments/skill-state/scripts/run.ts all baseline v2
+
+# Three-way comparison in one suite
+bun ../experiments/skill-state/scripts/run.ts all baseline paper v2
 ```
 
 Each cell is independent, uses one initial user prompt, and is evaluated by black-box checks outside the model-visible
@@ -107,14 +110,19 @@ workspace. The harness runs cells sequentially and records raw events and summar
 
 ## Codex SKILL.state modes
 
-The Codex fork implements both protocols in Rust core. Every default coding turn started through `codex exec` is rebuilt
-from state; the persisted transcript remains available for audit and resume but is not replayed to the provider. Paper
-mode exposes `skill_step({ state_patch, action })` and only the latest textual result. V2 exposes
+The Codex fork contains all three runtime paths in one binary. With no flag, or with
+`CODEX_SKILL_STATE_MODE=baseline`, `codex exec` keeps the native transcript loop. Paper and v2 rebuild every provider
+turn from state; the persisted transcript remains available for audit and resume but is not replayed to the provider.
+Paper mode exposes `skill_step({ state_patch, action })` and only the latest textual result. V2 exposes
 `skill_step({ state_revision, state_patch, comment, action })` and a structured observation window.
 
 ```bash
 cd codex/codex-rs
 CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
+
+# Native transcript mode (also the default)
+CODEX_SKILL_STATE_MODE=baseline \
+  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
 
 # Original paper mode
 CODEX_SKILL_STATE_MODE=paper \
@@ -125,6 +133,9 @@ CODEX_SKILL_STATE_MODE=v2 \
 CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
   ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
 ```
+
+OpenCode uses the matching `OPENCODE_SKILL_STATE_MODE=baseline|paper|v2` runtime flag and likewise defaults to
+`baseline`. The older experimental OpenCode variables remain compatibility aliases for recorded runs.
 
 Code Mode is deliberately bypassed inside a state session: nesting its multi-call JavaScript loop would violate the
 one-patch/one-action contract and duplicate tool schemas. The wrapper exposes the underlying atomic Codex tools instead.

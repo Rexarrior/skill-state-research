@@ -9,6 +9,7 @@ const opencode = path.join(repository, "opencode/packages/opencode")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
 const modes = ["baseline", "skill-state"] as const
 const runnableModes = [...modes, "skill-state-paper"] as const
+const modeNames = ["baseline", "paper", "v2"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -31,6 +32,24 @@ const cellTimeoutMs = 15 * 60 * 1000
 
 type Project = (typeof projects)[number]
 type Mode = (typeof runnableModes)[number]
+type ModeName = (typeof modeNames)[number]
+
+function parseMode(value: string): Mode {
+  if (value === "baseline") return "baseline"
+  if (value === "paper" || value === "skill-state-paper") return "skill-state-paper"
+  if (value === "v2" || value === "skill-state") return "skill-state"
+  throw new Error(`unknown mode ${JSON.stringify(value)}; expected ${modeNames.join("|")}`)
+}
+
+function runtimeMode(mode: Mode): ModeName {
+  if (mode === "skill-state-paper") return "paper"
+  if (mode === "skill-state") return "v2"
+  return "baseline"
+}
+
+function modeLabel(mode: Mode) {
+  return runtimeMode(mode) === "v2" ? "V2" : runtimeMode(mode)[0]!.toUpperCase() + runtimeMode(mode).slice(1)
+}
 
 type Metrics = {
   sessionID?: string
@@ -178,8 +197,7 @@ async function runCell(project: Project, mode: Mode, suite: string) {
       env: {
         ...process.env,
         OPENCODE_CONFIG_CONTENT: config(),
-        OPENCODE_EXPERIMENTAL_SKILL_STATE: mode === "baseline" ? "false" : "true",
-        OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE: mode === "skill-state-paper" ? "paper" : "v2",
+        OPENCODE_SKILL_STATE_MODE: runtimeMode(mode),
         OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW: String(observationWindow),
         NO_COLOR: "1",
       },
@@ -221,7 +239,7 @@ async function runCell(project: Project, mode: Mode, suite: string) {
     mode,
     model,
     observationWindow: mode === "skill-state" ? observationWindow : undefined,
-    protocolMode: mode === "baseline" ? undefined : mode === "skill-state-paper" ? "paper" : "v2",
+    protocolMode: runtimeMode(mode),
     prompt,
     exitCode,
     timedOut,
@@ -246,21 +264,10 @@ function percent(value: number) {
 }
 
 async function report(suite: string, summaries: Awaited<ReturnType<typeof runCell>>[]) {
-  const rows: string[] = []
+  const selectedModes = runnableModes.filter((mode) => summaries.some((item) => item.mode === mode))
   const comparedProjects = projects.filter((project) =>
-    modes.every((mode) => summaries.some((item) => item.project === project && item.mode === mode)),
+    selectedModes.every((mode) => summaries.some((item) => item.project === project && item.mode === mode)),
   )
-  for (const project of comparedProjects) {
-    const base = summaries.find((item) => item.project === project && item.mode === "baseline")!
-    const skill = summaries.find((item) => item.project === project && item.mode === "skill-state")!
-    const basePrompt = base.metrics.input + base.metrics.cacheRead
-    const skillPrompt = skill.metrics.input + skill.metrics.cacheRead
-    const savings = basePrompt === 0 ? 0 : 1 - skillPrompt / basePrompt
-    rows.push(
-      `| ${project} | ${base.evaluation.passed}/${base.evaluation.total} | ${skill.evaluation.passed}/${skill.evaluation.total} | ${number(basePrompt)} | ${number(skillPrompt)} | ${percent(savings)} | ${base.metrics.turns}/${skill.metrics.turns} | ${number(base.metrics.durationMs / 1000)}/${number(skill.metrics.durationMs / 1000)} |`,
-    )
-  }
-
   const total = (mode: Mode, field: keyof Metrics) =>
     summaries.filter((item) => item.mode === mode).reduce((sum, item) => sum + Number(item.metrics[field] ?? 0), 0)
   const maximum = (mode: Mode, field: keyof Metrics) =>
@@ -269,45 +276,82 @@ async function report(suite: string, summaries: Awaited<ReturnType<typeof runCel
     summaries.filter((item) => item.mode === mode).reduce((sum, item) => sum + item.evaluation.passed, 0)
   const possible = (mode: Mode) =>
     summaries.filter((item) => item.mode === mode).reduce((sum, item) => sum + item.evaluation.total, 0)
-  const basePrompt = total("baseline", "input") + total("baseline", "cacheRead")
-  const skillPrompt = total("skill-state", "input") + total("skill-state", "cacheRead")
-  const savings = basePrompt === 0 ? 0 : 1 - skillPrompt / basePrompt
+  const promptTokens = (mode: Mode) => total(mode, "input") + total(mode, "cacheRead")
+  const headers = selectedModes.flatMap((mode) => [`${modeLabel(mode)} score`, `${modeLabel(mode)} prompt`, "Turns"])
+  const rows = comparedProjects.map((project) => {
+    const cells = selectedModes.flatMap((mode) => {
+      const item = summaries.find((summary) => summary.project === project && summary.mode === mode)!
+      return [
+        `${item.evaluation.passed}/${item.evaluation.total}`,
+        number(item.metrics.input + item.metrics.cacheRead),
+        String(item.metrics.turns),
+      ]
+    })
+    return `| ${project} | ${cells.join(" | ")} |`
+  })
+  const totals = selectedModes.flatMap((mode) => [
+    `${score(mode)}/${possible(mode)}`,
+    number(promptTokens(mode)),
+    number(total(mode, "turns")),
+  ])
+  const aggregateMetrics: [string, keyof Metrics, "total" | "maximum"][] = [
+    ["Input", "input", "total"],
+    ["Cache read", "cacheRead", "total"],
+    ["Cache write", "cacheWrite", "total"],
+    ["Output", "output", "total"],
+    ["Reasoning", "reasoning", "total"],
+    ["Tool calls", "toolCalls", "total"],
+    ["SKILL.state calls", "stateCalls", "total"],
+    ["State-tool errors", "stateErrors", "total"],
+    ["State comments", "stateComments", "total"],
+    ["Finish calls", "finishCalls", "total"],
+    ["Consecutive repeated actions", "repeatedActions", "total"],
+    ["Maximum repeat streak", "maxRepeatStreak", "maximum"],
+    ["Maximum state bytes", "maxStateBytes", "maximum"],
+    ["Provider-reported cost", "cost", "total"],
+  ]
+  const aggregateRows = aggregateMetrics.map(([label, field, aggregation]) => {
+    const values = selectedModes.map((mode) =>
+      number(aggregation === "maximum" ? maximum(mode, field) : total(mode, field)),
+    )
+    return `| ${label} | ${values.join(" | ")} |`
+  })
+  const baselinePrompt = selectedModes.includes("baseline") ? promptTokens("baseline") : 0
+  const comparisonRows = selectedModes
+    .filter((mode) => mode !== "baseline")
+    .map((mode) => {
+      const change = baselinePrompt === 0 ? 0 : 1 - promptTokens(mode) / baselinePrompt
+      return `| ${modeLabel(mode)} | ${number(promptTokens(mode))} | ${percent(change)} |`
+    })
 
-  const body = `# One-shot A/B results
+  const body = `# One-shot multimode results
 
 Suite: \`${suite}\`
 
 Model: \`${model}\`
 
-Observation window: \`k=${observationWindow}\`
+Selected modes: ${selectedModes.map((mode) => `\`${runtimeMode(mode)}\``).join(", ")}
 
 Design: one independent run per project and mode; one user prompt per run; sequential execution.
 
-| Project | Baseline score | SKILL.state score | Baseline prompt tokens¹ | SKILL.state prompt tokens¹ | Savings | Turns B/S | Seconds B/S |
-|---|---:|---:|---:|---:|---:|---:|---:|
+| Project | ${headers.join(" | ")} |
+|---|${headers.map(() => "---:").join("|")}|
 ${rows.join("\n")}
-| **Total** | **${score("baseline")}/${possible("baseline")}** | **${score("skill-state")}/${possible("skill-state")}** | **${number(basePrompt)}** | **${number(skillPrompt)}** | **${percent(savings)}** | **${total("baseline", "turns")}/${total("skill-state", "turns")}** | **${number(total("baseline", "durationMs") / 1000)}/${number(total("skill-state", "durationMs") / 1000)}** |
+| **Total** | ${totals.map((value) => `**${value}**`).join(" | ")} |
 
 ¹ Prompt tokens are provider-reported \`input + cache.read\`. Raw counters are retained in each cell's \`summary.json\`.
 
+## Prompt-token change from baseline
+
+| Mode | Prompt tokens | Reduction |
+|---|---:|---:|
+${comparisonRows.join("\n") || "| — | — | — |"}
+
 ## Aggregate counters
 
-| Metric | Baseline | SKILL.state |
-|---|---:|---:|
-| Input | ${number(total("baseline", "input"))} | ${number(total("skill-state", "input"))} |
-| Cache read | ${number(total("baseline", "cacheRead"))} | ${number(total("skill-state", "cacheRead"))} |
-| Cache write | ${number(total("baseline", "cacheWrite"))} | ${number(total("skill-state", "cacheWrite"))} |
-| Output | ${number(total("baseline", "output"))} | ${number(total("skill-state", "output"))} |
-| Reasoning | ${number(total("baseline", "reasoning"))} | ${number(total("skill-state", "reasoning"))} |
-| Tool calls | ${number(total("baseline", "toolCalls"))} | ${number(total("skill-state", "toolCalls"))} |
-| SKILL.state calls | 0 | ${number(total("skill-state", "stateCalls"))} |
-| State-tool errors | 0 | ${number(total("skill-state", "stateErrors"))} |
-| State comments | 0 | ${number(total("skill-state", "stateComments"))} |
-| Finish calls | 0 | ${number(total("skill-state", "finishCalls"))} |
-| Consecutive repeated actions | 0 | ${number(total("skill-state", "repeatedActions"))} |
-| Maximum repeat streak | 0 | ${number(maximum("skill-state", "maxRepeatStreak"))} |
-| Maximum state bytes | 0 | ${number(maximum("skill-state", "maxStateBytes"))} |
-| Provider-reported cost | ${number(total("baseline", "cost"))} | ${number(total("skill-state", "cost"))} |
+| Metric | ${selectedModes.map(modeLabel).join(" | ")} |
+|---|${selectedModes.map(() => "---:").join("|")}|
+${aggregateRows.join("\n")}
 
 ## Interpretation guardrails
 
@@ -331,50 +375,52 @@ async function doctor() {
   console.log(JSON.stringify({ ok: true, model, observationWindow, projects, prompt, runtime: "core" }, null, 2))
 }
 
-const [action = "doctor", arg1, arg2] = process.argv.slice(2)
+const [action = "doctor", ...args] = process.argv.slice(2)
 if (action === "doctor") {
   await doctor()
 } else if (action === "one") {
-  if (!projects.includes(arg1 as Project) || !runnableModes.includes(arg2 as Mode)) {
-    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${runnableModes.join("|")}>`)
+  const [project, requestedMode] = args
+  if (!projects.includes(project as Project) || !requestedMode) {
+    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${modeNames.join("|")}>`)
   }
   const suite = suiteID()
-  const summary = await runCell(arg1 as Project, arg2 as Mode, suite)
+  const summary = await runCell(project as Project, parseMode(requestedMode), suite)
   console.log(JSON.stringify(summary, null, 2))
 } else if (action === "all") {
+  const selectedModes = args.length ? args.map(parseMode) : [...modes]
+  if (new Set(selectedModes).size !== selectedModes.length) throw new Error("modes must be unique")
   const suite = suiteID()
-  const order: [Project, Mode][] = projects.flatMap((project, index) =>
-    index % 2 === 0
-      ? [
-          [project, "baseline"],
-          [project, "skill-state"],
-        ]
-      : [
-          [project, "skill-state"],
-          [project, "baseline"],
-        ],
-  )
+  const order: [Project, Mode][] = projects.flatMap((project, index) => {
+    const offset = index % selectedModes.length
+    return [...selectedModes.slice(offset), ...selectedModes.slice(0, offset)].map(
+      (mode) => [project, mode] as [Project, Mode],
+    )
+  })
   const summaries = []
   for (const [project, mode] of order) summaries.push(await runCell(project, mode, suite))
   await report(suite, summaries)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "pair") {
-  if (!projects.includes(arg1 as Project)) {
-    throw new Error(`usage: bun run.ts pair <${projects.join("|")}>`)
+  const [project, requestedMode = "v2"] = args
+  if (!projects.includes(project as Project)) {
+    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2]`)
   }
+  const selectedMode = parseMode(requestedMode)
+  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper or v2")
   const suite = suiteID()
   const summaries = [
-    await runCell(arg1 as Project, "baseline", suite),
-    await runCell(arg1 as Project, "skill-state", suite),
+    await runCell(project as Project, "baseline", suite),
+    await runCell(project as Project, selectedMode, suite),
   ]
   await report(suite, summaries)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "report") {
-  if (!arg1) throw new Error("usage: bun run.ts report SUITE")
+  const [targetSuite] = args
+  if (!targetSuite) throw new Error("usage: bun run.ts report SUITE")
   const summaries = []
   for (const project of projects) {
-    for (const mode of modes) {
-      const file = path.join(experiment, "results", arg1, mode, project, "summary.json")
+    for (const mode of runnableModes) {
+      const file = path.join(experiment, "results", targetSuite, mode, project, "summary.json")
       try {
         summaries.push(JSON.parse(await readFile(file, "utf8")))
       } catch (error) {
@@ -382,11 +428,13 @@ if (action === "doctor") {
       }
     }
   }
-  if (!summaries.length) throw new Error(`suite has no summaries: ${arg1}`)
-  await report(arg1, summaries)
-  console.log(JSON.stringify({ suite: arg1, report: path.join(experiment, "results", arg1, "report.md") }, null, 2))
+  if (!summaries.length) throw new Error(`suite has no summaries: ${targetSuite}`)
+  await report(targetSuite, summaries)
+  console.log(
+    JSON.stringify({ suite: targetSuite, report: path.join(experiment, "results", targetSuite, "report.md") }, null, 2),
+  )
 } else {
-  throw new Error("usage: bun run.ts doctor|all|pair PROJECT|one PROJECT MODE|report SUITE")
+  throw new Error("usage: bun run.ts doctor|all [MODES...]|pair PROJECT [paper|v2]|one PROJECT MODE|report SUITE")
 }
 
 function isMissingFile(error: unknown): error is NodeJS.ErrnoException {

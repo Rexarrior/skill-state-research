@@ -10,17 +10,16 @@ The implementation is a core modification, not a skill or plugin. The complete o
 
 ## Current status
 
-- The same binary now provides two kernel modes: `CODEX_SKILL_STATE_MODE=paper` implements the original `P + Sigma +
-  latest O` protocol, while `CODEX_SKILL_STATE_MODE=v2` retains the structured `k`-observation extension. See
+- The same binary provides three runtime modes: `baseline` keeps the native transcript loop, `paper` implements the
+  original `P + Sigma + latest O` protocol, and `v2` retains the structured `k`-observation extension. See
   [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md).
 - Kernel state schema, patch validation, monotonic revisions, atomic tool dispatch, bounded observations, finish action,
   persistence, and resume reconstruction are implemented.
 - Action requests may be up to 64 KiB; only a bounded 3 KiB preview is retained in the observation. This distinction was
   added after the first benchmark exposed rejected normal-size code patches.
-- `codex exec` in this fork enters state mode directly; the mode defaults to v2 and is selected with
-  `CODEX_SKILL_STATE_MODE=paper|v2`.
+- `codex exec` defaults to `baseline`; select a mode with `CODEX_SKILL_STATE_MODE=baseline|paper|v2`.
 - Observation window `k` defaults to 3 and is configurable with `CODEX_SKILL_STATE_OBSERVATION_WINDOW=1..8`.
-- Nine focused core tests and two two-step end-to-end `codex exec` tests cover v2 and paper mode.
+- Focused core and end-to-end `codex exec` tests cover native baseline, v2, and paper mode.
 - The GPT-5.6 Luna `k=3` CLI benchmark is complete. Baseline scored 40/40 and state scored 39/40, but state consumed
   3.54x more input tokens because provider samples increased 4.47x. See
   [`REPORT-gpt-5.6-luna-k3.md`](./REPORT-gpt-5.6-luna-k3.md).
@@ -52,28 +51,32 @@ The integration test uses a loopback mock Responses API, so a restricted environ
 
 ## CLI benchmark
 
-The runner reuses the five OpenCode one-shot specifications and their black-box evaluator. It compares an installed
-official Codex CLI baseline with this state build, saves external CLI events plus the persisted rollout for audit, and
-runs no more than two cells concurrently:
+The runner reuses the five OpenCode one-shot specifications and their black-box evaluator. By default every mode uses
+the same research binary, so the runtime flag is the only implementation switch. It saves external CLI events plus the
+persisted rollout for audit and runs no more than two cells concurrently:
 
 ```bash
 cd ../..
 CODEX_SKILL_STATE_MODEL=gpt-5.6-luna \
 CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
-CODEX_BASELINE_BINARY=/path/to/pristine/codex \
-CODEX_BASELINE_SOURCE='pristine upstream revision from ../../codex/UPSTREAM.md' \
-bun experiments/codex-skill-state/scripts/run.ts all
+bun experiments/codex-skill-state/scripts/run.ts all baseline v2
+
+# Include the exact paper contract in the same suite.
+bun experiments/codex-skill-state/scripts/run.ts all baseline paper v2
 ```
 
-Run `doctor`, `pair PROJECT`, or `one PROJECT MODE` in place of `all` for setup checks and smaller probes. After a kernel
-change, `state-all BASELINE_SUITE` runs only the five state cells and builds a combined report from an already valid,
-unchanged baseline suite. Results are written below `experiments/codex-skill-state/results/<suite>/`. The short-project
+Run `doctor`, `pair PROJECT [paper|v2]`, or `one PROJECT MODE` in place of `all` for setup checks and smaller probes.
+Calling `all` without mode arguments retains the historical baseline/v2 default. `CODEX_BASELINE_BINARY` and
+`CODEX_BASELINE_SOURCE` may still point baseline at a pristine binary when reproducing older cross-binary reports.
+After a kernel change, `state-all BASELINE_SUITE` runs only the five v2 cells and builds a combined report from an
+already valid, unchanged baseline suite. Results are written below `experiments/codex-skill-state/results/<suite>/`. The short-project
 A/B should eventually be complemented with controlled 25/50/100/200-step scenarios to measure the asymptotic claim
 independently of code-generation quality.
 
-`one PROJECT skill-state-paper` runs an individual original-paper cell through the same binary and evaluator; existing
-`all`, `pair`, and `state-all` commands continue to target v2 so historical reports remain reproducible.
+The canonical mode arguments are `baseline`, `paper`, and `v2`; the legacy names `skill-state-paper` and `skill-state`
+remain accepted so historical commands stay reproducible.
 
-The baseline CLI must support `--approve-for-me`; `doctor` rejects older installed releases that cannot use the same
-sandboxed non-interactive contract. For the recorded Luna run, the pristine CLI was built from the exact SHA in
-`codex/UPSTREAM.md`, and the application-provided `codex-code-mode-host` was placed beside it.
+When `CODEX_BASELINE_BINARY` selects a separate baseline, that CLI must support `--approve-for-me`; `doctor` rejects
+older installed releases that cannot use the same sandboxed non-interactive contract. For the recorded Luna run, the
+pristine CLI was built from the exact SHA in `codex/UPSTREAM.md`, and the application-provided `codex-code-mode-host`
+was placed beside it.

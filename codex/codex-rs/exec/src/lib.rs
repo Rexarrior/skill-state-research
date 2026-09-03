@@ -538,12 +538,13 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
         )
         .await?
     };
-    match std::env::var("CODEX_SKILL_STATE_MODE") {
-        Ok(value) if value == "paper" || value == "v2" => {}
-        Err(std::env::VarError::NotPresent) => {}
+    let skill_state_enabled = match std::env::var("CODEX_SKILL_STATE_MODE") {
+        Ok(value) if value == "paper" || value == "v2" => true,
+        Ok(value) if value == "baseline" => false,
+        Err(std::env::VarError::NotPresent) => false,
         Ok(value) => {
             return Err(anyhow::anyhow!(
-                "invalid CODEX_SKILL_STATE_MODE {value:?}; expected paper or v2"
+                "invalid CODEX_SKILL_STATE_MODE {value:?}; expected baseline, paper, or v2"
             ));
         }
         Err(err) => return Err(anyhow::anyhow!(err)),
@@ -560,12 +561,13 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
         state_db: state_db.clone(),
         environment_manager: std::sync::Arc::new(environment_manager),
         config_warnings,
-        // This experimental fork routes every `codex exec` turn through the
-        // selected kernel-level SKILL.state loop while retaining the ordinary
-        // Codex product restrictions.
-        session_source: SessionSource::Custom(
-            codex_core::SKILL_STATE_V2_SESSION_SOURCE.to_string(),
-        ),
+        session_source: if skill_state_enabled {
+            // State sessions retain the ordinary Codex product identity while
+            // core selects paper or v2 from the validated runtime flag.
+            SessionSource::Custom(codex_core::SKILL_STATE_V2_SESSION_SOURCE.to_string())
+        } else {
+            SessionSource::Exec
+        },
         enable_codex_api_key_env: true,
         client_name: "codex_exec".to_string(),
         client_version: env!("CARGO_PKG_VERSION").to_string(),

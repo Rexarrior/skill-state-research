@@ -27,6 +27,7 @@ const CodingState = Schema.Struct({
 
 export type State = typeof CodingState.Type
 export type Mode = "paper" | "v2"
+export type RuntimeMode = "baseline" | Mode
 
 export const initialState: State = {
   status: "working",
@@ -133,9 +134,9 @@ On every turn call skill_step exactly once with exactly two fields: state_patch 
 
 Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
 
-export function parseMode(value: string): Mode {
-  if (value === "paper" || value === "v2") return value
-  throw new Error(`Invalid SKILL.state mode: ${value}; expected paper or v2`)
+export function parseMode(value: string): RuntimeMode {
+  if (value === "baseline" || value === "paper" || value === "v2") return value
+  throw new Error(`Invalid SKILL.state mode: ${value}; expected baseline, paper, or v2`)
 }
 
 export function context(

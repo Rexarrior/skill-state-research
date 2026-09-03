@@ -9,6 +9,7 @@ const fixtures = path.join(repository, "experiments/skill-state")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
 const modes = ["baseline", "skill-state"] as const
 const runnableModes = [...modes, "skill-state-paper"] as const
+const modeNames = ["baseline", "paper", "v2"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -19,16 +20,35 @@ const expectedChecks: Record<Project, number> = {
 
 type Project = (typeof projects)[number]
 type Mode = (typeof runnableModes)[number]
+type ModeName = (typeof modeNames)[number]
+
+function parseMode(value: string): Mode {
+  if (value === "baseline") return "baseline"
+  if (value === "paper" || value === "skill-state-paper") return "skill-state-paper"
+  if (value === "v2" || value === "skill-state") return "skill-state"
+  throw new Error(`unknown mode ${JSON.stringify(value)}; expected ${modeNames.join("|")}`)
+}
+
+function runtimeMode(mode: Mode): ModeName {
+  if (mode === "skill-state-paper") return "paper"
+  if (mode === "skill-state") return "v2"
+  return "baseline"
+}
+
+function modeLabel(mode: Mode) {
+  return runtimeMode(mode) === "v2" ? "V2" : runtimeMode(mode)[0]!.toUpperCase() + runtimeMode(mode).slice(1)
+}
 
 const model = process.env.CODEX_SKILL_STATE_MODEL?.trim() || "gpt-5.6-luna"
 const observationWindow = readObservationWindow()
 const maxConcurrency = readInteger("CODEX_SKILL_STATE_MAX_CONCURRENCY", 2, 1, 2)
 const cellTimeoutMs = readInteger("CODEX_SKILL_STATE_TIMEOUT_MS", 15 * 60 * 1000, 30_000, 30 * 60 * 1000)
-const baselineBinary = process.env.CODEX_BASELINE_BINARY?.trim() || Bun.which("codex") || "codex"
-const baselineSource =
-  process.env.CODEX_BASELINE_SOURCE?.trim() || "installed CLI; exact source revision was not supplied"
 const stateBinary =
   process.env.CODEX_SKILL_STATE_BINARY?.trim() || path.join(repository, "codex/codex-rs/target/debug/codex")
+const baselineBinary = process.env.CODEX_BASELINE_BINARY?.trim() || stateBinary
+const baselineSource =
+  process.env.CODEX_BASELINE_SOURCE?.trim() ||
+  (baselineBinary === stateBinary ? "baseline runtime mode in the same research binary" : "separate baseline binary")
 const oneShotInstruction = (
   await readFile(path.join(fixtures, "prompts/one-shot.txt"), "utf8")
 ).trim()
@@ -277,7 +297,7 @@ async function runCell(project: Project, mode: Mode, suite: string, binaries: Re
     cwd: repository,
     env: {
       ...process.env,
-      CODEX_SKILL_STATE_MODE: mode === "skill-state-paper" ? "paper" : "v2",
+      CODEX_SKILL_STATE_MODE: runtimeMode(mode),
       CODEX_SKILL_STATE_OBSERVATION_WINDOW: String(observationWindow),
       NO_COLOR: "1",
     },
@@ -333,7 +353,7 @@ async function runCell(project: Project, mode: Mode, suite: string, binaries: Re
     mode,
     model,
     observationWindow: mode === "skill-state" ? observationWindow : undefined,
-    protocolMode: mode === "baseline" ? undefined : mode === "skill-state-paper" ? "paper" : "v2",
+    protocolMode: runtimeMode(mode),
     oneShot: true,
     binary: binaries[mode],
     exitCode,
@@ -379,19 +399,10 @@ async function report(
   binaries: Record<Mode, BinaryInfo>,
   baselineSuite?: string,
 ) {
-  const rows: string[] = []
+  const selectedModes = runnableModes.filter((mode) => summaries.some((item) => item.mode === mode))
   const compared = projects.filter((project) =>
-    modes.every((mode) => summaries.some((item) => item.project === project && item.mode === mode)),
+    selectedModes.every((mode) => summaries.some((item) => item.project === project && item.mode === mode)),
   )
-  for (const project of compared) {
-    const base = summaries.find((item) => item.project === project && item.mode === "baseline")!
-    const state = summaries.find((item) => item.project === project && item.mode === "skill-state")!
-    const savings = base.metrics.input === 0 ? 0 : 1 - state.metrics.input / base.metrics.input
-    rows.push(
-      `| ${project} | ${base.evaluation.passed}/${base.evaluation.total} | ${state.evaluation.passed}/${state.evaluation.total} | ${number(base.metrics.input)} | ${number(state.metrics.input)} | ${percent(savings)} | ${base.metrics.samples}/${state.metrics.samples} | ${number(base.metrics.durationMs / 1000)}/${number(state.metrics.durationMs / 1000)} | ${base.timedOut ? "timeout" : base.exitCode} / ${state.timedOut ? "timeout" : state.exitCode} |`,
-    )
-  }
-
   const byMode = (mode: Mode) => summaries.filter((item) => item.mode === mode)
   const metric = (mode: Mode, field: keyof Metrics) =>
     byMode(mode).reduce((sum, item) => sum + Number(item.metrics[field] ?? 0), 0)
@@ -399,59 +410,106 @@ async function report(
     Math.max(0, ...byMode(mode).map((item) => Number(item.metrics[field] ?? 0)))
   const score = (mode: Mode) => byMode(mode).reduce((sum, item) => sum + item.evaluation.passed, 0)
   const possible = (mode: Mode) => byMode(mode).reduce((sum, item) => sum + item.evaluation.total, 0)
-  const baselineInput = metric("baseline", "input")
-  const stateInput = metric("skill-state", "input")
-  const savings = baselineInput === 0 ? 0 : 1 - stateInput / baselineInput
+  const headers = selectedModes.flatMap((mode) => [
+    `${modeLabel(mode)} score`,
+    `${modeLabel(mode)} input`,
+    "Samples",
+    "Exit",
+  ])
+  const rows = compared.map((project) => {
+    const cells = selectedModes.flatMap((mode) => {
+      const item = summaries.find((summary) => summary.project === project && summary.mode === mode)!
+      return [
+        `${item.evaluation.passed}/${item.evaluation.total}`,
+        number(item.metrics.input),
+        String(item.metrics.samples),
+        item.timedOut ? "timeout" : String(item.exitCode),
+      ]
+    })
+    return `| ${project} | ${cells.join(" | ")} |`
+  })
+  const totals = selectedModes.flatMap((mode) => [
+    `${score(mode)}/${possible(mode)}`,
+    number(metric(mode, "input")),
+    number(metric(mode, "samples")),
+    "—",
+  ])
+  const aggregateMetrics: [string, keyof Metrics, "total" | "maximum"][] = [
+    ["Input tokens", "input", "total"],
+    ["Cached input tokens", "cachedInput", "total"],
+    ["Output tokens", "output", "total"],
+    ["Reasoning tokens", "reasoning", "total"],
+    ["Provider samples", "samples", "total"],
+    ["Command executions", "commandExecutions", "total"],
+    ["File-change events", "fileChanges", "total"],
+    ["CLI error events", "errors", "total"],
+    ["State transitions", "stateCalls", "total"],
+    ["State transition errors", "stateErrors", "total"],
+    ["State comments", "stateComments", "total"],
+    ["Finish transitions", "finishCalls", "total"],
+    ["Consecutive repeated actions", "repeatedActions", "total"],
+    ["Maximum repeat streak", "maxRepeatStreak", "maximum"],
+    ["Maximum state bytes", "maxStateBytes", "maximum"],
+  ]
+  const aggregateRows = aggregateMetrics.map(([label, field, aggregation]) => {
+    const values = selectedModes.map((mode) =>
+      number(aggregation === "maximum" ? maximum(mode, field) : metric(mode, field)),
+    )
+    return `| ${label} | ${values.join(" | ")} |`
+  })
+  const baselineInput = selectedModes.includes("baseline") ? metric("baseline", "input") : 0
+  const comparisonRows = selectedModes
+    .filter((mode) => mode !== "baseline")
+    .map((mode) => {
+      const change = baselineInput === 0 ? 0 : 1 - metric(mode, "input") / baselineInput
+      return `| ${modeLabel(mode)} | ${number(metric(mode, "input"))} | ${percent(change)} |`
+    })
+  const provenance = selectedModes
+    .map(
+      (mode) =>
+        `- ${modeLabel(mode)}: \`${binaries[mode].version}\` at \`${binaries[mode].path}\`, SHA-256 \`${binaries[mode].sha256}\`.`,
+    )
+    .join("\n")
 
-  const body = `# Codex CLI one-shot A/B results
+  const body = `# Codex CLI one-shot multimode results
 
 Suite: \`${suite}\`
 
 Model: \`${model}\` (reasoning effort: \`medium\`)
 
-State observation window: \`k=${observationWindow}\`
+Selected modes: ${selectedModes.map((mode) => `\`${runtimeMode(mode)}\``).join(", ")}
 
 Design: one independent one-shot run per project and mode; black-box evaluation; at most ${maxConcurrency} concurrent
 CLI processes; ${number(cellTimeoutMs / 60_000)} minute timeout per cell. Skills, skill search, and user config were
-disabled in both modes. Both CLIs use \`--approve-for-me\`: model commands remain in the \`workspace-write\` sandbox while
-the CLI's automatic reviewer handles safe edits. Every run starts in an empty temporary workspace. The pristine
-baseline retains upstream Code Mode; the state kernel forces direct tools to preserve one-patch/one-action atomicity.
+disabled in every mode. All runs use \`--approve-for-me\`: model commands remain in the \`workspace-write\` sandbox while
+the CLI's automatic reviewer handles safe edits. Every run starts in an empty temporary workspace. Baseline retains
+the native transcript and Code Mode; state modes force direct tools to preserve one-patch/one-action atomicity.
 ${baselineSuite ? `\nBaseline cells were reused without rerunning from suite \`${baselineSuite}\`; state cells belong to this suite.\n` : ""}
 
-| Project | Baseline score | SKILL.state score | Baseline input tokens¹ | SKILL.state input tokens¹ | Savings | Samples B/S | Seconds B/S | Exit B / S |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Project | ${headers.join(" | ")} |
+|---|${headers.map(() => "---:").join("|")}|
 ${rows.join("\n")}
-| **Total** | **${score("baseline")}/${possible("baseline")}** | **${score("skill-state")}/${possible("skill-state")}** | **${number(baselineInput)}** | **${number(stateInput)}** | **${percent(savings)}** | **${metric("baseline", "samples")}/${metric("skill-state", "samples")}** | **${number(metric("baseline", "durationMs") / 1000)}/${number(metric("skill-state", "durationMs") / 1000)}** | |
+| **Total** | ${totals.map((value) => `**${value}**`).join(" | ")} |
 
 ¹ Codex's provider-reported \`input_tokens\`; \`cached_input_tokens\` is a subset and is not added again.
 
+## Input-token change from baseline
+
+| Mode | Input tokens | Reduction |
+|---|---:|---:|
+${comparisonRows.join("\n") || "| — | — | — |"}
+
 ## Aggregate counters
 
-| Metric | Baseline | SKILL.state |
-|---|---:|---:|
-| Input tokens | ${number(baselineInput)} | ${number(stateInput)} |
-| Cached input tokens | ${number(metric("baseline", "cachedInput"))} | ${number(metric("skill-state", "cachedInput"))} |
-| Output tokens | ${number(metric("baseline", "output"))} | ${number(metric("skill-state", "output"))} |
-| Reasoning tokens | ${number(metric("baseline", "reasoning"))} | ${number(metric("skill-state", "reasoning"))} |
-| Provider samples | ${number(metric("baseline", "samples"))} | ${number(metric("skill-state", "samples"))} |
-| Command executions | ${number(metric("baseline", "commandExecutions"))} | ${number(metric("skill-state", "commandExecutions"))} |
-| File-change events | ${number(metric("baseline", "fileChanges"))} | ${number(metric("skill-state", "fileChanges"))} |
-| CLI error events | ${number(metric("baseline", "errors"))} | ${number(metric("skill-state", "errors"))} |
-| State transitions | 0 | ${number(metric("skill-state", "stateCalls"))} |
-| State transition errors | 0 | ${number(metric("skill-state", "stateErrors"))} |
-| State comments | 0 | ${number(metric("skill-state", "stateComments"))} |
-| Finish transitions | 0 | ${number(metric("skill-state", "finishCalls"))} |
-| Consecutive repeated actions | 0 | ${number(metric("skill-state", "repeatedActions"))} |
-| Maximum repeat streak | 0 | ${number(maximum("skill-state", "maxRepeatStreak"))} |
-| Maximum state bytes | 0 | ${number(maximum("skill-state", "maxStateBytes"))} |
+| Metric | ${selectedModes.map(modeLabel).join(" | ")} |
+|---|${selectedModes.map(() => "---:").join("|")}|
+${aggregateRows.join("\n")}
 
 ## Binary provenance
 
-- Baseline: \`${binaries.baseline.version}\` at \`${binaries.baseline.path}\`, SHA-256
-  \`${binaries.baseline.sha256}\`. Source: ${baselineSource}.
-- SKILL.state: research build \`${binaries["skill-state"].version}\` at \`${binaries["skill-state"].path}\`, based on
-  upstream Codex commit \`1d74c3ba1ee98be2025ab066dcc3fd654fe8a3b6\`, SHA-256
-  \`${binaries["skill-state"].sha256}\`.
+${provenance}
+
+Baseline source: ${baselineSource}.
 
 The prompt, model, reasoning effort, sandbox, fixtures, evaluator, and concurrency are held constant. Binary hashes and
 source provenance are recorded so a suite can be rejected if the baseline is not the intended pristine revision.
@@ -504,7 +562,7 @@ async function doctor() {
 async function loadSummaries(suite: string) {
   const summaries = []
   for (const project of projects) {
-    for (const mode of modes) {
+    for (const mode of runnableModes) {
       try {
         summaries.push(
           JSON.parse(await readFile(path.join(experiment, "results", suite, mode, project, "summary.json"), "utf8")),
@@ -517,34 +575,32 @@ async function loadSummaries(suite: string) {
   return summaries
 }
 
-const [action = "doctor", arg1, arg2] = process.argv.slice(2)
+const [action = "doctor", ...args] = process.argv.slice(2)
 if (action === "doctor") {
   await doctor()
 } else if (action === "all") {
+  const selectedModes = args.length ? args.map(parseMode) : [...modes]
+  if (new Set(selectedModes).size !== selectedModes.length) throw new Error("modes must be unique")
   const binaries = await inspectBinaries()
   const suite = suiteID()
-  const cells: [Project, Mode][] = projects.flatMap((project, index) =>
-    index % 2 === 0
-      ? [
-          [project, "baseline"],
-          [project, "skill-state"],
-        ]
-      : [
-          [project, "skill-state"],
-          [project, "baseline"],
-        ],
-  )
+  const cells: [Project, Mode][] = projects.flatMap((project, index) => {
+    const offset = index % selectedModes.length
+    return [...selectedModes.slice(offset), ...selectedModes.slice(0, offset)].map(
+      (mode) => [project, mode] as [Project, Mode],
+    )
+  })
   const summaries = await mapLimited(cells, maxConcurrency, ([project, mode]) =>
     runCell(project, mode, suite, binaries),
   )
   await report(suite, summaries, binaries)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "state-all") {
-  if (!arg1) throw new Error("usage: bun run.ts state-all BASELINE_SUITE")
+  const [baselineSuite] = args
+  if (!baselineSuite) throw new Error("usage: bun run.ts state-all BASELINE_SUITE")
   const binaries = await inspectBinaries()
-  const baseline = (await loadSummaries(arg1)).filter((item) => item.mode === "baseline")
+  const baseline = (await loadSummaries(baselineSuite)).filter((item) => item.mode === "baseline")
   if (baseline.length !== projects.length) {
-    throw new Error(`baseline suite ${arg1} has ${baseline.length}/${projects.length} baseline cells`)
+    throw new Error(`baseline suite ${baselineSuite} has ${baseline.length}/${projects.length} baseline cells`)
   }
   const suite = suiteID()
   const state = await mapLimited(
@@ -552,34 +608,45 @@ if (action === "doctor") {
     maxConcurrency,
     ([project, mode]) => runCell(project, mode, suite, binaries),
   )
-  await report(suite, [...baseline, ...state], binaries, arg1)
+  await report(suite, [...baseline, ...state], binaries, baselineSuite)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "pair") {
-  if (!projects.includes(arg1 as Project)) throw new Error(`usage: bun run.ts pair <${projects.join("|")}>`)
+  const [project, requestedMode = "v2"] = args
+  if (!projects.includes(project as Project)) {
+    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2]`)
+  }
+  const selectedMode = parseMode(requestedMode)
+  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper or v2")
   const binaries = await inspectBinaries()
   const suite = suiteID()
   const summaries = await mapLimited(
-    modes.map((mode) => [arg1 as Project, mode] as [Project, Mode]),
+    ["baseline", selectedMode].map((mode) => [project as Project, mode] as [Project, Mode]),
     maxConcurrency,
     ([project, mode]) => runCell(project, mode, suite, binaries),
   )
   await report(suite, summaries, binaries)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "one") {
-  if (!projects.includes(arg1 as Project) || !runnableModes.includes(arg2 as Mode)) {
-    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${runnableModes.join("|")}>`)
+  const [project, requestedMode] = args
+  if (!projects.includes(project as Project) || !requestedMode) {
+    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${modeNames.join("|")}>`)
   }
   const binaries = await inspectBinaries()
   const suite = suiteID()
-  const summary = await runCell(arg1 as Project, arg2 as Mode, suite, binaries)
+  const summary = await runCell(project as Project, parseMode(requestedMode), suite, binaries)
   console.log(JSON.stringify(summary, null, 2))
 } else if (action === "report") {
-  if (!arg1) throw new Error("usage: bun run.ts report SUITE")
+  const [targetSuite] = args
+  if (!targetSuite) throw new Error("usage: bun run.ts report SUITE")
   const binaries = await inspectBinaries()
-  const summaries = await loadSummaries(arg1)
-  if (!summaries.length) throw new Error(`suite has no summaries: ${arg1}`)
-  await report(arg1, summaries, binaries)
-  console.log(JSON.stringify({ suite: arg1, report: path.join(experiment, "results", arg1, "report.md") }, null, 2))
+  const summaries = await loadSummaries(targetSuite)
+  if (!summaries.length) throw new Error(`suite has no summaries: ${targetSuite}`)
+  await report(targetSuite, summaries, binaries)
+  console.log(
+    JSON.stringify({ suite: targetSuite, report: path.join(experiment, "results", targetSuite, "report.md") }, null, 2),
+  )
 } else {
-  throw new Error("usage: bun run.ts doctor|all|state-all BASELINE_SUITE|pair PROJECT|one PROJECT MODE|report SUITE")
+  throw new Error(
+    "usage: bun run.ts doctor|all [MODES...]|state-all BASELINE_SUITE|pair PROJECT [paper|v2]|one PROJECT MODE|report SUITE",
+  )
 }

@@ -12,6 +12,18 @@ const enabledByExperimental = (name: string) =>
   Config.all({ experimental, enabled: Config.boolean(name).pipe(Config.option) }).pipe(
     Config.map((flags) => Option.getOrElse(flags.enabled, () => flags.experimental)),
   )
+const skillStateMode = Config.all({
+  mode: Config.string("OPENCODE_SKILL_STATE_MODE").pipe(Config.option),
+  legacyEnabled: bool("OPENCODE_EXPERIMENTAL_SKILL_STATE"),
+  legacyMode: Config.string("OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE").pipe(Config.option),
+}).pipe(
+  Config.map((flags) => {
+    const mode = Option.getOrUndefined(flags.mode)
+    if (mode) return mode
+    if (!flags.legacyEnabled) return "baseline"
+    return Option.getOrUndefined(flags.legacyMode) ?? "v2"
+  }),
+)
 
 export class Service extends ConfigService.Service<Service>()("@opencode/RuntimeFlags", {
   autoShare: bool("OPENCODE_AUTO_SHARE"),
@@ -46,8 +58,7 @@ export class Service extends ConfigService.Service<Service>()("@opencode/Runtime
   experimentalOxfmt: enabledByExperimental("OPENCODE_EXPERIMENTAL_OXFMT"),
   experimentalPlanMode: enabledByExperimental("OPENCODE_EXPERIMENTAL_PLAN_MODE"),
   experimentalCodeMode: enabledByExperimental("OPENCODE_EXPERIMENTAL_CODE_MODE"),
-  experimentalSkillState: bool("OPENCODE_EXPERIMENTAL_SKILL_STATE"),
-  experimentalSkillStateMode: Config.string("OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE").pipe(Config.withDefault("v2")),
+  skillStateMode,
   experimentalSkillStateObservationWindow: positiveInteger("OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW"),
   experimentalEventSystem: enabledByExperimental("OPENCODE_EXPERIMENTAL_EVENT_SYSTEM"),
   experimentalWorkspaces: enabledByExperimental("OPENCODE_EXPERIMENTAL_WORKSPACES"),

@@ -145,6 +145,10 @@ prompt-only ablation с одинаковой гранулярностью tools.
 является памятью модели. Реализация и команды запуска описаны в
 [контракте original-paper mode](../experiments/PAPER-ORIGINAL.md). Результатов benchmark для paper-режима пока нет.
 
+После объединения веток один бинарник каждого агента содержит все три пути. OpenCode выбирает их через
+`OPENCODE_SKILL_STATE_MODE=baseline|paper|v2`, Codex — через `CODEX_SKILL_STATE_MODE=baseline|paper|v2`; без флага оба
+запускают штатный baseline. Harness умеет собирать двух- и трёхрежимные suites, не меняя бинарник между cells.
+
 ## Сводные выводы
 
 1. **Ядровый контракт реализован и проверяем.** В OpenCode и Codex модель владеет patch, runtime валидирует resulting

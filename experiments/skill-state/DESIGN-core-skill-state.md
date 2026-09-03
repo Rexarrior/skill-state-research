@@ -113,12 +113,12 @@ The core runtime materializes `P` before the first provider call:
 The experiment runner uses the existing attachment path:
 
 ```text
-OPENCODE_EXPERIMENTAL_SKILL_STATE=true opencode run --file /path/to/SPEC.md "Implement the project"
+OPENCODE_SKILL_STATE_MODE=v2 opencode run --file /path/to/SPEC.md "Implement the project"
 ```
 
 OpenCode resolves `--file` into textual prompt parts before the agent loop. The model receives the attached contents in
-`P`; it is never instructed to open a state or specification file itself. No new public CLI/API/config surface is added
-for this experiment.
+`P`; it is never instructed to open a state or specification file itself. The same binary also exposes the native loop
+with `OPENCODE_SKILL_STATE_MODE=baseline` and the article-exact variant with `OPENCODE_SKILL_STATE_MODE=paper`.
 
 ## State and persistence
 
