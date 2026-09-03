@@ -1,0 +1,82 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "dependency-planner",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "9dd340af1a3053bb5498c8f0ecf6e3768603a32f0c6a0e82bdca3b4f731dd8de"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/skill-state/dependency-planner",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 439115,
+    "cachedInput": 387584,
+    "cacheWriteInput": 0,
+    "output": 43260,
+    "reasoning": 5716,
+    "total": 482375,
+    "samples": 31,
+    "commandExecutions": 12,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 31,
+    "stateErrors": 19,
+    "stateComments": 25,
+    "finishCalls": 0,
+    "repeatedActions": 12,
+    "maxRepeatStreak": 3,
+    "maxStateBytes": 417,
+    "durationMs": 900015,
+    "threadID": "01a0689d-5a79-7b32-9005-46e5fd65336e"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 0,
+    "total": 7,
+    "score": 0,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "empty graph",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": false,
+        "detail": "cycle succeeded"
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": false,
+        "detail": "unknown dependency accepted"
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": false,
+        "detail": "invalid schema accepted"
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "README is missing or too short"
+      }
+    ]
+  }
+}

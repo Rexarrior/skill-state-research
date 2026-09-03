@@ -1,0 +1,52 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "9dd340af1a3053bb5498c8f0ecf6e3768603a32f0c6a0e82bdca3b4f731dd8de"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/skill-state/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 968539,
+    "cachedInput": 797440,
+    "cacheWriteInput": 0,
+    "output": 37621,
+    "reasoning": 3579,
+    "total": 1006160,
+    "samples": 63,
+    "commandExecutions": 47,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 63,
+    "stateErrors": 14,
+    "stateComments": 27,
+    "finishCalls": 0,
+    "repeatedActions": 8,
+    "maxRepeatStreak": 3,
+    "maxStateBytes": 521,
+    "durationMs": 900017,
+    "threadID": "01a0688d-f395-7832-9591-06e20f40f0b5"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

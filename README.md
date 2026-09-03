@@ -19,6 +19,8 @@ message instead of being asked to read a state file itself.
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
 - [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state v2 implementation.
 - [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
+- [`experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md)
+  — Codex CLI benchmark, implementation defect found by the first run, corrected result, and interpretation.
 - [`experiments/skill-state/`](./experiments/skill-state/) — benchmark harness, project specifications, evaluators,
   plans, reports, generated workspaces metadata, raw JSONL event logs, stderr logs, and per-run summaries.
 - [`experiments/skill-state/REPORT-core.md`](./experiments/skill-state/REPORT-core.md) — implementation history and the
@@ -47,6 +49,14 @@ timeout, and many invalid transitions before it was stopped.
 The richer observation record eliminated the earlier 74-command identical-action loop, but GLM replaced it with
 non-identical repeated reads, protocol violations, or very long reasoning turns. The aggregate token reduction from
 the incomplete GLM runs is not a valid efficiency win.
+
+### Codex CLI, GPT-5.6 Luna, `k=3`
+
+The pristine Codex baseline and state fork were built from the same upstream SHA. Baseline passed **40/40** checks;
+post-fix state passed **39/40**, but used **4,482,763** input tokens versus **1,265,791**—**3.54x more**. State reduced
+input per provider sample by 20.7%, yet required 268 samples versus 60 and timed out in two of five cells. The first run
+also exposed an implementation bug: a 3 KiB incoming-action limit rejected ordinary code patches. The corrected kernel
+accepts up to 64 KiB while keeping only a bounded 3 KiB preview in observations.
 
 ## Running the experiment
 

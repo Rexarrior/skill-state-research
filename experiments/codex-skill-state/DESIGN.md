@@ -67,8 +67,11 @@ An observation is not just tool output:
 ```
 
 The next request receives the last `k` observations, with `k=3` by default and a hard range of 1 through 8. Result text
-is capped at 4 KiB, action input at 3 KiB, and comment at 1 KiB. Durable conclusions belong in `Sigma`; observations are
-short-term action memory. The same fragment is not separately copied into state by the runtime.
+is capped at 4 KiB, the action-input representation retained in an observation at 3 KiB, and comment at 1 KiB. The
+runtime accepts an action request up to 64 KiB so code-generation patches are executable; when it is larger than the
+observation budget, `O` contains its size and a bounded preview. The original full call remains in the local rollout for
+audit. Durable conclusions belong in `Sigma`; observations are short-term action memory. The same fragment is not
+separately copied into state by the runtime.
 
 ## Atomic action contract
 

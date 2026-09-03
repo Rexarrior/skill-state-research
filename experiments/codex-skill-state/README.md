@@ -12,10 +12,14 @@ The implementation is a core modification, not a skill or plugin. The complete o
 
 - Kernel state schema, patch validation, monotonic revisions, atomic tool dispatch, bounded observations, finish action,
   persistence, and resume reconstruction are implemented.
+- Action requests may be up to 64 KiB; only a bounded 3 KiB preview is retained in the observation. This distinction was
+  added after the first benchmark exposed rejected normal-size code patches.
 - `codex exec` in this fork enters state mode directly; there is no feature toggle in this experimental branch.
 - Observation window `k` defaults to 3 and is configurable with `CODEX_SKILL_STATE_OBSERVATION_WINDOW=1..8`.
 - Five focused core tests and one two-step end-to-end `codex exec` test cover the protocol.
-- A full Codex benchmark has not yet been run. Existing OpenCode results are not evidence about the Codex fork.
+- The GPT-5.6 Luna `k=3` CLI benchmark is complete. Baseline scored 40/40 and state scored 39/40, but state consumed
+  3.54x more input tokens because provider samples increased 4.47x. See
+  [`REPORT-gpt-5.6-luna-k3.md`](./REPORT-gpt-5.6-luna-k3.md).
 
 ## Build
 
@@ -37,9 +41,27 @@ CARGO_INCREMENTAL=0 just test -p codex-exec --test all -E 'test(~skill_state_v2)
 
 The integration test uses a loopback mock Responses API, so a restricted environment must permit binding a local port.
 
-## Next experiment
+## CLI benchmark
 
-Port the existing five one-shot project fixtures to a Codex runner, retain black-box evaluation, and record raw JSONL,
-stderr, provider usage, transitions, elapsed time, and termination reason per cell. Run no more than two cells
-concurrently. Compare transcript baseline from an unmodified binary with this state binary at `k=3`, then add controlled
-25/50/100/200-step scenarios to measure the asymptotic claim independently of short code-generation quality.
+The runner reuses the five OpenCode one-shot specifications and their black-box evaluator. It compares an installed
+official Codex CLI baseline with this state build, saves external CLI events plus the persisted rollout for audit, and
+runs no more than two cells concurrently:
+
+```bash
+cd ../..
+CODEX_SKILL_STATE_MODEL=gpt-5.6-luna \
+CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
+CODEX_BASELINE_BINARY=/path/to/pristine/codex \
+CODEX_BASELINE_SOURCE='pristine upstream revision from ../../codex/UPSTREAM.md' \
+bun experiments/codex-skill-state/scripts/run.ts all
+```
+
+Run `doctor`, `pair PROJECT`, or `one PROJECT MODE` in place of `all` for setup checks and smaller probes. After a kernel
+change, `state-all BASELINE_SUITE` runs only the five state cells and builds a combined report from an already valid,
+unchanged baseline suite. Results are written below `experiments/codex-skill-state/results/<suite>/`. The short-project
+A/B should eventually be complemented with controlled 25/50/100/200-step scenarios to measure the asymptotic claim
+independently of code-generation quality.
+
+The baseline CLI must support `--approve-for-me`; `doctor` rejects older installed releases that cannot use the same
+sandboxed non-interactive contract. For the recorded Luna run, the pristine CLI was built from the exact SHA in
+`codex/UPSTREAM.md`, and the application-provided `codex-code-mode-host` was placed beside it.

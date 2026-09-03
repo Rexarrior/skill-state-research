@@ -1,0 +1,86 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "mini-template",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "9dd340af1a3053bb5498c8f0ecf6e3768603a32f0c6a0e82bdca3b4f731dd8de"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/skill-state/mini-template",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 469814,
+    "cachedInput": 427776,
+    "cacheWriteInput": 0,
+    "output": 40044,
+    "reasoning": 2540,
+    "total": 509858,
+    "samples": 33,
+    "commandExecutions": 18,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 33,
+    "stateErrors": 15,
+    "stateComments": 20,
+    "finishCalls": 0,
+    "repeatedActions": 9,
+    "maxRepeatStreak": 3,
+    "maxStateBytes": 463,
+    "durationMs": 900023,
+    "threadID": "01a0688b-fa9c-7531-b067-7fe914e9d2a7"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested if and else",
+        "passed": false,
+        "detail": "expected \"ANZ\", got \"\""
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested loops",
+        "passed": false,
+        "detail": "expected \"12;E;\", got \"\""
+      },
+      {
+        "name": "specified truthiness",
+        "passed": false,
+        "detail": "expected \"0eo\", got \"\""
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": false,
+        "detail": "location missing"
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "README is missing or too short"
+      }
+    ]
+  }
+}

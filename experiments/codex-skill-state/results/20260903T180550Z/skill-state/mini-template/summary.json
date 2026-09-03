@@ -1,0 +1,83 @@
+{
+  "suite": "20260903T180550Z",
+  "project": "mini-template",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0"
+  },
+  "exitCode": 2,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/skill-state/mini-template",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 13
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested if and else",
+        "passed": false,
+        "detail": "expected \"ANZ\", got \"\""
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested loops",
+        "passed": false,
+        "detail": "expected \"12;E;\", got \"\""
+      },
+      {
+        "name": "specified truthiness",
+        "passed": false,
+        "detail": "expected \"0eo\", got \"\""
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": false,
+        "detail": "location missing"
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/skill-state/mini-template/README.md'"
+      }
+    ]
+  }
+}

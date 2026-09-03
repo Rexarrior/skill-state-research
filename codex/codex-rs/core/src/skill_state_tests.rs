@@ -96,6 +96,40 @@ fn transition_round_trips_state_and_observation() {
 }
 
 #[test]
+fn accepts_large_action_but_bounds_observation_input() {
+    let mut runtime = RuntimeState::default();
+    let command = "x".repeat(MAX_OBSERVATION_INPUT_BYTES * 2);
+    let accepted = runtime
+        .accept(
+            Snapshot::default(),
+            StepRequest {
+                action: RequestedAction {
+                    name: "exec_command".to_string(),
+                    input: serde_json::json!({"command": command}),
+                },
+                ..request(0, "exec_command")
+            },
+            &[function_tool("exec_command")],
+        )
+        .expect("code-generation actions larger than the observation budget must execute");
+    let output = transition_output(
+        "call-large".to_string(),
+        accepted,
+        ObservationStatus::Success,
+        "ok".to_string(),
+    );
+
+    let restored = snapshot(&[output]);
+    let input = &restored.observations[0].input;
+    assert_eq!(input.get("truncated").and_then(Value::as_bool), Some(true));
+    assert_eq!(
+        input.get("original_bytes").and_then(Value::as_u64),
+        Some((MAX_OBSERVATION_INPUT_BYTES * 2 + 14) as u64)
+    );
+    assert!(serde_json::to_vec(input).unwrap().len() <= MAX_OBSERVATION_INPUT_BYTES);
+}
+
+#[test]
 fn provider_sees_one_message_without_transcript() {
     let task = ResponseItem::Message {
         id: None,

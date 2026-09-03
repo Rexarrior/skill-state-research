@@ -1,0 +1,86 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "csv-insights",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "9dd340af1a3053bb5498c8f0ecf6e3768603a32f0c6a0e82bdca3b4f731dd8de"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/skill-state/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 563517,
+    "cachedInput": 491008,
+    "cacheWriteInput": 0,
+    "output": 40346,
+    "reasoning": 4170,
+    "total": 603863,
+    "samples": 40,
+    "commandExecutions": 17,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 40,
+    "stateErrors": 23,
+    "stateComments": 26,
+    "finishCalls": 0,
+    "repeatedActions": 15,
+    "maxRepeatStreak": 4,
+    "maxStateBytes": 271,
+    "durationMs": 900018,
+    "threadID": "01a0687d-9f41-7910-8e46-6a882b66ba79"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": false,
+        "detail": "embedded newline not quoted"
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": false,
+        "detail": "unknown column was accepted"
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": false,
+        "detail": "invalid decimal was accepted"
+      },
+      {
+        "name": "ragged records fail",
+        "passed": false,
+        "detail": "ragged input was accepted"
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "README is missing or too short"
+      }
+    ]
+  }
+}

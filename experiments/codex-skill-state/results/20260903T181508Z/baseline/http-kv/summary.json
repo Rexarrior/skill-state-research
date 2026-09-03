@@ -1,0 +1,82 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "http-kv",
+  "mode": "baseline",
+  "model": "gpt-5.6-luna",
+  "oneShot": true,
+  "binary": {
+    "path": "/private/tmp/codex-baseline-1d74c3b-bin/codex",
+    "version": "codex-cli 0.0.0",
+    "sha256": "3a385dcfc565ebd05f2421ee696f2d64c1eec896e4b633e7c07b3b39e13f9fb9"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/baseline/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 369264,
+    "cachedInput": 340992,
+    "cacheWriteInput": 0,
+    "output": 9841,
+    "reasoning": 1704,
+    "total": 379105,
+    "samples": 16,
+    "commandExecutions": 10,
+    "fileChanges": 4,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 237256,
+    "threadID": "01a06899-b678-7f51-bd44-9192bb59ea1b"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

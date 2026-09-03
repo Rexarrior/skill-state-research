@@ -30,7 +30,8 @@ const DEFAULT_OBSERVATION_WINDOW: usize = 3;
 const MAX_OBSERVATION_WINDOW: usize = 8;
 const MAX_STATE_BYTES: usize = 32 * 1024;
 const MAX_COMMENT_BYTES: usize = 1024;
-const MAX_ACTION_INPUT_BYTES: usize = 3 * 1024;
+const MAX_ACTION_REQUEST_BYTES: usize = 64 * 1024;
+const MAX_OBSERVATION_INPUT_BYTES: usize = 3 * 1024;
 const MAX_RESULT_BYTES: usize = 4 * 1024;
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
@@ -180,7 +181,7 @@ impl RuntimeState {
         validate_json_size(
             "action.input",
             &request.action.input,
-            MAX_ACTION_INPUT_BYTES,
+            MAX_ACTION_REQUEST_BYTES,
         )?;
         let action = resolve_action(&request.action, tools)?;
         let mut next = current.state.clone();
@@ -284,6 +285,7 @@ pub(crate) fn provider_input(input: &[ResponseItem]) -> Vec<ResponseItem> {
 The execution state is your only durable memory. Previous messages and reasoning are not available.\n\
 On every step, call skill_step exactly once. Supply the shown state_revision, a minimal state_patch, an optional comment, and one action.\n\
 The patch updates durable state before the action runs. Preserve facts needed later in state; do not use state as a transcript.\n\
+Large action inputs may be executed, but only a bounded preview is retained in observations.\n\
 Use finish only when the task is complete, with a concise final message in action.input.message.\n\
 \nInstructions (P, immutable):\n{task}\n\
 \nSkill Execution State (Sigma, revision {}):\n{state_json}\n\
@@ -336,7 +338,7 @@ pub(crate) fn transition_output(
         observation: Observation {
             revision: accepted.revision,
             action: accepted.action_name,
-            input: accepted.action_input,
+            input: bounded_action_input(accepted.action_input),
             comment: accepted.comment,
             status,
             result: truncate_utf8(result, MAX_RESULT_BYTES),
@@ -680,6 +682,25 @@ fn truncate_utf8(mut value: String, max_bytes: usize) -> String {
     value.truncate(end);
     value.push_str("\n…[truncated by SKILL.state v2]");
     value
+}
+
+fn bounded_action_input(value: Value) -> Value {
+    let Ok(serialized) = serde_json::to_vec(&value) else {
+        return serde_json::json!({"truncated": true, "reason": "serialization failed"});
+    };
+    if serialized.len() <= MAX_OBSERVATION_INPUT_BYTES {
+        return value;
+    }
+    let original_bytes = serialized.len();
+    let preview = truncate_utf8(
+        String::from_utf8_lossy(&serialized).into_owned(),
+        MAX_OBSERVATION_INPUT_BYTES.saturating_sub(1024),
+    );
+    serde_json::json!({
+        "truncated": true,
+        "original_bytes": original_bytes,
+        "preview": preview,
+    })
 }
 
 pub(crate) fn tool_specs(wrapper: ToolSpec) -> Arc<[ToolSpec]> {

@@ -1,0 +1,79 @@
+{
+  "suite": "20260903T192411Z",
+  "project": "csv-insights",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "b8580c16a8a88d1690d57abd9e5c0858a3a3145a213514f024e50fcb7ab180b0"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T192411Z/skill-state/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 520366,
+    "cachedInput": 404736,
+    "cacheWriteInput": 0,
+    "output": 15590,
+    "reasoning": 2578,
+    "total": 535956,
+    "samples": 32,
+    "commandExecutions": 23,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 32,
+    "stateErrors": 6,
+    "stateComments": 18,
+    "finishCalls": 1,
+    "repeatedActions": 2,
+    "maxRepeatStreak": 2,
+    "maxStateBytes": 755,
+    "durationMs": 415417,
+    "threadID": "01a068ba-8fd9-7ba0-834e-078237547c12"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

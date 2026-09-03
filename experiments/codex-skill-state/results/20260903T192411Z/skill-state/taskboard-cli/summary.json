@@ -1,0 +1,80 @@
+{
+  "suite": "20260903T192411Z",
+  "project": "taskboard-cli",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "b8580c16a8a88d1690d57abd9e5c0858a3a3145a213514f024e50fcb7ab180b0"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T192411Z/skill-state/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 1184713,
+    "cachedInput": 803072,
+    "cacheWriteInput": 0,
+    "output": 31316,
+    "reasoning": 4089,
+    "total": 1216029,
+    "samples": 69,
+    "commandExecutions": 63,
+    "fileChanges": 3,
+    "errors": 0,
+    "stateCalls": 69,
+    "stateErrors": 3,
+    "stateComments": 21,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 768,
+    "durationMs": 900019,
+    "threadID": "01a068ba-8ff6-7c71-8581-98cad3f048d8"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "suite": "20260903T180550Z",
+  "project": "csv-insights",
+  "mode": "baseline",
+  "model": "gpt-5.6-luna",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :33 chars>",
+    "version": "codex-cli 0.145.0"
+  },
+  "exitCode": 2,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/csv-insights",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 37
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 2,
+    "total": 8,
+    "score": 0.25,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": false,
+        "detail": "unknown column was accepted"
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": false,
+        "detail": "error lacks column or row"
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/csv-insights/README.md'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "suite": "20260903T180550Z",
+  "project": "http-kv",
+  "mode": "baseline",
+  "model": "gpt-5.6-luna",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :33 chars>",
+    "version": "codex-cli 0.145.0"
+  },
+  "exitCode": 2,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/http-kv",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 37
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

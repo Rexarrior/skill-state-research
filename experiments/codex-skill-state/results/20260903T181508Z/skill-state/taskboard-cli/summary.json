@@ -1,0 +1,87 @@
+{
+  "suite": "20260903T181508Z",
+  "project": "taskboard-cli",
+  "mode": "skill-state",
+  "model": "gpt-5.6-luna",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "9dd340af1a3053bb5498c8f0ecf6e3768603a32f0c6a0e82bdca3b4f731dd8de"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T181508Z/skill-state/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 547326,
+    "cachedInput": 483072,
+    "cacheWriteInput": 0,
+    "output": 42230,
+    "reasoning": 5016,
+    "total": 589556,
+    "samples": 38,
+    "commandExecutions": 17,
+    "fileChanges": 1,
+    "errors": 0,
+    "stateCalls": 38,
+    "stateErrors": 20,
+    "stateComments": 25,
+    "finishCalls": 0,
+    "repeatedActions": 11,
+    "maxRepeatStreak": 5,
+    "maxStateBytes": 396,
+    "durationMs": 900011,
+    "threadID": "01a0687b-58ee-7523-8a1c-93e14feff716"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 0,
+    "total": 8,
+    "score": 0,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "combined list filters",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "done is idempotent",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "overdue and stats",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/taskboard-eval-neTeqt/tasks.json'"
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": false,
+        "detail": "malformed database was accepted"
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "README is missing or too short"
+      }
+    ]
+  }
+}

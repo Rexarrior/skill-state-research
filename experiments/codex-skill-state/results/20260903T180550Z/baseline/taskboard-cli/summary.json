@@ -1,0 +1,82 @@
+{
+  "suite": "20260903T180550Z",
+  "project": "taskboard-cli",
+  "mode": "baseline",
+  "model": "gpt-5.6-luna",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :33 chars>",
+    "version": "codex-cli 0.145.0"
+  },
+  "exitCode": 2,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/taskboard-cli",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 37
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "combined list filters",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "done is idempotent",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\nerror: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "overdue and stats",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/taskboard-eval-sXKBgW/tasks.json'"
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T180550Z/baseline/taskboard-cli/README.md'"
+      }
+    ]
+  }
+}
