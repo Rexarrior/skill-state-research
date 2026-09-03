@@ -16,6 +16,8 @@ message instead of being asked to read a state file itself.
 
 ## Repository layout
 
+- [`journals/`](./journals/) — consolidated research journal covering the historical OpenCode plugin, both OpenCode
+  core revisions, the Codex port, cross-model results, limitations, and links to every detailed report.
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
 - [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state v2 implementation.
 - [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
