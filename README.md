@@ -23,6 +23,8 @@ message instead of being asked to read a state file itself.
   — Codex CLI benchmark, implementation defect found by the first run, corrected result, and interpretation.
 - [`experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md)
   — matching Codex CLI Terra benchmark and comparison with Luna.
+- [`experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md)
+  — matching Codex CLI Sol benchmark and three-model comparison.
 - [`experiments/skill-state/`](./experiments/skill-state/) — benchmark harness, project specifications, evaluators,
   plans, reports, generated workspaces metadata, raw JSONL event logs, stderr logs, and per-run summaries.
 - [`experiments/skill-state/REPORT-core.md`](./experiments/skill-state/REPORT-core.md) — implementation history and the
@@ -67,6 +69,14 @@ baseline's **38/40** and reduced input tokens from **1,588,485** to **1,243,798*
 cells emitted `finish` without timeout. State used more samples (71 versus 61), but average input per sample was 32.7%
 lower. Per-project results varied from an 85.9% regression to a 73.7% saving, so this exploratory `n=1` result is not a
 stable expected effect.
+
+### Codex CLI, GPT-5.6 Sol, `k=3`
+
+Sol delivered the cleanest Codex result so far: both baseline and state passed **40/40** checks, while state reduced
+input tokens from **3,446,461** to **1,691,115**, a **50.9% saving**. Both modes used exactly 94 provider samples in
+aggregate. All five state sessions emitted `finish`, no cell timed out, and the two rejected transitions were recovered.
+Wall time increased by 4.1%, and state was more expensive on `taskboard-cli`, so the aggregate token win still should
+not be generalized beyond this exploratory `n=1` run.
 
 ## Running the experiment
 

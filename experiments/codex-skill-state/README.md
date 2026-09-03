@@ -22,6 +22,9 @@ The implementation is a core modification, not a skill or plugin. The complete o
   [`REPORT-gpt-5.6-luna-k3.md`](./REPORT-gpt-5.6-luna-k3.md).
 - The matching GPT-5.6 Terra run favored state: 39/40 versus baseline's 38/40 with 21.7% fewer input tokens. All five
   state cells finished without timeout. See [`REPORT-gpt-5.6-terra-k3.md`](./REPORT-gpt-5.6-terra-k3.md).
+- GPT-5.6 Sol produced the strongest clean result so far: both modes scored 40/40, while state used 50.9% fewer input
+  tokens. Both modes used 94 provider samples in aggregate, and all cells finished without timeout. See
+  [`REPORT-gpt-5.6-sol-k3.md`](./REPORT-gpt-5.6-sol-k3.md).
 
 ## Build
 
