@@ -1,0 +1,400 @@
+//! Experimental controls with popup-owned discovery and configured enablement.
+//! Only changed, supported controls are submitted to the existing writer.
+
+use codex_app_server_protocol::ExperimentalFeature;
+use codex_app_server_protocol::ExperimentalFeatureStage;
+use codex_features::FEATURES;
+use std::time::Duration;
+use std::time::Instant;
+use tokio::sync::oneshot;
+
+use crossterm::event::KeyCode;
+use crossterm::event::KeyEvent;
+use crossterm::event::KeyModifiers;
+use ratatui::buffer::Buffer;
+use ratatui::layout::Constraint;
+use ratatui::layout::Layout;
+use ratatui::layout::Rect;
+use ratatui::style::Stylize;
+use ratatui::text::Line;
+use ratatui::widgets::Block;
+use ratatui::widgets::Widget;
+
+use crate::app_event::AppEvent;
+use crate::app_event_sender::AppEventSender;
+use crate::key_hint;
+use crate::key_hint::KeyBindingListExt;
+use crate::keymap::ListAction;
+use crate::keymap::ListKeymap;
+use crate::render::Insets;
+use crate::render::RectExt as _;
+use crate::render::renderable::ColumnRenderable;
+use crate::render::renderable::Renderable;
+use crate::style::user_message_style;
+
+use codex_features::Feature;
+
+use super::CancellationEvent;
+use super::bottom_pane_view::BottomPaneView;
+use super::popup_consts::MAX_POPUP_ROWS;
+use super::scroll_state::ScrollState;
+use super::selection_popup_common::GenericDisplayRow;
+use super::selection_popup_common::measure_rows_height;
+use super::selection_popup_common::render_rows;
+
+pub(crate) struct ExperimentalFeatureItem {
+    pub feature: Option<Feature>,
+    pub name: String,
+    pub description: String,
+    pub enabled: bool,
+}
+
+pub(crate) struct ExperimentalFeaturesView {
+    features: Vec<ExperimentalFeatureItem>,
+    initial_enabled: Vec<bool>,
+    catalog_rx: Option<oneshot::Receiver<Result<Vec<ExperimentalFeature>, String>>>,
+    discovery_status: &'static str,
+    state: ScrollState,
+    complete: bool,
+    app_event_tx: AppEventSender,
+    footer_hint: Line<'static>,
+    keymap: ListKeymap,
+}
+
+impl ExperimentalFeaturesView {
+    pub(crate) fn new(
+        features: Vec<ExperimentalFeatureItem>,
+        catalog_rx: Option<oneshot::Receiver<Result<Vec<ExperimentalFeature>, String>>>,
+        app_event_tx: AppEventSender,
+        keymap: ListKeymap,
+    ) -> Self {
+        let mut view = Self {
+            discovery_status: if catalog_rx.is_some() {
+                "Loading server experiments…"
+            } else {
+                ""
+            },
+            catalog_rx,
+            initial_enabled: features.iter().map(|item| item.enabled).collect(),
+            features,
+            state: ScrollState::new(),
+            complete: false,
+            app_event_tx,
+            footer_hint: experimental_popup_hint_line(&keymap),
+            keymap,
+        };
+        view.initialize_selection();
+        view
+    }
+
+    fn header(&self, width: u16) -> impl Renderable {
+        let mut header = ColumnRenderable::new();
+        header.push(Line::from("Experimental features".bold()));
+        for text in [
+            "Checked features are configured on. Some experimental features take effect only in new tasks or after restarting the Codex server.",
+            self.discovery_status,
+        ].into_iter().filter(|text| !text.is_empty()) {
+            for line in textwrap::wrap(text, usize::from(width.max(1))) {
+                header.push(Line::from(line.into_owned().dim()));
+            }
+        }
+        header
+    }
+
+    fn initialize_selection(&mut self) {
+        if self.visible_len() == 0 {
+            self.state.selected_idx = None;
+        } else if self.state.selected_idx.is_none() {
+            self.state.selected_idx = Some(0);
+        }
+    }
+
+    fn visible_len(&self) -> usize {
+        self.features.len()
+    }
+
+    fn build_rows(&self) -> Vec<GenericDisplayRow> {
+        let mut rows = Vec::with_capacity(self.features.len());
+        let selected_idx = self.state.selected_idx;
+        for (idx, item) in self.features.iter().enumerate() {
+            let prefix = if selected_idx == Some(idx) {
+                '›'
+            } else {
+                ' '
+            };
+            let marker = if item.enabled { 'x' } else { ' ' };
+            let read_only = if item.feature.is_none() {
+                " (read-only)"
+            } else {
+                ""
+            };
+            let name = format!("{prefix} [{marker}] {}{read_only}", item.name);
+            rows.push(GenericDisplayRow {
+                name,
+                description: Some(item.description.clone()),
+                is_disabled: item.feature.is_none(),
+                ..Default::default()
+            });
+        }
+
+        rows
+    }
+
+    fn move_up(&mut self) {
+        let len = self.visible_len();
+        if len == 0 {
+            return;
+        }
+        self.state.move_up_wrap(len);
+        self.state.ensure_visible(len, MAX_POPUP_ROWS.min(len));
+    }
+
+    fn move_down(&mut self) {
+        let len = self.visible_len();
+        if len == 0 {
+            return;
+        }
+        self.state.move_down_wrap(len);
+        self.state.ensure_visible(len, MAX_POPUP_ROWS.min(len));
+    }
+
+    fn page_up(&mut self) {
+        let len = self.visible_len();
+        let visible = MAX_POPUP_ROWS.min(len);
+        self.state.page_up_clamped(len, visible);
+    }
+
+    fn page_down(&mut self) {
+        let len = self.visible_len();
+        let visible = MAX_POPUP_ROWS.min(len);
+        self.state.page_down_clamped(len, visible);
+    }
+
+    fn jump_top(&mut self) {
+        let len = self.visible_len();
+        let visible = MAX_POPUP_ROWS.min(len);
+        self.state.jump_top(len, visible);
+    }
+
+    fn jump_bottom(&mut self) {
+        let len = self.visible_len();
+        let visible = MAX_POPUP_ROWS.min(len);
+        self.state.jump_bottom(len, visible);
+    }
+
+    fn toggle_selected(&mut self) {
+        let Some(selected_idx) = self.state.selected_idx else {
+            return;
+        };
+
+        if let Some(item) = self.features.get_mut(selected_idx)
+            && item.feature.is_some()
+        {
+            item.enabled = !item.enabled;
+        }
+    }
+
+    fn rows_width(total_width: u16) -> u16 {
+        total_width.saturating_sub(2)
+    }
+}
+
+impl BottomPaneView for ExperimentalFeaturesView {
+    fn pre_draw_tick(&mut self, _now: Instant) -> bool {
+        let Some(receiver) = self.catalog_rx.as_mut() else {
+            return false;
+        };
+        let result = match receiver.try_recv() {
+            Ok(result) => result,
+            Err(oneshot::error::TryRecvError::Empty) => return false,
+            Err(oneshot::error::TryRecvError::Closed) => {
+                Err("Discovery was interrupted".to_string())
+            }
+        };
+        self.catalog_rx = None;
+        match result {
+            Ok(features) => {
+                let mut count = 0;
+                for feature in features {
+                    if feature.stage != ExperimentalFeatureStage::Beta {
+                        continue;
+                    }
+                    // The existing writer uses local defaults and Feature IDs. A new
+                    // server control or a changed default must wait for config-write migration.
+                    let writable = FEATURES
+                        .iter()
+                        .find(|spec| {
+                            spec.key == feature.name
+                                && spec.stage.experimental_menu_name().is_some()
+                                && spec.default_enabled == feature.default_enabled
+                        })
+                        .map(|spec| spec.id);
+                    self.initial_enabled.push(feature.enabled);
+                    self.features.push(ExperimentalFeatureItem {
+                        feature: writable,
+                        name: feature.display_name.unwrap_or(feature.name),
+                        description: feature.description.unwrap_or_default(),
+                        enabled: feature.enabled,
+                    });
+                    count += 1;
+                }
+                self.discovery_status = if count == 0 {
+                    "No server experiments available."
+                } else {
+                    ""
+                };
+                self.initialize_selection();
+            }
+            Err(error) => {
+                tracing::warn!(%error, "experimental feature discovery failed");
+                self.discovery_status = "Server experiments unavailable. Reopen /experimental to retry; restart this Codex client if requests remain unanswered.";
+            }
+        }
+        true
+    }
+
+    fn next_frame_delay(&self) -> Option<Duration> {
+        self.catalog_rx
+            .as_ref()
+            .map(|_| Duration::from_millis(/*millis*/ 100))
+    }
+
+    fn keymap_contexts(&self) -> crate::keymap::KeymapContextSet {
+        crate::keymap::KeymapContextSet::new(crate::keymap::KeymapContext::List)
+    }
+
+    fn handle_key_event(&mut self, key_event: KeyEvent) {
+        match key_event {
+            _ if self.keymap.move_up.is_pressed(key_event) => self.move_up(),
+            _ if self.keymap.move_down.is_pressed(key_event) => self.move_down(),
+            _ if self.keymap.page_up.is_pressed(key_event) => self.page_up(),
+            _ if self.keymap.page_down.is_pressed(key_event) => self.page_down(),
+            _ if self.keymap.jump_top.is_pressed(key_event) => self.jump_top(),
+            _ if self.keymap.jump_bottom.is_pressed(key_event) => self.jump_bottom(),
+            KeyEvent {
+                code: KeyCode::Char(' '),
+                modifiers: KeyModifiers::NONE,
+                ..
+            } => self.toggle_selected(),
+            _ if self.keymap.accept.is_pressed(key_event)
+                || self.keymap.cancel.is_pressed(key_event) =>
+            {
+                self.on_ctrl_c();
+            }
+            _ => {}
+        }
+    }
+
+    fn is_complete(&self) -> bool {
+        self.complete
+    }
+
+    fn on_ctrl_c(&mut self) -> CancellationEvent {
+        let updates: Vec<_> = self
+            .features
+            .iter()
+            .zip(&self.initial_enabled)
+            .filter(|(item, initial)| item.enabled != **initial)
+            .filter_map(|(item, _)| item.feature.map(|feature| (feature, item.enabled)))
+            .collect();
+        if !updates.is_empty() {
+            self.app_event_tx
+                .send(AppEvent::UpdateFeatureFlags { updates });
+        }
+
+        self.complete = true;
+        CancellationEvent::Handled
+    }
+}
+
+impl Renderable for ExperimentalFeaturesView {
+    fn render(&self, area: Rect, buf: &mut Buffer) {
+        if area.height == 0 || area.width == 0 {
+            return;
+        }
+
+        let [content_area, footer_area] =
+            Layout::vertical([Constraint::Fill(1), Constraint::Length(1)]).areas(area);
+
+        Block::default()
+            .style(user_message_style())
+            .render(content_area, buf);
+
+        let header = self.header(content_area.width.saturating_sub(4));
+        let header_height = header.desired_height(content_area.width.saturating_sub(4));
+        let rows = self.build_rows();
+        let rows_width = Self::rows_width(content_area.width);
+        let rows_height = measure_rows_height(
+            &rows,
+            &self.state,
+            MAX_POPUP_ROWS,
+            rows_width.saturating_add(1),
+        );
+        let [header_area, _, list_area] = Layout::vertical([
+            Constraint::Max(header_height),
+            Constraint::Max(1),
+            Constraint::Length(rows_height),
+        ])
+        .areas(content_area.inset(Insets::vh(/*v*/ 1, /*h*/ 2)));
+
+        header.render(header_area, buf);
+
+        if list_area.height > 0 && (!rows.is_empty() || self.catalog_rx.is_none()) {
+            let render_area = Rect {
+                x: list_area.x.saturating_sub(2),
+                y: list_area.y,
+                width: rows_width.max(1),
+                height: list_area.height,
+            };
+            render_rows(
+                render_area,
+                buf,
+                &rows,
+                &self.state,
+                MAX_POPUP_ROWS,
+                "  No experimental features available for now",
+            );
+        }
+
+        let hint_area = Rect {
+            x: footer_area.x + 2,
+            y: footer_area.y,
+            width: footer_area.width.saturating_sub(2),
+            height: footer_area.height,
+        };
+        self.footer_hint.clone().dim().render(hint_area, buf);
+    }
+
+    fn desired_height(&self, width: u16) -> u16 {
+        let rows = self.build_rows();
+        let rows_width = Self::rows_width(width);
+        let rows_height = measure_rows_height(
+            &rows,
+            &self.state,
+            MAX_POPUP_ROWS,
+            rows_width.saturating_add(1),
+        );
+
+        let mut height = self
+            .header(width.saturating_sub(4))
+            .desired_height(width.saturating_sub(4));
+        height = height.saturating_add(rows_height + 3);
+        height.saturating_add(1)
+    }
+}
+
+fn experimental_popup_hint_line(keymap: &ListKeymap) -> Line<'static> {
+    let mut spans = vec![
+        "Press ".into(),
+        key_hint::plain(KeyCode::Char(' ')).into(),
+        " to select".into(),
+    ];
+    if let Some(accept) = keymap.primary_hint(ListAction::Accept) {
+        spans.extend([" or ".into(), accept.into(), " to save".into()]);
+    }
+    Line::from(spans)
+}
+
+#[cfg(test)]
+#[path = "experimental_features_view_tests.rs"]
+mod tests;

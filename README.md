@@ -1,7 +1,8 @@
-# OpenCode SKILL.state research
+# SKILL.state agent-runtime research
 
-This repository contains an experimental core modification of
-[OpenCode](https://github.com/anomalyco/opencode) and the complete artifacts from our investigation of
+This repository contains experimental kernel-level modifications of
+[OpenCode](https://github.com/anomalyco/opencode) and [OpenAI Codex](https://github.com/openai/codex), together with
+the complete artifacts from our investigation of
 [SKILL.state: Scalable Long-Horizon Agent Skills](https://arxiv.org/abs/2608.26263) by Sanket Badhe, Priyanka Tiwari,
 and Jonghyun Chung.
 
@@ -16,6 +17,8 @@ message instead of being asked to read a state file itself.
 ## Repository layout
 
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
+- [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state v2 implementation.
+- [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
 - [`experiments/skill-state/`](./experiments/skill-state/) — benchmark harness, project specifications, evaluators,
   plans, reports, generated workspaces metadata, raw JSONL event logs, stderr logs, and per-run summaries.
 - [`experiments/skill-state/REPORT-core.md`](./experiments/skill-state/REPORT-core.md) — implementation history and the
@@ -68,11 +71,34 @@ Each cell is independent, uses one initial user prompt, and is evaluated by blac
 workspace. The harness runs cells sequentially and records raw events and summaries under
 `experiments/skill-state/results/<suite>/`.
 
+## Codex SKILL.state v2
+
+The Codex fork implements the same protocol in Rust core. Every default coding turn started through `codex exec` in this
+experimental fork is rebuilt as `SYSTEM + P + Sigma + O[n..n-k]`; the persisted transcript remains available for audit
+and resume but is not replayed to the provider. The model can call only
+`skill_step({ state_revision, state_patch, comment, action })`. Core validates and applies the patch before dispatching
+one ordinary Codex tool, then stores a structured observation containing the action, input, comment, status, and bounded
+result.
+
+```bash
+cd codex/codex-rs
+CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
+
+# k defaults to 3 and may be set from 1 through 8.
+CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
+  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
+```
+
+Code Mode is deliberately bypassed inside a state session: nesting its multi-call JavaScript loop would violate the
+one-patch/one-action contract and duplicate tool schemas. The wrapper exposes the underlying atomic Codex tools instead.
+See [`experiments/codex-skill-state/DESIGN.md`](./experiments/codex-skill-state/DESIGN.md) for the exact contract and
+current verification status.
+
 ## Status
 
-Research prototype. The implementation is suitable for controlled experiments, not a recommendation to replace
-OpenCode's default transcript runtime. The results so far suggest that bounded state can reduce cost dramatically when
-the model follows the protocol and terminates efficiently, while poor action policy or provider latency can erase the
-benefit.
+Research prototype. The implementations are suitable for controlled experiments, not a recommendation to replace a
+production agent runtime. The results so far suggest that bounded state can reduce cost dramatically when the model
+follows the protocol and terminates efficiently, while poor action policy or provider latency can erase the benefit.
 
-The OpenCode snapshot retains its upstream license in [`opencode/LICENSE`](./opencode/LICENSE).
+The imported sources retain their upstream licenses in [`opencode/LICENSE`](./opencode/LICENSE) and
+[`codex/LICENSE`](./codex/LICENSE).
