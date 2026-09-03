@@ -1,0 +1,64 @@
+{
+  "suite": "20260902T205346Z",
+  "project": "csv-insights",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T205346Z/skill-state/csv-insights",
+  "metrics": {
+    "turns": 80,
+    "toolCalls": 80,
+    "stateCalls": 80,
+    "stateErrors": 0,
+    "maxStateBytes": 1163,
+    "input": 143260,
+    "output": 23884,
+    "reasoning": 7417,
+    "cacheRead": 1523550,
+    "cacheWrite": 0,
+    "cost": 0.527768856,
+    "durationMs": 478009,
+    "sessionID": "ses_f9be3349affeGK0oAQQoEZASte"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

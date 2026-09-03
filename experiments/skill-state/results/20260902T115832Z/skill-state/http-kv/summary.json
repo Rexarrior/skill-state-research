@@ -1,0 +1,37 @@
+{
+  "suite": "20260902T115832Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in SPEC.md. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/http-kv",
+  "metrics": {
+    "turns": 2,
+    "toolCalls": 2,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "maxStateBytes": 0,
+    "input": 23514,
+    "output": 282,
+    "reasoning": 31862,
+    "cacheRead": 22720,
+    "cacheWrite": 0,
+    "cost": 0.124693212,
+    "durationMs": 506051,
+    "sessionID": "ses_f9ddafa65ffeJloWLgP0pGL5hO"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

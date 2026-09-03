@@ -1,0 +1,60 @@
+{
+  "suite": "20260902T115832Z",
+  "project": "dependency-planner",
+  "mode": "baseline",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in SPEC.md. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/baseline/dependency-planner",
+  "metrics": {
+    "turns": 15,
+    "toolCalls": 14,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "maxStateBytes": 0,
+    "input": 148280,
+    "output": 4509,
+    "reasoning": 11162,
+    "cacheRead": 347717,
+    "cacheWrite": 0,
+    "cost": 0.25799456039999996,
+    "durationMs": 285880,
+    "sessionID": "ses_f9dca7529ffeaIHZXZjspWUK5J"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

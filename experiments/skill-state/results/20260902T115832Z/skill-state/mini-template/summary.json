@@ -1,0 +1,71 @@
+{
+  "suite": "20260902T115832Z",
+  "project": "mini-template",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in SPEC.md. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/mini-template",
+  "metrics": {
+    "turns": 80,
+    "toolCalls": 79,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "maxStateBytes": 0,
+    "input": 113838,
+    "output": 5267,
+    "reasoning": 67,
+    "cacheRead": 1747584,
+    "cacheWrite": 0,
+    "cost": 0.46379476080000004,
+    "durationMs": 199179,
+    "sessionID": "ses_f9dde0682ffe5EVfvH9IETklC9"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested if and else",
+        "passed": false,
+        "detail": "expected \"ANZ\", got \"\""
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested loops",
+        "passed": false,
+        "detail": "expected \"12;E;\", got \"\""
+      },
+      {
+        "name": "specified truthiness",
+        "passed": false,
+        "detail": "expected \"0eo\", got \"\""
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": false,
+        "detail": "location missing"
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/mini-template/README.md'"
+      }
+    ]
+  }
+}

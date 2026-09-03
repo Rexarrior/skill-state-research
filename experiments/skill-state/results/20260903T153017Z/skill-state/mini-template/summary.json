@@ -1,0 +1,78 @@
+{
+  "suite": "20260903T153017Z",
+  "project": "mini-template",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T153017Z/skill-state/mini-template",
+  "metrics": {
+    "turns": 3,
+    "toolCalls": 3,
+    "stateCalls": 3,
+    "stateErrors": 2,
+    "stateComments": 1,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 267,
+    "input": 20274,
+    "output": 176,
+    "reasoning": 64077,
+    "cacheRead": 39360,
+    "cacheWrite": 0,
+    "cost": 0.22226114400000002,
+    "durationMs": 900039,
+    "sessionID": "ses_f98032786ffeD7qTmAc2zjm5zq"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested if and else",
+        "passed": false,
+        "detail": "expected \"ANZ\", got \"\""
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "nested loops",
+        "passed": false,
+        "detail": "expected \"12;E;\", got \"\""
+      },
+      {
+        "name": "specified truthiness",
+        "passed": false,
+        "detail": "expected \"0eo\", got \"\""
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": false,
+        "detail": "location missing"
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T153017Z/skill-state/mini-template/README.md'"
+      }
+    ]
+  }
+}

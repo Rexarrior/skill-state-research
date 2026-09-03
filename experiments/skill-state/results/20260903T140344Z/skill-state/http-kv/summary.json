@@ -1,0 +1,75 @@
+{
+  "suite": "20260903T140344Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T140344Z/skill-state/http-kv",
+  "metrics": {
+    "turns": 12,
+    "toolCalls": 12,
+    "stateCalls": 12,
+    "stateErrors": 3,
+    "stateComments": 8,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 1595,
+    "input": 47915,
+    "output": 11503,
+    "reasoning": 361,
+    "cacheRead": 222336,
+    "cacheWrite": 0,
+    "cost": 0.1252603092,
+    "durationMs": 208351,
+    "sessionID": "ses_f98413331ffeMTVdJ5TD6DbdWA"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "suite": "20260902T115832Z",
+  "project": "csv-insights",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in SPEC.md. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/csv-insights",
+  "metrics": {
+    "turns": 80,
+    "toolCalls": 87,
+    "stateCalls": 5,
+    "stateErrors": 0,
+    "maxStateBytes": 245,
+    "input": 321212,
+    "output": 5747,
+    "reasoning": 11695,
+    "cacheRead": 1529692,
+    "cacheWrite": 0,
+    "cost": 0.6587811983999999,
+    "durationMs": 565416,
+    "sessionID": "ses_f9df399faffeAeoi3BaK4C2Ose"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 2,
+    "total": 8,
+    "score": 0.25,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": false,
+        "detail": "unknown column was accepted"
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": false,
+        "detail": "error lacks column or row"
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T115832Z/skill-state/csv-insights/README.md'"
+      }
+    ]
+  }
+}

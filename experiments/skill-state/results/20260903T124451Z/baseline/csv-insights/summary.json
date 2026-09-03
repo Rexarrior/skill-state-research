@@ -1,0 +1,72 @@
+{
+  "suite": "20260903T124451Z",
+  "project": "csv-insights",
+  "mode": "baseline",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T124451Z/baseline/csv-insights",
+  "metrics": {
+    "turns": 9,
+    "toolCalls": 10,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "input": 27,
+    "output": 4564,
+    "reasoning": 1263,
+    "cacheRead": 182782,
+    "cacheWrite": 26373,
+    "cost": 0.1065344,
+    "durationMs": 98860,
+    "sessionID": "ses_f98b01345ffe3MN839wR3R5qKk"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "expected [{\"region\":\"North\",\"sum_revenue\":\"4\",\"avg_revenue\":\"2\"},{\"region\":\"South\",\"sum_revenue\":\"2.3\",\"avg_revenue\":\"2.3\"}], got [{\"region\":\"North\",\"sum_revenue\":4,\"avg_revenue\":2},{\"region\":\"South\",\"sum_revenue\":2.3,\"avg_revenue\":2.3}]"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

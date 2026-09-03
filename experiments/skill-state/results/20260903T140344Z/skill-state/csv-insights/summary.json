@@ -1,0 +1,73 @@
+{
+  "suite": "20260903T140344Z",
+  "project": "csv-insights",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T140344Z/skill-state/csv-insights",
+  "metrics": {
+    "turns": 44,
+    "toolCalls": 44,
+    "stateCalls": 44,
+    "stateErrors": 6,
+    "stateComments": 35,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 2118,
+    "input": 154168,
+    "output": 18621,
+    "reasoning": 31672,
+    "cacheRead": 852288,
+    "cacheWrite": 0,
+    "cost": 0.4662778775999999,
+    "durationMs": 900038,
+    "sessionID": "ses_f9860447dffetaqeKnpvb46kgh"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 6,
+    "total": 8,
+    "score": 0.75,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "expected [{\"region\":\"North\",\"sum_revenue\":\"4\",\"avg_revenue\":\"2\"},{\"region\":\"South\",\"sum_revenue\":\"2.3\",\"avg_revenue\":\"2.3\"}], got [{\"region\":\"North\",\"sum_revenue\":\"4.00\",\"avg_revenue\":\"2.00\"},{\"region\":\"South\",\"sum_revenue\":\"2.30\",\"avg_revenue\":\"2.30\"}]"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T140344Z/skill-state/csv-insights/README.md'"
+      }
+    ]
+  }
+}

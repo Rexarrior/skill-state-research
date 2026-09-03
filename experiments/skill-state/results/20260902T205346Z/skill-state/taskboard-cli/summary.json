@@ -1,0 +1,64 @@
+{
+  "suite": "20260902T205346Z",
+  "project": "taskboard-cli",
+  "mode": "skill-state",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 1,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T205346Z/skill-state/taskboard-cli",
+  "metrics": {
+    "turns": 57,
+    "toolCalls": 57,
+    "stateCalls": 57,
+    "stateErrors": 9,
+    "maxStateBytes": 1492,
+    "input": 102949,
+    "output": 33372,
+    "reasoning": 197126,
+    "cacheRead": 1082611,
+    "cacheWrite": 0,
+    "cost": 1.0084011072,
+    "durationMs": 3399362,
+    "sessionID": "ses_f9c171be2ffebV2pNzs4sPRuHJ"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

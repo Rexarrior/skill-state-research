@@ -1,0 +1,388 @@
+import { describe, expect, test } from "bun:test"
+import { Effect } from "effect"
+import { jsonSchema, tool, type Tool, type ToolExecutionOptions } from "ai"
+import { SessionV1 } from "@opencode-ai/core/v1/session"
+import { SkillState } from "@/session/skill-state"
+
+const options: ToolExecutionOptions = {
+  toolCallId: "call_1",
+  messages: [],
+  abortSignal: new AbortController().signal,
+}
+
+describe("core SKILL.state protocol", () => {
+  test("builds a single bounded model message from specification, state, and a recent observation window", () => {
+    const value = SkillState.context(
+      [
+        message("user", [text("Implement every requirement below."), text("Requirement A\nRequirement B")]),
+        message("assistant", [
+          completedStep(
+            1,
+            { ...SkillState.initialState, completed: ["Requirement A"] },
+            "wrote a.ts",
+            { name: "write", input: { path: "a.ts" } },
+            "Create requirement A.",
+          ),
+        ]),
+        message("assistant", [
+          completedStep(
+            2,
+            { ...SkillState.initialState, completed: ["A", "B"] },
+            "tests passed",
+            { name: "bash", input: { command: "bun test" } },
+            "Verify both requirements.",
+          ),
+        ]),
+      ],
+      1,
+    )
+
+    expect(value.revision).toBe(2)
+    expect(value.state.completed).toEqual(["A", "B"])
+    expect(value.observations).toEqual([
+      {
+        revision: 2,
+        action: { name: "bash", input: { command: "bun test" } },
+        comment: "Verify both requirements.",
+        status: "completed",
+        result: "tests passed",
+      },
+    ])
+    expect(value.specification).toContain("Requirement A")
+
+    const prompt = SkillState.modelMessages(value)
+    expect(prompt).toHaveLength(1)
+    expect(prompt[0]?.role).toBe("user")
+    expect(String(prompt[0]?.content)).toContain("Instructions:\nImplement every requirement below.")
+    expect(String(prompt[0]?.content)).toContain("Skill Execution State:")
+    expect(String(prompt[0]?.content)).toContain("Recent Observations (oldest to newest, maximum 1):")
+    expect(String(prompt[0]?.content)).toContain('"command":"bun test"')
+    expect(String(prompt[0]?.content)).toContain('"result":"tests passed"')
+    expect(String(prompt[0]?.content)).not.toContain("wrote a.ts")
+  })
+
+  test("keeps the configured number of observations and identifies empty successful actions", () => {
+    const value = SkillState.context(
+      [
+        message("user", [text("Implement")]),
+        message("assistant", [
+          completedStep(1, SkillState.initialState, "first", { name: "read", input: { filePath: "a.ts" } }),
+        ]),
+        message("assistant", [
+          completedStep(
+            2,
+            SkillState.initialState,
+            "",
+            { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+            "Check syntax before smoke tests.",
+          ),
+        ]),
+      ],
+      1,
+    )
+
+    expect(value.observations).toEqual([
+      {
+        revision: 2,
+        action: { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+        comment: "Check syntax before smoke tests.",
+        status: "completed",
+        result: "Action completed successfully without textual output.",
+      },
+    ])
+  })
+
+  test("keeps protocol errors visible without advancing the valid state", () => {
+    const state = { ...SkillState.initialState, completed: ["created source"] }
+    const value = SkillState.context(
+      [
+        message("user", [text("Implement")]),
+        message("assistant", [completedStep(1, state, "created", { name: "write", input: { path: "main.py" } })]),
+        message("assistant", [
+          erroredStep(
+            {
+              state_patch: {},
+              comment: "Compile the implementation.",
+              action: { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+            },
+            "Protocol error: expected exactly one skill_step transition",
+          ),
+        ]),
+      ],
+      2,
+    )
+
+    expect(value.revision).toBe(1)
+    expect(value.state.completed).toEqual(["created source"])
+    expect(value.observations.at(-1)).toEqual({
+      revision: null,
+      action: { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+      comment: "Compile the implementation.",
+      status: "protocol_error",
+      result: "Protocol error: expected exactly one skill_step transition",
+    })
+  })
+
+  test("bounds large action inputs and results deterministically", () => {
+    const value = SkillState.context([
+      message("user", [text("Implement")]),
+      message("assistant", [
+        completedStep(1, SkillState.initialState, "o".repeat(5_000), {
+          name: "apply_patch",
+          input: { patchText: "p".repeat(5_000) },
+        }),
+      ]),
+    ])
+    const current = value.observations[0]
+
+    expect(current.action?.input).toMatchObject({ truncated: true, originalBytes: 5_016 })
+    expect(JSON.stringify(current.action?.input)).toContain('"sha256"')
+    expect(Buffer.byteLength(current.result)).toBeLessThanOrEqual(4 * 1024)
+    expect(current.result).toContain("[truncated; original bytes: 5000]")
+  })
+
+  test("applies the state patch before dispatching exactly one action", async () => {
+    let calls = 0
+    const action = tool({
+      inputSchema: jsonSchema({
+        type: "object",
+        properties: { path: { type: "string" } },
+        required: ["path"],
+        additionalProperties: false,
+      }),
+      execute(input) {
+        if (!isPathInput(input)) throw new Error("expected path input")
+        calls++
+        return { title: "Wrote file", output: `wrote ${input.path}`, metadata: { changed: true } }
+      },
+    })
+    const schemaTool = await Effect.runPromise(SkillState.createTool({ tools: { write: action } }))
+    expect(schemaTool.execute).toBeUndefined()
+
+    const transition = SkillState.prepare(
+      {
+        state_patch: {
+          completed: ["created source"],
+          files: { "src/index.ts": "implements the entry point" },
+          next_action: "Run tests",
+        },
+        comment: "Create the source entry point.",
+        action: { name: "write", input: { path: "src/index.ts" } },
+      },
+      SkillState.initialState,
+      0,
+    )
+    expect(SkillState.metadata(transition, "pending")).toMatchObject({
+      skillState: {
+        protocolVersion: 2,
+        revision: 1,
+        action: { name: "write", input: { path: "src/index.ts" } },
+        comment: "Create the source entry point.",
+        actionStatus: "pending",
+      },
+    })
+
+    const result = await SkillState.execute(transition, { write: action }, options)
+
+    expect(calls).toBe(1)
+    expect(result).toMatchObject({ title: "Wrote file", output: "wrote src/index.ts" })
+    const restored = SkillState.context([
+      message("user", [text("Implement the project")]),
+      message("assistant", [stepFromResult(result)]),
+    ])
+    expect(restored.revision).toBe(1)
+    expect(restored.state.completed).toEqual(["created source"])
+    expect(restored.state.files).toEqual({ "src/index.ts": "implements the entry point" })
+    expect(restored.observations.at(-1)).toMatchObject({
+      action: { name: "write", input: { path: "src/index.ts" } },
+      comment: "Create the source entry point.",
+      status: "completed",
+      result: "wrote src/index.ts",
+    })
+  })
+
+  test("returns failed actions as structured observations", async () => {
+    const action: Tool<{ command: string }, string> = {
+      inputSchema: jsonSchema<{ command: string }>({
+        type: "object",
+        properties: { command: { type: "string" } },
+        required: ["command"],
+        additionalProperties: false,
+      }),
+      execute(input) {
+        if (!isCommandInput(input)) throw new Error("expected command input")
+        throw new Error("compile failed")
+      },
+    }
+    const transition = SkillState.prepare(
+      {
+        state_patch: { next_action: "Fix the compile error" },
+        comment: "Check whether the source compiles.",
+        action: { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+      },
+      SkillState.initialState,
+      0,
+    )
+    const result = await SkillState.execute(transition, { bash: action }, options)
+    const restored = SkillState.context([
+      message("user", [text("Implement")]),
+      message("assistant", [stepFromResult(result)]),
+    ])
+
+    expect(restored.observations[0]).toMatchObject({
+      action: { name: "bash", input: { command: "python3 -m py_compile main.py" } },
+      comment: "Check whether the source compiles.",
+      status: "error",
+      result: "compile failed",
+    })
+  })
+
+  test("rejects removed verification state and invalid comments", () => {
+    expect(() =>
+      SkillState.prepare(
+        { state_patch: { verification: ["tests passed"] }, action: { name: "action", input: {} } },
+        SkillState.initialState,
+        0,
+      ),
+    ).toThrow("Invalid resulting execution state")
+
+    expect(() =>
+      SkillState.prepare(
+        { state_patch: {}, comment: "   ", action: { name: "action", input: {} } },
+        SkillState.initialState,
+        0,
+      ),
+    ).toThrow("skill_step.comment must be a non-empty string")
+  })
+
+  test("rejects an invalid resulting state before action execution", () => {
+    expect(() =>
+      SkillState.prepare(
+        { state_patch: { next_action: null }, action: { name: "action", input: {} } },
+        SkillState.initialState,
+        0,
+      ),
+    ).toThrow("Invalid resulting execution state")
+  })
+
+  test("rejects prototype-polluting patches", () => {
+    const patch = JSON.parse('{"files":{"__proto__":{"polluted":true}}}')
+
+    expect(() =>
+      SkillState.prepare({ state_patch: patch, action: { name: "action", input: {} } }, SkillState.initialState, 0),
+    ).toThrow("forbidden key")
+  })
+
+  test("uses finish as an in-band terminal action", async () => {
+    const transition = SkillState.prepare(
+      {
+        state_patch: { status: "done", next_action: "None" },
+        action: { name: "finish", input: { message: "Everything is implemented and verified." } },
+      },
+      SkillState.initialState,
+      4,
+    )
+    const result = await SkillState.execute(transition, {}, options)
+    const part = stepFromResult(result)
+
+    expect(SkillState.finish([part])).toBe("Everything is implemented and verified.")
+    const restored = SkillState.context([message("user", [text("Implement")]), message("assistant", [part])])
+    expect(restored.revision).toBe(5)
+    expect(restored.state.status).toBe("done")
+  })
+})
+
+function message(role: "user" | "assistant", parts: SessionV1.Part[]) {
+  return { info: { role }, parts } as SessionV1.WithParts
+}
+
+function text(value: string) {
+  return { type: "text", text: value } as SessionV1.TextPart
+}
+
+function completedStep(
+  revision: number,
+  state: SkillState.State,
+  output: string,
+  action: { name: string; input: Record<string, unknown> },
+  comment?: string,
+) {
+  return {
+    type: "tool",
+    tool: "skill_step",
+    state: {
+      status: "completed",
+      input: {},
+      output,
+      title: "Action",
+      time: { start: 1, end: 2 },
+      metadata: {
+        skillState: {
+          protocolVersion: 2,
+          revision,
+          state,
+          patch: {},
+          action,
+          ...(comment ? { comment } : {}),
+          stateBytes: JSON.stringify(state).length,
+          actionStatus: "completed",
+        },
+      },
+    },
+  } as unknown as SessionV1.ToolPart
+}
+
+function erroredStep(input: Record<string, unknown>, error: string) {
+  return {
+    type: "tool",
+    tool: "skill_step",
+    state: {
+      status: "error",
+      input,
+      error,
+      time: { start: 1, end: 2 },
+    },
+  } as unknown as SessionV1.ToolPart
+}
+
+function stepFromResult(result: unknown) {
+  if (!isResult(result)) throw new Error("expected a structured tool result")
+  return {
+    type: "tool",
+    tool: "skill_step",
+    state: {
+      status: "completed",
+      input: {},
+      output: result.output,
+      title: result.title,
+      time: { start: 1, end: 2 },
+      metadata: result.metadata,
+    },
+  } as unknown as SessionV1.ToolPart
+}
+
+function isPathInput(value: unknown): value is { path: string } {
+  return typeof value === "object" && value !== null && "path" in value && typeof value.path === "string"
+}
+
+function isCommandInput(value: unknown): value is { command: string } {
+  return typeof value === "object" && value !== null && "command" in value && typeof value.command === "string"
+}
+
+function isResult(value: unknown): value is {
+  title: string
+  output: string
+  metadata: Record<string, unknown>
+} {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "title" in value &&
+    typeof value.title === "string" &&
+    "output" in value &&
+    typeof value.output === "string" &&
+    "metadata" in value &&
+    typeof value.metadata === "object" &&
+    value.metadata !== null
+  )
+}

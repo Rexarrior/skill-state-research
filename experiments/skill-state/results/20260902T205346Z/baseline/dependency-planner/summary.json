@@ -1,0 +1,66 @@
+{
+  "suite": "20260902T205346Z",
+  "project": "dependency-planner",
+  "mode": "baseline",
+  "model": "openrouter-yandex-team/z-ai/glm-5.2",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T205346Z/baseline/dependency-planner",
+  "metrics": {
+    "turns": 2,
+    "toolCalls": 2,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "maxStateBytes": 0,
+    "input": 23064,
+    "output": 85,
+    "reasoning": 32109,
+    "cacheRead": 22976,
+    "cacheWrite": 0,
+    "cost": 0.1244597712,
+    "durationMs": 435743,
+    "sessionID": "ses_f9ba2b8e4ffeWlJr1rqnrRLn0J"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 1,
+    "total": 7,
+    "score": 0.14285714285714285,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "empty graph",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": false,
+        "detail": "unexpected cycle: error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": false,
+        "detail": "unknown dependency accepted"
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T205346Z/baseline/dependency-planner/README.md'"
+      }
+    ]
+  }
+}

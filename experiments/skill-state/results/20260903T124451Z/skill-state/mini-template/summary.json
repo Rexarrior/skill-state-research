@@ -1,0 +1,72 @@
+{
+  "suite": "20260903T124451Z",
+  "project": "mini-template",
+  "mode": "skill-state",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T124451Z/skill-state/mini-template",
+  "metrics": {
+    "turns": 7,
+    "toolCalls": 7,
+    "stateCalls": 7,
+    "stateErrors": 0,
+    "stateComments": 7,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 1559,
+    "input": 854,
+    "output": 4768,
+    "reasoning": 250,
+    "cacheRead": 90480,
+    "cacheWrite": 33096,
+    "cost": 0.08002000000000001,
+    "durationMs": 69553,
+    "sessionID": "ses_f98a53fd8ffeqr6HuULMwAk5ER"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "expected \"[0:a/T][1:b/T]\", got \"[0:/T][1:/T]\""
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

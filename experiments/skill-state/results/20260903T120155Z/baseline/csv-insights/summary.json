@@ -1,0 +1,72 @@
+{
+  "suite": "20260903T120155Z",
+  "project": "csv-insights",
+  "mode": "baseline",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260903T120155Z/baseline/csv-insights",
+  "metrics": {
+    "turns": 7,
+    "toolCalls": 7,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "input": 21,
+    "output": 3656,
+    "reasoning": 923,
+    "cacheRead": 132290,
+    "cacheWrite": 25042,
+    "cost": 0.08144799999999999,
+    "durationMs": 103241,
+    "sessionID": "ses_f98da4eefffewZKPSfHQui3Kz2"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": false,
+        "detail": "error lacks column or row"
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "suite": "20260902T234155Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260902T234155Z/skill-state/http-kv",
+  "metrics": {
+    "turns": 8,
+    "toolCalls": 8,
+    "stateCalls": 8,
+    "stateErrors": 0,
+    "maxStateBytes": 1486,
+    "input": 976,
+    "output": 4908,
+    "reasoning": 98,
+    "cacheRead": 105378,
+    "cacheWrite": 25671,
+    "cost": 0.0830996,
+    "durationMs": 62492,
+    "sessionID": "ses_f9b7e5d7fffeAnd3q9GuV8yW40"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}
