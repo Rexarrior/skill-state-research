@@ -79,7 +79,7 @@ impl ToolCallRuntime {
         async move {
             if call.tool_name.is_default_namespace()
                 && call.tool_name.name == crate::skill_state::TOOL_NAME
-                && crate::skill_state::enabled(&self.step_context.turn.session_source)
+                && crate::skill_state::mode(&self.step_context.turn.session_source).is_some()
             {
                 return self.handle_skill_state_step(call, cancellation_token).await;
             }
@@ -102,23 +102,29 @@ impl ToolCallRuntime {
         call: ToolCall,
         cancellation_token: CancellationToken,
     ) -> Result<ResponseItemEnvelope, CodexErr> {
+        let Some(mode) = crate::skill_state::mode(&self.step_context.turn.session_source) else {
+            return Err(CodexErr::Fatal(
+                "skill_step was dispatched outside a SKILL.state session".to_string(),
+            ));
+        };
         let history = self.session.clone_history().await;
         let history_items = history.raw_items().cloned().collect::<Vec<_>>();
-        let persisted = crate::skill_state::snapshot(&history_items);
+        let persisted = crate::skill_state::snapshot(&history_items, mode);
         let ToolPayload::Function { arguments } = &call.payload else {
             return Ok(ResponseItemEnvelope::new(
                 crate::skill_state::rejected_output(
                     call.call_id,
+                    mode,
                     persisted,
                     "skill_step requires function-call arguments".to_string(),
                 ),
             ));
         };
-        let request = match crate::skill_state::decode_request(arguments) {
+        let request = match crate::skill_state::decode_request(arguments, mode) {
             Ok(request) => request,
             Err(message) => {
                 return Ok(ResponseItemEnvelope::new(
-                    crate::skill_state::rejected_output(call.call_id, persisted, message),
+                    crate::skill_state::rejected_output(call.call_id, mode, persisted, message),
                 ));
             }
         };
@@ -131,7 +137,7 @@ impl ToolCallRuntime {
             Ok(accepted) => accepted,
             Err(message) => {
                 return Ok(ResponseItemEnvelope::new(
-                    crate::skill_state::rejected_output(call.call_id, persisted, message),
+                    crate::skill_state::rejected_output(call.call_id, mode, persisted, message),
                 ));
             }
         };

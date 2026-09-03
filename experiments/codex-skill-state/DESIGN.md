@@ -1,5 +1,9 @@
 # Codex kernel design: SKILL.state v2
 
+This document describes the extended v2 protocol. The same core now also contains the isolated original-paper mode
+documented in [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md); the two provider contracts are selected explicitly and do
+not share model-visible transition fields.
+
 ## Goal
 
 Test the paper's actual runtime contract in Codex without asking the model to read or maintain an external state file.
@@ -103,6 +107,7 @@ contract.
 
 - The current fork changes `codex exec`; the interactive TUI still uses the upstream transcript loop.
 - Images and audio in the immutable task are represented by omission markers rather than replayed binary payloads.
-- The state patch replaces individual collection fields; it does not define item-level JSON Patch operations.
+- V2 replaces individual collection fields; paper mode recursively merges dictionaries and supports `null` deletion,
+  but neither mode implements RFC 6902 JSON Patch operations.
 - Tool schema size is still a fixed per-turn cost and may dominate short tasks.
-- No Codex A/B benchmark results exist yet.
+- No Codex A/B benchmark results exist yet for paper mode.

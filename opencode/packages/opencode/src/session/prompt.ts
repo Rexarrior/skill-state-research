@@ -1261,8 +1261,11 @@ const layer = Layer.effect(
 
             yield* plugin.trigger("experimental.chat.messages.transform", {}, { messages: msgs })
 
-            const skillContext = flags.experimentalSkillState
-              ? SkillState.context(msgs, flags.experimentalSkillStateObservationWindow)
+            const skillMode = flags.experimentalSkillState
+              ? SkillState.parseMode(flags.experimentalSkillStateMode)
+              : undefined
+            const skillContext = skillMode
+              ? SkillState.context(msgs, flags.experimentalSkillStateObservationWindow, skillMode)
               : undefined
             const disabledActions = skillContext
               ? Permission.disabled(
@@ -1281,6 +1284,7 @@ const layer = Layer.effect(
               ? {
                   skill_step: yield* SkillState.createTool({
                     tools: actionTools,
+                    mode: skillContext.mode,
                   }),
                 }
               : resolvedTools
@@ -1362,7 +1366,8 @@ const layer = Layer.effect(
               }
 
               const prepared = yield* Effect.try({
-                try: () => SkillState.prepare(call.state.input, skillContext.state, skillContext.revision),
+                try: () =>
+                  SkillState.prepare(call.state.input, skillContext.state, skillContext.revision, skillContext.mode),
                 catch: (error) => error,
               }).pipe(Effect.exit)
               if (Exit.isFailure(prepared)) {

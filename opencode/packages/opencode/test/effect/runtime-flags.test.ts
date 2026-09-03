@@ -89,6 +89,16 @@ describe("RuntimeFlags", () => {
     }),
   )
 
+  it.effect("parses the SKILL.state protocol mode", () =>
+    Effect.gen(function* () {
+      const flags = yield* readFlags.pipe(
+        Effect.provide(fromConfig({ OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE: "paper" })),
+      )
+
+      expect(flags.experimentalSkillStateMode).toBe("paper")
+    }),
+  )
+
   it.effect("enables native LLM via dedicated flag only", () =>
     Effect.gen(function* () {
       const explicit = yield* readFlags.pipe(Effect.provide(fromConfig({ OPENCODE_EXPERIMENTAL_NATIVE_LLM: "true" })))
@@ -129,6 +139,7 @@ describe("RuntimeFlags", () => {
       expect(flags.outputTokenMax).toBeUndefined()
       expect(flags.bashDefaultTimeoutMs).toBe(1_000)
       expect(flags.experimentalSkillStateObservationWindow).toBeUndefined()
+      expect(flags.experimentalSkillStateMode).toBe("v2")
       expect(flags.enableExperimentalModels).toBe(false)
       expect(flags.client).toBe("cli")
     }),

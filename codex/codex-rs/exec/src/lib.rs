@@ -538,6 +538,16 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
         )
         .await?
     };
+    match std::env::var("CODEX_SKILL_STATE_MODE") {
+        Ok(value) if value == "paper" || value == "v2" => {}
+        Err(std::env::VarError::NotPresent) => {}
+        Ok(value) => {
+            return Err(anyhow::anyhow!(
+                "invalid CODEX_SKILL_STATE_MODE {value:?}; expected paper or v2"
+            ));
+        }
+        Err(err) => return Err(anyhow::anyhow!(err)),
+    };
     let in_process_start_args = InProcessClientStartArgs {
         arg0_paths,
         config: std::sync::Arc::new(config.clone()),
@@ -551,8 +561,8 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
         environment_manager: std::sync::Arc::new(environment_manager),
         config_warnings,
         // This experimental fork routes every `codex exec` turn through the
-        // kernel-level SKILL.state v2 loop. `codex` keeps the normal Codex
-        // product restrictions while giving core an unambiguous session kind.
+        // selected kernel-level SKILL.state loop while retaining the ordinary
+        // Codex product restrictions.
         session_source: SessionSource::Custom(
             codex_core::SKILL_STATE_V2_SESSION_SOURCE.to_string(),
         ),

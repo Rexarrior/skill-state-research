@@ -6,18 +6,20 @@ the complete artifacts from our investigation of
 [SKILL.state: Scalable Long-Horizon Agent Skills](https://arxiv.org/abs/2608.26263) by Sanket Badhe, Priyanka Tiwari,
 and Jonghyun Chung.
 
-SKILL.state replaces the growing agent transcript with explicit mutable execution state. On each turn the model sees
-the immutable task specification (`P`), the current structured state (`Sigma`), and a bounded window of recent action
-observations (`O`). It returns an atomic `state_patch` plus one action. The runtime validates and applies the patch
-before executing that action.
+SKILL.state replaces the growing agent transcript with explicit mutable execution state. The original-paper mode sends
+the immutable task specification (`P`), current structured state (`Sigma`), and only the latest observation (`O`). The
+separate v2 mode sends a bounded structured observation window. Both return an atomic `state_patch` plus one action;
+the runtime validates and applies the patch before executing that action.
 
-This implementation lives in OpenCode core rather than a plugin. The provider receives one reconstructed state
-message instead of being asked to read a state file itself.
+Both implementations live in the OpenCode and Codex cores rather than plugins. The provider receives one
+reconstructed state message instead of being asked to read a state file itself.
 
 ## Repository layout
 
 - [`journals/`](./journals/) — consolidated research journal covering the historical OpenCode plugin, both OpenCode
   core revisions, the Codex port, cross-model results, limitations, and links to every detailed report.
+- [`experiments/PAPER-ORIGINAL.md`](./experiments/PAPER-ORIGINAL.md) — original paper-mode contract and launch commands
+  for both core implementations.
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
 - [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state v2 implementation.
 - [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
@@ -103,20 +105,23 @@ Each cell is independent, uses one initial user prompt, and is evaluated by blac
 workspace. The harness runs cells sequentially and records raw events and summaries under
 `experiments/skill-state/results/<suite>/`.
 
-## Codex SKILL.state v2
+## Codex SKILL.state modes
 
-The Codex fork implements the same protocol in Rust core. Every default coding turn started through `codex exec` in this
-experimental fork is rebuilt as `SYSTEM + P + Sigma + O[n..n-k]`; the persisted transcript remains available for audit
-and resume but is not replayed to the provider. The model can call only
-`skill_step({ state_revision, state_patch, comment, action })`. Core validates and applies the patch before dispatching
-one ordinary Codex tool, then stores a structured observation containing the action, input, comment, status, and bounded
-result.
+The Codex fork implements both protocols in Rust core. Every default coding turn started through `codex exec` is rebuilt
+from state; the persisted transcript remains available for audit and resume but is not replayed to the provider. Paper
+mode exposes `skill_step({ state_patch, action })` and only the latest textual result. V2 exposes
+`skill_step({ state_revision, state_patch, comment, action })` and a structured observation window.
 
 ```bash
 cd codex/codex-rs
 CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
 
-# k defaults to 3 and may be set from 1 through 8.
+# Original paper mode
+CODEX_SKILL_STATE_MODE=paper \
+  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
+
+# V2; k defaults to 3 and may be set from 1 through 8.
+CODEX_SKILL_STATE_MODE=v2 \
 CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
   ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
 ```

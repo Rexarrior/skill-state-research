@@ -9,7 +9,6 @@ import { isRecord } from "@/util/record"
 const TOOL_ID = "skill_step"
 const METADATA_KEY = "skillState"
 const MAX_STATE_BYTES = 32 * 1024
-const PROTOCOL_VERSION = 2
 const DEFAULT_OBSERVATION_WINDOW = 3
 const MAX_OBSERVATION_WINDOW = 8
 const MAX_COMMENT_BYTES = 1024
@@ -27,6 +26,7 @@ const CodingState = Schema.Struct({
 })
 
 export type State = typeof CodingState.Type
+export type Mode = "paper" | "v2"
 
 export const initialState: State = {
   status: "working",
@@ -39,7 +39,7 @@ export const initialState: State = {
 }
 
 type TransitionMetadata = {
-  protocolVersion: typeof PROTOCOL_VERSION
+  protocolVersion: 1 | 2
   revision: number
   state: State
   patch: Record<string, unknown>
@@ -54,6 +54,7 @@ type TransitionMetadata = {
 }
 
 type Context = {
+  mode: Mode
   specification: string
   state: State
   revision: number
@@ -73,6 +74,7 @@ export type Observation = {
 }
 
 export type Transition = {
+  mode: Mode
   revision: number
   patch: Record<string, unknown>
   state: State
@@ -113,7 +115,7 @@ const statePatchSchema: JSONSchema7 = {
   additionalProperties: false,
 }
 
-const protocol = `You are operating under the SKILL.state execution protocol.
+const v2Protocol = `You are operating under the SKILL.state v2 execution protocol.
 
 The task specification below is immutable and is included on every turn. The execution state is your only durable memory of progress. A bounded window of recent structured observations is retained; all previous reasoning, assistant text, and older observations are intentionally discarded.
 
@@ -123,7 +125,24 @@ Do not repeat an action when a recent observation already reports that the same 
 
 Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
 
-export function context(messages: SessionV1.WithParts[], requestedWindow = DEFAULT_OBSERVATION_WINDOW): Context {
+const paperProtocol = `You are operating under the original SKILL.state execution protocol from the paper.
+
+The task specification below is immutable. The execution state is the only durable memory. Every earlier observation, action, response, and reasoning trace is discarded; only the latest environment observation is available.
+
+On every turn call skill_step exactly once with exactly two fields: state_patch and action. Use state_patch to retain only information required by future execution, using null to delete obsolete dictionary entries. Then choose exactly one environment action. The runtime validates and applies the patch before it executes the action.
+
+Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
+
+export function parseMode(value: string): Mode {
+  if (value === "paper" || value === "v2") return value
+  throw new Error(`Invalid SKILL.state mode: ${value}; expected paper or v2`)
+}
+
+export function context(
+  messages: SessionV1.WithParts[],
+  requestedWindow = DEFAULT_OBSERVATION_WINDOW,
+  mode: Mode = "v2",
+): Context {
   const firstUser = messages.find((message) => message.info.role === "user")
   if (!firstUser) throw new Error("SKILL.state requires an initial user message")
 
@@ -136,28 +155,30 @@ export function context(messages: SessionV1.WithParts[], requestedWindow = DEFAU
   const parts = messages
     .flatMap((message) => message.parts)
     .filter((part): part is SessionV1.ToolPart => part.type === "tool" && part.tool === TOOL_ID)
+  const version = protocolVersion(mode)
   const transition = parts
     .flatMap((part) => {
       if (part.state.status !== "completed") return []
       const value = transitionMetadata(part)
-      return isTransitionMetadata(value) ? [value] : []
+      return isTransitionMetadata(value) && value.protocolVersion === version ? [value] : []
     })
     .sort((a, b) => a.revision - b.revision)
     .at(-1)
-  const legacy = parts.some((part) => {
+  const incompatible = parts.some((part) => {
     const value = transitionMetadata(part)
-    return isRecord(value) && value.protocolVersion !== PROTOCOL_VERSION
+    return isTransitionMetadata(value) && value.protocolVersion !== version
   })
-  if (legacy) {
-    throw new Error("This SKILL.state session uses protocol v1 and cannot be resumed with protocol v2")
+  if (incompatible) {
+    throw new Error(`This SKILL.state session cannot be resumed in ${mode} mode because it uses another protocol`)
   }
   const observationWindow = Math.min(
     Math.max(Math.trunc(requestedWindow) || DEFAULT_OBSERVATION_WINDOW, 1),
     MAX_OBSERVATION_WINDOW,
   )
-  const observations = parts.slice(-observationWindow).map(observation)
+  const observations = parts.slice(-(mode === "paper" ? 1 : observationWindow)).map(observation)
 
   return {
+    mode,
     specification,
     state: transition?.state ?? structuredClone(initialState),
     revision: transition?.revision ?? 0,
@@ -167,15 +188,26 @@ export function context(messages: SessionV1.WithParts[], requestedWindow = DEFAU
 }
 
 export function modelMessages(value: Context): ModelMessage[] {
+  if (value.mode === "paper") {
+    return [
+      {
+        role: "user",
+        content: `${paperProtocol}\n\nInstructions:\n${value.specification}\n\nSkill Execution State:\n${JSON.stringify(value.state)}\n\nLatest Observation:\n${value.observations.at(-1)?.result ?? initialObservation.result}`,
+      },
+    ]
+  }
   return [
     {
       role: "user",
-      content: `${protocol}\n\nInstructions:\n${value.specification}\n\nSkill Execution State:\n${JSON.stringify(value.state)}\n\nRecent Observations (oldest to newest, maximum ${value.observationWindow}):\n${JSON.stringify(value.observations)}`,
+      content: `${v2Protocol}\n\nInstructions:\n${value.specification}\n\nSkill Execution State:\n${JSON.stringify(value.state)}\n\nRecent Observations (oldest to newest, maximum ${value.observationWindow}):\n${JSON.stringify(value.observations)}`,
     },
   ]
 }
 
-export const createTool = Effect.fn("SkillState.createTool")(function* (input: { tools: Record<string, Tool> }) {
+export const createTool = Effect.fn("SkillState.createTool")(function* (input: {
+  tools: Record<string, Tool>
+  mode?: Mode
+}) {
   const actions = yield* Effect.forEach(
     Object.entries(input.tools).filter(([name, item]) => name !== "invalid" && item.execute),
     ([name, item]) =>
@@ -213,29 +245,32 @@ export const createTool = Effect.fn("SkillState.createTool")(function* (input: {
       },
     ],
   }
+  const properties: Record<string, JSONSchema7> = {
+    state_patch: statePatchSchema,
+    action: actionSchema,
+  }
+  if (input.mode !== "paper") {
+    properties.comment = {
+      type: "string",
+      minLength: 1,
+      maxLength: MAX_COMMENT_BYTES,
+      description: "Optional explanation of why this action is useful and what evidence it should produce.",
+    }
+  }
   return tool({
     description:
       "Submit the mandatory SKILL.state transition. The runtime validates and applies state_patch before executing exactly one action.",
     inputSchema: jsonSchema({
       type: "object",
-      properties: {
-        state_patch: statePatchSchema,
-        comment: {
-          type: "string",
-          minLength: 1,
-          maxLength: MAX_COMMENT_BYTES,
-          description: "Optional explanation of why this action is useful and what evidence it should produce.",
-        },
-        action: actionSchema,
-      },
+      properties,
       required: ["state_patch", "action"],
       additionalProperties: false,
     }),
   })
 })
 
-export function prepare(value: unknown, state: State, revision: number): Transition {
-  return prepareTransition(value, state, revision)
+export function prepare(value: unknown, state: State, revision: number, mode: Mode = "v2"): Transition {
+  return prepareTransition(value, state, revision, mode)
 }
 
 export function metadata(
@@ -245,7 +280,7 @@ export function metadata(
 ) {
   return {
     [METADATA_KEY]: {
-      protocolVersion: PROTOCOL_VERSION,
+      protocolVersion: protocolVersion(transition.mode),
       revision: transition.revision,
       state: transition.state,
       patch: transition.patch,
@@ -302,14 +337,17 @@ export function finish(messages: SessionV1.Part[]) {
     .at(-1)
 }
 
-function prepareTransition(value: unknown, state: State, revision: number): Transition {
+function prepareTransition(value: unknown, state: State, revision: number, mode: Mode): Transition {
   if (!isRecord(value) || !isRecord(value.state_patch) || !isRecord(value.action)) {
     throw new Error("skill_step requires object fields state_patch and action")
   }
   if (typeof value.action.name !== "string" || !isRecord(value.action.input)) {
     throw new Error("skill_step.action requires string name and object input")
   }
-  const comment = prepareComment(value.comment)
+  if (mode === "paper" && Object.keys(value).some((key) => key !== "state_patch" && key !== "action")) {
+    throw new Error("paper mode accepts exactly state_patch and action")
+  }
+  const comment = mode === "v2" ? prepareComment(value.comment) : undefined
   assertSafePatch(value.state_patch)
   const next = applyPatch(state, value.state_patch)
   const decoded = Schema.decodeUnknownExit(CodingState)(next, {
@@ -322,6 +360,7 @@ function prepareTransition(value: unknown, state: State, revision: number): Tran
     throw new Error(`Execution state uses ${bytes} bytes; the limit is ${MAX_STATE_BYTES}`)
   }
   return {
+    mode,
     revision: revision + 1,
     patch: structuredClone(value.state_patch),
     state: decoded.value,
@@ -491,7 +530,7 @@ async function last(value: AsyncIterable<unknown>) {
 function isTransitionMetadata(value: unknown): value is TransitionMetadata {
   return (
     isRecord(value) &&
-    value.protocolVersion === PROTOCOL_VERSION &&
+    (value.protocolVersion === 1 || value.protocolVersion === 2) &&
     typeof value.revision === "number" &&
     Number.isInteger(value.revision) &&
     value.revision > 0 &&
@@ -504,6 +543,10 @@ function isTransitionMetadata(value: unknown): value is TransitionMetadata {
     typeof value.stateBytes === "number" &&
     ["pending", "completed", "error", "finish"].includes(String(value.actionStatus))
   )
+}
+
+function protocolVersion(mode: Mode) {
+  return mode === "paper" ? 1 : 2
 }
 
 export * as SkillState from "./skill-state"

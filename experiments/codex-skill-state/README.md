@@ -10,13 +10,17 @@ The implementation is a core modification, not a skill or plugin. The complete o
 
 ## Current status
 
+- The same binary now provides two kernel modes: `CODEX_SKILL_STATE_MODE=paper` implements the original `P + Sigma +
+  latest O` protocol, while `CODEX_SKILL_STATE_MODE=v2` retains the structured `k`-observation extension. See
+  [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md).
 - Kernel state schema, patch validation, monotonic revisions, atomic tool dispatch, bounded observations, finish action,
   persistence, and resume reconstruction are implemented.
 - Action requests may be up to 64 KiB; only a bounded 3 KiB preview is retained in the observation. This distinction was
   added after the first benchmark exposed rejected normal-size code patches.
-- `codex exec` in this fork enters state mode directly; there is no feature toggle in this experimental branch.
+- `codex exec` in this fork enters state mode directly; the mode defaults to v2 and is selected with
+  `CODEX_SKILL_STATE_MODE=paper|v2`.
 - Observation window `k` defaults to 3 and is configurable with `CODEX_SKILL_STATE_OBSERVATION_WINDOW=1..8`.
-- Five focused core tests and one two-step end-to-end `codex exec` test cover the protocol.
+- Nine focused core tests and two two-step end-to-end `codex exec` tests cover v2 and paper mode.
 - The GPT-5.6 Luna `k=3` CLI benchmark is complete. Baseline scored 40/40 and state scored 39/40, but state consumed
   3.54x more input tokens because provider samples increased 4.47x. See
   [`REPORT-gpt-5.6-luna-k3.md`](./REPORT-gpt-5.6-luna-k3.md).
@@ -66,6 +70,9 @@ change, `state-all BASELINE_SUITE` runs only the five state cells and builds a c
 unchanged baseline suite. Results are written below `experiments/codex-skill-state/results/<suite>/`. The short-project
 A/B should eventually be complemented with controlled 25/50/100/200-step scenarios to measure the asymptotic claim
 independently of code-generation quality.
+
+`one PROJECT skill-state-paper` runs an individual original-paper cell through the same binary and evaluator; existing
+`all`, `pair`, and `state-all` commands continue to target v2 so historical reports remain reproducible.
 
 The baseline CLI must support `--approve-for-me`; `doctor` rejects older installed releases that cannot use the same
 sandboxed non-interactive contract. For the recorded Luna run, the pristine CLI was built from the exact SHA in

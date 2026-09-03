@@ -18,12 +18,12 @@ fn function_tool(name: &str) -> ToolSpec {
 
 fn request(revision: u64, action: &str) -> StepRequest {
     StepRequest {
-        state_revision: revision,
-        state_patch: StatePatch {
-            facts: Some(vec!["workspace inspected".to_string()]),
-            next_action: Some("run tests".to_string()),
-            ..Default::default()
-        },
+        mode: ProtocolMode::V2,
+        state_revision: Some(revision),
+        state_patch: serde_json::json!({
+            "facts": ["workspace inspected"],
+            "next_action": "run tests"
+        }),
         comment: Some("Inspect once before editing.".to_string()),
         action: RequestedAction {
             name: action.to_string(),
@@ -87,7 +87,7 @@ fn transition_round_trips_state_and_observation() {
         "ok".to_string(),
     );
 
-    let restored = snapshot(&[output]);
+    let restored = snapshot(&[output], ProtocolMode::V2);
     assert_eq!(restored.revision, 1);
     assert_eq!(restored.state.facts, vec!["workspace inspected"]);
     assert_eq!(restored.observations.len(), 1);
@@ -119,7 +119,7 @@ fn accepts_large_action_but_bounds_observation_input() {
         "ok".to_string(),
     );
 
-    let restored = snapshot(&[output]);
+    let restored = snapshot(&[output], ProtocolMode::V2);
     let input = &restored.observations[0].input;
     assert_eq!(input.get("truncated").and_then(Value::as_bool), Some(true));
     assert_eq!(
@@ -151,11 +151,12 @@ fn provider_sees_one_message_without_transcript() {
     };
     let rejected = rejected_output(
         "call-1".to_string(),
+        ProtocolMode::V2,
         Snapshot::default(),
         "bad patch".to_string(),
     );
 
-    let visible = provider_input(&[task, call, rejected]);
+    let visible = provider_input(&[task, call, rejected], ProtocolMode::V2);
     assert_eq!(visible.len(), 1);
     let ResponseItem::Message { role, content, .. } = &visible[0] else {
         panic!("state prompt must be a single message")
@@ -177,8 +178,9 @@ fn finish_forces_done_and_carries_final_message() {
         .accept(
             Snapshot::default(),
             StepRequest {
-                state_revision: 0,
-                state_patch: StatePatch::default(),
+                mode: ProtocolMode::V2,
+                state_revision: Some(0),
+                state_patch: empty_patch(),
                 comment: None,
                 action: RequestedAction {
                     name: "finish".to_string(),
@@ -195,10 +197,148 @@ fn finish_forces_done_and_carries_final_message() {
         "Implemented and tested.".to_string(),
     );
 
-    let restored = snapshot(&[output]);
+    let restored = snapshot(&[output], ProtocolMode::V2);
     assert_eq!(restored.state.status, ExecutionStatus::Done);
     assert_eq!(
         restored.final_message.as_deref(),
         Some("Implemented and tested.")
+    );
+}
+
+#[test]
+fn paper_payload_has_exactly_patch_and_action() {
+    let request = decode_request(
+        &serde_json::json!({
+            "state_patch": {"next_action": "inspect"},
+            "action": {"name": "exec_command", "input": {"command": "pwd"}}
+        })
+        .to_string(),
+        ProtocolMode::Paper,
+    )
+    .expect("paper payload should decode");
+    assert_eq!(request.mode, ProtocolMode::Paper);
+    assert_eq!(request.state_revision, None);
+    assert_eq!(request.comment, None);
+
+    let error = decode_request(
+        &serde_json::json!({
+            "state_revision": 0,
+            "state_patch": {},
+            "action": {"name": "exec_command", "input": {"command": "pwd"}}
+        })
+        .to_string(),
+        ProtocolMode::Paper,
+    )
+    .expect_err("paper payload must reject v2 fields");
+    assert!(error.contains("unknown field `state_revision`"));
+}
+
+#[test]
+fn paper_prompt_exposes_only_latest_result() {
+    let task = ResponseItem::Message {
+        id: None,
+        role: "user".to_string(),
+        content: vec![ContentItem::InputText {
+            text: "Implement the parser".to_string(),
+        }],
+        phase: None,
+        internal_chat_message_metadata_passthrough: None,
+    };
+    let mut runtime = RuntimeState::default();
+    let first = runtime
+        .accept(
+            Snapshot::default(),
+            StepRequest {
+                mode: ProtocolMode::Paper,
+                state_revision: None,
+                state_patch: serde_json::json!({"facts":["first fact"]}),
+                comment: None,
+                action: RequestedAction {
+                    name: "exec_command".to_string(),
+                    input: serde_json::json!({"command":"first-command"}),
+                },
+            },
+            &[function_tool("exec_command")],
+        )
+        .expect("first paper step should be valid");
+    let first = transition_output(
+        "paper-1".to_string(),
+        first,
+        ObservationStatus::Success,
+        "first-result".to_string(),
+    );
+    let persisted = snapshot(std::slice::from_ref(&first), ProtocolMode::Paper);
+    let second = runtime
+        .accept(
+            persisted,
+            StepRequest {
+                mode: ProtocolMode::Paper,
+                state_revision: None,
+                state_patch: serde_json::json!({"facts":["first fact", "second fact"]}),
+                comment: None,
+                action: RequestedAction {
+                    name: "exec_command".to_string(),
+                    input: serde_json::json!({"command":"second-command"}),
+                },
+            },
+            &[function_tool("exec_command")],
+        )
+        .expect("second paper step should be valid");
+    let second = transition_output(
+        "paper-2".to_string(),
+        second,
+        ObservationStatus::Success,
+        "second-result".to_string(),
+    );
+
+    let visible = provider_input(&[task, first, second], ProtocolMode::Paper);
+    let ResponseItem::Message { content, .. } = &visible[0] else {
+        panic!("paper prompt must be one message")
+    };
+    let ContentItem::InputText { text } = &content[0] else {
+        panic!("paper prompt must be textual")
+    };
+    assert!(text.contains("Skill Execution State:"));
+    assert!(text.contains("second fact"));
+    assert!(text.contains("Latest Observation:\nsecond-result"));
+    assert!(!text.contains("first-result"));
+    assert!(!text.contains("first-command"));
+    assert!(!text.contains("second-command"));
+    assert!(!text.contains("state_revision"));
+    assert!(!text.contains("comment"));
+}
+
+#[test]
+fn paper_patch_supports_nested_null_deletion() {
+    let state = ExecutionState {
+        files: BTreeMap::from([
+            ("keep.rs".to_string(), "keep".to_string()),
+            ("remove.rs".to_string(), "remove".to_string()),
+        ]),
+        ..ExecutionState::default()
+    };
+    let mut runtime = RuntimeState::default();
+    let accepted = runtime
+        .accept(
+            Snapshot {
+                state,
+                ..Snapshot::default()
+            },
+            StepRequest {
+                mode: ProtocolMode::Paper,
+                state_revision: None,
+                state_patch: serde_json::json!({"files":{"remove.rs":null}}),
+                comment: None,
+                action: RequestedAction {
+                    name: "exec_command".to_string(),
+                    input: serde_json::json!({"command":"pwd"}),
+                },
+            },
+            &[function_tool("exec_command")],
+        )
+        .expect("nested deletion should preserve a valid state");
+    assert_eq!(
+        accepted.state.files,
+        BTreeMap::from([("keep.rs".to_string(), "keep".to_string())])
     );
 }

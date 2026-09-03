@@ -4,9 +4,10 @@
 
 Этот репозиторий исследует архитектуру из статьи
 [SKILL.state: Scalable Long-Horizon Agent Skills](https://arxiv.org/abs/2608.26263): вместо повторной отправки модели
-всего transcript runtime передаёт неизменную постановку задачи `P`, полное структурированное состояние `Sigma` и
-ограниченное окно последних наблюдений `O`. Модель возвращает только `state_patch` и одно действие, после чего ядро
-валидирует patch, обновляет состояние и выполняет действие атомарно.
+всего transcript исходный протокол передаёт неизменную постановку задачи `P`, полное структурированное состояние
+`Sigma` и только последнее наблюдение `O`. Наш отдельный эксперимент v2 заменяет последнее окно на ограниченную
+последовательность наблюдений. Модель возвращает `state_patch` и одно действие, после чего ядро валидирует patch,
+обновляет состояние и выполняет действие атомарно.
 
 При проектировании также учитывался
 [инженерный отчёт Apex](https://github.com/runapex/apex-router/blob/main/docs/DESIGN-skill-state.md): короткие задачи
@@ -132,6 +133,18 @@ prompt-only ablation с одинаковой гранулярностью tools.
 - [отчёт GPT-5.6 Terra](../experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md);
 - [отчёт GPT-5.6 Sol](../experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md).
 
+## Этап 5. Разделение original-paper и v2
+
+После первых сравнений обе ядровые реализации получили отдельный режим исходного протокола статьи. В `paper` модель
+видит строго `P + Sigma_n + O_n`, где `O_n` — только текст результата последнего действия, и отвечает envelope ровно
+из `state_patch + action`. Здесь нет model-visible revision, `comment` и окна прошлых действий. Рекурсивный merge
+поддерживает `null`-удаления, а reasoning и все более старые observations не возвращаются провайдеру.
+
+Расширенный v2 сохранён отдельно для прямого сравнения: `state_revision + state_patch + comment? + action` и
+структурированное окно `O[n..n-k]`. Для обоих режимов полный локальный transcript остаётся аудитным артефактом и не
+является памятью модели. Реализация и команды запуска описаны в
+[контракте original-paper mode](../experiments/PAPER-ORIGINAL.md). Результатов benchmark для paper-режима пока нет.
+
 ## Сводные выводы
 
 1. **Ядровый контракт реализован и проверяем.** В OpenCode и Codex модель владеет patch, runtime валидирует resulting
@@ -155,6 +168,7 @@ prompt-only ablation с одинаковой гранулярностью tools.
 - [OpenCode: core v1/v2 и Terra](../experiments/skill-state/REPORT-core.md)
 - [OpenCode: GLM-5.2 `k=3`](../experiments/skill-state/REPORT-glm-5.2-k3.md)
 - [Codex: описание harness](../experiments/codex-skill-state/README.md)
+- [Original-paper mode: общий контракт и запуск](../experiments/PAPER-ORIGINAL.md)
 - [Codex: Luna](../experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md)
 - [Codex: Terra](../experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md)
 - [Codex: Sol](../experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md)

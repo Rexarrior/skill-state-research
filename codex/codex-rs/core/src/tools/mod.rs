@@ -84,7 +84,7 @@ pub(crate) fn effective_tool_mode(turn_context: &TurnContext, model_info: &Model
     // violate the protocol's one-patch/one-action atomicity and duplicate the
     // complete tool schema in every request. Keep the underlying Codex tools
     // direct so the state wrapper can expose each one as an action variant.
-    if crate::skill_state::enabled(&turn_context.session_source)
+    if crate::skill_state::mode(&turn_context.session_source).is_some()
         && turn_context.mode() == ModeKind::Default
     {
         return ToolMode::Direct;

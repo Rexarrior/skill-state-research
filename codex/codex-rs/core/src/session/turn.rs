@@ -444,10 +444,10 @@ pub(crate) async fn run_turn(
                     needs_follow_up: mut model_needs_follow_up,
                     last_agent_message: mut sampling_request_last_agent_message,
                 } = sampling_request_output;
-                if crate::skill_state::enabled(&turn_context.session_source) {
+                if let Some(mode) = crate::skill_state::mode(&turn_context.session_source) {
                     let history = sess.clone_history().await;
                     let items = history.raw_items().cloned().collect::<Vec<_>>();
-                    let snapshot = crate::skill_state::snapshot(&items);
+                    let snapshot = crate::skill_state::snapshot(&items, mode);
                     if snapshot.state.status == crate::skill_state::ExecutionStatus::Done
                         && let Some(message) = snapshot.final_message
                     {
@@ -1414,13 +1414,13 @@ pub(crate) fn build_prompt(
     base_instructions: BaseInstructions,
 ) -> Prompt {
     let turn_context = &step_context.turn;
-    if crate::skill_state::enabled(&turn_context.session_source)
+    if let Some(mode) = crate::skill_state::mode(&turn_context.session_source)
         && turn_context.mode() == ModeKind::Default
     {
         let original_tools = step_context.tool_router.model_visible_specs();
-        let wrapper = crate::skill_state::wrapper_spec(&original_tools);
+        let wrapper = crate::skill_state::wrapper_spec(&original_tools, mode);
         return Prompt {
-            input: crate::skill_state::provider_input(&input),
+            input: crate::skill_state::provider_input(&input, mode),
             tools: crate::skill_state::tool_specs(wrapper),
             parallel_tool_calls: false,
             base_instructions,

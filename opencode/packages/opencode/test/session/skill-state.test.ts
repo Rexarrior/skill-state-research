@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
 import { Effect } from "effect"
-import { jsonSchema, tool, type Tool, type ToolExecutionOptions } from "ai"
+import { asSchema, jsonSchema, tool, type Tool, type ToolExecutionOptions } from "ai"
 import { SessionV1 } from "@opencode-ai/core/v1/session"
 import { SkillState } from "@/session/skill-state"
 
@@ -290,6 +290,95 @@ describe("core SKILL.state protocol", () => {
     expect(restored.revision).toBe(5)
     expect(restored.state.status).toBe("done")
   })
+
+  test("paper mode exposes only P, Sigma, and the latest result", async () => {
+    const action = tool({
+      inputSchema: jsonSchema({
+        type: "object",
+        properties: { command: { type: "string" } },
+        required: ["command"],
+        additionalProperties: false,
+      }),
+      execute() {
+        return { title: "Probe", output: "latest-result", metadata: {} }
+      },
+    })
+    const wrapper = await Effect.runPromise(SkillState.createTool({ tools: { bash: action }, mode: "paper" }))
+    const schema = await Promise.resolve(asSchema(wrapper.inputSchema).jsonSchema)
+    expect(schema.required).toEqual(["state_patch", "action"])
+    expect(schema.properties).not.toHaveProperty("comment")
+
+    const transition = SkillState.prepare(
+      {
+        state_patch: { facts: ["durable fact"], next_action: "Finish" },
+        action: { name: "bash", input: { command: "paper-command" } },
+      },
+      SkillState.initialState,
+      0,
+      "paper",
+    )
+    const result = await SkillState.execute(transition, { bash: action }, options)
+    expect(SkillState.metadata(transition, "pending")).toMatchObject({
+      skillState: { protocolVersion: 1 },
+    })
+    const value = SkillState.context(
+      [message("user", [text("Implement from P")]), message("assistant", [stepFromResult(result)])],
+      8,
+      "paper",
+    )
+    const prompt = String(SkillState.modelMessages(value)[0]?.content)
+    expect(prompt).toContain("Instructions:\nImplement from P")
+    expect(prompt).toContain('"facts":["durable fact"]')
+    expect(prompt).toContain("Latest Observation:\nlatest-result")
+    expect(prompt).not.toContain("paper-command")
+    expect(prompt).not.toContain("Recent Observations")
+    expect(prompt).not.toContain("state_revision")
+    expect(prompt).not.toContain("comment")
+  })
+
+  test("paper mode supports nested null deletion and rejects v2 envelope fields", () => {
+    const transition = SkillState.prepare(
+      {
+        state_patch: { files: { "remove.ts": null } },
+        action: { name: "bash", input: { command: "pwd" } },
+      },
+      { ...SkillState.initialState, files: { "keep.ts": "keep", "remove.ts": "remove" } },
+      0,
+      "paper",
+    )
+    expect(transition.state.files).toEqual({ "keep.ts": "keep" })
+    expect(() =>
+      SkillState.prepare(
+        {
+          state_revision: 0,
+          state_patch: {},
+          action: { name: "bash", input: { command: "pwd" } },
+        },
+        SkillState.initialState,
+        0,
+        "paper",
+      ),
+    ).toThrow("exactly state_patch and action")
+  })
+
+  test("paper mode discards older observations even when the configured v2 window is larger", () => {
+    const value = SkillState.context(
+      [
+        message("user", [text("Implement")]),
+        message("assistant", [
+          completedStep(1, SkillState.initialState, "older-result", { name: "bash", input: {} }, undefined, 1),
+        ]),
+        message("assistant", [
+          completedStep(2, SkillState.initialState, "latest-result", { name: "bash", input: {} }, undefined, 1),
+        ]),
+      ],
+      8,
+      "paper",
+    )
+    const prompt = String(SkillState.modelMessages(value)[0]?.content)
+    expect(prompt).toContain("Latest Observation:\nlatest-result")
+    expect(prompt).not.toContain("older-result")
+  })
 })
 
 function message(role: "user" | "assistant", parts: SessionV1.Part[]) {
@@ -306,6 +395,7 @@ function completedStep(
   output: string,
   action: { name: string; input: Record<string, unknown> },
   comment?: string,
+  protocolVersion: 1 | 2 = 2,
 ) {
   return {
     type: "tool",
@@ -318,7 +408,7 @@ function completedStep(
       time: { start: 1, end: 2 },
       metadata: {
         skillState: {
-          protocolVersion: 2,
+          protocolVersion,
           revision,
           state,
           patch: {},

@@ -8,6 +8,7 @@ const repository = path.resolve(experiment, "../..")
 const opencode = path.join(repository, "opencode/packages/opencode")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
 const modes = ["baseline", "skill-state"] as const
+const runnableModes = [...modes, "skill-state-paper"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -29,7 +30,7 @@ const prompt = (await readFile(path.join(experiment, "prompts/one-shot.txt"), "u
 const cellTimeoutMs = 15 * 60 * 1000
 
 type Project = (typeof projects)[number]
-type Mode = (typeof modes)[number]
+type Mode = (typeof runnableModes)[number]
 
 type Metrics = {
   sessionID?: string
@@ -177,7 +178,8 @@ async function runCell(project: Project, mode: Mode, suite: string) {
       env: {
         ...process.env,
         OPENCODE_CONFIG_CONTENT: config(),
-        OPENCODE_EXPERIMENTAL_SKILL_STATE: mode === "skill-state" ? "true" : "false",
+        OPENCODE_EXPERIMENTAL_SKILL_STATE: mode === "baseline" ? "false" : "true",
+        OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE: mode === "skill-state-paper" ? "paper" : "v2",
         OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW: String(observationWindow),
         NO_COLOR: "1",
       },
@@ -218,7 +220,8 @@ async function runCell(project: Project, mode: Mode, suite: string) {
     project,
     mode,
     model,
-    observationWindow,
+    observationWindow: mode === "skill-state" ? observationWindow : undefined,
+    protocolMode: mode === "baseline" ? undefined : mode === "skill-state-paper" ? "paper" : "v2",
     prompt,
     exitCode,
     timedOut,
@@ -332,8 +335,8 @@ const [action = "doctor", arg1, arg2] = process.argv.slice(2)
 if (action === "doctor") {
   await doctor()
 } else if (action === "one") {
-  if (!projects.includes(arg1 as Project) || !modes.includes(arg2 as Mode)) {
-    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${modes.join("|")}>`)
+  if (!projects.includes(arg1 as Project) || !runnableModes.includes(arg2 as Mode)) {
+    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${runnableModes.join("|")}>`)
   }
   const suite = suiteID()
   const summary = await runCell(arg1 as Project, arg2 as Mode, suite)

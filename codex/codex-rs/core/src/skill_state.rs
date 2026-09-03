@@ -1,4 +1,4 @@
-//! Kernel-level SKILL.state v2 prompt and transition protocol.
+//! Kernel-level SKILL.state paper and v2 prompt and transition protocols.
 //!
 //! The rollout keeps the ordinary Codex transcript for audit and resume.  The
 //! provider-visible request is rebuilt from that transcript as `(P, Sigma, O)`:
@@ -23,9 +23,13 @@ use serde_json::Value;
 use std::collections::BTreeMap;
 use std::sync::Arc;
 
+#[path = "skill_state_paper.rs"]
+mod paper;
+
 pub(crate) const TOOL_NAME: &str = "skill_step";
-pub const SESSION_SOURCE: &str = "codex";
-const PROTOCOL: &str = "skill.state/v2";
+pub const V2_SESSION_SOURCE: &str = "codex";
+const V2_PROTOCOL: &str = "skill.state/v2";
+const PAPER_PROTOCOL: &str = "skill.state/paper";
 const DEFAULT_OBSERVATION_WINDOW: usize = 3;
 const MAX_OBSERVATION_WINDOW: usize = 8;
 const MAX_STATE_BYTES: usize = 32 * 1024;
@@ -68,27 +72,30 @@ impl Default for ExecutionState {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
-#[serde(deny_unknown_fields)]
-pub(crate) struct StatePatch {
-    pub(crate) status: Option<ExecutionStatus>,
-    pub(crate) plan: Option<Vec<String>>,
-    pub(crate) completed: Option<Vec<String>>,
-    pub(crate) files: Option<BTreeMap<String, String>>,
-    pub(crate) facts: Option<Vec<String>>,
-    pub(crate) decisions: Option<Vec<String>>,
-    pub(crate) next_action: Option<String>,
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub(crate) enum ProtocolMode {
+    Paper,
+    V2,
+}
+
+#[derive(Clone, Debug)]
+pub(crate) struct StepRequest {
+    pub(crate) mode: ProtocolMode,
+    pub(crate) state_revision: Option<u64>,
+    pub(crate) state_patch: Value,
+    pub(crate) comment: Option<String>,
+    pub(crate) action: RequestedAction,
 }
 
 #[derive(Clone, Debug, Deserialize)]
 #[serde(deny_unknown_fields)]
-pub(crate) struct StepRequest {
-    pub(crate) state_revision: u64,
+struct V2StepRequest {
+    state_revision: u64,
+    #[serde(default = "empty_patch")]
+    state_patch: Value,
     #[serde(default)]
-    pub(crate) state_patch: StatePatch,
-    #[serde(default)]
-    pub(crate) comment: Option<String>,
-    pub(crate) action: RequestedAction,
+    comment: Option<String>,
+    action: RequestedAction,
 }
 
 #[derive(Clone, Debug, Deserialize)]
@@ -155,6 +162,7 @@ pub(crate) enum ResolvedAction {
 
 #[derive(Clone, Debug)]
 pub(crate) struct AcceptedStep {
+    pub(crate) mode: ProtocolMode,
     pub(crate) revision: u64,
     pub(crate) state: ExecutionState,
     pub(crate) comment: Option<String>,
@@ -171,10 +179,11 @@ impl RuntimeState {
         tools: &[ToolSpec],
     ) -> Result<AcceptedStep, String> {
         let current = self.current.get_or_insert(persisted);
-        if request.state_revision != current.revision {
+        if request.mode == ProtocolMode::V2 && request.state_revision != Some(current.revision) {
             return Err(format!(
                 "stale state_revision {}; expected {}",
-                request.state_revision, current.revision
+                request.state_revision.unwrap_or(u64::MAX),
+                current.revision
             ));
         }
         validate_comment(request.comment.as_deref())?;
@@ -184,8 +193,11 @@ impl RuntimeState {
             MAX_ACTION_REQUEST_BYTES,
         )?;
         let action = resolve_action(&request.action, tools)?;
-        let mut next = current.state.clone();
-        apply_patch(&mut next, request.state_patch);
+        let mut next = serde_json::to_value(&current.state)
+            .map_err(|err| format!("failed to serialize execution state: {err}"))?;
+        apply_patch(&mut next, request.state_patch, request.mode)?;
+        let mut next = serde_json::from_value::<ExecutionState>(next)
+            .map_err(|err| format!("invalid resulting execution state: {err}"))?;
         if matches!(action, ResolvedAction::Finish { .. }) {
             next.status = ExecutionStatus::Done;
             next.next_action.clear();
@@ -201,6 +213,7 @@ impl RuntimeState {
             ResolvedAction::Tool { .. } => None,
         };
         Ok(AcceptedStep {
+            mode: request.mode,
             revision,
             state: next,
             comment: request.comment,
@@ -211,48 +224,78 @@ impl RuntimeState {
     }
 }
 
-pub(crate) fn enabled(source: &SessionSource) -> bool {
-    matches!(source, SessionSource::Custom(name) if name == SESSION_SOURCE)
+pub(crate) fn mode(source: &SessionSource) -> Option<ProtocolMode> {
+    match source {
+        // Keep the ordinary Codex identity for both protocols. Command policy
+        // and approval routing consume this source, so overloading it as a
+        // protocol discriminator would change tool execution semantics.
+        SessionSource::Custom(name) if name == V2_SESSION_SOURCE => {
+            match std::env::var("CODEX_SKILL_STATE_MODE").as_deref() {
+                Ok("paper") => Some(ProtocolMode::Paper),
+                Ok("v2") | Err(std::env::VarError::NotPresent) => Some(ProtocolMode::V2),
+                _ => None,
+            }
+        }
+        _ => None,
+    }
 }
 
-pub(crate) fn decode_request(arguments: &str) -> Result<StepRequest, String> {
-    serde_json::from_str(arguments).map_err(|err| format!("invalid skill_step payload: {err}"))
+pub(crate) fn decode_request(arguments: &str, mode: ProtocolMode) -> Result<StepRequest, String> {
+    match mode {
+        ProtocolMode::Paper => paper::decode_request(arguments),
+        ProtocolMode::V2 => serde_json::from_str::<V2StepRequest>(arguments)
+            .map(|request| StepRequest {
+                mode,
+                state_revision: Some(request.state_revision),
+                state_patch: request.state_patch,
+                comment: request.comment,
+                action: request.action,
+            })
+            .map_err(|err| format!("invalid v2 skill_step payload: {err}")),
+    }
 }
 
-pub(crate) fn wrapper_spec(tools: &[ToolSpec]) -> ToolSpec {
+pub(crate) fn wrapper_spec(tools: &[ToolSpec], mode: ProtocolMode) -> ToolSpec {
     let mut variants = action_variants(tools);
     variants.push(finish_action_schema());
-    let patch = state_patch_schema();
-    let parameters = JsonSchema::object(
-        BTreeMap::from([
-            (
-                "state_revision".to_string(),
-                JsonSchema::integer(Some(
-                    "Revision shown in the current Skill Execution State.".to_string(),
-                )),
-            ),
-            ("state_patch".to_string(), patch),
-            (
-                "comment".to_string(),
-                JsonSchema::string(Some(
-                    "Optional concise explanation of why this action is useful.".to_string(),
-                )),
-            ),
-            (
-                "action".to_string(),
-                JsonSchema::one_of(
-                    variants,
-                    Some("Exactly one concrete runtime action.".to_string()),
-                ),
-            ),
-        ]),
-        Some(vec![
-            "state_revision".to_string(),
-            "state_patch".to_string(),
-            "action".to_string(),
-        ]),
-        Some(false.into()),
+    let action = JsonSchema::one_of(
+        variants,
+        Some("Exactly one concrete runtime action.".to_string()),
     );
+    let parameters = match mode {
+        ProtocolMode::Paper => JsonSchema::object(
+            BTreeMap::from([
+                ("state_patch".to_string(), paper::state_patch_schema()),
+                ("action".to_string(), action),
+            ]),
+            Some(vec!["state_patch".to_string(), "action".to_string()]),
+            Some(false.into()),
+        ),
+        ProtocolMode::V2 => JsonSchema::object(
+            BTreeMap::from([
+                (
+                    "state_revision".to_string(),
+                    JsonSchema::integer(Some(
+                        "Revision shown in the current Skill Execution State.".to_string(),
+                    )),
+                ),
+                ("state_patch".to_string(), state_patch_schema()),
+                (
+                    "comment".to_string(),
+                    JsonSchema::string(Some(
+                        "Optional concise explanation of why this action is useful.".to_string(),
+                    )),
+                ),
+                ("action".to_string(), action),
+            ]),
+            Some(vec![
+                "state_revision".to_string(),
+                "state_patch".to_string(),
+                "action".to_string(),
+            ]),
+            Some(false.into()),
+        ),
+    };
     ToolSpec::Function(ResponsesApiTool {
         name: TOOL_NAME.to_string(),
         description: "Atomically patch SKILL.state and execute exactly one Codex action. This is the only tool you may call.".to_string(),
@@ -263,9 +306,30 @@ pub(crate) fn wrapper_spec(tools: &[ToolSpec]) -> ToolSpec {
     })
 }
 
-pub(crate) fn provider_input(input: &[ResponseItem]) -> Vec<ResponseItem> {
-    let snapshot = snapshot(input);
+pub(crate) fn provider_input(input: &[ResponseItem], mode: ProtocolMode) -> Vec<ResponseItem> {
+    let snapshot = snapshot(input, mode);
     let task = immutable_task(input);
+    let text = match mode {
+        ProtocolMode::Paper => paper::prompt(
+            &task,
+            &snapshot.state,
+            snapshot
+                .observations
+                .last()
+                .map(|value| value.result.as_str()),
+        ),
+        ProtocolMode::V2 => v2_prompt(&task, &snapshot),
+    };
+    vec![ResponseItem::Message {
+        id: None,
+        role: "user".to_string(),
+        content: vec![ContentItem::InputText { text }],
+        phase: None,
+        internal_chat_message_metadata_passthrough: None,
+    }]
+}
+
+fn v2_prompt(task: &str, snapshot: &Snapshot) -> String {
     let observations = snapshot
         .observations
         .iter()
@@ -280,7 +344,7 @@ pub(crate) fn provider_input(input: &[ResponseItem]) -> Vec<ResponseItem> {
         serde_json::to_string_pretty(&snapshot.state).unwrap_or_else(|_| "{}".to_string());
     let observation_json =
         serde_json::to_string_pretty(&observations).unwrap_or_else(|_| "[]".to_string());
-    let text = format!(
+    format!(
         "You are operating under the SKILL.state v2 execution protocol.\n\
 The execution state is your only durable memory. Previous messages and reasoning are not available.\n\
 On every step, call skill_step exactly once. Supply the shown state_revision, a minimal state_patch, an optional comment, and one action.\n\
@@ -291,17 +355,10 @@ Use finish only when the task is complete, with a concise final message in actio
 \nSkill Execution State (Sigma, revision {}):\n{state_json}\n\
 \nRecent Observations (O[n..n-k], oldest first):\n{observation_json}",
         snapshot.revision,
-    );
-    vec![ResponseItem::Message {
-        id: None,
-        role: "user".to_string(),
-        content: vec![ContentItem::InputText { text }],
-        phase: None,
-        internal_chat_message_metadata_passthrough: None,
-    }]
+    )
 }
 
-pub(crate) fn snapshot(input: &[ResponseItem]) -> Snapshot {
+pub(crate) fn snapshot(input: &[ResponseItem], mode: ProtocolMode) -> Snapshot {
     let mut current = Snapshot::default();
     for item in input {
         let Some(text) = skill_step_output_text(item) else {
@@ -310,7 +367,7 @@ pub(crate) fn snapshot(input: &[ResponseItem]) -> Snapshot {
         let Ok(transition) = serde_json::from_str::<PersistedTransition>(text) else {
             continue;
         };
-        if transition.protocol != PROTOCOL || transition.revision < current.revision {
+        if transition.protocol != protocol(mode) || transition.revision < current.revision {
             continue;
         }
         current.revision = transition.revision;
@@ -332,7 +389,7 @@ pub(crate) fn transition_output(
         ResolvedAction::Tool { .. } => None,
     };
     let transition = PersistedTransition {
-        protocol: PROTOCOL.to_string(),
+        protocol: protocol(accepted.mode).to_string(),
         revision: accepted.revision,
         state: accepted.state,
         observation: Observation {
@@ -345,8 +402,12 @@ pub(crate) fn transition_output(
         },
         final_message,
     };
-    let output = serde_json::to_string(&transition)
-        .unwrap_or_else(|err| format!("{{\"protocol\":\"{PROTOCOL}\",\"error\":\"{err}\"}}"));
+    let output = serde_json::to_string(&transition).unwrap_or_else(|err| {
+        format!(
+            "{{\"protocol\":\"{}\",\"error\":\"{err}\"}}",
+            protocol(accepted.mode)
+        )
+    });
     ResponseItem::FunctionCallOutput {
         id: None,
         call_id: Some(call_id),
@@ -362,11 +423,12 @@ pub(crate) fn transition_output(
 
 pub(crate) fn rejected_output(
     call_id: String,
+    mode: ProtocolMode,
     snapshot: Snapshot,
     message: String,
 ) -> ResponseItem {
     let transition = PersistedTransition {
-        protocol: PROTOCOL.to_string(),
+        protocol: protocol(mode).to_string(),
         revision: snapshot.revision,
         state: snapshot.state,
         observation: Observation {
@@ -379,8 +441,12 @@ pub(crate) fn rejected_output(
         },
         final_message: snapshot.final_message,
     };
-    let output = serde_json::to_string(&transition)
-        .unwrap_or_else(|err| format!("{{\"protocol\":\"{PROTOCOL}\",\"error\":\"{err}\"}}"));
+    let output = serde_json::to_string(&transition).unwrap_or_else(|err| {
+        format!(
+            "{{\"protocol\":\"{}\",\"error\":\"{err}\"}}",
+            protocol(mode)
+        )
+    });
     ResponseItem::FunctionCallOutput {
         id: None,
         call_id: Some(call_id),
@@ -411,8 +477,8 @@ fn immutable_task(input: &[ResponseItem]) -> String {
             .iter()
             .map(|part| match part {
                 ContentItem::InputText { text } | ContentItem::OutputText { text } => text.as_str(),
-                ContentItem::InputImage { .. } => "[image omitted by SKILL.state v2]",
-                ContentItem::InputAudio { .. } => "[audio omitted by SKILL.state v2]",
+                ContentItem::InputImage { .. } => "[image omitted by SKILL.state]",
+                ContentItem::InputAudio { .. } => "[audio omitted by SKILL.state]",
             })
             .collect::<Vec<_>>()
             .join("\n");
@@ -624,27 +690,39 @@ fn require_string_input(action: &RequestedAction) -> Result<(), String> {
     }
 }
 
-fn apply_patch(state: &mut ExecutionState, patch: StatePatch) {
-    if let Some(value) = patch.status {
-        state.status = value;
+fn apply_patch(state: &mut Value, patch: Value, mode: ProtocolMode) -> Result<(), String> {
+    if mode == ProtocolMode::Paper {
+        return paper::apply_patch(state, patch);
     }
-    if let Some(value) = patch.plan {
-        state.plan = value;
+    let Value::Object(patch) = patch else {
+        return Err("state_patch must be a JSON object".to_string());
+    };
+    let Value::Object(state) = state else {
+        return Err("execution state must be a JSON object".to_string());
+    };
+    for (key, value) in patch {
+        if matches!(key.as_str(), "__proto__" | "prototype" | "constructor") {
+            return Err(format!(
+                "execution state patch contains forbidden key: {key}"
+            ));
+        }
+        if value.is_null() {
+            state.remove(&key);
+            continue;
+        }
+        state.insert(key, value);
     }
-    if let Some(value) = patch.completed {
-        state.completed = value;
-    }
-    if let Some(value) = patch.files {
-        state.files = value;
-    }
-    if let Some(value) = patch.facts {
-        state.facts = value;
-    }
-    if let Some(value) = patch.decisions {
-        state.decisions = value;
-    }
-    if let Some(value) = patch.next_action {
-        state.next_action = value;
+    Ok(())
+}
+
+fn empty_patch() -> Value {
+    serde_json::json!({})
+}
+
+fn protocol(mode: ProtocolMode) -> &'static str {
+    match mode {
+        ProtocolMode::Paper => PAPER_PROTOCOL,
+        ProtocolMode::V2 => V2_PROTOCOL,
     }
 }
 

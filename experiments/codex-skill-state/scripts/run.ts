@@ -8,6 +8,7 @@ const repository = path.resolve(experiment, "../..")
 const fixtures = path.join(repository, "experiments/skill-state")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
 const modes = ["baseline", "skill-state"] as const
+const runnableModes = [...modes, "skill-state-paper"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -17,7 +18,7 @@ const expectedChecks: Record<Project, number> = {
 }
 
 type Project = (typeof projects)[number]
-type Mode = (typeof modes)[number]
+type Mode = (typeof runnableModes)[number]
 
 const model = process.env.CODEX_SKILL_STATE_MODEL?.trim() || "gpt-5.6-luna"
 const observationWindow = readObservationWindow()
@@ -276,6 +277,7 @@ async function runCell(project: Project, mode: Mode, suite: string, binaries: Re
     cwd: repository,
     env: {
       ...process.env,
+      CODEX_SKILL_STATE_MODE: mode === "skill-state-paper" ? "paper" : "v2",
       CODEX_SKILL_STATE_OBSERVATION_WINDOW: String(observationWindow),
       NO_COLOR: "1",
     },
@@ -331,6 +333,7 @@ async function runCell(project: Project, mode: Mode, suite: string, binaries: Re
     mode,
     model,
     observationWindow: mode === "skill-state" ? observationWindow : undefined,
+    protocolMode: mode === "baseline" ? undefined : mode === "skill-state-paper" ? "paper" : "v2",
     oneShot: true,
     binary: binaries[mode],
     exitCode,
@@ -472,6 +475,7 @@ async function inspectBinaries(): Promise<Record<Mode, BinaryInfo>> {
   return {
     baseline: await binaryInfo(baselineBinary),
     "skill-state": await binaryInfo(stateBinary),
+    "skill-state-paper": await binaryInfo(stateBinary),
   }
 }
 
@@ -562,8 +566,8 @@ if (action === "doctor") {
   await report(suite, summaries, binaries)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
 } else if (action === "one") {
-  if (!projects.includes(arg1 as Project) || !modes.includes(arg2 as Mode)) {
-    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${modes.join("|")}>`)
+  if (!projects.includes(arg1 as Project) || !runnableModes.includes(arg2 as Mode)) {
+    throw new Error(`usage: bun run.ts one <${projects.join("|")}> <${runnableModes.join("|")}>`)
   }
   const binaries = await inspectBinaries()
   const suite = suiteID()

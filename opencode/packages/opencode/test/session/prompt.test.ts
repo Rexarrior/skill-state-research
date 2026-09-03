@@ -170,6 +170,11 @@ const skillStateRuntimeFlags = RuntimeFlags.layer({
   experimentalEventSystem: true,
   experimentalSkillState: true,
 })
+const paperSkillStateRuntimeFlags = RuntimeFlags.layer({
+  experimentalEventSystem: true,
+  experimentalSkillState: true,
+  experimentalSkillStateMode: "paper",
+})
 
 const testLLMServerNode = LayerNode.make({ service: TestLLMServer, layer: TestLLMServer.layer, deps: [] })
 
@@ -229,14 +234,21 @@ function makePrompt(input?: { mcpInstructions?: MCP.ServerInstructions[]; proces
 function makeHttp(input?: {
   mcpInstructions?: MCP.ServerInstructions[]
   processor?: "blocking"
-  skillState?: boolean
+  skillState?: "paper" | "v2"
 }) {
   const root = LayerNode.group([promptRoot, testLLMServerNode])
   const replacements = [
     [SessionSummary.node, summary],
     [LSP.node, lsp],
     [MCP.node, makeMcp(input?.mcpInstructions)],
-    [RuntimeFlags.node, input?.skillState ? skillStateRuntimeFlags : runtimeFlags],
+    [
+      RuntimeFlags.node,
+      input?.skillState === "paper"
+        ? paperSkillStateRuntimeFlags
+        : input?.skillState === "v2"
+          ? skillStateRuntimeFlags
+          : runtimeFlags,
+    ],
   ] as const
   if (input?.processor === "blocking") {
     return LayerNode.compile(root, [...replacements, [SessionProcessor.node, blockingProcessor]])
@@ -249,7 +261,8 @@ function makeHttpNoLLMServer(input?: { mcpInstructions?: MCP.ServerInstructions[
 }
 
 const it = testEffect(makeHttp())
-const skillState = testEffect(makeHttp({ skillState: true }))
+const skillState = testEffect(makeHttp({ skillState: "v2" }))
+const paperSkillState = testEffect(makeHttp({ skillState: "paper" }))
 const noLLMServer = testEffect(makeHttpNoLLMServer())
 const raceNoLLMServer = testEffect(makeHttpNoLLMServer({ processor: "blocking" }))
 const withMcpInstructions = testEffect(
@@ -909,7 +922,7 @@ skillState.instance("core SKILL.state sends only P, state, and recent observatio
     const secondMessages = Array.isArray(inputs[1]?.messages) ? inputs[1].messages : []
     const secondPrompt = JSON.stringify(secondMessages)
     expect(secondPrompt).toContain("environment observation")
-    expect(secondPrompt).toContain('\\"completed\\":[\\"read evidence\\"]')
+    expect(secondPrompt).toContain('\\"plan\\":[\\"read evidence\\",\\"finish\\"]')
     expect(secondPrompt).toContain("Read the evidence file before finishing.")
     expect(secondPrompt).toContain('\\"name\\":\\"read\\"')
     expect(secondPrompt).toContain('\\"filePath\\"')
@@ -918,6 +931,68 @@ skillState.instance("core SKILL.state sends only P, state, and recent observatio
     const transcript = yield* sessions.messages({ sessionID: session.id })
     const steps = transcript.flatMap((message) => message.parts).filter((part) => part.type === "tool")
     expect(steps.map((part) => part.tool)).toEqual(["skill_step", "skill_step"])
+  }),
+)
+
+paperSkillState.instance("paper SKILL.state sends only P, state, and the latest observation", () =>
+  Effect.gen(function* () {
+    const { dir, llm } = yield* useServerConfig(providerCfg)
+    const prompt = yield* SessionPrompt.Service
+    const sessions = yield* Session.Service
+    const target = path.join(dir, "paper-evidence.txt")
+    yield* writeText(target, "paper observation")
+    const session = yield* sessions.create({
+      title: "Paper SKILL.state",
+      permission: [{ permission: "*", pattern: "*", action: "allow" }],
+    })
+    yield* prompt.prompt({
+      sessionID: session.id,
+      agent: "build",
+      noReply: true,
+      parts: [{ type: "text", text: "Immutable paper requirement: inspect evidence and finish." }],
+    })
+    yield* llm.tool("skill_step", {
+      state_patch: { facts: ["paper mode active"], next_action: "Read evidence" },
+      action: { name: "read", input: { filePath: target } },
+    })
+    yield* llm.tool("skill_step", {
+      state_patch: {
+        status: "done",
+        completed: ["read evidence"],
+        facts: ["paper mode active", "evidence contained paper observation"],
+        next_action: "None",
+      },
+      action: { name: "finish", input: { message: "Verified the paper protocol." } },
+    })
+
+    const result = yield* prompt.loop({ sessionID: session.id })
+    expect(yield* llm.calls).toBe(2)
+    expect(result.parts.some((part) => part.type === "text" && part.text === "Verified the paper protocol.")).toBe(
+      true,
+    )
+
+    const inputs = yield* llm.inputs
+    for (const input of inputs) {
+      const tools = Array.isArray(input.tools) ? input.tools : []
+      expect(tools).toHaveLength(1)
+      const schema = JSON.stringify(tools)
+      expect(schema).toContain('"name":"skill_step"')
+      expect(schema).not.toContain('"state_revision"')
+      expect(schema).not.toContain('"comment"')
+      const messages = Array.isArray(input.messages) ? input.messages : []
+      expect(messages.filter((message) => isRecord(message) && message.role === "user")).toHaveLength(1)
+      expect(messages.some((message) => isRecord(message) && message.role === "assistant")).toBeFalse()
+    }
+    const secondMessages = Array.isArray(inputs[1]?.messages) ? inputs[1].messages : []
+    const secondPrompt = JSON.stringify(
+      secondMessages.filter((message) => isRecord(message) && message.role === "user"),
+    )
+    expect(secondPrompt).toContain("paper observation")
+    expect(secondPrompt).toContain("paper mode active")
+    expect(secondPrompt).toContain("Latest Observation")
+    expect(secondPrompt).not.toContain("Recent Observations")
+    expect(secondPrompt).not.toContain("state_revision")
+    expect(secondPrompt).not.toContain("comment")
   }),
 )
 

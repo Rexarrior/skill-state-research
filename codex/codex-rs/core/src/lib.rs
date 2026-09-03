@@ -105,7 +105,7 @@ pub mod sandboxing;
 mod session_prefix;
 mod session_startup_prewarm;
 mod skill_state;
-pub use skill_state::SESSION_SOURCE as SKILL_STATE_V2_SESSION_SOURCE;
+pub use skill_state::V2_SESSION_SOURCE as SKILL_STATE_V2_SESSION_SOURCE;
 mod skills;
 pub(crate) use skills::maybe_emit_implicit_skill_invocation;
 pub(crate) use skills::skills_load_input_from_config;

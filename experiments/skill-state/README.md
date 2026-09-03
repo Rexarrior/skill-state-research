@@ -13,6 +13,9 @@ an external attachment before the first model turn; `SPEC.md` is not present in 
 
 ## Design
 
+- Core protocol: `OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE=v2` selects the existing extension;
+  `OPENCODE_EXPERIMENTAL_SKILL_STATE_MODE=paper` selects the original `P + Sigma + latest O` architecture. See
+  [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md).
 - Model: `openrouter-yandex-team/z-ai/glm-5.2`
 - Prompt: `Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.`
 - Modes: `baseline` (transcript replay) and `skill-state` (core `P + Sigma + O[n-k+1..n]` runtime)
@@ -43,6 +46,7 @@ Run one cell:
 
 ```sh
 bun experiments/skill-state/scripts/run.ts one taskboard-cli baseline
+bun experiments/skill-state/scripts/run.ts one taskboard-cli skill-state-paper
 ```
 
 Results are written to `experiments/skill-state/results/<suite-id>/`. Workspaces are created under the system
