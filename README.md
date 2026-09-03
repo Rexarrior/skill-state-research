@@ -21,6 +21,8 @@ message instead of being asked to read a state file itself.
 - [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
 - [`experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md)
   — Codex CLI benchmark, implementation defect found by the first run, corrected result, and interpretation.
+- [`experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md)
+  — matching Codex CLI Terra benchmark and comparison with Luna.
 - [`experiments/skill-state/`](./experiments/skill-state/) — benchmark harness, project specifications, evaluators,
   plans, reports, generated workspaces metadata, raw JSONL event logs, stderr logs, and per-run summaries.
 - [`experiments/skill-state/REPORT-core.md`](./experiments/skill-state/REPORT-core.md) — implementation history and the
@@ -57,6 +59,14 @@ post-fix state passed **39/40**, but used **4,482,763** input tokens versus **1,
 input per provider sample by 20.7%, yet required 268 samples versus 60 and timed out in two of five cells. The first run
 also exposed an implementation bug: a 3 KiB incoming-action limit rejected ordinary code patches. The corrected kernel
 accepts up to 64 KiB while keeping only a bounded 3 KiB preview in observations.
+
+### Codex CLI, GPT-5.6 Terra, `k=3`
+
+Terra produced the opposite efficiency result on the same post-fix kernel: state passed **39/40** checks versus
+baseline's **38/40** and reduced input tokens from **1,588,485** to **1,243,798**, a **21.7% saving**. All five state
+cells emitted `finish` without timeout. State used more samples (71 versus 61), but average input per sample was 32.7%
+lower. Per-project results varied from an 85.9% regression to a 73.7% saving, so this exploratory `n=1` result is not a
+stable expected effect.
 
 ## Running the experiment
 

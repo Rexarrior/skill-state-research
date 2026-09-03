@@ -1,0 +1,78 @@
+{
+  "suite": "20260903T203123Z",
+  "project": "taskboard-cli",
+  "mode": "baseline",
+  "model": "gpt-5.6-terra",
+  "oneShot": true,
+  "binary": {
+    "path": "/private/tmp/codex-baseline-1d74c3b-bin/codex",
+    "version": "codex-cli 0.0.0",
+    "sha256": "3a385dcfc565ebd05f2421ee696f2d64c1eec896e4b633e7c07b3b39e13f9fb9"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/baseline/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 165036,
+    "cachedInput": 147456,
+    "cacheWriteInput": 0,
+    "output": 6082,
+    "reasoning": 1503,
+    "total": 171118,
+    "samples": 8,
+    "commandExecutions": 5,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 137943,
+    "threadID": "01a068f8-17d8-74b1-a93b-4c73213014ed"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

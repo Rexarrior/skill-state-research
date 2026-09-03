@@ -1,0 +1,83 @@
+{
+  "suite": "20260903T203123Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "gpt-5.6-terra",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "b8580c16a8a88d1690d57abd9e5c0858a3a3145a213514f024e50fcb7ab180b0"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/skill-state/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 283506,
+    "cachedInput": 217088,
+    "cacheWriteInput": 0,
+    "output": 8152,
+    "reasoning": 1074,
+    "total": 291658,
+    "samples": 16,
+    "commandExecutions": 11,
+    "fileChanges": 3,
+    "errors": 0,
+    "stateCalls": 16,
+    "stateErrors": 1,
+    "stateComments": 15,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 683,
+    "durationMs": 206955,
+    "threadID": "01a06900-23b0-7861-a3a6-627797a9bb8d"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

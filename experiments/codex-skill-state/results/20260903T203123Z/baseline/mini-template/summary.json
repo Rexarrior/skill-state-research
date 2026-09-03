@@ -1,0 +1,78 @@
+{
+  "suite": "20260903T203123Z",
+  "project": "mini-template",
+  "mode": "baseline",
+  "model": "gpt-5.6-terra",
+  "oneShot": true,
+  "binary": {
+    "path": "/private/tmp/codex-baseline-1d74c3b-bin/codex",
+    "version": "codex-cli 0.0.0",
+    "sha256": "3a385dcfc565ebd05f2421ee696f2d64c1eec896e4b633e7c07b3b39e13f9fb9"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/baseline/mini-template",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 515362,
+    "cachedInput": 476928,
+    "cacheWriteInput": 0,
+    "output": 9453,
+    "reasoning": 2542,
+    "total": 524815,
+    "samples": 17,
+    "commandExecutions": 11,
+    "fileChanges": 5,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "durationMs": 225854,
+    "threadID": "01a068fc-b0ec-7592-8567-ec150d8219e7"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": true
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

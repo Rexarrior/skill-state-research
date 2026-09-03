@@ -1,0 +1,10 @@
+Reading additional input from stdin...
+2026-09-03T20:41:41.663370Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown
+2026-09-03T20:42:21.770606Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown
+2026-09-03T20:42:33.319489Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/skill-state/http-kv/server.py:
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        Handler.store = Store(os.path.join(self.tempdir.name, "data.json"))
+        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+2026-09-03T20:43:05.342405Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown

@@ -1,0 +1,75 @@
+{
+  "suite": "20260903T203123Z",
+  "project": "dependency-planner",
+  "mode": "skill-state",
+  "model": "gpt-5.6-terra",
+  "observationWindow": 3,
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :108 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "b8580c16a8a88d1690d57abd9e5c0858a3a3145a213514f024e50fcb7ab180b0"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/skill-state/dependency-planner",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 310508,
+    "cachedInput": 143360,
+    "cacheWriteInput": 0,
+    "output": 8529,
+    "reasoning": 1346,
+    "total": 319037,
+    "samples": 18,
+    "commandExecutions": 13,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 18,
+    "stateErrors": 2,
+    "stateComments": 18,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 666,
+    "durationMs": 227432,
+    "threadID": "01a06905-08fd-7f21-99b5-6199cb6194cf"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

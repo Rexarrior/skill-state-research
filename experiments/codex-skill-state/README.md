@@ -20,6 +20,8 @@ The implementation is a core modification, not a skill or plugin. The complete o
 - The GPT-5.6 Luna `k=3` CLI benchmark is complete. Baseline scored 40/40 and state scored 39/40, but state consumed
   3.54x more input tokens because provider samples increased 4.47x. See
   [`REPORT-gpt-5.6-luna-k3.md`](./REPORT-gpt-5.6-luna-k3.md).
+- The matching GPT-5.6 Terra run favored state: 39/40 versus baseline's 38/40 with 21.7% fewer input tokens. All five
+  state cells finished without timeout. See [`REPORT-gpt-5.6-terra-k3.md`](./REPORT-gpt-5.6-terra-k3.md).
 
 ## Build
 

@@ -1,0 +1,5 @@
+Reading additional input from stdin...
+2026-09-03T20:47:37.835313Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260903T203123Z/skill-state/dependency-planner/src/cli.test.ts:
+    expect(plan.criticalPath).toEqual(["a", "z"]);
+  });
+});
