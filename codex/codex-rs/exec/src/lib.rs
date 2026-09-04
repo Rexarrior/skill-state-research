@@ -539,12 +539,12 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
         .await?
     };
     let skill_state_enabled = match std::env::var("CODEX_SKILL_STATE_MODE") {
-        Ok(value) if value == "paper" || value == "v2" => true,
+        Ok(value) if value == "paper" || value == "v2" || value == "v3" => true,
         Ok(value) if value == "baseline" => false,
         Err(std::env::VarError::NotPresent) => false,
         Ok(value) => {
             return Err(anyhow::anyhow!(
-                "invalid CODEX_SKILL_STATE_MODE {value:?}; expected baseline, paper, or v2"
+                "invalid CODEX_SKILL_STATE_MODE {value:?}; expected baseline, paper, v2, or v3"
             ));
         }
         Err(err) => return Err(anyhow::anyhow!(err)),

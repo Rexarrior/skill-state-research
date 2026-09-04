@@ -1,11 +1,12 @@
-# Codex kernel design: SKILL.state v2
+# Codex kernel design: SKILL.state v2 and v3
 
 This document describes the extended v2 protocol. The same core now also contains the isolated original-paper mode
 documented in [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md); the two provider contracts are selected explicitly and do
 not share model-visible transition fields.
 
-The compiled CLI also retains the upstream transcript loop. `CODEX_SKILL_STATE_MODE=baseline|paper|v2` selects the
-runtime path, and an unset variable is equivalent to `baseline`.
+The compiled CLI also retains the upstream transcript loop. `CODEX_SKILL_STATE_MODE=baseline|paper|v2|v3` selects the
+runtime path, and an unset variable is equivalent to `baseline`. V3's action-batch contract is shared with OpenCode and
+documented in [`../V3-BATCHED-ACTIONS.md`](../V3-BATCHED-ACTIONS.md).
 
 ## Goal
 
@@ -88,6 +89,11 @@ tool-search specs are currently excluded because they do not map to the same cli
 
 State sessions force Codex's direct tool mode. Code Mode's `exec` is itself a multi-tool agent loop, so nesting it would
 break one-patch/one-action atomicity and expand every wrapper schema with a second tool catalogue.
+
+V3 changes that contract at the outer kernel boundary: the model returns `actions[]` with no count limit, the runtime
+pre-validates every member, applies one patch, and dispatches members strictly sequentially. An error stops the batch,
+remaining members are recorded as skipped, and the whole batch occupies one observation-window slot. Later members may
+not depend on results the model has not seen yet.
 
 ## Persistence and recovery
 

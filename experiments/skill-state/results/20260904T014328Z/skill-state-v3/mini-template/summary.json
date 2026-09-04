@@ -1,0 +1,77 @@
+{
+  "suite": "20260904T014328Z",
+  "project": "mini-template",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T014328Z/skill-state-v3/mini-template",
+  "metrics": {
+    "turns": 8,
+    "toolCalls": 8,
+    "stateCalls": 8,
+    "stateErrors": 2,
+    "stateComments": 5,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 990,
+    "batchedActions": 10,
+    "multiActionBatches": 4,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 2,
+    "input": 976,
+    "output": 6123,
+    "reasoning": 1336,
+    "cacheRead": 105896,
+    "cacheWrite": 33236,
+    "cost": 0.281598,
+    "durationMs": 97276,
+    "sessionID": "ses_f95ea2a9effeoBCYhvd8sYRRSj"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": true
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

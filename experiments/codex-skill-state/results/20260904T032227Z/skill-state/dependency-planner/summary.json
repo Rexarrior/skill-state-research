@@ -1,0 +1,87 @@
+{
+  "suite": "20260904T032227Z",
+  "project": "dependency-planner",
+  "mode": "skill-state",
+  "model": "gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v2",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state/dependency-planner",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 5150,
+    "threadID": "01a06ab6-3156-7af2-ba9c-0afde2da4059"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 1,
+    "total": 7,
+    "score": 0.14285714285714285,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "empty graph",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": false,
+        "detail": "unexpected cycle: error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": false,
+        "detail": "unknown dependency accepted"
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state/dependency-planner/README.md'"
+      }
+    ]
+  }
+}

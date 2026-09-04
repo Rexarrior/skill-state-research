@@ -22,7 +22,7 @@ pub(super) fn decode_request(arguments: &str) -> Result<StepRequest, String> {
             state_revision: None,
             state_patch: request.state_patch,
             comment: None,
-            action: request.action,
+            actions: vec![request.action],
         })
         .map_err(|err| format!("invalid paper skill_step payload: {err}"))
 }

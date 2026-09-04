@@ -1,0 +1,78 @@
+{
+  "suite": "20260904T023009Z",
+  "project": "mini-template",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T023009Z/skill-state-v3/mini-template",
+  "metrics": {
+    "turns": 5,
+    "toolCalls": 5,
+    "stateCalls": 5,
+    "stateErrors": 0,
+    "stateComments": 5,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 827,
+    "batchedActions": 5,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 1,
+    "input": 610,
+    "output": 3477,
+    "reasoning": 181,
+    "cacheRead": 60424,
+    "cacheWrite": 24084,
+    "cost": 0.0572008,
+    "durationMs": 39325,
+    "sessionID": "ses_f95b8dc3affeVHyc2He5UKi9PW"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "expected \"[0:a/T][1:b/T]\", got \"[0:/T][1:/T]\""
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "suite": "20260904T015621Z",
+  "project": "taskboard-cli",
+  "mode": "baseline",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "protocolMode": "baseline",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T015621Z/baseline/taskboard-cli",
+  "metrics": {
+    "turns": 10,
+    "toolCalls": 14,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 30,
+    "output": 5473,
+    "reasoning": 1234,
+    "cacheRead": 213378,
+    "cacheWrite": 30025,
+    "cost": 0.308049,
+    "durationMs": 86087,
+    "sessionID": "ses_f95de61f6ffe8DQf2jYBTLMJQf"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

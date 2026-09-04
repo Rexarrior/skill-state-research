@@ -1,0 +1,81 @@
+{
+  "suite": "20260904T015621Z",
+  "project": "http-kv",
+  "mode": "skill-state",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v2",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T015621Z/skill-state/http-kv",
+  "metrics": {
+    "turns": 12,
+    "toolCalls": 12,
+    "stateCalls": 12,
+    "stateErrors": 0,
+    "stateComments": 11,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 1585,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 1464,
+    "output": 7915,
+    "reasoning": 858,
+    "cacheRead": 165638,
+    "cacheWrite": 55881,
+    "cost": 0.353329,
+    "durationMs": 117734,
+    "sessionID": "ses_f95cd97a8ffeAZBxobhYIdgdBr"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

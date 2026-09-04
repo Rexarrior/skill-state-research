@@ -1,0 +1,77 @@
+{
+  "suite": "20260904T023009Z",
+  "project": "taskboard-cli",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T023009Z/skill-state-v3/taskboard-cli",
+  "metrics": {
+    "turns": 10,
+    "toolCalls": 10,
+    "stateCalls": 10,
+    "stateErrors": 0,
+    "stateComments": 10,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 711,
+    "batchedActions": 15,
+    "multiActionBatches": 4,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 3,
+    "input": 1220,
+    "output": 5964,
+    "reasoning": 443,
+    "cacheRead": 135990,
+    "cacheWrite": 49798,
+    "cost": 0.10652199999999999,
+    "durationMs": 72382,
+    "sessionID": "ses_f95bd433bffeSkUlB5ErXHmrsj"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

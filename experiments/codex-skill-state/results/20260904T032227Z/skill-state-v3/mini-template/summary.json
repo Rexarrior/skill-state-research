@@ -1,0 +1,86 @@
+{
+  "suite": "20260904T032227Z",
+  "project": "mini-template",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state-v3/mini-template",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 295916,
+    "cachedInput": 235520,
+    "cacheWriteInput": 0,
+    "output": 8318,
+    "reasoning": 1302,
+    "total": 304234,
+    "samples": 17,
+    "commandExecutions": 14,
+    "fileChanges": 3,
+    "errors": 0,
+    "stateCalls": 17,
+    "stateErrors": 1,
+    "stateComments": 17,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 732,
+    "batchedActions": 19,
+    "multiActionBatches": 2,
+    "failedBatches": 1,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 2,
+    "durationMs": 196284,
+    "threadID": "01a06a87-7e1b-78f0-853f-145d7c40ed30"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "expected \"[0:a/T][1:b/T]\", got \"[0:/T][1:/T]\""
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

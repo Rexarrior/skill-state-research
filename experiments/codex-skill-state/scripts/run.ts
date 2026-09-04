@@ -7,9 +7,9 @@ const experiment = path.resolve(import.meta.dir, "..")
 const repository = path.resolve(experiment, "../..")
 const fixtures = path.join(repository, "experiments/skill-state")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
-const modes = ["baseline", "skill-state"] as const
+const modes = ["baseline", "skill-state", "skill-state-v3"] as const
 const runnableModes = [...modes, "skill-state-paper"] as const
-const modeNames = ["baseline", "paper", "v2"] as const
+const modeNames = ["baseline", "paper", "v2", "v3"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -26,17 +26,20 @@ function parseMode(value: string): Mode {
   if (value === "baseline") return "baseline"
   if (value === "paper" || value === "skill-state-paper") return "skill-state-paper"
   if (value === "v2" || value === "skill-state") return "skill-state"
+  if (value === "v3" || value === "skill-state-v3") return "skill-state-v3"
   throw new Error(`unknown mode ${JSON.stringify(value)}; expected ${modeNames.join("|")}`)
 }
 
 function runtimeMode(mode: Mode): ModeName {
   if (mode === "skill-state-paper") return "paper"
   if (mode === "skill-state") return "v2"
+  if (mode === "skill-state-v3") return "v3"
   return "baseline"
 }
 
 function modeLabel(mode: Mode) {
-  return runtimeMode(mode) === "v2" ? "V2" : runtimeMode(mode)[0]!.toUpperCase() + runtimeMode(mode).slice(1)
+  const name = runtimeMode(mode)
+  return name === "v2" || name === "v3" ? name.toUpperCase() : name[0]!.toUpperCase() + name.slice(1)
 }
 
 const model = process.env.CODEX_SKILL_STATE_MODEL?.trim() || "gpt-5.6-luna"
@@ -49,9 +52,7 @@ const baselineBinary = process.env.CODEX_BASELINE_BINARY?.trim() || stateBinary
 const baselineSource =
   process.env.CODEX_BASELINE_SOURCE?.trim() ||
   (baselineBinary === stateBinary ? "baseline runtime mode in the same research binary" : "separate baseline binary")
-const oneShotInstruction = (
-  await readFile(path.join(fixtures, "prompts/one-shot.txt"), "utf8")
-).trim()
+const oneShotInstruction = (await readFile(path.join(fixtures, "prompts/one-shot.txt"), "utf8")).trim()
 
 type Usage = {
   input: number
@@ -75,6 +76,11 @@ type Metrics = Usage & {
   repeatedActions: number
   maxRepeatStreak: number
   maxStateBytes: number
+  batchedActions: number
+  multiActionBatches: number
+  failedBatches: number
+  skippedActions: number
+  maxActionsPerBatch: number
   durationMs: number
 }
 
@@ -82,6 +88,8 @@ type BinaryInfo = {
   path: string
   version: string
   sha256: string
+  codeModeHostPath?: string
+  codeModeHostSha256?: string
 }
 
 function readObservationWindow() {
@@ -139,6 +147,29 @@ async function binaryInfo(binary: string): Promise<BinaryInfo> {
   }
 }
 
+async function baselineBinaryInfo(binary: string): Promise<BinaryInfo> {
+  const info = await binaryInfo(binary)
+  const host = path.join(path.dirname(path.resolve(binary)), "codex-code-mode-host")
+  let hostStat
+  try {
+    hostStat = await stat(host)
+  } catch {
+    throw new Error(
+      `baseline requires the executable Code Mode companion ${host}; build it with cargo build -p codex-code-mode-host --bin codex-code-mode-host`,
+    )
+  }
+  if (!hostStat.isFile() || (hostStat.mode & 0o111) === 0) {
+    throw new Error(`baseline Code Mode companion is not executable: ${host}`)
+  }
+  const digest = await runCommand(["shasum", "-a", "256", host], repository, 60_000)
+  if (digest.exitCode !== 0) throw new Error(`cannot hash ${host}: ${digest.stderr}`)
+  return {
+    ...info,
+    codeModeHostPath: host,
+    codeModeHostSha256: digest.stdout.trim().split(/\s+/)[0] ?? "",
+  }
+}
+
 function blankMetrics(durationMs: number): Metrics {
   return {
     input: 0,
@@ -158,6 +189,11 @@ function blankMetrics(durationMs: number): Metrics {
     repeatedActions: 0,
     maxRepeatStreak: 0,
     maxStateBytes: 0,
+    batchedActions: 0,
+    multiActionBatches: 0,
+    failedBatches: 0,
+    skippedActions: 0,
+    maxActionsPerBatch: 0,
     durationMs,
   }
 }
@@ -220,10 +256,36 @@ function parseRollout(raw: string, metrics: Metrics) {
     const observation = transition.observation
     if (observation?.status === "error") metrics.stateErrors++
     if (typeof observation?.comment === "string" && observation.comment.trim()) metrics.stateComments++
-    if (observation?.action === "finish") metrics.finishCalls++
     metrics.maxStateBytes = Math.max(metrics.maxStateBytes, Buffer.byteLength(JSON.stringify(transition.state ?? {})))
-    if (typeof observation?.action === "string") {
-      const action = JSON.stringify({ name: observation.action, input: observation.input })
+    const observedActions = Array.isArray(observation?.actions)
+      ? observation.actions.map((action: any) => ({
+          name: action?.action,
+          input: action?.input,
+          status: action?.status,
+        }))
+      : typeof observation?.action === "string"
+        ? [
+            {
+              name: observation.action,
+              input: observation.input,
+              status: observation.status,
+            },
+          ]
+        : []
+    if (Array.isArray(observation?.actions)) {
+      metrics.batchedActions += observedActions.length
+      metrics.maxActionsPerBatch = Math.max(metrics.maxActionsPerBatch, observedActions.length)
+      if (observedActions.length > 1) metrics.multiActionBatches++
+      if (observation.status === "error") metrics.failedBatches++
+      metrics.skippedActions += observedActions.filter((action: any) => action.status === "skipped").length
+    }
+    if (observedActions.some((action: any) => action.name === "finish")) metrics.finishCalls++
+    for (const observed of observedActions) {
+      if (typeof observed.name !== "string") continue
+      const action = JSON.stringify({
+        name: observed.name,
+        input: observed.input,
+      })
       if (action === previousAction) {
         metrics.repeatedActions++
         repeatStreak++
@@ -352,7 +414,7 @@ async function runCell(project: Project, mode: Mode, suite: string, binaries: Re
     project,
     mode,
     model,
-    observationWindow: mode === "skill-state" ? observationWindow : undefined,
+    observationWindow: mode === "skill-state" || mode === "skill-state-v3" ? observationWindow : undefined,
     protocolMode: runtimeMode(mode),
     oneShot: true,
     binary: binaries[mode],
@@ -397,7 +459,8 @@ async function report(
   suite: string,
   summaries: Awaited<ReturnType<typeof runCell>>[],
   binaries: Record<Mode, BinaryInfo>,
-  baselineSuite?: string,
+  reusedSuite?: string,
+  reuseKind: "baseline" | "failed" = "baseline",
 ) {
   const selectedModes = runnableModes.filter((mode) => summaries.some((item) => item.mode === mode))
   const compared = projects.filter((project) =>
@@ -450,6 +513,11 @@ async function report(
     ["Consecutive repeated actions", "repeatedActions", "total"],
     ["Maximum repeat streak", "maxRepeatStreak", "maximum"],
     ["Maximum state bytes", "maxStateBytes", "maximum"],
+    ["Actions inside v3 batches", "batchedActions", "total"],
+    ["Multi-action v3 batches", "multiActionBatches", "total"],
+    ["Failed v3 batches", "failedBatches", "total"],
+    ["Skipped v3 actions", "skippedActions", "total"],
+    ["Maximum actions per batch", "maxActionsPerBatch", "maximum"],
   ]
   const aggregateRows = aggregateMetrics.map(([label, field, aggregation]) => {
     const values = selectedModes.map((mode) =>
@@ -470,6 +538,9 @@ async function report(
         `- ${modeLabel(mode)}: \`${binaries[mode].version}\` at \`${binaries[mode].path}\`, SHA-256 \`${binaries[mode].sha256}\`.`,
     )
     .join("\n")
+  const baselineHost = binaries.baseline.codeModeHostPath
+    ? `\nBaseline Code Mode host: \`${binaries.baseline.codeModeHostPath}\`, SHA-256 \`${binaries.baseline.codeModeHostSha256}\`.\n`
+    : ""
 
   const body = `# Codex CLI one-shot multimode results
 
@@ -483,8 +554,15 @@ Design: one independent one-shot run per project and mode; black-box evaluation;
 CLI processes; ${number(cellTimeoutMs / 60_000)} minute timeout per cell. Skills, skill search, and user config were
 disabled in every mode. All runs use \`--approve-for-me\`: model commands remain in the \`workspace-write\` sandbox while
 the CLI's automatic reviewer handles safe edits. Every run starts in an empty temporary workspace. Baseline retains
-the native transcript and Code Mode; state modes force direct tools to preserve one-patch/one-action atomicity.
-${baselineSuite ? `\nBaseline cells were reused without rerunning from suite \`${baselineSuite}\`; state cells belong to this suite.\n` : ""}
+the native transcript and Code Mode; state modes force direct tools. V2 preserves one-patch/one-action transitions;
+v3 applies one patch and executes a non-empty, unbounded action array strictly sequentially.
+${
+  reusedSuite
+    ? reuseKind === "failed"
+      ? `\nValid cells were reused without rerunning from suite \`${reusedSuite}\`; only failed/timeout cells were executed in this retry suite. Each summary retains its original suite and workspace provenance.\n`
+      : `\nBaseline cells were reused without rerunning from suite \`${reusedSuite}\`; state cells were executed in this suite. Each summary retains its original suite and workspace provenance.\n`
+    : ""
+}
 
 | Project | ${headers.join(" | ")} |
 |---|${headers.map(() => "---:").join("|")}|
@@ -508,6 +586,7 @@ ${aggregateRows.join("\n")}
 ## Binary provenance
 
 ${provenance}
+${baselineHost}
 
 Baseline source: ${baselineSource}.
 
@@ -531,8 +610,9 @@ Generated workspace paths are recorded in each cell summary. State workspaces fo
 
 async function inspectBinaries(): Promise<Record<Mode, BinaryInfo>> {
   return {
-    baseline: await binaryInfo(baselineBinary),
+    baseline: await baselineBinaryInfo(baselineBinary),
     "skill-state": await binaryInfo(stateBinary),
+    "skill-state-v3": await binaryInfo(stateBinary),
     "skill-state-paper": await binaryInfo(stateBinary),
   }
 }
@@ -610,13 +690,42 @@ if (action === "doctor") {
   )
   await report(suite, [...baseline, ...state], binaries, baselineSuite)
   console.log(JSON.stringify({ suite, report: path.join(experiment, "results", suite, "report.md") }, null, 2))
+} else if (action === "retry-failed") {
+  const [sourceSuite] = args
+  if (!sourceSuite) throw new Error("usage: bun run.ts retry-failed SOURCE_SUITE")
+  const previous = await loadSummaries(sourceSuite)
+  if (!previous.length) throw new Error(`suite has no summaries: ${sourceSuite}`)
+  const failed = previous.filter((item) => item.timedOut || item.exitCode !== 0)
+  if (!failed.length) throw new Error(`suite has no failed or timeout cells: ${sourceSuite}`)
+  const binaries = await inspectBinaries()
+  const suite = suiteID()
+  const retried = await mapLimited(
+    failed.map((item) => [item.project as Project, item.mode as Mode] as [Project, Mode]),
+    maxConcurrency,
+    ([project, mode]) => runCell(project, mode, suite, binaries),
+  )
+  const failedKeys = new Set(failed.map((item) => `${item.project}\u0000${item.mode}`))
+  const valid = previous.filter((item) => !failedKeys.has(`${item.project}\u0000${item.mode}`))
+  await report(suite, [...valid, ...retried], binaries, sourceSuite, "failed")
+  console.log(
+    JSON.stringify(
+      {
+        suite,
+        sourceSuite,
+        retried: failed.length,
+        report: path.join(experiment, "results", suite, "report.md"),
+      },
+      null,
+      2,
+    ),
+  )
 } else if (action === "pair") {
   const [project, requestedMode = "v2"] = args
   if (!projects.includes(project as Project)) {
-    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2]`)
+    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2|v3]`)
   }
   const selectedMode = parseMode(requestedMode)
-  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper or v2")
+  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper, v2, or v3")
   const binaries = await inspectBinaries()
   const suite = suiteID()
   const summaries = await mapLimited(
@@ -643,10 +752,17 @@ if (action === "doctor") {
   if (!summaries.length) throw new Error(`suite has no summaries: ${targetSuite}`)
   await report(targetSuite, summaries, binaries)
   console.log(
-    JSON.stringify({ suite: targetSuite, report: path.join(experiment, "results", targetSuite, "report.md") }, null, 2),
+    JSON.stringify(
+      {
+        suite: targetSuite,
+        report: path.join(experiment, "results", targetSuite, "report.md"),
+      },
+      null,
+      2,
+    ),
   )
 } else {
   throw new Error(
-    "usage: bun run.ts doctor|all [MODES...]|state-all BASELINE_SUITE|pair PROJECT [paper|v2]|one PROJECT MODE|report SUITE",
+    "usage: bun run.ts doctor|all [MODES...]|state-all BASELINE_SUITE|retry-failed SOURCE_SUITE|pair PROJECT [paper|v2|v3]|one PROJECT MODE|report SUITE",
   )
 }

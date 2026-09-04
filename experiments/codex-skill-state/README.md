@@ -1,4 +1,4 @@
-# Codex SKILL.state v2 experiment
+# Codex SKILL.state experiment
 
 This directory documents the Codex implementation of the state-based agent loop proposed in
 [SKILL.state](https://arxiv.org/abs/2608.26263) and refined using the practical cautions in the
@@ -10,14 +10,15 @@ The implementation is a core modification, not a skill or plugin. The complete o
 
 ## Current status
 
-- The same binary provides three runtime modes: `baseline` keeps the native transcript loop, `paper` implements the
-  original `P + Sigma + latest O` protocol, and `v2` retains the structured `k`-observation extension. See
-  [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md).
+- The same binary provides four runtime modes: `baseline` keeps the native transcript loop, `paper` implements the
+  original `P + Sigma + latest O` protocol, `v2` retains the structured `k`-observation extension, and `v3` adds
+  unlimited strictly sequential action batches. See [`../PAPER-ORIGINAL.md`](../PAPER-ORIGINAL.md) and
+  [`../V3-BATCHED-ACTIONS.md`](../V3-BATCHED-ACTIONS.md).
 - Kernel state schema, patch validation, monotonic revisions, atomic tool dispatch, bounded observations, finish action,
   persistence, and resume reconstruction are implemented.
 - Action requests may be up to 64 KiB; only a bounded 3 KiB preview is retained in the observation. This distinction was
   added after the first benchmark exposed rejected normal-size code patches.
-- `codex exec` defaults to `baseline`; select a mode with `CODEX_SKILL_STATE_MODE=baseline|paper|v2`.
+- `codex exec` defaults to `baseline`; select a mode with `CODEX_SKILL_STATE_MODE=baseline|paper|v2|v3`.
 - Observation window `k` defaults to 3 and is configurable with `CODEX_SKILL_STATE_OBSERVATION_WINDOW=1..8`.
 - Focused core and end-to-end `codex exec` tests cover native baseline, v2, and paper mode.
 - The GPT-5.6 Luna `k=3` CLI benchmark is complete. Baseline scored 40/40 and state scored 39/40, but state consumed
@@ -28,16 +29,25 @@ The implementation is a core modification, not a skill or plugin. The complete o
 - GPT-5.6 Sol produced the strongest clean result so far: both modes scored 40/40, while state used 50.9% fewer input
   tokens. Both modes used 94 provider samples in aggregate, and all cells finished without timeout. See
   [`REPORT-gpt-5.6-sol-k3.md`](./REPORT-gpt-5.6-sol-k3.md).
+- The v3 Sol/Terra benchmark is complete. Sol preserved 40/40 and used 17.4% less input than v2; Terra rarely batched,
+  scored 39/40, and saved only 2.1% versus baseline. See
+  [`REPORT-v3-sol-terra-k3.md`](./REPORT-v3-sol-terra-k3.md).
 
 ## Build
 
 ```bash
 cd ../../codex/codex-rs
 CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
+CARGO_INCREMENTAL=0 cargo build -p codex-code-mode-host --bin codex-code-mode-host
 ```
 
-The resulting executable is `codex/codex-rs/target/debug/codex` relative to the repository root. It retains the normal
-Codex CLI name; this research branch and its recorded upstream revision identify the variant.
+The resulting executables are `codex/codex-rs/target/debug/codex` and its required baseline companion
+`codex/codex-rs/target/debug/codex-code-mode-host` relative to the repository root. The benchmark doctor rejects a
+baseline whose companion is missing so it cannot silently fall back from Code Mode to direct tools.
+
+On macOS/aarch64 the pinned `rusty_v8` release may not publish the archive expected by Cargo. If that host build fails,
+place the compatible `codex-code-mode-host` shipped with the installed Codex application beside the research binary;
+`doctor` records both executable hashes before a run.
 
 ## Focused verification
 
@@ -63,9 +73,12 @@ bun experiments/codex-skill-state/scripts/run.ts all baseline v2
 
 # Include the exact paper contract in the same suite.
 bun experiments/codex-skill-state/scripts/run.ts all baseline paper v2
+
+# Compare sequential action batches with baseline and v2.
+bun experiments/codex-skill-state/scripts/run.ts all baseline v2 v3
 ```
 
-Run `doctor`, `pair PROJECT [paper|v2]`, or `one PROJECT MODE` in place of `all` for setup checks and smaller probes.
+Run `doctor`, `pair PROJECT [paper|v2|v3]`, or `one PROJECT MODE` in place of `all` for setup checks and smaller probes.
 Calling `all` without mode arguments retains the historical baseline/v2 default. `CODEX_BASELINE_BINARY` and
 `CODEX_BASELINE_SOURCE` may still point baseline at a pristine binary when reproducing older cross-binary reports.
 After a kernel change, `state-all BASELINE_SUITE` runs only the five v2 cells and builds a combined report from an
@@ -73,8 +86,10 @@ already valid, unchanged baseline suite. Results are written below `experiments/
 A/B should eventually be complemented with controlled 25/50/100/200-step scenarios to measure the asymptotic claim
 independently of code-generation quality.
 
-The canonical mode arguments are `baseline`, `paper`, and `v2`; the legacy names `skill-state-paper` and `skill-state`
-remain accepted so historical commands stay reproducible.
+The canonical mode arguments are `baseline`, `paper`, `v2`, and `v3`; the legacy names `skill-state-paper` and
+`skill-state` remain accepted so historical commands stay reproducible. `retry-failed SOURCE_SUITE` repeats only
+infrastructure-failed cells in fresh workspaces and emits a composite report; this was used after the documented Terra
+network interruption.
 
 When `CODEX_BASELINE_BINARY` selects a separate baseline, that CLI must support `--approve-for-me`; `doctor` rejects
 older installed releases that cannot use the same sandboxed non-interactive contract. For the recorded Luna run, the

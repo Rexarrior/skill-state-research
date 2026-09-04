@@ -1,0 +1,73 @@
+{
+  "suite": "20260904T023009Z",
+  "project": "dependency-planner",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T023009Z/skill-state-v3/dependency-planner",
+  "metrics": {
+    "turns": 16,
+    "toolCalls": 16,
+    "stateCalls": 16,
+    "stateErrors": 0,
+    "stateComments": 16,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 951,
+    "batchedActions": 34,
+    "multiActionBatches": 9,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 7,
+    "input": 1952,
+    "output": 9296,
+    "reasoning": 1437,
+    "cacheRead": 226680,
+    "cacheWrite": 75661,
+    "cost": 0.178036,
+    "durationMs": 128889,
+    "sessionID": "ses_f95b14f27ffe53J76lSmgh6ciU"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

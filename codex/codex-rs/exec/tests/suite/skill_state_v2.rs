@@ -160,6 +160,115 @@ async fn exec_rebuilds_each_request_as_p_sigma_and_bounded_observations() -> any
 }
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn exec_v3_runs_an_unbounded_schema_batch_strictly_sequentially() -> anyhow::Result<()> {
+    let test = test_codex_exec();
+    let server = start_mock_server().await;
+    let batch = json!({
+        "state_revision": 0,
+        "state_patch": {
+            "plan": ["Run three known probes in order", "Finish"],
+            "next_action": "Execute the independent ordered probes"
+        },
+        "comment": "The commands have known inputs and must execute in list order.",
+        "actions": [
+            {
+                "name": "exec_command",
+                "input": {"cmd": "printf first"}
+            },
+            {
+                "name": "exec_command",
+                "input": {"cmd": "printf second"}
+            },
+            {
+                "name": "exec_command",
+                "input": {"cmd": "printf third"}
+            }
+        ]
+    });
+    let finish = json!({
+        "state_revision": 1,
+        "state_patch": {
+            "completed": ["Observed all three ordered probes"],
+            "next_action": ""
+        },
+        "actions": [{
+            "name": "finish",
+            "input": {"message": "SKILL.state v3 integration succeeded."}
+        }]
+    });
+    let mock = mount_sse_sequence(
+        &server,
+        vec![
+            sse(vec![
+                ev_response_created("v3-resp-1"),
+                ev_function_call("v3-step-1", "skill_step", &batch.to_string()),
+                ev_completed("v3-resp-1"),
+            ]),
+            sse(vec![
+                ev_response_created("v3-resp-2"),
+                ev_function_call("v3-step-2", "skill_step", &finish.to_string()),
+                ev_completed("v3-resp-2"),
+            ]),
+        ],
+    )
+    .await;
+
+    let output = test
+        .cmd_with_server(&server)
+        .env("CODEX_SKILL_STATE_MODE", "v3")
+        .arg("--skip-git-repo-check")
+        .arg("--dangerously-bypass-approvals-and-sandbox")
+        .arg("Implement the v3 state protocol fixture")
+        .output()?;
+
+    assert!(
+        output.status.success(),
+        "codex exec failed\nstdout:\n{}\nstderr:\n{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(
+        String::from_utf8_lossy(&output.stdout).contains("SKILL.state v3 integration succeeded."),
+        "finish message missing; stdout:\n{}\nstderr:\n{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+
+    let requests = mock.requests();
+    assert_eq!(requests.len(), 2);
+    let first_input: Vec<Value> = requests[0].input();
+    let wrapper = first_input
+        .iter()
+        .filter_map(|item| item["tools"].as_array())
+        .flatten()
+        .filter_map(|namespace| namespace["tools"].as_array())
+        .flatten()
+        .find(|tool| tool["name"] == "skill_step")
+        .expect("v3 request must declare skill_step");
+    let action_array = &wrapper["parameters"]["properties"]["actions"];
+    assert_eq!(action_array["minItems"], 1);
+    assert!(action_array.get("maxItems").is_none());
+    assert_eq!(
+        wrapper["parameters"]["required"],
+        json!(["state_revision", "state_patch", "actions"])
+    );
+
+    let first_prompt = requests[0].message_input_text_groups("user")[0].join("\n");
+    assert!(first_prompt.contains("strictly sequentially"));
+    assert!(first_prompt.contains("no protocol limit"));
+    let second_prompt = requests[1].message_input_text_groups("user")[0].join("\n");
+    assert!(second_prompt.contains("Recent Batch Observations"));
+    assert!(second_prompt.contains("printf first"));
+    assert!(second_prompt.contains("printf second"));
+    assert!(second_prompt.contains("printf third"));
+    assert!(second_prompt.contains("first"));
+    assert!(second_prompt.contains("second"));
+    assert!(second_prompt.contains("third"));
+
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn exec_baseline_mode_keeps_the_native_transcript_loop() -> anyhow::Result<()> {
     let test = test_codex_exec();
     let server = start_mock_server().await;

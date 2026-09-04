@@ -1,0 +1,86 @@
+{
+  "suite": "20260904T032227Z",
+  "project": "taskboard-cli",
+  "mode": "baseline",
+  "model": "gpt-5.6-terra",
+  "protocolMode": "baseline",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb",
+    "codeModeHostPath": "<nda context deleted, size :114 chars>",
+    "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/baseline/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 283150,
+    "cachedInput": 242432,
+    "cacheWriteInput": 0,
+    "output": 6810,
+    "reasoning": 1326,
+    "total": 289960,
+    "samples": 9,
+    "commandExecutions": 7,
+    "fileChanges": 1,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 153046,
+    "threadID": "01a06a70-6d7b-7da3-b7dd-73fa5af02b74"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

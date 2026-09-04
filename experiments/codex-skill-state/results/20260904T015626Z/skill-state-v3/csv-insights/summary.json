@@ -1,0 +1,85 @@
+{
+  "suite": "20260904T015626Z",
+  "project": "csv-insights",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/skill-state-v3/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 304624,
+    "cachedInput": 129024,
+    "cacheWriteInput": 0,
+    "output": 11867,
+    "reasoning": 2141,
+    "total": 316491,
+    "samples": 16,
+    "commandExecutions": 12,
+    "fileChanges": 3,
+    "errors": 1,
+    "stateCalls": 16,
+    "stateErrors": 2,
+    "stateComments": 16,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 868,
+    "batchedActions": 18,
+    "multiActionBatches": 2,
+    "failedBatches": 2,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 2,
+    "durationMs": 269727,
+    "threadID": "01a06a2b-9293-7982-be11-e7f8ac6c815f"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

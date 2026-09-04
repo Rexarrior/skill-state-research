@@ -1,10 +1,11 @@
-//! Kernel-level SKILL.state paper and v2 prompt and transition protocols.
+//! Kernel-level SKILL.state paper, v2, and v3 prompt and transition protocols.
 //!
 //! The rollout keeps the ordinary Codex transcript for audit and resume.  The
 //! provider-visible request is rebuilt from that transcript as `(P, Sigma, O)`:
 //! one immutable task, one mutable execution state, and a bounded observation
 //! window.  The model can only call `skill_step`; the runtime validates and
-//! applies its patch before dispatching the nested Codex tool action.
+//! applies its patch before dispatching one nested Codex tool action (paper/v2)
+//! or a strictly sequential action batch (v3).
 
 use codex_protocol::models::ContentItem;
 use codex_protocol::models::FunctionCallOutputBody;
@@ -29,6 +30,7 @@ mod paper;
 pub(crate) const TOOL_NAME: &str = "skill_step";
 pub const V2_SESSION_SOURCE: &str = "codex";
 const V2_PROTOCOL: &str = "skill.state/v2";
+const V3_PROTOCOL: &str = "skill.state/v3";
 const PAPER_PROTOCOL: &str = "skill.state/paper";
 const DEFAULT_OBSERVATION_WINDOW: usize = 3;
 const MAX_OBSERVATION_WINDOW: usize = 8;
@@ -76,6 +78,7 @@ impl Default for ExecutionState {
 pub(crate) enum ProtocolMode {
     Paper,
     V2,
+    V3,
 }
 
 #[derive(Clone, Debug)]
@@ -84,7 +87,7 @@ pub(crate) struct StepRequest {
     pub(crate) state_revision: Option<u64>,
     pub(crate) state_patch: Value,
     pub(crate) comment: Option<String>,
-    pub(crate) action: RequestedAction,
+    pub(crate) actions: Vec<RequestedAction>,
 }
 
 #[derive(Clone, Debug, Deserialize)]
@@ -100,14 +103,32 @@ struct V2StepRequest {
 
 #[derive(Clone, Debug, Deserialize)]
 #[serde(deny_unknown_fields)]
+struct V3StepRequest {
+    state_revision: u64,
+    #[serde(default = "empty_patch")]
+    state_patch: Value,
+    #[serde(default)]
+    comment: Option<String>,
+    actions: Vec<RequestedAction>,
+}
+
+#[derive(Clone, Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub(crate) struct RequestedAction {
     pub(crate) name: String,
     pub(crate) input: Value,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(untagged)]
+pub(crate) enum Observation {
+    Single(SingleObservation),
+    Batch(BatchObservation),
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
-pub(crate) struct Observation {
+pub(crate) struct SingleObservation {
     pub(crate) revision: u64,
     pub(crate) action: String,
     pub(crate) input: Value,
@@ -117,11 +138,40 @@ pub(crate) struct Observation {
     pub(crate) result: String,
 }
 
-#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub(crate) struct BatchObservation {
+    pub(crate) revision: u64,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub(crate) comment: Option<String>,
+    pub(crate) status: ObservationStatus,
+    pub(crate) actions: Vec<BatchActionObservation>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub(crate) error: Option<String>,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub(crate) struct BatchActionObservation {
+    pub(crate) action: String,
+    pub(crate) input: Value,
+    pub(crate) status: BatchActionStatus,
+    pub(crate) result: String,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "snake_case")]
 pub(crate) enum ObservationStatus {
     Success,
     Error,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub(crate) enum BatchActionStatus {
+    Success,
+    Error,
+    Skipped,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -166,9 +216,20 @@ pub(crate) struct AcceptedStep {
     pub(crate) revision: u64,
     pub(crate) state: ExecutionState,
     pub(crate) comment: Option<String>,
+    pub(crate) actions: Vec<AcceptedAction>,
+}
+
+#[derive(Clone, Debug)]
+pub(crate) struct AcceptedAction {
     pub(crate) action_name: String,
     pub(crate) action_input: Value,
     pub(crate) action: ResolvedAction,
+}
+
+#[derive(Clone, Debug)]
+pub(crate) struct ActionOutcome {
+    pub(crate) status: BatchActionStatus,
+    pub(crate) result: String,
 }
 
 impl RuntimeState {
@@ -179,7 +240,9 @@ impl RuntimeState {
         tools: &[ToolSpec],
     ) -> Result<AcceptedStep, String> {
         let current = self.current.get_or_insert(persisted);
-        if request.mode == ProtocolMode::V2 && request.state_revision != Some(current.revision) {
+        if matches!(request.mode, ProtocolMode::V2 | ProtocolMode::V3)
+            && request.state_revision != Some(current.revision)
+        {
             return Err(format!(
                 "stale state_revision {}; expected {}",
                 request.state_revision.unwrap_or(u64::MAX),
@@ -187,18 +250,37 @@ impl RuntimeState {
             ));
         }
         validate_comment(request.comment.as_deref())?;
-        validate_json_size(
-            "action.input",
-            &request.action.input,
-            MAX_ACTION_REQUEST_BYTES,
-        )?;
-        let action = resolve_action(&request.action, tools)?;
+        if request.actions.is_empty() {
+            return Err("actions must be a non-empty array".to_string());
+        }
+        if request.mode == ProtocolMode::V3
+            && request.actions.len() != 1
+            && request.actions.iter().any(|action| action.name == "finish")
+        {
+            return Err("finish must be the sole action in a v3 batch".to_string());
+        }
+        let actions = request
+            .actions
+            .into_iter()
+            .map(|requested| {
+                validate_json_size("action.input", &requested.input, MAX_ACTION_REQUEST_BYTES)?;
+                let action = resolve_action(&requested, tools)?;
+                Ok(AcceptedAction {
+                    action_name: requested.name,
+                    action_input: requested.input,
+                    action,
+                })
+            })
+            .collect::<Result<Vec<_>, String>>()?;
         let mut next = serde_json::to_value(&current.state)
             .map_err(|err| format!("failed to serialize execution state: {err}"))?;
         apply_patch(&mut next, request.state_patch, request.mode)?;
         let mut next = serde_json::from_value::<ExecutionState>(next)
             .map_err(|err| format!("invalid resulting execution state: {err}"))?;
-        if matches!(action, ResolvedAction::Finish { .. }) {
+        if actions
+            .iter()
+            .any(|accepted| matches!(accepted.action, ResolvedAction::Finish { .. }))
+        {
             next.status = ExecutionStatus::Done;
             next.next_action.clear();
         } else if next.status == ExecutionStatus::Done {
@@ -208,18 +290,16 @@ impl RuntimeState {
         let revision = current.revision.saturating_add(1);
         current.revision = revision;
         current.state = next.clone();
-        current.final_message = match &action {
+        current.final_message = actions.iter().find_map(|accepted| match &accepted.action {
             ResolvedAction::Finish { message } => Some(message.clone()),
             ResolvedAction::Tool { .. } => None,
-        };
+        });
         Ok(AcceptedStep {
             mode: request.mode,
             revision,
             state: next,
             comment: request.comment,
-            action_name: request.action.name,
-            action_input: request.action.input,
-            action,
+            actions,
         })
     }
 }
@@ -233,6 +313,7 @@ pub(crate) fn mode(source: &SessionSource) -> Option<ProtocolMode> {
             match std::env::var("CODEX_SKILL_STATE_MODE").as_deref() {
                 Ok("paper") => Some(ProtocolMode::Paper),
                 Ok("v2") | Err(std::env::VarError::NotPresent) => Some(ProtocolMode::V2),
+                Ok("v3") => Some(ProtocolMode::V3),
                 _ => None,
             }
         }
@@ -249,19 +330,32 @@ pub(crate) fn decode_request(arguments: &str, mode: ProtocolMode) -> Result<Step
                 state_revision: Some(request.state_revision),
                 state_patch: request.state_patch,
                 comment: request.comment,
-                action: request.action,
+                actions: vec![request.action],
             })
             .map_err(|err| format!("invalid v2 skill_step payload: {err}")),
+        ProtocolMode::V3 => serde_json::from_str::<V3StepRequest>(arguments)
+            .and_then(|request| {
+                if request.actions.is_empty() {
+                    return Err(serde::de::Error::custom(
+                        "actions must be a non-empty array",
+                    ));
+                }
+                Ok(StepRequest {
+                    mode,
+                    state_revision: Some(request.state_revision),
+                    state_patch: request.state_patch,
+                    comment: request.comment,
+                    actions: request.actions,
+                })
+            })
+            .map_err(|err| format!("invalid v3 skill_step payload: {err}")),
     }
 }
 
 pub(crate) fn wrapper_spec(tools: &[ToolSpec], mode: ProtocolMode) -> ToolSpec {
     let mut variants = action_variants(tools);
     variants.push(finish_action_schema());
-    let action = JsonSchema::one_of(
-        variants,
-        Some("Exactly one concrete runtime action.".to_string()),
-    );
+    let action = JsonSchema::one_of(variants, Some("One concrete runtime action.".to_string()));
     let parameters = match mode {
         ProtocolMode::Paper => JsonSchema::object(
             BTreeMap::from([
@@ -295,10 +389,45 @@ pub(crate) fn wrapper_spec(tools: &[ToolSpec], mode: ProtocolMode) -> ToolSpec {
             ]),
             Some(false.into()),
         ),
+        ProtocolMode::V3 => {
+            let mut actions = JsonSchema::array(
+                action,
+                Some("Actions executed strictly sequentially in the listed order.".to_string()),
+            );
+            actions.min_items = Some(1);
+            JsonSchema::object(
+                BTreeMap::from([
+                    (
+                        "state_revision".to_string(),
+                        JsonSchema::integer(Some(
+                            "Revision shown in the current Skill Execution State.".to_string(),
+                        )),
+                    ),
+                    ("state_patch".to_string(), state_patch_schema()),
+                    (
+                        "comment".to_string(),
+                        JsonSchema::string(Some(
+                            "Optional concise explanation of why this action batch is useful."
+                                .to_string(),
+                        )),
+                    ),
+                    ("actions".to_string(), actions),
+                ]),
+                Some(vec![
+                    "state_revision".to_string(),
+                    "state_patch".to_string(),
+                    "actions".to_string(),
+                ]),
+                Some(false.into()),
+            )
+        }
     };
     ToolSpec::Function(ResponsesApiTool {
         name: TOOL_NAME.to_string(),
-        description: "Atomically patch SKILL.state and execute exactly one Codex action. This is the only tool you may call.".to_string(),
+        description: match mode {
+            ProtocolMode::V3 => "Apply one SKILL.state patch, then execute a non-empty action array strictly sequentially. This is the only tool you may call.".to_string(),
+            ProtocolMode::Paper | ProtocolMode::V2 => "Atomically patch SKILL.state and execute exactly one Codex action. This is the only tool you may call.".to_string(),
+        },
         strict: false,
         defer_loading: None,
         parameters,
@@ -313,12 +442,13 @@ pub(crate) fn provider_input(input: &[ResponseItem], mode: ProtocolMode) -> Vec<
         ProtocolMode::Paper => paper::prompt(
             &task,
             &snapshot.state,
-            snapshot
-                .observations
-                .last()
-                .map(|value| value.result.as_str()),
+            snapshot.observations.last().and_then(|value| match value {
+                Observation::Single(value) => Some(value.result.as_str()),
+                Observation::Batch(_) => None,
+            }),
         ),
         ProtocolMode::V2 => v2_prompt(&task, &snapshot),
+        ProtocolMode::V3 => v3_prompt(&task, &snapshot),
     };
     vec![ResponseItem::Message {
         id: None,
@@ -358,6 +488,35 @@ Use finish only when the task is complete, with a concise final message in actio
     )
 }
 
+fn v3_prompt(task: &str, snapshot: &Snapshot) -> String {
+    let observations = snapshot
+        .observations
+        .iter()
+        .rev()
+        .take(observation_window())
+        .cloned()
+        .collect::<Vec<_>>()
+        .into_iter()
+        .rev()
+        .collect::<Vec<_>>();
+    let state_json =
+        serde_json::to_string_pretty(&snapshot.state).unwrap_or_else(|_| "{}".to_string());
+    let observation_json =
+        serde_json::to_string_pretty(&observations).unwrap_or_else(|_| "[]".to_string());
+    format!(
+        "You are operating under the SKILL.state v3 batched execution protocol.\n\
+The execution state is your only durable memory. Previous messages and reasoning are not available.\n\
+On every step, call skill_step exactly once. Copy the currently shown state_revision exactly; do not increment or predict it. Supply a minimal state_patch, an optional comment, and a non-empty actions array. There is no protocol limit on the number of actions in the array. The patch is applied once before any action starts.\n\
+Actions execute strictly sequentially in listed order. Action i+1 starts only after action i completes. On failure, the runtime stops and marks all remaining actions skipped. You see results only after the entire batch stops. Batch only actions whose inputs are already known; if an action depends on an unseen earlier result, defer it to the next step.\n\
+Preserve facts needed later in state; do not use state as a transcript and do not claim unobserved success. Large action inputs and results are retained only as bounded previews.\n\
+Use finish only when the task is complete. finish must be the sole action in its batch.\n\
+\nInstructions (P, immutable):\n{task}\n\
+\nSkill Execution State (Sigma, revision {}):\n{state_json}\n\
+\nRecent Batch Observations (O[n..n-k], oldest first; each batch is one observation):\n{observation_json}",
+        snapshot.revision,
+    )
+}
+
 pub(crate) fn snapshot(input: &[ResponseItem], mode: ProtocolMode) -> Snapshot {
     let mut current = Snapshot::default();
     for item in input {
@@ -381,25 +540,74 @@ pub(crate) fn snapshot(input: &[ResponseItem], mode: ProtocolMode) -> Snapshot {
 pub(crate) fn transition_output(
     call_id: String,
     accepted: AcceptedStep,
-    status: ObservationStatus,
-    result: String,
+    outcomes: Vec<ActionOutcome>,
 ) -> ResponseItem {
-    let final_message = match &accepted.action {
+    let AcceptedStep {
+        mode,
+        revision,
+        state,
+        comment,
+        actions,
+    } = accepted;
+    let final_message = actions.iter().find_map(|accepted| match &accepted.action {
         ResolvedAction::Finish { message } => Some(message.clone()),
         ResolvedAction::Tool { .. } => None,
+    });
+    let failed = outcomes
+        .iter()
+        .any(|outcome| outcome.status == BatchActionStatus::Error);
+    let observation = if mode == ProtocolMode::V3 {
+        Observation::Batch(BatchObservation {
+            revision,
+            comment,
+            status: if failed {
+                ObservationStatus::Error
+            } else {
+                ObservationStatus::Success
+            },
+            actions: actions
+                .into_iter()
+                .zip(outcomes)
+                .map(|(accepted, outcome)| BatchActionObservation {
+                    action: accepted.action_name,
+                    input: bounded_action_input(accepted.action_input),
+                    status: outcome.status,
+                    result: truncate_utf8(outcome.result, MAX_RESULT_BYTES),
+                })
+                .collect(),
+            error: None,
+        })
+    } else {
+        let Some(accepted_action) = actions.into_iter().next() else {
+            return rejected_output(
+                call_id,
+                mode,
+                Snapshot::default(),
+                "accepted transition contained no action".to_string(),
+            );
+        };
+        let outcome = outcomes.into_iter().next().unwrap_or(ActionOutcome {
+            status: BatchActionStatus::Error,
+            result: "The action ended without an outcome.".to_string(),
+        });
+        Observation::Single(SingleObservation {
+            revision,
+            action: accepted_action.action_name,
+            input: bounded_action_input(accepted_action.action_input),
+            comment,
+            status: if outcome.status == BatchActionStatus::Success {
+                ObservationStatus::Success
+            } else {
+                ObservationStatus::Error
+            },
+            result: truncate_utf8(outcome.result, MAX_RESULT_BYTES),
+        })
     };
     let transition = PersistedTransition {
-        protocol: protocol(accepted.mode).to_string(),
-        revision: accepted.revision,
-        state: accepted.state,
-        observation: Observation {
-            revision: accepted.revision,
-            action: accepted.action_name,
-            input: bounded_action_input(accepted.action_input),
-            comment: accepted.comment,
-            status,
-            result: truncate_utf8(result, MAX_RESULT_BYTES),
-        },
+        protocol: protocol(mode).to_string(),
+        revision,
+        state,
+        observation,
         final_message,
     };
     let output = serde_json::to_string(&transition).unwrap_or_else(|err| {
@@ -415,7 +623,7 @@ pub(crate) fn transition_output(
         namespace: None,
         output: FunctionCallOutputPayload {
             body: FunctionCallOutputBody::Text(output),
-            success: Some(matches!(status, ObservationStatus::Success)),
+            success: Some(!failed),
         },
         internal_chat_message_metadata_passthrough: None,
     }
@@ -431,13 +639,23 @@ pub(crate) fn rejected_output(
         protocol: protocol(mode).to_string(),
         revision: snapshot.revision,
         state: snapshot.state,
-        observation: Observation {
-            revision: snapshot.revision,
-            action: TOOL_NAME.to_string(),
-            input: Value::Null,
-            comment: Some("The proposed step was rejected before execution.".to_string()),
-            status: ObservationStatus::Error,
-            result: truncate_utf8(message, MAX_RESULT_BYTES),
+        observation: if mode == ProtocolMode::V3 {
+            Observation::Batch(BatchObservation {
+                revision: snapshot.revision,
+                comment: Some("The proposed batch was rejected before execution.".to_string()),
+                status: ObservationStatus::Error,
+                actions: Vec::new(),
+                error: Some(truncate_utf8(message, MAX_RESULT_BYTES)),
+            })
+        } else {
+            Observation::Single(SingleObservation {
+                revision: snapshot.revision,
+                action: TOOL_NAME.to_string(),
+                input: Value::Null,
+                comment: Some("The proposed step was rejected before execution.".to_string()),
+                status: ObservationStatus::Error,
+                result: truncate_utf8(message, MAX_RESULT_BYTES),
+            })
         },
         final_message: snapshot.final_message,
     };
@@ -723,6 +941,7 @@ fn protocol(mode: ProtocolMode) -> &'static str {
     match mode {
         ProtocolMode::Paper => PAPER_PROTOCOL,
         ProtocolMode::V2 => V2_PROTOCOL,
+        ProtocolMode::V3 => V3_PROTOCOL,
     }
 }
 
@@ -758,7 +977,7 @@ fn truncate_utf8(mut value: String, max_bytes: usize) -> String {
         end -= 1;
     }
     value.truncate(end);
-    value.push_str("\n…[truncated by SKILL.state v2]");
+    value.push_str("\n…[truncated by SKILL.state]");
     value
 }
 

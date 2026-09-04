@@ -1,0 +1,5 @@
+Reading additional input from stdin...
+2026-09-04T03:46:38.448283Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/baseline/csv-insights/self_test.py:
+            ("a,b\\nx,1\\n", ("--sum", "b"), "require --group-by"),
+            ("a,b\\nx,nope\\n", ("--group-by", "a", "--sum", "b"), "row 2, column 'b'"),
+            ("a,b\\nx,1\\n", ("--where", "broken"), "malformed filter"),

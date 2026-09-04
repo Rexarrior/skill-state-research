@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a06aa8-56dd-7330-b5a2-adade37661cd"}
+{"type":"turn.started"}
+{"type":"error","message":"Reconnecting... 1/5 (stream disconnected before completion: No route to host (os error 65))"}
+{"type":"error","message":"Reconnecting... 2/5 (stream disconnected before completion: No route to host (os error 65))"}
+{"type":"error","message":"Reconnecting... 3/5 (stream disconnected before completion: No route to host (os error 65))"}
+{"type":"error","message":"Reconnecting... 4/5 (stream disconnected before completion: No route to host (os error 65))"}

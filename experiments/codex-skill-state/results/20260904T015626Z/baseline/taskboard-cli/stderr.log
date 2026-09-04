@@ -1,0 +1,5 @@
+Reading additional input from stdin...
+2026-09-04T01:56:36.318444Z ERROR codex_core::tools::router: error=failed to spawn code-mode host <nda context deleted, size :114 chars>: No such file or directory (os error 2)
+2026-09-04T01:56:41.006281Z ERROR codex_core::tools::router: error=failed to spawn code-mode host <nda context deleted, size :114 chars>: No such file or directory (os error 2)
+2026-09-04T01:56:44.854319Z ERROR codex_core::tools::router: error=failed to spawn code-mode host <nda context deleted, size :114 chars>: No such file or directory (os error 2)
+2026-09-04T01:56:56.646923Z ERROR codex_core::tools::router: error=failed to spawn code-mode host <nda context deleted, size :114 chars>: No such file or directory (os error 2)

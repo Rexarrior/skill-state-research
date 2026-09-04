@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test"
+import type { JSONSchema7 } from "@ai-sdk/provider"
 import { Effect } from "effect"
 import { asSchema, jsonSchema, tool, type Tool, type ToolExecutionOptions } from "ai"
 import { SessionV1 } from "@opencode-ai/core/v1/session"
@@ -15,7 +16,8 @@ describe("core SKILL.state protocol", () => {
     expect(SkillState.parseMode("baseline")).toBe("baseline")
     expect(SkillState.parseMode("paper")).toBe("paper")
     expect(SkillState.parseMode("v2")).toBe("v2")
-    expect(() => SkillState.parseMode("unknown")).toThrow("expected baseline, paper, or v2")
+    expect(SkillState.parseMode("v3")).toBe("v3")
+    expect(() => SkillState.parseMode("unknown")).toThrow("expected baseline, paper, v2, or v3")
   })
 
   test("builds a single bounded model message from specification, state, and a recent observation window", () => {
@@ -244,6 +246,111 @@ describe("core SKILL.state protocol", () => {
     })
   })
 
+  test("v3 exposes an unbounded action array and executes it sequentially with fail-fast", async () => {
+    const order: string[] = []
+    const action = (name: string, fails = false) =>
+      tool({
+        inputSchema: jsonSchema({
+          type: "object",
+          properties: { value: { type: "string" } },
+          required: ["value"],
+          additionalProperties: false,
+        }),
+        execute(input) {
+          if (!isRecordWithString(input, "value")) throw new Error("expected value input")
+          order.push(name)
+          if (fails) throw new Error(`${name} failed`)
+          return { title: name, output: `${name}:${input.value}`, metadata: {} }
+        },
+      })
+    const tools = {
+      first: action("first"),
+      second: action("second", true),
+      third: action("third"),
+    }
+    const wrapper = await Effect.runPromise(SkillState.createTool({ tools, mode: "v3" }))
+    const schema = await Promise.resolve(asSchema(wrapper.inputSchema).jsonSchema)
+    expect(schema.required).toEqual(["state_revision", "state_patch", "actions"])
+    expect(schema.properties?.actions).toMatchObject({ type: "array", minItems: 1 })
+    expect(schema.properties?.actions).not.toHaveProperty("maxItems")
+    expect((schema.properties?.state_patch as JSONSchema7).properties?.next_action).toEqual({ type: "string" })
+    expect(String(wrapper.description)).toContain("strictly sequentially")
+
+    const transition = SkillState.prepare(
+      {
+        state_revision: 0,
+        state_patch: { next_action: "Inspect the failed batch" },
+        comment: "Run all independent checks in order.",
+        actions: [
+          { name: "first", input: { value: "a" } },
+          { name: "second", input: { value: "b" } },
+          { name: "third", input: { value: "c" } },
+        ],
+      },
+      SkillState.initialState,
+      0,
+      "v3",
+    )
+    const result = await SkillState.execute(transition, tools, options)
+    expect(order).toEqual(["first", "second"])
+
+    const restored = SkillState.context(
+      [message("user", [text("Implement")]), message("assistant", [stepFromResult(result)])],
+      3,
+      "v3",
+    )
+    expect(restored.revision).toBe(1)
+    expect(restored.observations).toHaveLength(1)
+    expect(restored.observations[0]).toMatchObject({
+      revision: 1,
+      comment: "Run all independent checks in order.",
+      status: "error",
+      actions: [
+        { name: "first", status: "completed", result: "first:a" },
+        { name: "second", status: "error", result: "second failed" },
+        {
+          name: "third",
+          status: "skipped",
+          result: "Skipped because an earlier action in this batch failed.",
+        },
+      ],
+    })
+    const prompt = String(SkillState.modelMessages(restored)[0]?.content)
+    expect(prompt).toContain("strictly sequentially in the listed order")
+    expect(prompt).toContain("There is no protocol limit on the number of actions")
+    expect(prompt).toContain("Copy the currently shown state_revision exactly")
+    expect(prompt).toContain("Recent Batch Observations")
+  })
+
+  test("v3 rejects stale revisions, empty arrays, and finish mixed with other actions", () => {
+    expect(() =>
+      SkillState.prepare(
+        { state_revision: 4, state_patch: {}, actions: [{ name: "action", input: {} }] },
+        SkillState.initialState,
+        3,
+        "v3",
+      ),
+    ).toThrow("stale state_revision 4; expected 3")
+    expect(() =>
+      SkillState.prepare({ state_revision: 0, state_patch: {}, actions: [] }, SkillState.initialState, 0, "v3"),
+    ).toThrow("non-empty array")
+    expect(() =>
+      SkillState.prepare(
+        {
+          state_revision: 0,
+          state_patch: {},
+          actions: [
+            { name: "action", input: {} },
+            { name: "finish", input: { message: "done" } },
+          ],
+        },
+        SkillState.initialState,
+        0,
+        "v3",
+      ),
+    ).toThrow("finish must be the sole action")
+  })
+
   test("rejects removed verification state and invalid comments", () => {
     expect(() =>
       SkillState.prepare(
@@ -464,6 +571,10 @@ function isPathInput(value: unknown): value is { path: string } {
 
 function isCommandInput(value: unknown): value is { command: string } {
   return typeof value === "object" && value !== null && "command" in value && typeof value.command === "string"
+}
+
+function isRecordWithString(value: unknown, key: string): value is Record<string, string> {
+  return typeof value === "object" && value !== null && typeof (value as Record<string, unknown>)[key] === "string"
 }
 
 function isResult(value: unknown): value is {

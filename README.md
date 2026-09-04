@@ -7,9 +7,10 @@ the complete artifacts from our investigation of
 and Jonghyun Chung.
 
 SKILL.state replaces the growing agent transcript with explicit mutable execution state. The original-paper mode sends
-the immutable task specification (`P`), current structured state (`Sigma`), and only the latest observation (`O`). The
-separate v2 mode sends a bounded structured observation window. Both return an atomic `state_patch` plus one action;
-the runtime validates and applies the patch before executing that action.
+the immutable task specification (`P`), current structured state (`Sigma`), and only the latest observation (`O`). V2
+sends a bounded structured observation window. The experimental v3 keeps that window but lets one transition contain
+an unlimited array of actions, executed strictly sequentially. In every state mode the runtime validates the complete
+transition before applying its patch or executing an action.
 
 Both implementations live in the OpenCode and Codex cores rather than plugins. The provider receives one
 reconstructed state message instead of being asked to read a state file itself.
@@ -21,7 +22,9 @@ reconstructed state message instead of being asked to read a state file itself.
 - [`experiments/PAPER-ORIGINAL.md`](./experiments/PAPER-ORIGINAL.md) — original paper-mode contract and launch commands
   for both core implementations.
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
-- [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state v2 implementation.
+- [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state implementations.
+- [`experiments/V3-BATCHED-ACTIONS.md`](./experiments/V3-BATCHED-ACTIONS.md) — shared v3 contract, runtime flags, and
+  verification notes.
 - [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
 - [`experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md)
   — Codex CLI benchmark, implementation defect found by the first run, corrected result, and interpretation.
@@ -35,6 +38,8 @@ reconstructed state message instead of being asked to read a state file itself.
   main experimental narrative.
 - [`experiments/skill-state/REPORT-glm-5.2-k3.md`](./experiments/skill-state/REPORT-glm-5.2-k3.md) — separate GLM-5.2
   analysis and the single-runner confirmation attempt.
+- [`journals/V3-BATCHED-ACTIONS.md`](./journals/V3-BATCHED-ACTIONS.md) — consolidated OpenCode/Codex v3 benchmark and
+  links to detailed reports and raw suites.
 
 ## Current results
 
@@ -82,6 +87,14 @@ aggregate. All five state sessions emitted `finish`, no cell timed out, and the 
 Wall time increased by 4.1%, and state was more expensive on `taskboard-cli`, so the aggregate token win still should
 not be generalized beyond this exploratory `n=1` run.
 
+### V3 batched actions, GPT-5.6 Sol and Terra, `k=3`
+
+V3 allowed a non-empty action array with no count limit and executed it in strict order; a complete array plus its
+results occupied one observation slot. Models did not abuse the unbounded schema: observed maxima were 5–7 actions.
+OpenCode v3 remained cheaper than baseline but lost to v2 for both models. Codex/Sol was the positive case: 40/40 and
+818,113 input tokens versus v2's 990,678 (**-17.4%**). Codex/Terra rarely batched, scored 39/40, and saved only 2.1%
+against baseline. See the [consolidated v3 journal](./journals/V3-BATCHED-ACTIONS.md).
+
 ## Running the experiment
 
 The harness expects the model providers configured for the included OpenCode snapshot.
@@ -102,6 +115,9 @@ bun ../experiments/skill-state/scripts/run.ts all baseline v2
 
 # Three-way comparison in one suite
 bun ../experiments/skill-state/scripts/run.ts all baseline paper v2
+
+# V3 comparison; actions inside each model-produced array run sequentially
+bun ../experiments/skill-state/scripts/run.ts all baseline v2 v3
 ```
 
 Each cell is independent, uses one initial user prompt, and is evaluated by black-box checks outside the model-visible
@@ -110,15 +126,17 @@ workspace. The harness runs cells sequentially and records raw events and summar
 
 ## Codex SKILL.state modes
 
-The Codex fork contains all three runtime paths in one binary. With no flag, or with
+The Codex fork contains all four runtime paths in one binary. With no flag, or with
 `CODEX_SKILL_STATE_MODE=baseline`, `codex exec` keeps the native transcript loop. Paper and v2 rebuild every provider
 turn from state; the persisted transcript remains available for audit and resume but is not replayed to the provider.
 Paper mode exposes `skill_step({ state_patch, action })` and only the latest textual result. V2 exposes
-`skill_step({ state_revision, state_patch, comment, action })` and a structured observation window.
+`skill_step({ state_revision, state_patch, comment, action })` and a structured observation window. V3 replaces the
+single action with `actions[]`; the runtime applies the patch once and executes the array strictly sequentially.
 
 ```bash
 cd codex/codex-rs
 CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
+CARGO_INCREMENTAL=0 cargo build -p codex-code-mode-host --bin codex-code-mode-host
 
 # Native transcript mode (also the default)
 CODEX_SKILL_STATE_MODE=baseline \
@@ -132,13 +150,19 @@ CODEX_SKILL_STATE_MODE=paper \
 CODEX_SKILL_STATE_MODE=v2 \
 CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
   ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
+
+# V3; each complete sequential action batch occupies one observation slot.
+CODEX_SKILL_STATE_MODE=v3 \
+CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
+  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
 ```
 
-OpenCode uses the matching `OPENCODE_SKILL_STATE_MODE=baseline|paper|v2` runtime flag and likewise defaults to
+OpenCode uses the matching `OPENCODE_SKILL_STATE_MODE=baseline|paper|v2|v3` runtime flag and likewise defaults to
 `baseline`. The older experimental OpenCode variables remain compatibility aliases for recorded runs.
 
 Code Mode is deliberately bypassed inside a state session: nesting its multi-call JavaScript loop would violate the
-one-patch/one-action contract and duplicate tool schemas. The wrapper exposes the underlying atomic Codex tools instead.
+state-transition contract and duplicate tool schemas. The wrapper exposes the underlying atomic Codex tools instead;
+v3 restores controlled batching at that wrapper layer.
 See [`experiments/codex-skill-state/DESIGN.md`](./experiments/codex-skill-state/DESIGN.md) for the exact contract and
 current verification status.
 

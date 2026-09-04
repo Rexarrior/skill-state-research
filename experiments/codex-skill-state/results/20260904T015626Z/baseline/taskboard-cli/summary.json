@@ -1,0 +1,91 @@
+{
+  "suite": "20260904T015626Z",
+  "project": "taskboard-cli",
+  "mode": "baseline",
+  "model": "gpt-5.6-sol",
+  "protocolMode": "baseline",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 87924,
+    "cachedInput": 80128,
+    "cacheWriteInput": 0,
+    "output": 1073,
+    "reasoning": 498,
+    "total": 88997,
+    "samples": 5,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 1,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 32177,
+    "threadID": "01a06a21-af30-7912-bcfc-feab4c2a9ba4"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 1,
+    "total": 8,
+    "score": 0.125,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "combined list filters",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "done is idempotent",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\nerror: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "overdue and stats",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/taskboard-eval-UXrHbO/tasks.json'"
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/taskboard-cli/README.md'"
+      }
+    ]
+  }
+}

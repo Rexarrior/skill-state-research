@@ -142,68 +142,92 @@ impl ToolCallRuntime {
             }
         };
 
-        let (status, result) = match accepted.action.clone() {
-            crate::skill_state::ResolvedAction::Finish { message } => {
-                (crate::skill_state::ObservationStatus::Success, message)
-            }
-            crate::skill_state::ResolvedAction::Tool {
-                tool_name,
-                input,
-                custom,
-            } => {
-                let payload = if custom {
-                    let Some(input) = input.as_str() else {
-                        unreachable!("freeform action input is validated before acceptance")
-                    };
-                    ToolPayload::Custom {
-                        input: input.to_string(),
+        let mut outcomes = Vec::with_capacity(accepted.actions.len());
+        for (index, accepted_action) in accepted.actions.iter().cloned().enumerate() {
+            let outcome = match accepted_action.action {
+                crate::skill_state::ResolvedAction::Finish { message } => {
+                    crate::skill_state::ActionOutcome {
+                        status: crate::skill_state::BatchActionStatus::Success,
+                        result: message,
                     }
-                } else {
-                    ToolPayload::Function {
-                        arguments: serde_json::to_string(&input).map_err(|err| {
-                            CodexErr::Fatal(format!("failed to serialize nested action: {err}"))
-                        })?,
-                    }
-                };
-                let inner = ToolCall {
-                    tool_name,
-                    call_id: format!("{}:action", call.call_id),
-                    payload,
-                    encrypted_function_args: None,
-                };
-                let source = inner.direct_source();
-                match self
-                    .clone()
-                    .handle_tool_call_with_source(inner, source, cancellation_token)
-                    .await
-                {
-                    Ok(output) => {
-                        let success = output.result.success_for_logging();
-                        let value = output.code_mode_result();
-                        let result = match value {
-                            serde_json::Value::String(text) => text,
-                            value => serde_json::to_string_pretty(&value)
-                                .unwrap_or_else(|_| value.to_string()),
-                        };
-                        (
-                            if success {
-                                crate::skill_state::ObservationStatus::Success
-                            } else {
-                                crate::skill_state::ObservationStatus::Error
-                            },
-                            result,
-                        )
-                    }
-                    Err(FunctionCallError::Fatal(message)) => return Err(CodexErr::Fatal(message)),
-                    Err(err) => (
-                        crate::skill_state::ObservationStatus::Error,
-                        err.to_string(),
-                    ),
                 }
+                crate::skill_state::ResolvedAction::Tool {
+                    tool_name,
+                    input,
+                    custom,
+                } => {
+                    let payload = if custom {
+                        let Some(input) = input.as_str() else {
+                            unreachable!("freeform action input is validated before acceptance")
+                        };
+                        ToolPayload::Custom {
+                            input: input.to_string(),
+                        }
+                    } else {
+                        ToolPayload::Function {
+                            arguments: serde_json::to_string(&input).map_err(|err| {
+                                CodexErr::Fatal(format!("failed to serialize nested action: {err}"))
+                            })?,
+                        }
+                    };
+                    let inner = ToolCall {
+                        tool_name,
+                        call_id: format!("{}:action:{index}", call.call_id),
+                        payload,
+                        encrypted_function_args: None,
+                    };
+                    let source = inner.direct_source();
+                    match self
+                        .clone()
+                        .handle_tool_call_with_source(
+                            inner,
+                            source,
+                            cancellation_token.child_token(),
+                        )
+                        .await
+                    {
+                        Ok(output) => {
+                            let success = output.result.success_for_logging();
+                            let value = output.code_mode_result();
+                            let result = match value {
+                                serde_json::Value::String(text) => text,
+                                value => serde_json::to_string_pretty(&value)
+                                    .unwrap_or_else(|_| value.to_string()),
+                            };
+                            crate::skill_state::ActionOutcome {
+                                status: if success {
+                                    crate::skill_state::BatchActionStatus::Success
+                                } else {
+                                    crate::skill_state::BatchActionStatus::Error
+                                },
+                                result,
+                            }
+                        }
+                        Err(FunctionCallError::Fatal(message)) => {
+                            return Err(CodexErr::Fatal(message));
+                        }
+                        Err(err) => crate::skill_state::ActionOutcome {
+                            status: crate::skill_state::BatchActionStatus::Error,
+                            result: err.to_string(),
+                        },
+                    }
+                }
+            };
+            let failed = outcome.status == crate::skill_state::BatchActionStatus::Error;
+            outcomes.push(outcome);
+            if failed {
+                outcomes.extend(accepted.actions[index + 1..].iter().map(|_| {
+                    crate::skill_state::ActionOutcome {
+                        status: crate::skill_state::BatchActionStatus::Skipped,
+                        result: "Skipped because an earlier action in this batch failed."
+                            .to_string(),
+                    }
+                }));
+                break;
             }
-        };
+        }
         Ok(ResponseItemEnvelope::new(
-            crate::skill_state::transition_output(call.call_id, accepted, status, result),
+            crate::skill_state::transition_output(call.call_id, accepted, outcomes),
         ))
     }
 

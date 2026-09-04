@@ -1,0 +1,90 @@
+{
+  "suite": "20260904T015626Z",
+  "project": "csv-insights",
+  "mode": "baseline",
+  "model": "gpt-5.6-sol",
+  "protocolMode": "baseline",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 87972,
+    "cachedInput": 73856,
+    "cacheWriteInput": 0,
+    "output": 1245,
+    "reasoning": 677,
+    "total": 89217,
+    "samples": 5,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 1,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 39941,
+    "threadID": "01a06a2f-b077-7683-be1a-06917d2f633c"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 2,
+    "total": 8,
+    "score": 0.25,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": false,
+        "detail": "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/csv-insights/main.py': [Errno 2] No such file or directory\n"
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": false,
+        "detail": "unknown column was accepted"
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": false,
+        "detail": "error lacks column or row"
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T015626Z/baseline/csv-insights/README.md'"
+      }
+    ]
+  }
+}

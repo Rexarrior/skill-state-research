@@ -1,0 +1,18 @@
+Reading additional input from stdin...
+2026-09-04T03:29:45.490584Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state-v3/taskboard-cli/test.sh:
+$cli add --title " First task " --tags "Work,work, urgent " --due 2020-02-29 | grep -F '"id":1'
+$cli add --title "Second" --tags home --due 2020-03-01 | grep -F '"id":2'
+$cli list --status open --tag work --overdue 2020-03-01 | grep -F '"First task"'
+$cli done 1 | grep -F '"status":"done"'
+$cli done 1 | grep -F '"status":"done"'
+$cli delete 2 | grep -F '"id":2'
+$cli stats | grep -F '"total":1'
+2026-09-04T03:30:09.238317Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state-v3/taskboard-cli/test.sh:
+$cli add --title ' First task ' --tags 'Work,work, urgent ' --due 2020-02-29 | grep -F '\"id\":1' >/dev/null
+$cli add --title 'Second task' --tags personal | grep -F '\"id\":2' >/dev/null
+$cli list --status open --tag work --overdue 2020-03-01 | grep -F 'First task' >/dev/null
+$cli done 1 | grep -F '\"status\":\"done\"' >/dev/null
+$cli done 1 | grep -F '\"status\":\"done\"' >/dev/null
+$cli stats | grep -F '\"total\":2,\"open\":1,\"done\":1' >/dev/null
+$cli delete 2 | grep -F '\"id\":2' >/dev/null
+if $cli add --title '' >/dev/null 2>&1; then exit 1; fi

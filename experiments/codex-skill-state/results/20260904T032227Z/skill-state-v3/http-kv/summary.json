@@ -1,0 +1,58 @@
+{
+  "suite": "20260904T032227Z",
+  "project": "http-kv",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T032227Z/skill-state-v3/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 0,
+    "cachedInput": 0,
+    "cacheWriteInput": 0,
+    "output": 0,
+    "reasoning": 0,
+    "total": 0,
+    "samples": 0,
+    "commandExecutions": 0,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 6199,
+    "threadID": "01a06aa8-56dd-7330-b5a2-adade37661cd"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

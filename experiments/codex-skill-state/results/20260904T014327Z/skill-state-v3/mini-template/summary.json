@@ -1,0 +1,85 @@
+{
+  "suite": "20260904T014327Z",
+  "project": "mini-template",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "cb94e8be23b1fbe67105d7a593b5ec2c1969c5a82c51cdba2e07f7441509525b"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T014327Z/skill-state-v3/mini-template",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 194492,
+    "cachedInput": 95232,
+    "cacheWriteInput": 0,
+    "output": 11196,
+    "reasoning": 2414,
+    "total": 205688,
+    "samples": 10,
+    "commandExecutions": 21,
+    "fileChanges": 1,
+    "errors": 1,
+    "stateCalls": 10,
+    "stateErrors": 2,
+    "stateComments": 10,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 906,
+    "batchedActions": 23,
+    "multiActionBatches": 5,
+    "failedBatches": 2,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 7,
+    "durationMs": 251186,
+    "threadID": "01a06a15-cc55-7603-9d56-db133a5b1947"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": true
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

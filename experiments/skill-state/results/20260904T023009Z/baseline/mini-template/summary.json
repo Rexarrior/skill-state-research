@@ -1,0 +1,77 @@
+{
+  "suite": "20260904T023009Z",
+  "project": "mini-template",
+  "mode": "baseline",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "protocolMode": "baseline",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T023009Z/baseline/mini-template",
+  "metrics": {
+    "turns": 13,
+    "toolCalls": 19,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 39,
+    "output": 6850,
+    "reasoning": 809,
+    "cacheRead": 294970,
+    "cacheWrite": 29300,
+    "cost": 0.15097999999999998,
+    "durationMs": 98205,
+    "sessionID": "ses_f95b841fbffeTqL2SWvfvhhdeI"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": false,
+        "detail": "expected \"[0:a/T][1:b/T]\", got \"[0:/T][1:/T]\""
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

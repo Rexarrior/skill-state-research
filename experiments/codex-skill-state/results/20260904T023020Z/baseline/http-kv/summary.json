@@ -1,0 +1,90 @@
+{
+  "suite": "20260904T023020Z",
+  "project": "http-kv",
+  "mode": "baseline",
+  "model": "gpt-5.6-sol",
+  "protocolMode": "baseline",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "fe3fa60f4362d50fdad2ac67896b1ef3261db6bd4ed44065b82335d18677acbb",
+    "codeModeHostPath": "<nda context deleted, size :114 chars>",
+    "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T023020Z/baseline/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 248868,
+    "cachedInput": 222720,
+    "cacheWriteInput": 0,
+    "output": 10827,
+    "reasoning": 2822,
+    "total": 259695,
+    "samples": 10,
+    "commandExecutions": 7,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 241721,
+    "threadID": "01a06a5a-a6db-7911-9584-bb1f07abf700"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

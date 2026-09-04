@@ -7,9 +7,9 @@ const experiment = path.resolve(import.meta.dir, "..")
 const repository = path.resolve(experiment, "../..")
 const opencode = path.join(repository, "opencode/packages/opencode")
 const projects = ["taskboard-cli", "csv-insights", "mini-template", "http-kv", "dependency-planner"] as const
-const modes = ["baseline", "skill-state"] as const
+const modes = ["baseline", "skill-state", "skill-state-v3"] as const
 const runnableModes = [...modes, "skill-state-paper"] as const
-const modeNames = ["baseline", "paper", "v2"] as const
+const modeNames = ["baseline", "paper", "v2", "v3"] as const
 const expectedChecks: Record<Project, number> = {
   "taskboard-cli": 8,
   "csv-insights": 8,
@@ -38,17 +38,20 @@ function parseMode(value: string): Mode {
   if (value === "baseline") return "baseline"
   if (value === "paper" || value === "skill-state-paper") return "skill-state-paper"
   if (value === "v2" || value === "skill-state") return "skill-state"
+  if (value === "v3" || value === "skill-state-v3") return "skill-state-v3"
   throw new Error(`unknown mode ${JSON.stringify(value)}; expected ${modeNames.join("|")}`)
 }
 
 function runtimeMode(mode: Mode): ModeName {
   if (mode === "skill-state-paper") return "paper"
   if (mode === "skill-state") return "v2"
+  if (mode === "skill-state-v3") return "v3"
   return "baseline"
 }
 
 function modeLabel(mode: Mode) {
-  return runtimeMode(mode) === "v2" ? "V2" : runtimeMode(mode)[0]!.toUpperCase() + runtimeMode(mode).slice(1)
+  const name = runtimeMode(mode)
+  return name === "v2" || name === "v3" ? name.toUpperCase() : name[0]!.toUpperCase() + name.slice(1)
 }
 
 type Metrics = {
@@ -62,6 +65,11 @@ type Metrics = {
   repeatedActions: number
   maxRepeatStreak: number
   maxStateBytes: number
+  batchedActions: number
+  multiActionBatches: number
+  failedBatches: number
+  skippedActions: number
+  maxActionsPerBatch: number
   input: number
   output: number
   reasoning: number
@@ -107,6 +115,11 @@ function parseEvents(raw: string, durationMs: number): Metrics {
     repeatedActions: 0,
     maxRepeatStreak: 0,
     maxStateBytes: 0,
+    batchedActions: 0,
+    multiActionBatches: 0,
+    failedBatches: 0,
+    skippedActions: 0,
+    maxActionsPerBatch: 0,
     input: 0,
     output: 0,
     reasoning: 0,
@@ -144,8 +157,24 @@ function parseEvents(raw: string, durationMs: number): Metrics {
         result.maxStateBytes = Math.max(result.maxStateBytes, metadata?.stateBytes ?? 0)
         if (typeof metadata?.comment === "string") result.stateComments++
         if (metadata?.actionStatus === "finish") result.finishCalls++
-        if (metadata?.action && typeof metadata.action.name === "string") {
-          const action = JSON.stringify(metadata.action)
+        const actions = Array.isArray(metadata?.actionResults)
+          ? metadata.actionResults
+          : metadata?.action && typeof metadata.action.name === "string"
+            ? [metadata.action]
+            : []
+        if (Array.isArray(metadata?.actionResults)) {
+          result.batchedActions += actions.length
+          result.maxActionsPerBatch = Math.max(result.maxActionsPerBatch, actions.length)
+          if (actions.length > 1) result.multiActionBatches++
+          if (metadata.actionStatus === "error") result.failedBatches++
+          result.skippedActions += actions.filter((action: any) => action?.status === "skipped").length
+        }
+        for (const observed of actions) {
+          if (!observed || typeof observed.name !== "string") continue
+          const action = JSON.stringify({
+            name: observed.name,
+            input: observed.input,
+          })
           if (action === previousAction) {
             result.repeatedActions++
             repeatStreak++
@@ -238,7 +267,7 @@ async function runCell(project: Project, mode: Mode, suite: string) {
     project,
     mode,
     model,
-    observationWindow: mode === "skill-state" ? observationWindow : undefined,
+    observationWindow: mode === "skill-state" || mode === "skill-state-v3" ? observationWindow : undefined,
     protocolMode: runtimeMode(mode),
     prompt,
     exitCode,
@@ -308,6 +337,11 @@ async function report(suite: string, summaries: Awaited<ReturnType<typeof runCel
     ["Consecutive repeated actions", "repeatedActions", "total"],
     ["Maximum repeat streak", "maxRepeatStreak", "maximum"],
     ["Maximum state bytes", "maxStateBytes", "maximum"],
+    ["Actions inside v3 batches", "batchedActions", "total"],
+    ["Multi-action v3 batches", "multiActionBatches", "total"],
+    ["Failed v3 batches", "failedBatches", "total"],
+    ["Skipped v3 actions", "skippedActions", "total"],
+    ["Maximum actions per batch", "maxActionsPerBatch", "maximum"],
     ["Provider-reported cost", "cost", "total"],
   ]
   const aggregateRows = aggregateMetrics.map(([label, field, aggregation]) => {
@@ -332,7 +366,8 @@ Model: \`${model}\`
 
 Selected modes: ${selectedModes.map((mode) => `\`${runtimeMode(mode)}\``).join(", ")}
 
-Design: one independent run per project and mode; one user prompt per run; sequential execution.
+Design: one independent run per project and mode; one user prompt per run. V3 applies one patch and executes each
+non-empty, unbounded action array strictly sequentially; each array occupies one observation-window slot.
 
 | Project | ${headers.join(" | ")} |
 |---|${headers.map(() => "---:").join("|")}|
@@ -403,10 +438,10 @@ if (action === "doctor") {
 } else if (action === "pair") {
   const [project, requestedMode = "v2"] = args
   if (!projects.includes(project as Project)) {
-    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2]`)
+    throw new Error(`usage: bun run.ts pair <${projects.join("|")}> [paper|v2|v3]`)
   }
   const selectedMode = parseMode(requestedMode)
-  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper or v2")
+  if (selectedMode === "baseline") throw new Error("pair comparison mode must be paper, v2, or v3")
   const suite = suiteID()
   const summaries = [
     await runCell(project as Project, "baseline", suite),
@@ -431,10 +466,17 @@ if (action === "doctor") {
   if (!summaries.length) throw new Error(`suite has no summaries: ${targetSuite}`)
   await report(targetSuite, summaries)
   console.log(
-    JSON.stringify({ suite: targetSuite, report: path.join(experiment, "results", targetSuite, "report.md") }, null, 2),
+    JSON.stringify(
+      {
+        suite: targetSuite,
+        report: path.join(experiment, "results", targetSuite, "report.md"),
+      },
+      null,
+      2,
+    ),
   )
 } else {
-  throw new Error("usage: bun run.ts doctor|all [MODES...]|pair PROJECT [paper|v2]|one PROJECT MODE|report SUITE")
+  throw new Error("usage: bun run.ts doctor|all [MODES...]|pair PROJECT [paper|v2|v3]|one PROJECT MODE|report SUITE")
 }
 
 function isMissingFile(error: unknown): error is NodeJS.ErrnoException {

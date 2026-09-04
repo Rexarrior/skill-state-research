@@ -26,7 +26,7 @@ const CodingState = Schema.Struct({
 })
 
 export type State = typeof CodingState.Type
-export type Mode = "paper" | "v2"
+export type Mode = "paper" | "v2" | "v3"
 export type RuntimeMode = "baseline" | Mode
 
 export const initialState: State = {
@@ -39,15 +39,24 @@ export const initialState: State = {
   next_action: "Inspect the task specification and workspace, then perform the first implementation action.",
 }
 
+type RequestedAction = {
+  name: string
+  input: Record<string, unknown>
+}
+
+type BatchActionResult = RequestedAction & {
+  status: "completed" | "error" | "skipped"
+  result: string
+}
+
 type TransitionMetadata = {
-  protocolVersion: 1 | 2
+  protocolVersion: 1 | 2 | 3
   revision: number
   state: State
   patch: Record<string, unknown>
-  action: {
-    name: string
-    input: Record<string, unknown>
-  }
+  action?: RequestedAction
+  actions?: RequestedAction[]
+  actionResults?: BatchActionResult[]
   comment?: string
   stateBytes: number
   actionStatus: "pending" | "completed" | "error" | "finish"
@@ -65,10 +74,8 @@ type Context = {
 
 export type Observation = {
   revision: number | null
-  action: {
-    name: string
-    input: unknown
-  } | null
+  action?: { name: string; input: unknown } | null
+  actions?: Array<{ name: string; input: unknown; status: BatchActionResult["status"]; result: string }>
   comment?: string
   status: "initial" | "completed" | "error" | "interrupted" | "finish" | "protocol_error"
   result: string
@@ -79,10 +86,8 @@ export type Transition = {
   revision: number
   patch: Record<string, unknown>
   state: State
-  action: {
-    name: string
-    input: Record<string, unknown>
-  }
+  action?: RequestedAction
+  actions?: RequestedAction[]
   comment?: string
 }
 
@@ -97,22 +102,28 @@ type ActionResult = {
 const statePatchSchema: JSONSchema7 = {
   type: "object",
   properties: {
-    status: { anyOf: [{ type: "string", enum: ["working", "blocked", "done"] }, { type: "null" }] },
-    plan: { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
-    completed: { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
+    status: { type: "string", enum: ["working", "blocked", "done"] },
+    plan: { type: "array", items: { type: "string" } },
+    completed: { type: "array", items: { type: "string" } },
     files: {
-      anyOf: [
-        {
-          type: "object",
-          additionalProperties: { anyOf: [{ type: "string" }, { type: "null" }] },
-        },
-        { type: "null" },
-      ],
+      type: "object",
+      additionalProperties: { anyOf: [{ type: "string" }, { type: "null" }] },
     },
-    facts: { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
-    decisions: { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
-    next_action: { anyOf: [{ type: "string" }, { type: "null" }] },
+    facts: { type: "array", items: { type: "string" } },
+    decisions: { type: "array", items: { type: "string" } },
+    next_action: { type: "string" },
   },
+  additionalProperties: false,
+}
+
+const paperStatePatchSchema: JSONSchema7 = {
+  type: "object",
+  properties: Object.fromEntries(
+    Object.entries(statePatchSchema.properties ?? {}).map(([name, schema]) => [
+      name,
+      { anyOf: [schema, { type: "null" }] },
+    ]),
+  ),
   additionalProperties: false,
 }
 
@@ -126,6 +137,18 @@ Do not repeat an action when a recent observation already reports that the same 
 
 Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
 
+const v3Protocol = `You are operating under the SKILL.state v3 batched execution protocol.
+
+The task specification below is immutable and is included on every turn. The execution state is your only durable memory of progress. A bounded window of recent structured batch observations is retained; all previous reasoning, assistant text, and older observations are intentionally discarded.
+
+On every turn you MUST call skill_step exactly once. Copy the currently shown state_revision exactly; do not increment or predict it. Supply a minimal state_patch, an optional comment, and a non-empty actions array. There is no protocol limit on the number of actions in the array. The state_patch is applied once before any action starts.
+
+Actions are executed strictly sequentially in the listed order. Action i+1 starts only after action i has completed. If an action fails, the runtime stops the batch and marks every remaining action as skipped. You do not see any result until the whole batch has stopped. Batch only actions whose inputs are already known; when a later action depends on an unseen result from an earlier action, end the batch and choose it on the next turn.
+
+The optional comment explains the purpose of the whole batch and must not claim that its actions have already succeeded. Do not repeat an action when a recent batch observation already reports that the same action and input completed successfully. If information must survive after its batch leaves the window, preserve only a compact durable conclusion in completed, files, facts, or decisions. Never copy raw observation text into state. Do not claim a file change or successful check until the environment has confirmed it.
+
+Use finish only after the implementation is complete and all available tests pass. finish must be the sole action in its batch. Do not answer outside skill_step.`
+
 const paperProtocol = `You are operating under the original SKILL.state execution protocol from the paper.
 
 The task specification below is immutable. The execution state is the only durable memory. Every earlier observation, action, response, and reasoning trace is discarded; only the latest environment observation is available.
@@ -135,8 +158,8 @@ On every turn call skill_step exactly once with exactly two fields: state_patch 
 Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
 
 export function parseMode(value: string): RuntimeMode {
-  if (value === "baseline" || value === "paper" || value === "v2") return value
-  throw new Error(`Invalid SKILL.state mode: ${value}; expected baseline, paper, or v2`)
+  if (value === "baseline" || value === "paper" || value === "v2" || value === "v3") return value
+  throw new Error(`Invalid SKILL.state mode: ${value}; expected baseline, paper, v2, or v3`)
 }
 
 export function context(
@@ -197,10 +220,13 @@ export function modelMessages(value: Context): ModelMessage[] {
       },
     ]
   }
+  const protocol = value.mode === "v3" ? v3Protocol : v2Protocol
+  const stateHeading =
+    value.mode === "v3" ? `Skill Execution State (revision ${value.revision}):` : "Skill Execution State:"
   return [
     {
       role: "user",
-      content: `${v2Protocol}\n\nInstructions:\n${value.specification}\n\nSkill Execution State:\n${JSON.stringify(value.state)}\n\nRecent Observations (oldest to newest, maximum ${value.observationWindow}):\n${JSON.stringify(value.observations)}`,
+      content: `${protocol}\n\nInstructions:\n${value.specification}\n\n${stateHeading}\n${JSON.stringify(value.state)}\n\nRecent ${value.mode === "v3" ? "Batch " : ""}Observations (oldest to newest, maximum ${value.observationWindow}):\n${JSON.stringify(value.observations)}`,
     },
   ]
 }
@@ -247,8 +273,22 @@ export const createTool = Effect.fn("SkillState.createTool")(function* (input: {
     ],
   }
   const properties: Record<string, JSONSchema7> = {
-    state_patch: statePatchSchema,
-    action: actionSchema,
+    state_patch: input.mode === "paper" ? paperStatePatchSchema : statePatchSchema,
+    ...(input.mode === "v3"
+      ? {
+          state_revision: {
+            type: "integer",
+            minimum: 0,
+            description: "Revision shown in the current Skill Execution State.",
+          } satisfies JSONSchema7,
+          actions: {
+            type: "array",
+            minItems: 1,
+            items: actionSchema,
+            description: "Actions executed strictly sequentially in the listed order.",
+          } satisfies JSONSchema7,
+        }
+      : { action: actionSchema }),
   }
   if (input.mode !== "paper") {
     properties.comment = {
@@ -260,11 +300,13 @@ export const createTool = Effect.fn("SkillState.createTool")(function* (input: {
   }
   return tool({
     description:
-      "Submit the mandatory SKILL.state transition. The runtime validates and applies state_patch before executing exactly one action.",
+      input.mode === "v3"
+        ? "Submit one SKILL.state transition. The runtime applies state_patch once, then executes the non-empty actions array strictly sequentially."
+        : "Submit the mandatory SKILL.state transition. The runtime validates and applies state_patch before executing exactly one action.",
     inputSchema: jsonSchema({
       type: "object",
       properties,
-      required: ["state_patch", "action"],
+      required: input.mode === "v3" ? ["state_revision", "state_patch", "actions"] : ["state_patch", "action"],
       additionalProperties: false,
     }),
   })
@@ -277,7 +319,7 @@ export function prepare(value: unknown, state: State, revision: number, mode: Mo
 export function metadata(
   transition: Transition,
   actionStatus: TransitionMetadata["actionStatus"],
-  finalMessage?: string,
+  options: { finalMessage?: string; actionResults?: BatchActionResult[] } = {},
 ) {
   return {
     [METADATA_KEY]: {
@@ -285,34 +327,39 @@ export function metadata(
       revision: transition.revision,
       state: transition.state,
       patch: transition.patch,
-      action: structuredClone(transition.action),
+      ...(transition.action ? { action: structuredClone(transition.action) } : {}),
+      ...(transition.actions ? { actions: structuredClone(transition.actions) } : {}),
+      ...(options.actionResults ? { actionResults: structuredClone(options.actionResults) } : {}),
       ...(transition.comment ? { comment: transition.comment } : {}),
       stateBytes: Buffer.byteLength(JSON.stringify(transition.state)),
       actionStatus,
-      ...(finalMessage ? { finalMessage } : {}),
+      ...(options.finalMessage ? { finalMessage: options.finalMessage } : {}),
     } satisfies TransitionMetadata,
   }
 }
 
 export async function execute(transition: Transition, tools: Record<string, Tool>, options: ToolExecutionOptions) {
-  if (transition.action.name === "finish") {
-    const message = transition.action.input.message
+  if (transition.mode === "v3") return executeBatch(transition, tools, options)
+  if (!transition.action) throw new Error("single-action SKILL.state transition is missing action")
+  const action = transition.action
+  if (action.name === "finish") {
+    const message = action.input.message
     if (typeof message !== "string" || !message.trim()) throw new Error("finish.message must be a non-empty string")
     return {
       title: "Finished",
       output: message,
-      metadata: metadata(transition, "finish", message),
+      metadata: metadata(transition, "finish", { finalMessage: message }),
     }
   }
 
-  const selected = tools[transition.action.name]
-  if (!selected?.execute) throw new Error(`Unknown or non-executable action: ${transition.action.name}`)
+  const selected = tools[action.name]
+  if (!selected?.execute) throw new Error(`Unknown or non-executable action: ${action.name}`)
   const result = await Promise.resolve()
-    .then(() => selected.execute!(transition.action.input, options))
+    .then(() => selected.execute!(action.input, options))
     .then(
       resolveToolResult,
       (error): ActionResult => ({
-        title: `${transition.action.name} failed`,
+        title: `${action.name} failed`,
         output: errorMessage(error),
         metadata: {},
         actionError: true,
@@ -323,6 +370,73 @@ export async function execute(transition: Transition, tools: Record<string, Tool
     output: result.output,
     metadata: { ...result.metadata, ...metadata(transition, result.actionError ? "error" : "completed") },
     ...(result.attachments ? { attachments: result.attachments } : {}),
+  }
+}
+
+async function executeBatch(transition: Transition, tools: Record<string, Tool>, options: ToolExecutionOptions) {
+  if (!transition.actions?.length) throw new Error("v3 SKILL.state transition is missing actions")
+  const finish = transition.actions.find((action) => action.name === "finish")
+  if (finish) {
+    const message = finish.input.message
+    if (transition.actions.length !== 1) throw new Error("finish must be the sole action in a v3 batch")
+    if (typeof message !== "string" || !message.trim()) throw new Error("finish.message must be a non-empty string")
+    const actionResults: BatchActionResult[] = [{ ...finish, status: "completed", result: message }]
+    return {
+      title: "Finished",
+      output: JSON.stringify(actionResults),
+      metadata: metadata(transition, "finish", { finalMessage: message, actionResults }),
+    }
+  }
+
+  const unknown = transition.actions.find((action) => !tools[action.name]?.execute)
+  if (unknown) throw new Error(`Unknown or non-executable action: ${unknown.name}`)
+
+  const actionResults: BatchActionResult[] = []
+  const attachments: unknown[] = []
+  const toolMetadata: Record<string, unknown> = {}
+  for (const [index, action] of transition.actions.entries()) {
+    const selected = tools[action.name]
+    if (!selected?.execute) throw new Error(`Unknown or non-executable action: ${action.name}`)
+    const result = await Promise.resolve()
+      .then(() =>
+        selected.execute!(action.input, {
+          ...options,
+          toolCallId: `${options.toolCallId}:action:${index}`,
+        }),
+      )
+      .then(
+        resolveToolResult,
+        (error): ActionResult => ({
+          title: `${action.name} failed`,
+          output: errorMessage(error),
+          metadata: {},
+          actionError: true,
+        }),
+      )
+    Object.assign(toolMetadata, result.metadata)
+    if (result.attachments) attachments.push(...result.attachments)
+    actionResults.push({
+      ...action,
+      status: result.actionError ? "error" : "completed",
+      result: boundedText(result.output || observationFallback(result.actionError), MAX_RESULT_BYTES),
+    })
+    if (result.actionError) {
+      actionResults.push(
+        ...transition.actions.slice(index + 1).map((skipped) => ({
+          ...skipped,
+          status: "skipped" as const,
+          result: "Skipped because an earlier action in this batch failed.",
+        })),
+      )
+      break
+    }
+  }
+  const failed = actionResults.some((result) => result.status === "error")
+  return {
+    title: failed ? "Batch stopped after an action failed" : `Completed ${actionResults.length} actions`,
+    output: JSON.stringify(actionResults),
+    metadata: { ...toolMetadata, ...metadata(transition, failed ? "error" : "completed", { actionResults }) },
+    ...(attachments.length ? { attachments } : {}),
   }
 }
 
@@ -339,16 +453,24 @@ export function finish(messages: SessionV1.Part[]) {
 }
 
 function prepareTransition(value: unknown, state: State, revision: number, mode: Mode): Transition {
-  if (!isRecord(value) || !isRecord(value.state_patch) || !isRecord(value.action)) {
-    throw new Error("skill_step requires object fields state_patch and action")
-  }
-  if (typeof value.action.name !== "string" || !isRecord(value.action.input)) {
-    throw new Error("skill_step.action requires string name and object input")
-  }
+  if (!isRecord(value) || !isRecord(value.state_patch)) throw new Error("skill_step requires object state_patch")
+  const actions = mode === "v3" ? prepareActions(value.actions) : undefined
+  const action = mode === "v3" ? undefined : prepareAction(value.action, "skill_step.action")
   if (mode === "paper" && Object.keys(value).some((key) => key !== "state_patch" && key !== "action")) {
     throw new Error("paper mode accepts exactly state_patch and action")
   }
-  const comment = mode === "v2" ? prepareComment(value.comment) : undefined
+  if (mode === "v3") {
+    if (value.state_revision !== revision) {
+      throw new Error(`stale state_revision ${String(value.state_revision)}; expected ${revision}`)
+    }
+    if (Object.keys(value).some((key) => !["state_revision", "state_patch", "comment", "actions"].includes(key))) {
+      throw new Error("v3 mode accepts exactly state_revision, state_patch, optional comment, and actions")
+    }
+    if (actions?.some((item) => item.name === "finish") && actions.length !== 1) {
+      throw new Error("finish must be the sole action in a v3 batch")
+    }
+  }
+  const comment = mode === "paper" ? undefined : prepareComment(value.comment)
   assertSafePatch(value.state_patch)
   const next = applyPatch(state, value.state_patch)
   const decoded = Schema.decodeUnknownExit(CodingState)(next, {
@@ -365,12 +487,22 @@ function prepareTransition(value: unknown, state: State, revision: number, mode:
     revision: revision + 1,
     patch: structuredClone(value.state_patch),
     state: decoded.value,
-    action: {
-      name: value.action.name,
-      input: structuredClone(value.action.input),
-    },
+    ...(action ? { action } : {}),
+    ...(actions ? { actions } : {}),
     ...(comment ? { comment } : {}),
   }
+}
+
+function prepareActions(value: unknown) {
+  if (!Array.isArray(value) || value.length === 0) throw new Error("skill_step.actions must be a non-empty array")
+  return value.map((action, index) => prepareAction(action, `skill_step.actions[${index}]`))
+}
+
+function prepareAction(value: unknown, label: string): RequestedAction {
+  if (!isRecord(value) || typeof value.name !== "string" || !isRecord(value.input)) {
+    throw new Error(`${label} requires string name and object input`)
+  }
+  return { name: value.name, input: structuredClone(value.input) }
 }
 
 function applyPatch(current: Record<string, unknown>, patch: Record<string, unknown>) {
@@ -408,6 +540,8 @@ const initialObservation: Observation = {
 function observation(part: SessionV1.ToolPart): Observation {
   const stored = transitionMetadata(part)
   if (isTransitionMetadata(stored)) {
+    if (stored.protocolVersion === 3) return batchObservation(part, stored)
+    if (!stored.action) throw new Error("single-action transition metadata is missing action")
     return {
       revision: stored.revision,
       action: {
@@ -426,6 +560,28 @@ function observation(part: SessionV1.ToolPart): Observation {
   }
 
   const input = isRecord(part.state.input) ? part.state.input : {}
+  if (Array.isArray(input.actions)) {
+    return {
+      revision: null,
+      actions: input.actions.map((action, index) => {
+        const prepared = prepareAction(action, `skill_step.actions[${index}]`)
+        return {
+          name: prepared.name,
+          input: boundedValue(prepared.input, MAX_ACTION_INPUT_BYTES),
+          status: "skipped" as const,
+          result: "The transition ended before this action produced a result.",
+        }
+      }),
+      ...(typeof input.comment === "string" && input.comment.trim()
+        ? { comment: boundedText(input.comment.trim(), MAX_COMMENT_BYTES) }
+        : {}),
+      status: part.state.status === "error" ? "protocol_error" : "interrupted",
+      result:
+        part.state.status === "error"
+          ? boundedText(part.state.error, MAX_RESULT_BYTES)
+          : "The transition was interrupted before its batch produced results.",
+    }
+  }
   const requested = isRecord(input.action) ? input.action : undefined
   const requestedName = requested && typeof requested.name === "string" ? requested.name : undefined
   const requestedInput = requested && isRecord(requested.input) ? requested.input : {}
@@ -448,6 +604,40 @@ function observation(part: SessionV1.ToolPart): Observation {
   }
 }
 
+function batchObservation(part: SessionV1.ToolPart, stored: TransitionMetadata): Observation {
+  const results =
+    stored.actionResults ??
+    (stored.actions ?? []).map((action) => ({
+      ...action,
+      status: "skipped" as const,
+      result: "The transition was interrupted before this action produced a result.",
+    }))
+  return {
+    revision: stored.revision,
+    actions: results.map((result) => ({
+      name: result.name,
+      input: boundedValue(result.input, MAX_ACTION_INPUT_BYTES),
+      status: result.status,
+      result: boundedText(result.result, MAX_RESULT_BYTES),
+    })),
+    ...(stored.comment ? { comment: boundedText(stored.comment, MAX_COMMENT_BYTES) } : {}),
+    status:
+      stored.actionStatus === "pending"
+        ? "interrupted"
+        : stored.actionStatus === "finish"
+          ? "finish"
+          : stored.actionStatus,
+    result:
+      part.state.status === "error"
+        ? boundedText(part.state.error, MAX_RESULT_BYTES)
+        : stored.actionStatus === "error"
+          ? "The batch stopped after an action failed."
+          : stored.actionStatus === "finish"
+            ? "The session finished."
+            : `The batch completed ${results.length} action${results.length === 1 ? "" : "s"}.`,
+  }
+}
+
 function transitionMetadata(part: SessionV1.ToolPart) {
   if (!("metadata" in part.state)) return undefined
   return part.state.metadata?.[METADATA_KEY]
@@ -461,6 +651,12 @@ function observationResult(part: SessionV1.ToolPart, status: TransitionMetadata[
   if (status === "error") return "Action failed without textual error output."
   if (status === "finish") return "The session finished without a textual final message."
   return "Action completed successfully without textual output."
+}
+
+function observationFallback(failed: boolean) {
+  return failed
+    ? "Action failed without textual error output."
+    : "Action completed successfully without textual output."
 }
 
 function prepareComment(value: unknown) {
@@ -529,17 +725,35 @@ async function last(value: AsyncIterable<unknown>) {
 }
 
 function isTransitionMetadata(value: unknown): value is TransitionMetadata {
+  if (!isRecord(value)) return false
+  const single =
+    value.protocolVersion !== 3 &&
+    isRecord(value.action) &&
+    typeof value.action.name === "string" &&
+    isRecord(value.action.input)
+  const batch =
+    value.protocolVersion === 3 &&
+    Array.isArray(value.actions) &&
+    value.actions.length > 0 &&
+    value.actions.every((action) => isRecord(action) && typeof action.name === "string" && isRecord(action.input)) &&
+    (value.actionResults === undefined ||
+      (Array.isArray(value.actionResults) &&
+        value.actionResults.every(
+          (result) =>
+            isRecord(result) &&
+            typeof result.name === "string" &&
+            isRecord(result.input) &&
+            ["completed", "error", "skipped"].includes(String(result.status)) &&
+            typeof result.result === "string",
+        )))
   return (
-    isRecord(value) &&
-    (value.protocolVersion === 1 || value.protocolVersion === 2) &&
+    (value.protocolVersion === 1 || value.protocolVersion === 2 || value.protocolVersion === 3) &&
     typeof value.revision === "number" &&
     Number.isInteger(value.revision) &&
     value.revision > 0 &&
     Schema.is(CodingState)(value.state) &&
     isRecord(value.patch) &&
-    isRecord(value.action) &&
-    typeof value.action.name === "string" &&
-    isRecord(value.action.input) &&
+    (single || batch) &&
     (value.comment === undefined || typeof value.comment === "string") &&
     typeof value.stateBytes === "number" &&
     ["pending", "completed", "error", "finish"].includes(String(value.actionStatus))
@@ -547,7 +761,9 @@ function isTransitionMetadata(value: unknown): value is TransitionMetadata {
 }
 
 function protocolVersion(mode: Mode) {
-  return mode === "paper" ? 1 : 2
+  if (mode === "paper") return 1
+  if (mode === "v2") return 2
+  return 3
 }
 
 export * as SkillState from "./skill-state"
