@@ -1,0 +1,10 @@
+[
+  {"runtime":"OpenCode","model":"sol","suite":"20260904T195726Z","repetition":0,"modes":["native","paper","v2","v3"]},
+  {"runtime":"Codex","model":"sol","suite":"20260904T202639Z","repetition":0,"modes":["native","paper","v2","v3"]},
+  {"runtime":"OpenCode","model":"terra","suite":"20260904T203726Z","repetition":0,"modes":["native","paper","v2","v3"]},
+  {"runtime":"Codex","model":"sol","suite":"20260904T212003Z","repetition":1,"modes":["v3","v2"]},
+  {"runtime":"Codex","model":"terra","suite":"20260904T220955Z","repetition":1,"modes":["v3","v2"]},
+  {"runtime":"Codex","model":"terra","suite":"20260904T223606Z","repetition":0,"modes":["native","paper","v2","v3"]},
+  {"runtime":"Codex","model":"sol","suite":"20260904T225135Z","repetition":2,"modes":["v2","v3"]},
+  {"runtime":"Codex","model":"terra","suite":"20260904T234023Z","repetition":2,"modes":["v2","v3"]}
+]

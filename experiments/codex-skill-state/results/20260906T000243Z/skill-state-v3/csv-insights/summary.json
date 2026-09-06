@@ -1,0 +1,85 @@
+{
+  "suite": "20260906T000243Z",
+  "project": "csv-insights",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T000243Z/skill-state-v3/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 171854,
+    "cachedInput": 64512,
+    "cacheWriteInput": 0,
+    "output": 8932,
+    "reasoning": 1476,
+    "total": 180786,
+    "samples": 9,
+    "commandExecutions": 14,
+    "fileChanges": 3,
+    "errors": 0,
+    "stateCalls": 9,
+    "stateErrors": 3,
+    "stateComments": 9,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 762,
+    "batchedActions": 18,
+    "multiActionBatches": 4,
+    "failedBatches": 3,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 5,
+    "durationMs": 195992,
+    "threadID": "01a07412-9239-7381-a336-a8d300b271f1"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

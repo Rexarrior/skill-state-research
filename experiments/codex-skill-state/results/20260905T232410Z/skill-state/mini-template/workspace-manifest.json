@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-09-05T23:51:07.017Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232410Z/skill-state/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.58dbb157ff33babc-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/build/cli.js",
+      "bytes": 6878,
+      "sha256": "7d6e835cadffc3c210e6396b0d5078fb2f3baa956468be559d9f02d1033ad66c"
+    },
+    {
+      "path": ".tmp/build/engine.js",
+      "bytes": 6279,
+      "sha256": "352a072ac8bf4e1e760f8d1ba70ffbc00eb8604f3333cfc4a94e8f1fb89473f0"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": ".tmp/manual-cli/data.json",
+      "bytes": 56,
+      "sha256": "7b46ac211e64e501b8d9c547860eb13857f320a7388f960d91bd333ef879cfb9"
+    },
+    {
+      "path": ".tmp/manual-cli/err",
+      "bytes": 212,
+      "sha256": "de1049cdad34f6bf4c766e2358589da6206c1d0ef6b01348ffd437e9de0644d5"
+    },
+    {
+      "path": ".tmp/manual-cli/out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/manual-cli/template.txt",
+      "bytes": 90,
+      "sha256": "b42dfd983d04ada7e6bbb974a83f8f67ae9ed31894873555b2eada85bbbca59e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 817,
+      "sha256": "2242db29b01e4ccb84f5276788b5413bae8a1ac9e1da25af8dcf53cc079eecff"
+    },
+    {
+      "path": "package.json",
+      "bytes": 233,
+      "sha256": "add1754343dc28c8e9c4134acfe7f522c2b3a9db3ef81f466e9cdbe64f94e6c9"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 678,
+      "sha256": "d910eac914b8e93104fd204149c5d6c1483eb10f6011279022270614f9e391be"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 7310,
+      "sha256": "9b4fa294b2ef92ff6c5995ed97a117bf10c0857d83acdf20a935176a360c78df"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 2135,
+      "sha256": "6c7de625f13924ce312e32dec3b75bc71352898d9f08bac1ec398d46320eebc5"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 227,
+      "sha256": "670d7c377663ece77be48918ec802e87eeb2fb7415a7844e9f6701c7468ad27e"
+    }
+  ],
+  "skipped": []
+}

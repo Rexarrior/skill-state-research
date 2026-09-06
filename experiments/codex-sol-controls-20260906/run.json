@@ -1,0 +1,140 @@
+{
+  "startedAt": "2026-09-06T01:07:17.286Z",
+  "endedAt": "2026-09-06T03:40:01.238Z",
+  "status": "complete",
+  "plannedCells": 100,
+  "maxWorkers": 5,
+  "pid": 24446,
+  "attempts": [
+    {
+      "repetition": 1,
+      "modes": [
+        "baseline",
+        "paper"
+      ],
+      "status": "complete",
+      "suite": "20260906T010725Z",
+      "worker": 1,
+      "startedAt": "2026-09-06T01:07:17.287Z",
+      "endedAt": "2026-09-06T02:02:43.151Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 2,
+      "modes": [
+        "paper",
+        "baseline"
+      ],
+      "status": "complete",
+      "suite": "20260906T010737Z",
+      "worker": 2,
+      "startedAt": "2026-09-06T01:07:17.287Z",
+      "endedAt": "2026-09-06T02:06:05.754Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 3,
+      "modes": [
+        "baseline",
+        "paper"
+      ],
+      "status": "complete",
+      "suite": "20260906T010746Z",
+      "worker": 3,
+      "startedAt": "2026-09-06T01:07:17.287Z",
+      "endedAt": "2026-09-06T01:55:00.283Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 4,
+      "modes": [
+        "paper",
+        "baseline"
+      ],
+      "status": "complete",
+      "suite": "20260906T010756Z",
+      "worker": 4,
+      "startedAt": "2026-09-06T01:07:17.287Z",
+      "endedAt": "2026-09-06T02:03:14.532Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 5,
+      "modes": [
+        "baseline",
+        "paper"
+      ],
+      "status": "complete",
+      "suite": "20260906T010805Z",
+      "worker": 5,
+      "startedAt": "2026-09-06T01:07:17.287Z",
+      "endedAt": "2026-09-06T02:10:16.406Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 6,
+      "modes": [
+        "paper",
+        "baseline"
+      ],
+      "status": "complete",
+      "suite": "20260906T015507Z",
+      "worker": 3,
+      "startedAt": "2026-09-06T01:55:00.284Z",
+      "endedAt": "2026-09-06T02:58:42.004Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 7,
+      "modes": [
+        "baseline",
+        "paper"
+      ],
+      "status": "complete",
+      "suite": "20260906T020250Z",
+      "worker": 1,
+      "startedAt": "2026-09-06T02:02:43.151Z",
+      "endedAt": "2026-09-06T03:40:01.233Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 8,
+      "modes": [
+        "paper",
+        "baseline"
+      ],
+      "status": "complete",
+      "suite": "20260906T020321Z",
+      "worker": 4,
+      "startedAt": "2026-09-06T02:03:14.532Z",
+      "endedAt": "2026-09-06T03:08:33.634Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 9,
+      "modes": [
+        "baseline",
+        "paper"
+      ],
+      "status": "complete",
+      "suite": "20260906T020613Z",
+      "worker": 2,
+      "startedAt": "2026-09-06T02:06:05.754Z",
+      "endedAt": "2026-09-06T03:10:07.432Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 10,
+      "modes": [
+        "paper",
+        "baseline"
+      ],
+      "status": "complete",
+      "suite": "20260906T021023Z",
+      "worker": 5,
+      "startedAt": "2026-09-06T02:10:16.406Z",
+      "endedAt": "2026-09-06T03:27:28.228Z",
+      "exitCode": 0
+    }
+  ]
+}

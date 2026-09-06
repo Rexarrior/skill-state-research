@@ -1,7 +1,8 @@
 # SKILL.state v3: sequential action batches
 
 V3 is an experimental extension of the repository's v2 protocol. It keeps the same kernel-level bounded-context
-runtime, but allows the model to submit more than one action in a provider turn:
+runtime, but allows the model to submit more than one action in a provider turn. This is a Codex-style sketch
+(OpenCode uses object arguments such as `patchText` and its `bash` tool instead):
 
 ```json
 {
@@ -9,16 +10,22 @@ runtime, but allows the model to submit more than one action in a provider turn:
   "state_patch": { "next_action": "Inspect the batch results" },
   "comment": "Create the known files, then run independent checks.",
   "actions": [
-    { "name": "apply_patch", "input": { "patch": "..." } },
+    { "name": "apply_patch", "input": "*** Begin Patch\n...\n*** End Patch" },
     { "name": "exec_command", "input": { "cmd": "bun test" } }
   ]
 }
 ```
 
 The action array is non-empty and has no protocol count limit (`minItems: 1`, no `maxItems`). The runtime validates
-the complete envelope and every action before changing state, applies `state_patch` once, and executes actions strictly
-sequentially in list order. Action `i + 1` starts only after action `i` completes. On an action error the batch stops
+the complete envelope, action names/basic input kinds, limits and resulting state, applies `state_patch` once, and executes actions strictly
+sequentially in list order. Tool invocation `i + 1` starts only after invocation `i` returns. A returned live-process
+handle is not proof that the process has completed; the model may need `write_stdin`. On an action error the batch stops
 and all remaining actions are recorded as `skipped`. `finish` must be the sole action in its batch.
+
+Audit clarification (2026-09-05): this preflight is not full validation of every nested tool's parameter schema.
+Tool-specific argument validation may happen during dispatch, after earlier actions have executed. The tested
+implementation provides envelope/state preflight and fail-fast execution, not an all-arguments-valid guarantee.
+See [the validation-boundary audit](./PAPER-CONFORMANCE.md#validation-boundary-of-the-tested-v3-implementation).
 
 The model sees results only after the batch stops, so a later action may not depend on an unseen result from an earlier
 action. Individual action inputs/results and the execution state remain byte-bounded to prevent one item from consuming

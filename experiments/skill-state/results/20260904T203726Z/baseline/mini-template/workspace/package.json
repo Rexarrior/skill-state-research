@@ -1,0 +1,8 @@
+{
+  "name": "mini-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test.ts"
+  }
+}

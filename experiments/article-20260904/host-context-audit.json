@@ -1,0 +1,3927 @@
+{
+  "partial": false,
+  "cells": [
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/baseline/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "df75bbcaf806405b66d0dfd26a6863583699f78a35fdac3f4b3fa108ab816f5e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "0131e9149e7a3f83e59c00b57b78fe56d0e5640a1a85f32274af374fd71ba56c",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-paper/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6179,
+          "sha256": "c2da15bec00b03b620cef6c14b6189bc6bedf67ac4520537fdda3dc2b514e558",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13592,
+          "sha256": "5794eed92be6cbb106ee1464b2716dc20c8f65259d72ebd38b4290aff050cada",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "ae7c35f513ee97281e98f42bd086d186c18b990e8ac8ebe9509a50eecc86d3c1",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "9d281c8795392104c99ba99848d4f1defa8370f7dd38cc28901f7a320ca48800",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "5ac59e664aaef8db6984e872904fd2e676ba910579029a6cc8828c327bde5d04",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "210dd34cf700b8f1851980038ba4b11603ede194b961a12082ced606bba91ec0",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/baseline/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6169,
+          "sha256": "8b91572deddb2ed3bab6a012cd455e0c9d9237620e831d5ab6562aae4397a7df",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13532,
+          "sha256": "0c1b0df0157c438c698fd3e76cb3896b9c251396b27fa37e7fc814934769b735",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-paper/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "2b5d4520221e751ae0ace305f34c14ea3f77e8aeeaa0a4d5f22d5cdbcc2df662",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "b2f3f0937011ef61453db55ee2668619d09d1063bddd1ef59c5190fdfe1d6b79",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "8f2274b7786f3b142edc942ecbe3649193f5eb95c645355dfb4f733b0af4b62c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "5108f62d5f7f76e75e7b55927ce71b2f2a0d6b897f32dfd2f00bdc0a734fde92",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-v3/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "8985ca20ecfefedbf4ddfd26de99ed1da06567ca593ce518af23720ffd3ec09e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "97f59985e329614f57a64763144c302ab4915ebd532dc28de2c04b9f15450b0a",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/baseline/mini-template/summary.json",
+      "model": "sol",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "21348d0a9362b977b672e8d3c9484011650a725b49c6733fb6268d01b02e69ae",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "2c2b70904991315b1b61fe6975da8846083a13fe503278cd92aa0905fc462e12",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-paper/mini-template/summary.json",
+      "model": "sol",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6179,
+          "sha256": "e6000d1cc77f3da3293b9d9770e0d00edcda8ffb0b13936bcc80661b4c00278f",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13592,
+          "sha256": "9bd00d9f7a78c76d05f6acd6e7d7f0a08f15477eb9164f203ab64a4c0b88e4e3",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "5404af1b44d7ee98b23a5ecabd3a98b5857a91574ede76c4e04a1c850726b6a0",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "fa7c4e15e48b4582cb56242b5c7291b058e80579f235f838ff1c762d8d21e1e7",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-v3/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "95c252399e32df412334446f7bcbe3389fc398f0adc40ec8cb55797d90d23638",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "1926d0d9814f0589b424bdcd1ffb072b3247995f1f83ae3019c11dc26ab25aef",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/baseline/http-kv/summary.json",
+      "model": "sol",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6164,
+          "sha256": "c2ed96b8b8d1b92e8eca19168310cdc08edc35b892027542261b5f897c3108a5",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13502,
+          "sha256": "7e2e3dddc25a28997054231ed6184bfd0336ccfda521518fd54a80aa4a5dda76",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-paper/http-kv/summary.json",
+      "model": "sol",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "9deb14c332bf41a523c8ea988fcf60780aeb85aa93412b88187515d10c696fe3",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "1a7dc0569089e90a5e8bd2cfddb48c26fc1b6cbb4cda44d3543b167d5ab3ec81",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "0722b7b2c8f796c3ae3ed57d81a1981e393fb542baf3893db4ffb5dd0772971a",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "ce062cf06b8c1c43503792f6f3f8fdb12163410a8c812e537a1e7619bf699a48",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-v3/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "9404d2307b10d7bac027a42900b5d75b53810bf20b431658db784e97414b6d91",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "51b1a4ba955d798c74d5be7d31fd8a6eec402ba9f28801f6cb4dda0f5515fa23",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/baseline/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "b3f90ce46872a09ee89b8ee8fef6636820dda099143d3344f2ebe6cd4ffeb3ba",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "106ca5b9e95ae5b2aaea7286f44499c33b7db4daf8988e176947a515b7f53a58",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-paper/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6184,
+          "sha256": "4f0e3fe80aa507ea69d84578146973b1fde0a7d70cbd8ecb5147a9ff6e71c544",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13622,
+          "sha256": "dc00fdaef1e077b3ee74c234bc065487a1a0ed0639fd9d46883344aae20ffedc",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "2cccc05da266e13ba3b0855074949c16b8211dd4a4dd37bc6a69f2f4914932ec",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "304d3f70996e57b13e9262d9e746dce347b78bc187dd22f075184970b1df94bb",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T202639Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "b024a00c5fed9c30a823fa0d1e2ab5ed96513ef20d5bc692b39307d01dacf6d5",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "2f8665533943eca9d5c201168d41507e103deb9073669982040477448a410911",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "1369a0f8e5aa0bf75e9bec475b884ca6eb52277bdbaec9d167e8af82ac7a384d",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "af8cedea72567d8dd57a8e9a4f393c9d7df927e4666f4ed905b276ac5824dfad",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "85d9555391790509d5b8e9bc663391c46cd1639ff255e65e2fd52d0f4cd8d920",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "1f8b2ebac6a291b1aceef411776c45d43d62232d6873af31e30b810d3e64f51e",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state-v3/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "fbc911982f6079668f1f9cce0f5aa207572a054d8b44796401761036b0ae0cc9",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "b9a2e6300a399d225cbf594e3df9e1c77b32da9be01c040018b4c6b11419fe61",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "3034282b9b63e1b9c0f5ad6ee01f18b3ce8c52758c79b5a04c3795be94ceb5dd",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "14eaa6c024b1b5d623450d46b88231620edc692a73b45831811fec3bc2a2fcc2",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state-v3/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "1899487cd3beedc30a6fd83946857f70dddaf9782fdfd37c79f2c9f806748d0f",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "2f5e8463d6b9ac2e1874bc42a2ab414014a03eac376c1835909c3553f5a2ccf6",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "831fa21ce2848a3a7fc6b72fa3f6410e85db1e75ae5bd95c90d784f2c382f417",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "6e146ca1ff655cb24bbd5aa3c10bd8ef9740e106ec8fbec505d34eed3a45a60e",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state-v3/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "48bfa209a38b95372ba960fbb4f544aaade30f3f561062c7945a3cbd302d9e7a",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "7e2465be3e98b980fcb3abebecb23332f57a6ad503dd01a970db70956a973274",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "3898de567f39eb848d8f783379041ceea86baa8c5ed4941927811de01aed6099",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "8cf212ecc5c5639ab4ca883419e19f20a90e1eb0ef7ff54dfd68b08f5a5af393",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "5d6fe9883f456bd4f29d9d79707fd2c1f29d7a9239c60cfbd55f814fcf0a915a",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "844642fb4e6796e1f8169a089ad28b6a90cf7c0037002cc48f6636fc065e7003",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T212003Z/skill-state/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "5408bfc3eecb7f5166e122e5db62f8064b4f073d6484259b1eb9d3d40196b747",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "42c6747e36301643d6f789f3cf382133acb0e60bfa6605d1a2e46edbf0eb2bc5",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "2f86b44e632a0f2c234a04ec94f0a9acd9eb9b763a2188483896f6f749b7dd87",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "f79a523a3c8349ed04dedd103abc891e47bfe99c4c84626ae10d841f7ab3a476",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "c2b1d46f64d4afe739a8adf193b0e51c4599745533f388cd2c61e62d4b5aeb04",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "e701acd246cf153ceed91a89cafdfe0bd8668d42eeb4651af3dbae964e47f68e",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state-v3/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "983621edb5b2c1a7d707d05eff03761e637da42af10801e09108d56abdef3d4c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "17a2e988c8a5d53c7cf7072dc578ec2cb38d2ccfcb5159efbb7465c192f6be2b",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "f7f179b20783764ea108e9f031f377351547bd59faa58a520eefc9715addfc06",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "cc2f99a8f34ac2aadcd9b509c50bebe4b8e9068122f8c93fca9a7e5836b8fd3a",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state-v3/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "2ac1399b11508622361a75ab59dd5376325fa3150546e860b51c0738226a143c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "b1aa90842fc95223a3a2e76804045be349d476d148495e84377ad76f1ec52ce5",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "a296b04fc7dac92a5cffeef2a9365dd4ce908183345909793bbcadbeb4930ab9",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "41bade16db65c1a50ab6571ecf0a630716027b3d2d8b80e2b1576d9482db8821",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state-v3/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "b346f861b85d04bcb34076f4615782ad58842be2af9e7bfb7a301d9099b0bc3c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "aebf925e6f9309cc4fe4bbb90d692e0e8d775000aeba0961580b2e553cf4b607",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "522539e8915adb76dc9659fd98ebcd180aeb61c10b6228db81624aedefcbb632",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "9c076904fc491d5d87a8886decfe7519bbfd011a4bbbc3d2f561bb7206bfb218",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "a800739e79e10c03cb20c319b5bcb785e01049f991bb69bbb0e4e606a6819205",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "30da05fc48c3c4fd76eae611dc7fb98098832b7e0b903725248288e4ca1e14ce",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T220955Z/skill-state/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 1,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "70424a5e1228b80deaf7190dd326b3830b5bf69d8e8398f16d7862bc237393d0",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "6c94d052c4d49b69e948b24fdca425701d16d6789406dc15d5b46737c6715bb0",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/baseline/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "8fbd53c82be46b0a8f8c5907726e378a19cf28eb29f45d29881092c152afe3c9",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "bf2a1fb458454d8950aef9f7b737e28fac811044493133d97ffb503a345a7a22",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6179,
+          "sha256": "7f3bb65ac4eae0be6ea8b3ffad9634768381bc988a3efdc126fcb95256d65dac",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13592,
+          "sha256": "afe85d753468354059da93d7637a54396928c179be3e4ebc0786494cbaad145d",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "b7861f81a9ef98e493bd9b88f2af9dfd9f843efbf679ef115fbcc66a40994d3e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "55d441d70c86a5f1880ee6fd1153de2a2b05d709182600769b61d2867726cdb8",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "f4c84720e45cec020360bda2ddc9354d002268ff04d5217825e454dcd988b9f6",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "c09a6c820e0c8c79beef4c9c15ebc083b6338cd2b85ceac6b4e3e38ec55f50ee",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/baseline/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6169,
+          "sha256": "5074187b1a51c763ee7c63c9a61ddf0e172c91ffff2d22e627aa47491d9d06bc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13532,
+          "sha256": "6ccee1dc5a8d70dfe08f1ecf9e6380e84e5084492bc27711fc0c9ca87697dab6",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "4d6d1c45f1c85c933d47affd7cc66dfdb87407bfb0b921f715c5764634177e85",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "1c997f56d5ca38dfb9e1a5729e2ee7437929516ba02606bcaa081bd6f5e80165",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "4ea710cf6f22cd293187d441e51f746c2be3fbfd856fc9b0b61d3407dd5cb45c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "23f7798236f9471007fcb455d4734a1ca196636ff2dd7dcfd14c43513e292097",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-v3/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "8eec26b1040ac4075d70f9f82e420a287d0169c21f17ac258a82903c94767748",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "dc4c43635e58b9fb8f407e577fe6d0a2a213ad2fceae8ea98731c3936db08a50",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/baseline/mini-template/summary.json",
+      "model": "terra",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "967cb7520db290b76cb870d07d8eb4f16dc048833d08f116777a244c5d87deb2",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "db1e4d103c035c05fa0908a3df63df1d8351cb6ff51c8de26315b0e7a5640795",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/mini-template/summary.json",
+      "model": "terra",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6179,
+          "sha256": "dd50724b33e4965445bb11411f9f970b4735be10ede52f84d13825fa77b54690",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13592,
+          "sha256": "bebac361cf7f9e5afec6a580f9e207c01c3ca56eb433f758fcef34747633e9e8",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "62b4e6fc6f09d867e9255e5941c7ba66fa3b89f8ca54a111ceede8c938b25586",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "150242ba1cf3ebaef053a9c59f1ff0794a5921db1fc1a610bbc48f2825903aa6",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-v3/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "7673de61951b12d7443697499c688074107281fdbd5bbc946fb51c4a01a6d026",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "f5b031ef6fd0dfcc169e7aa26f743ce7e0fbee12b5a640862074e5ff85c19553",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/baseline/http-kv/summary.json",
+      "model": "terra",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6164,
+          "sha256": "617f149056357d78cf9b0fda58ec1f902631bc4e4082be70f30b9eb297082247",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13502,
+          "sha256": "28292be208226705a0f289d1686676277da16200f9afcb0421be56b223c10ec0",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/http-kv/summary.json",
+      "model": "terra",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "e992c9d9c3c822718a2ec3866f1a8c0819d7312d1211fb933696d73141943f3c",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "b5070778dce6059a459dad34e625063f9f0f70e0755ffac34f5bd5b5cfcad1b1",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "8f50ac998e0452358e5c4e6bea84b9bf52c7a33976bedbfb29f515500b98609b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "93b73a7baa4b8849ed22843f5ac516153f2209d2946560108a3fe80ea0723453",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-v3/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "6cc83e5a97fa83aa77a9884937ce20845d6713a68225be2bc47b0f64c50a297b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "1d33543c7f4e3fced5ca3450e0df7eaba9bbab4a5968ed83c0aed10bb8eda76a",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/baseline/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "native",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "4af2f85b9435dad89be76470a09b23dc8fbfd1732346538d9a8d98d2dff59882",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "a8422f605a1bafcba5aa5c8696bcb16e007eaaeea3f5e3014995eef9858d9735",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "paper",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6184,
+          "sha256": "b735a5a9c0e5e3c5b4491b18d6b145b619961369d5cda0182ee1668d9490586d",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13622,
+          "sha256": "f28170084c3623730f4fd85ee36361eed54bfee3a79fcfd3325239a9546ed8e4",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "9f98d00758316f1eca9b3778fc44a11d472d7052618910ce2eec67780bd75691",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "a0fac303ebbae554a888a174b65eafaa67dd70eab195b2f7412d1d77b8a846d5",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 0,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "c37cd8acc9699d67e33c2ab1087ba2c728f3dca75c29a03c6602335a52f6c839",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "2950177412225d44d624d3137b33d233b048f17509091b7d0fdc387b262f94aa",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "99b29045a85ce15104a65d15b7367aea1f998b580935f34e041da92f88785083",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "ae17b440ccca322a55b61c40a6dd677730d495facf658ac6e05a3e64aaaf1b83",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "12bee094baf4d9fbc1c54173775c01c00827187e49faa7c6e90536cf44867714",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "8db2443b339f476f68d1b85bf76c1f826764fc8d1f0c843b1469463295d904f3",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "0819bb5aaf46e93813a629076ed6be0bbb5cdab7de5f074d9cd0b02ab947bcb8",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "47f9c6ca46f48d9192cd6d2cfbec467e7b385b8e7065ab971094c9c4585a511b",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state-v3/csv-insights/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "79c512798920f4cf474875a809bd279a97547ce035d979e657f226de0ffc76d9",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "898cdc481f7e4a6917d1792be7826fedaec16868180c06293dd31963af354bbe",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "ed14a23db437c56cac254920a405f5ee049f2f880412e66c16a1819546044b8d",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "67285b2c87906452ec956777ac7b781163be2cad1cb184a49b7113fea783fed0",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state-v3/mini-template/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 5161,
+          "sha256": "fed6622ca39d63038021650e3c1db6670e5f187a08b9b1a59306fafe6e6d49da",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "7a7a7a3a2d0bd11c9b9a9fec644a3cfd4466e7b6e8b63a53527db3fbd24d4d45",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "48247a56186fd3a6b2c7d3f5a73fe1b7355180c8fff8c3e9e01b2340af198a67",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "876128914324e4af7a0d3a6642f8a0c5300aaea52749b9eab56e96407f221475",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state-v3/http-kv/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "7ad8b200a78a7de33a77fbb6eddd93a7bb6c582b37a4969aa0d2641f02384343",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "df6a5c731c9af88348fbea650bda3c1fb34b4391a3c1204b08c85f816a3d308c",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "344bf6b8ded9c6bccbf547c48ee22719eca24aecd14285bea88ef147178f9b1d",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "ed441019ff1b3239fea1d020b1b9dc006089260f28185b68e9da1bb365160eab",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T225135Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "ca4835a2b402c3eb6aea84bfeaf56c02575be175353bec1395e8eb5cdbf5627b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "ebb4fe696450510fd3dd08f6518577d99f727beef864a0607b20c32ec03d964f",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "b1aca06d3a147da81efd1ae3cd56bec8a834f5cc9c7b86e6790954a45d6885d6",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "74e6a1a10d34d56ffc341f5e9f1d8a834d74aeeb876c341e002819fc2b989875",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state-v3/taskboard-cli/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "930ee498ff824e3a622c6244931572554d6b647a7835657ddc71b63f71335c16",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "bbe01ee929c40e51c703749540cd2a8349ee8e52c5d37d48e6d9ecb55ae4e87b",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1700,
+          "sha256": "a3ef9fb4abba71906c10c59d6c256ebb909119c939a7f0766aec86daa3c18c0b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6172,
+          "sha256": "5832a5fdc8ee4c8dfe3d9fa655a9511285f7056b45276e951294b3d987097c80",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13550,
+          "sha256": "c05ada49f2de99c2ff5fd55e0b722d0556b49721e3d681aa3ef67c0035a908fc",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state-v3/csv-insights/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6175,
+          "sha256": "fca152a91f49d8e9cb0fc7f2a0352dc6e87beb88ac122eaf3482217a762b2297",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13568,
+          "sha256": "0b049da55b33427d5c1b31cef22fd188de140ea6384879e4cc8919093c94764a",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1618,
+          "sha256": "732f3475bc5d8f303476b94965b58e9ba493c865788ec184b09a9dfc2197d066",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6173,
+          "sha256": "57f78e80479d34d6ed107b1314499fad384c7af29fcfd0553f61d7b5e37eeb46",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13556,
+          "sha256": "06530227f8f9363b21faac59d70ee6f6d3801ef030f76924a3b7dbe6ec69c122",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state-v3/mini-template/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6176,
+          "sha256": "7614cc4c168f33a805cf4bb37aaf03874e316789c58cdcc5c35ec26afc1d4d8d",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13574,
+          "sha256": "6eaf9068403e561a554f2889e89b072161fd9f031bdbf90103fe84cb813accfa",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1639,
+          "sha256": "f4181af831b2aed11b4220a8e5f5e6d0da3736167d22240cf3f05e114244fd07",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6167,
+          "sha256": "86f365014ff14f96fe248dde730e27d3536c55fac2553916078f19c426fd5a50",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13520,
+          "sha256": "53431b4f4dd44877954e7c3770505ab9b594e720ee565df79831799b2c516b9c",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state-v3/http-kv/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6170,
+          "sha256": "1935fb1d34ec921edd6aff799939628cb190c3aa413cf289a19fa3104e8eaac3",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13538,
+          "sha256": "7dbffb64f0e0474d649169ab1fa1b906f68fdb73114e4e687706d482f6f30cba",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1716,
+          "sha256": "6ff0253c7b464d6963c84a6992397978ebe56140a0c9f9de320d42c4c2f9a813",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v2",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6178,
+          "sha256": "00f9b512959ba8a010d0fdd8c66dd3f8d4753643d604e2a63574357a5c715e9a",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13586,
+          "sha256": "6b6091df7c2cbd7035dcecf72092d18b65807ab2fdfbad632800c60bac2580f5",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260904T234023Z/skill-state-v3/dependency-planner/summary.json",
+      "model": "terra",
+      "mode": "v3",
+      "repetition": 2,
+      "hostProfilePresent": true,
+      "messages": [
+        {
+          "role": "developer",
+          "bytes": 6181,
+          "sha256": "a247f1f8133432f01460518373679290cc4d733e35627f226376e9fe9a5f8f2b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 2264,
+          "sha256": "af60719c7b64906bd05733aec72a96726712fe25d382a7bc9e05a6733cfd67dc",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "developer",
+          "bytes": 271,
+          "sha256": "6ded806e3cdbb35599ecaf8742574bc5274908472b1729090010c404c2151e8e",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 13604,
+          "sha256": "d4b48db0d643844f61b4b69cfe53e9943d0378d9cc009e9fe6bb4ec6ca04c6a3",
+          "hostProfile": true,
+          "pluginRecommendations": true,
+          "taskSpecification": false
+        },
+        {
+          "role": "user",
+          "bytes": 1734,
+          "sha256": "b88d731bc498570f1705f9cd197c481517587ca4431dbdc913232fe75267230b",
+          "hostProfile": false,
+          "pluginRecommendations": false,
+          "taskSpecification": true
+        }
+      ]
+    }
+  ],
+  "hostProfileCells": 80,
+  "scope": "Initial messages in local Codex rollouts, not production packet captures. Hashes include per-cell environment text, so differing hashes do not isolate a changed instruction. No personal instruction text is re-exported here."
+}

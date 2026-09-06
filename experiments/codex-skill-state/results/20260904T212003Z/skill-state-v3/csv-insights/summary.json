@@ -1,0 +1,86 @@
+{
+  "suite": "20260904T212003Z",
+  "project": "csv-insights",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T212003Z/skill-state-v3/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 177882,
+    "cachedInput": 73728,
+    "cacheWriteInput": 0,
+    "output": 10200,
+    "reasoning": 2284,
+    "total": 188082,
+    "samples": 9,
+    "commandExecutions": 18,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 9,
+    "stateErrors": 5,
+    "stateComments": 9,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 941,
+    "batchedActions": 24,
+    "multiActionBatches": 5,
+    "failedBatches": 5,
+    "skippedActions": 3,
+    "maxActionsPerBatch": 6,
+    "durationMs": 220878,
+    "threadID": "01a06e55-4f16-7633-bd1e-9aaa77f1d863"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 7,
+    "total": 8,
+    "score": 0.875,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": false,
+        "detail": "expected [{\"region\":\"North\",\"sum_revenue\":\"4\",\"avg_revenue\":\"2\"},{\"region\":\"South\",\"sum_revenue\":\"2.3\",\"avg_revenue\":\"2.3\"}], got [{\"region\":\"North\",\"sum_revenue\":4,\"avg_revenue\":2},{\"region\":\"South\",\"sum_revenue\":2.3,\"avg_revenue\":2.3}]"
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

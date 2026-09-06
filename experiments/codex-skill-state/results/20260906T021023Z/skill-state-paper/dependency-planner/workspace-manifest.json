@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-06T03:40:15.612Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T021023Z/skill-state-paper/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 812,
+      "sha256": "5b98c095b39071ca122ff6cf3b3c045e80eee7a6876d1a211f164012b583815c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 118,
+      "sha256": "bb66150b640450e092c6bac9af4ce8a732c698ce4b7abdd7de23f9eb0d295b90"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 8416,
+      "sha256": "9a7ca826b85ca9d0813da5cd03d0be973ed7d3b4b5168ea522390e003469c423"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 3441,
+      "sha256": "eba8b914ca8da00ff0cadeb4d1c7887d3676ef39b1581de66c5935e3ff0a9f38"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 224,
+      "sha256": "24302f352425bf751370ccea2cbc8a8cb31522d1e9f570fa0bdedc4cac770a55"
+    }
+  ],
+  "skipped": []
+}

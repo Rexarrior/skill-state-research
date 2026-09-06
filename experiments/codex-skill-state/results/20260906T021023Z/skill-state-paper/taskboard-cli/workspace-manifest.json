@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-06T02:17:22.488Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T021023Z/skill-state-paper/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 809,
+      "sha256": "effcedc143d23d7fe2ecb217f4d64d8884f5693f35fd9614956411661f45383f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "4ecdb6df540c760d48629a669a7ff1822ad5ae4f6c00f3df8b3002b68253e6d8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 9101,
+      "sha256": "1fcc889b029adf6ce6f1439f1815a42db5e66c607998595811856ee3ce681c7f"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 4270,
+      "sha256": "a0c57005f81fc0dc162ae4b16791994257750b81bc41eaffc72a4b16069e2259"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 211,
+      "sha256": "67abcf80482ab45d8254cb0c749ca796cc9a95de118fcccaffd278e940af4c7a"
+    }
+  ],
+  "skipped": []
+}

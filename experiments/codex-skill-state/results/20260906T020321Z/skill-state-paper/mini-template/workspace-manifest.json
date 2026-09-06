@@ -1,0 +1,138 @@
+{
+  "capturedAt": "2026-09-06T02:34:50.724Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020321Z/skill-state-paper/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.1cf29feffff67dec-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.3dd3fbfbfbc4fffb-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.79db9ffefcf86f9b-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.7afbfa4ddf7ffcbe-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.9cf3fbff57f7dfe7-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.9df2bb6fe7bdeef9-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.9ef6def2fbefdf7b-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.b8d3da69edefe4be-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.badafee6fffbfc7b-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.bbd6de772ef37f3a-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.bcd2db5fefbdff76-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.bdf6bb7e7fbf7ffb-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.ddd2decfe6bcfff3-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.dfd6baddcad3ee4b-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.f8d7baf7f5fffe89-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.f8fadbfec9b1fff8-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/.ffdefaf1fa7dfdd0-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/.tmp/.1adebee573ffaee8-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/.tmp/.1ddb9afdeae15f5d-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "README.md",
+      "bytes": 932,
+      "sha256": "6fabfd968b2db63e16ab356568ba3a3e891462982a44c4ba33b8720210bd75f1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 173,
+      "sha256": "62b54990da18dcaebb3d607633ec89978002a4804f24bbb20796a82a3787c2ff"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 663,
+      "sha256": "8fcfa78c8c24032f7e8d159229640b2d4438dbf15532be09aa501e8a38eedb83"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 7724,
+      "sha256": "2390cfbb71b0ecdd93e74891edebb8e05e368489ab07e5146398f8896872f292"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 3652,
+      "sha256": "ec00b9709ed50e519beafa73e8e7dcd673adb8cd03061700ac6782b67b4aefa8"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 227,
+      "sha256": "670d7c377663ece77be48918ec802e87eeb2fb7415a7844e9f6701c7468ad27e"
+    }
+  ],
+  "skipped": []
+}

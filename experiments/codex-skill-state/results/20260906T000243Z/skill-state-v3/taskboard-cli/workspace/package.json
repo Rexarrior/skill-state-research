@@ -1,0 +1,8 @@
+{
+  "name": "taskboard-cli",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "taskboard": "bun run src/cli.ts"
+  }
+}

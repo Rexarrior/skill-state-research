@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-09-06T02:39:08.613Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020613Z/baseline/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 783,
+      "sha256": "0b10d67d5b0dd584743c2ac9caf259fced3a47f44100ad84a67da9a8b10e2d38"
+    },
+    {
+      "path": "package.json",
+      "bytes": 134,
+      "sha256": "131a2fa50250447d8e03797852ad159ab8b27f41c30e135a1f056541f4c9aea8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 863,
+      "sha256": "eb59b84d594a9eb9820c92401b1b1651b14a495c464a3d017f51c642c1e46212"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 7504,
+      "sha256": "5bbe22ac61e2eb0fa31972233be7434e96b69c50f9381ca90132e8fed3284130"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 1245,
+      "sha256": "57ce4dbcc3dd10756986adf4e5bd8ebe0f0244cfe1eafc116d638f6d7cf2228b"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 2622,
+      "sha256": "48ccee936c3d69abfcad4b57ebd7018e589e6d56a5a3e1718887cef2a75a68ad"
+    },
+    {
+      "path": "test/fixtures/data.json",
+      "bytes": 41,
+      "sha256": "cce31cc6e9c58906966d6e88b2469256b248e1bdecb8f6fdb9656701529d464f"
+    },
+    {
+      "path": "test/fixtures/template.txt",
+      "bytes": 30,
+      "sha256": "493350a278a8d0f0d035457a6ca922e1be1baff66ffcd28d5ec30c462fca1031"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 227,
+      "sha256": "ecbc7b67910d8668c7e79f132334647de21d4a587b38beec21e82b6d4db3c909"
+    }
+  ],
+  "skipped": []
+}

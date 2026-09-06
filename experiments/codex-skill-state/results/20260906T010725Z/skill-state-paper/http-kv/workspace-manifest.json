@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-06T01:53:21.845Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T010725Z/skill-state-paper/http-kv",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1289,
+      "sha256": "024caeeeddaef3a4f316b1b6a0e619be68eadaedfdc6a23df24ab57c777c95ac"
+    },
+    {
+      "path": "server.py",
+      "bytes": 13465,
+      "sha256": "73e754ea92cda56da42e4d1ee4c68e2101ac8cb3c9a08b604dc4421d5e86e3e3"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "__pycache__",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+diff --git a/codex/codex-rs/core/src/session/turn.rs b/codex/codex-rs/core/src/session/turn.rs
+index 04df1f3..1176276 100644
+--- a/codex/codex-rs/core/src/session/turn.rs
++++ b/codex/codex-rs/core/src/session/turn.rs
+@@ -464,6 +464,10 @@ pub(crate) async fn run_turn(
+                             .await;
+                         model_needs_follow_up = false;
+                         sampling_request_last_agent_message = Some(message);
++                    } else {
++                        // A plain assistant answer is not a terminal state transition.
++                        // Keep sampling until finish is accepted or the run is interrupted.
++                        model_needs_follow_up = true;
+                     }
+                 }
+                 if model_needs_follow_up {
+diff --git a/codex/codex-rs/core/src/skill_state_paper.rs b/codex/codex-rs/core/src/skill_state_paper.rs
+index 6bd67cb..94919b0 100644
+--- a/codex/codex-rs/core/src/skill_state_paper.rs
++++ b/codex/codex-rs/core/src/skill_state_paper.rs
+@@ -33,7 +33,7 @@ pub(super) fn prompt(task: &str, state: &ExecutionState, observation: Option<&st
+     format!(
+         "You are operating under the original SKILL.state execution protocol from the paper.\n\
+ The execution state is your only durable memory. Previous observations, actions, responses, and reasoning are unavailable.\n\
+-On every step, call skill_step exactly once with exactly two fields: state_patch and action. Use null in nested dictionaries to delete obsolete entries.\n\
++On every step, call skill_step exactly once with exactly two fields: state_patch and action. Use null inside files to delete obsolete entries. Top-level coding-state fields are required; clear arrays with [] and files with per-entry null deletions.\n\
+ The runtime validates and applies the patch before executing exactly one action. Use finish only when the task is complete.\n\
+ \nInstructions:\n{task}\n\
+ \nSkill Execution State:\n{state_json}\n\
+@@ -43,37 +43,34 @@ The runtime validates and applies the patch before executing exactly one action.
+ 
+ pub(super) fn state_patch_schema() -> JsonSchema {
+     let nullable = |schema| JsonSchema::any_of(vec![schema, JsonSchema::null(None)], None);
+-    let strings = || nullable(JsonSchema::array(JsonSchema::string(None), None));
++    let strings = || JsonSchema::array(JsonSchema::string(None), None);
+     JsonSchema::object(
+         BTreeMap::from([
+             (
+                 "status".to_string(),
+-                nullable(JsonSchema::string_enum(
++                JsonSchema::string_enum(
+                     ["working", "blocked", "done"]
+                         .into_iter()
+                         .map(|value| Value::String(value.to_string()))
+                         .collect(),
+                     None,
+-                )),
++                ),
+             ),
+             ("plan".to_string(), strings()),
+             ("completed".to_string(), strings()),
+             (
+                 "files".to_string(),
+-                nullable(JsonSchema::object(
++                JsonSchema::object(
+                     BTreeMap::new(),
+                     None,
+                     Some(AdditionalProperties::Schema(Box::new(nullable(
+                         JsonSchema::string(None),
+                     )))),
+-                )),
++                ),
+             ),
+             ("facts".to_string(), strings()),
+             ("decisions".to_string(), strings()),
+-            (
+-                "next_action".to_string(),
+-                nullable(JsonSchema::string(None)),
+-            ),
++            ("next_action".to_string(), JsonSchema::string(None)),
+         ]),
+         None,
+         Some(false.into()),
+diff --git a/codex/codex-rs/core/src/tools/parallel.rs b/codex/codex-rs/core/src/tools/parallel.rs
+index e0a83e4..174e826 100644
+--- a/codex/codex-rs/core/src/tools/parallel.rs
++++ b/codex/codex-rs/core/src/tools/parallel.rs
+@@ -156,6 +156,7 @@ impl ToolCallRuntime {
+                     input,
+                     custom,
+                 } => {
++                    let shell = matches!(tool_name.name.as_str(), "exec_command" | "write_stdin");
+                     let payload = if custom {
+                         let Some(input) = input.as_str() else {
+                             unreachable!("freeform action input is validated before acceptance")
+@@ -189,6 +190,12 @@ impl ToolCallRuntime {
+                         Ok(output) => {
+                             let success = output.result.success_for_logging();
+                             let value = output.code_mode_result();
++                            let success = success
++                                && !(shell
++                                    && value
++                                        .get("exit_code")
++                                        .and_then(serde_json::Value::as_i64)
++                                        .is_some_and(|code| code != 0));
+                             let result = match value {
+                                 serde_json::Value::String(text) => text,
+                                 value => serde_json::to_string_pretty(&value)
+diff --git a/opencode/packages/opencode/src/session/skill-state.ts b/opencode/packages/opencode/src/session/skill-state.ts
+index 42c06d6..02dd707 100644
+--- a/opencode/packages/opencode/src/session/skill-state.ts
++++ b/opencode/packages/opencode/src/session/skill-state.ts
+@@ -117,14 +117,7 @@ const statePatchSchema: JSONSchema7 = {
+ }
+ 
+ const paperStatePatchSchema: JSONSchema7 = {
+-  type: "object",
+-  properties: Object.fromEntries(
+-    Object.entries(statePatchSchema.properties ?? {}).map(([name, schema]) => [
+-      name,
+-      { anyOf: [schema, { type: "null" }] },
+-    ]),
+-  ),
+-  additionalProperties: false,
++  ...statePatchSchema,
+ }
+ 
+ const v2Protocol = `You are operating under the SKILL.state v2 execution protocol.
+@@ -153,7 +146,7 @@ const paperProtocol = `You are operating under the original SKILL.state executio
+ 
+ The task specification below is immutable. The execution state is the only durable memory. Every earlier observation, action, response, and reasoning trace is discarded; only the latest environment observation is available.
+ 
+-On every turn call skill_step exactly once with exactly two fields: state_patch and action. Use state_patch to retain only information required by future execution, using null to delete obsolete dictionary entries. Then choose exactly one environment action. The runtime validates and applies the patch before it executes the action.
++On every turn call skill_step exactly once with exactly two fields: state_patch and action. Use state_patch to retain only information required by future execution, using null to delete obsolete entries inside files. The top-level coding-state fields are required; clear arrays with [] and files with per-entry null deletions. Then choose exactly one environment action. The runtime validates and applies the patch before it executes the action.
+ 
+ Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
+ 
+@@ -710,7 +703,10 @@ async function resolveToolResult(value: unknown): Promise<ActionResult> {
+     output: typeof result.output === "string" ? result.output : (JSON.stringify(result.output) ?? ""),
+     metadata: isRecord(result.metadata) ? result.metadata : {},
+     attachments: Array.isArray(result.attachments) ? result.attachments : undefined,
+-    actionError: false,
++    actionError:
++      isRecord(result.metadata) &&
++      (result.metadata.timeout === true ||
++        (typeof result.metadata.exit === "number" && result.metadata.exit !== 0)),
+   }
+ }
+ 

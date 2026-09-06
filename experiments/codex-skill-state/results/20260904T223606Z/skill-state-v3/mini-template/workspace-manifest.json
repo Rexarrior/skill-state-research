@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-04T23:38:47.402Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T223606Z/skill-state-v3/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 588,
+      "sha256": "b37af066eb4d8e65c21d48b9c0e276d2efcc56381d5de215db2dda59d6f3dfad"
+    },
+    {
+      "path": "package.json",
+      "bytes": 138,
+      "sha256": "d7965d1ddb5933b80d9788ced2beadbd47215e4cd75fac8842bdf8896aaa18cb"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 532,
+      "sha256": "619e2763a4ca5400c027f6e9b467a3b902cd59ee7c7e6e8fba9d5fc4e13e17f4"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 5429,
+      "sha256": "6410f5feef899899467cf279a18c0e18640cf33d433573b8948eba4729bbeb61"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 1423,
+      "sha256": "e3503d0cd0f634f95fe1cf0f75adfd2a1d1101ddd73e3e81430222e3f5c2fefe"
+    }
+  ],
+  "skipped": []
+}

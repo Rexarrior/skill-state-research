@@ -1,0 +1,1 @@
+mini-template: ENOENT: no such file or directory, open '.tmp/fixtures/missing.txt'

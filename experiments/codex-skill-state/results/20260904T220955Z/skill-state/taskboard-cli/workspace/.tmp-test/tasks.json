@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "First task",
+      "tags": [
+        "work",
+        "urgent"
+      ],
+      "status": "open",
+      "createdAt": "2026-09-04T22:15:15.628Z",
+      "due": "2020-02-29"
+    }
+  ],
+  "nextId": 2
+}

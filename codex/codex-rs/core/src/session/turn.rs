@@ -464,6 +464,10 @@ pub(crate) async fn run_turn(
                             .await;
                         model_needs_follow_up = false;
                         sampling_request_last_agent_message = Some(message);
+                    } else {
+                        // A plain assistant answer is not a terminal state transition.
+                        // Keep sampling until finish is accepted or the run is interrupted.
+                        model_needs_follow_up = true;
                     }
                 }
                 if model_needs_follow_up {

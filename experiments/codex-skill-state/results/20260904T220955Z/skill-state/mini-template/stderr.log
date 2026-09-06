@@ -1,0 +1,9 @@
+Reading additional input from stdin...
+2026-09-04T22:29:42.286546Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T220955Z/skill-state/mini-template/src/engine.ts:
+function resolvePath(path: string, context: Context): unknown {
+  if (path === "this") return context.current;
+  if (path === "@index") return context.index;
+
+  const parts = path.split(".");
+  let value: unknown = context.root;
+  for (const part of parts) {

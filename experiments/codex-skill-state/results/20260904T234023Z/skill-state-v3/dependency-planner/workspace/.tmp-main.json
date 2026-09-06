@@ -1,0 +1,9 @@
+{
+  "tasks": [
+    { "id": "deploy", "duration": 1, "dependsOn": ["build", "docs"] },
+    { "id": "docs", "duration": 0, "dependsOn": ["lint"] },
+    { "id": "build", "duration": 3, "dependsOn": ["lint"] },
+    { "id": "lint", "duration": 2 },
+    { "id": "alpha", "duration": 4 }
+  ]
+}

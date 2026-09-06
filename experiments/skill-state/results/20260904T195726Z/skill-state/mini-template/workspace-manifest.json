@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.565Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 555,
+      "sha256": "839c75770215c80b943b6477a50de1ed12f597007bba7931366405fc35f0c916"
+    },
+    {
+      "path": "bun.lock",
+      "bytes": 9172,
+      "sha256": "a17afffa8dca8e108e80a4ca4f80dd1db96b881bd7683e79e5a627b57694e535"
+    },
+    {
+      "path": "package.json",
+      "bytes": 233,
+      "sha256": "add1754343dc28c8e9c4134acfe7f522c2b3a9db3ef81f466e9cdbe64f94e6c9"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 635,
+      "sha256": "bf281779a3264932450a8007c124ae17b3ecb36dd46b89d19bf59d834ff5fd43"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 6074,
+      "sha256": "083d4112124aae781dc69c544e25cb3aba8bb69dd74ae1f0eafed2e776735828"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 1753,
+      "sha256": "61209c9b35e25f0ceb73f6daba0d8f1311a0af4a35317b456f9797d43c8c68a0"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 221,
+      "sha256": "e3845670a16e00f294b254d234a3fb41cae120e93bfb7d3cb0281ce89f167ba9"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "node_modules",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

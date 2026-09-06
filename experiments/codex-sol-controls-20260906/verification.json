@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-06T03:43:13.324Z",
+  "status": "passed",
+  "cells": 100,
+  "uniqueMainSessions": 100,
+  "pairedAttempts": 10,
+  "combinedCells": 200,
+  "normalizedProfileHashes": 1,
+  "archives": 100,
+  "archivedFiles": 448,
+  "protectedFiles": 971,
+  "maximumSuiteWorkers": 5,
+  "auxiliaryThreads": 26,
+  "supplementaryDeletionProjects": 20,
+  "links": 134,
+  "scope": "Recorded suite intervals, usage, archive hashes and source/article preservation; not a guarantee about all unrecorded HTTP requests or scientific generalizability."
+}

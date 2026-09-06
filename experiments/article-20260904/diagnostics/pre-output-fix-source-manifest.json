@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-09-04T20:07:46.660Z",
+  "baseCommit": "08c908c2aa5f274fe0165c4b8c635ef16d52346c",
+  "patchSha256": "9e99bd64da427c00597eaaaead6fe29ea09d582440c26b3ad37740061783f055",
+  "files": {
+    "opencode/packages/opencode/src/session/skill-state.ts": "f2612b07b26f6e041bfdf406a6de1649cd02e2e22ee8d0326b4c21b59bea3c31",
+    "opencode/packages/opencode/src/session/prompt.ts": "f1ebc547abd33759441ad932b440845729f2a2fb71c086715d8e40a11006e366",
+    "codex/codex-rs/core/src/skill_state.rs": "085709f707b4bb859f1a01a1fda6231fe920b70070a3a79b9f308cd45d9a85a8",
+    "codex/codex-rs/core/src/skill_state_paper.rs": "b1686f326e74ff0318069083733fca4e54fe73740c18a1e7c49cc25d34e06e8d",
+    "codex/codex-rs/core/src/session/turn.rs": "61b07b5aec71c3df69a801010c576919b3454a6d156a472438327a1e8fc9cc57",
+    "codex/codex-rs/core/src/tools/parallel.rs": "b442504a39c07aac562c521c67524bcc07cc6520625fd4ab1f5d58d9b45797f8",
+    "experiments/skill-state/scripts/run.ts": "5cb8fd13297e11f71946c3ccbd35583fdb9c75a3bf44aec707d4ddb759cc7135",
+    "experiments/codex-skill-state/scripts/run.ts": "25e38c4ba2ca192547525b49d0d4bfdc7fe6512b6bd98fd39d5aae7bfafb0c07",
+    "experiments/skill-state/scripts/evaluate.ts": "b3585d9d15e037821d1f13e9bc324f200d3b0dd6d80c74f6d99ff01103dadf62",
+    "experiments/skill-state/prompts/one-shot.txt": "cab1588d1c9ba78e09e1cbe182cbc85c6bf45491a7002dfdeaf4cba9391d2b46",
+    "experiments/skill-state/projects/taskboard-cli/SPEC.md": "5283ab5d807e5e8437632ed692a2413b44d24cbc40ba5695ff3268760ff003c5",
+    "experiments/skill-state/projects/csv-insights/SPEC.md": "f82b69a20387950a3f7984ab12de3e3f944fb4209d4d9a3daf35bca70aa04409",
+    "experiments/skill-state/projects/mini-template/SPEC.md": "5fa368cd875c9e2f4aa645cba8a1ba91bff35cb4211331e44c0bd24867055da5",
+    "experiments/skill-state/projects/http-kv/SPEC.md": "04cabd1910194dd7b8163f5853d0a49b7f644ced59175bbeaa72f43aea97edd8",
+    "experiments/skill-state/projects/dependency-planner/SPEC.md": "190125ac0285fbc68ef2eeac7e6b187357a69648ea3e737bd7dfac6b5da8f096"
+  }
+}

@@ -156,6 +156,7 @@ impl ToolCallRuntime {
                     input,
                     custom,
                 } => {
+                    let action_name = tool_name.name.clone();
                     let payload = if custom {
                         let Some(input) = input.as_str() else {
                             unreachable!("freeform action input is validated before acceptance")
@@ -186,23 +187,11 @@ impl ToolCallRuntime {
                         )
                         .await
                     {
-                        Ok(output) => {
-                            let success = output.result.success_for_logging();
-                            let value = output.code_mode_result();
-                            let result = match value {
-                                serde_json::Value::String(text) => text,
-                                value => serde_json::to_string_pretty(&value)
-                                    .unwrap_or_else(|_| value.to_string()),
-                            };
-                            crate::skill_state::ActionOutcome {
-                                status: if success {
-                                    crate::skill_state::BatchActionStatus::Success
-                                } else {
-                                    crate::skill_state::BatchActionStatus::Error
-                                },
-                                result,
-                            }
-                        }
+                        Ok(output) => crate::skill_state::ActionOutcome::from_tool_output(
+                            &action_name,
+                            output.result.as_ref(),
+                            &output.payload,
+                        ),
                         Err(FunctionCallError::Fatal(message)) => {
                             return Err(CodexErr::Fatal(message));
                         }

@@ -1,0 +1,9 @@
+{
+  "name": "taskboard-cli",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "bun build src/cli.ts --target bun --outdir /tmp/taskboard-cli-build-check && bun test",
+    "test": "bun test"
+  }
+}

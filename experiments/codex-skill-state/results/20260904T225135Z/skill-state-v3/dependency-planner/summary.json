@@ -1,0 +1,81 @@
+{
+  "suite": "20260904T225135Z",
+  "project": "dependency-planner",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T225135Z/skill-state-v3/dependency-planner",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 619015,
+    "cachedInput": 267264,
+    "cacheWriteInput": 0,
+    "output": 28944,
+    "reasoning": 4699,
+    "total": 647959,
+    "samples": 31,
+    "commandExecutions": 41,
+    "fileChanges": 4,
+    "errors": 0,
+    "stateCalls": 31,
+    "stateErrors": 16,
+    "stateComments": 28,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 580,
+    "batchedActions": 51,
+    "multiActionBatches": 12,
+    "failedBatches": 16,
+    "skippedActions": 4,
+    "maxActionsPerBatch": 4,
+    "durationMs": 654315,
+    "threadID": "01a06ec1-60de-7481-904b-766ece498966"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

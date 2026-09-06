@@ -1,0 +1,73 @@
+{
+  "suite": "20260904T203726Z",
+  "project": "dependency-planner",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T203726Z/skill-state-v3/dependency-planner",
+  "metrics": {
+    "turns": 24,
+    "toolCalls": 24,
+    "stateCalls": 24,
+    "stateErrors": 0,
+    "stateComments": 23,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 975,
+    "batchedActions": 47,
+    "multiActionBatches": 14,
+    "failedBatches": 8,
+    "skippedActions": 3,
+    "maxActionsPerBatch": 4,
+    "input": 2928,
+    "output": 11332,
+    "reasoning": 1743,
+    "cacheRead": 347507,
+    "cacheWrite": 97851,
+    "cost": 0.23225740000000003,
+    "durationMs": 161822,
+    "sessionID": "ses_f91b96e0cffeXIE8egPZs6Jw3J"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-06T00:58:55.355Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T001510Z/skill-state-v3/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.19ded57b3ff9cffa-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "README.md",
+      "bytes": 659,
+      "sha256": "d440b4bfcd3bd5881bb1ff5baba6c71a6b42302f93146e469a04f3eb5cfc7225"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 7053,
+      "sha256": "5035264ca3139d4c557b49e0c1a697f41d1dfa3026f9b22370f6451aa4a2cc53"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 3576,
+      "sha256": "d52f1511ac36027fe5975b0514d5c07fa6de747a99bf7014bf3872df1bfdf3e6"
+    }
+  ],
+  "skipped": []
+}

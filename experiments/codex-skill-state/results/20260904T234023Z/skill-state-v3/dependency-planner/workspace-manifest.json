@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-09-05T00:13:33.707Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T234023Z/skill-state-v3/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp-cycle.json",
+      "bytes": 96,
+      "sha256": "170909e7cbabc3139876807a0e39e0df8ffcd207dfcdefb8bd21b766fc61c9bf"
+    },
+    {
+      "path": ".tmp-empty.json",
+      "bytes": 13,
+      "sha256": "2e0037521461ed23f4269712d6deac75619d38bedeeeafd0f6d518d3a002de5a"
+    },
+    {
+      "path": ".tmp-invalid.json",
+      "bytes": 60,
+      "sha256": "18029deee1c1cba205b3ed857051405d7ce9ed408ef2586d423561fb2086b23a"
+    },
+    {
+      "path": ".tmp-main.json",
+      "bytes": 287,
+      "sha256": "09fecbc15751b8ed4847998569af125045086b26a3a65f079fd4e9f7ef5f31f3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 813,
+      "sha256": "dd952e00d86a9fa082e1da1405c6c7ee06032675275f6fbe87089c9133ea4850"
+    },
+    {
+      "path": "src/cli.test.ts",
+      "bytes": 2276,
+      "sha256": "37107a909cb6d97c85b5a9d728de5fe4a1f4f956dcaf38d3b8b696a8392cc102"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 6310,
+      "sha256": "c8dd9ad322e8983bdbe67371a82c0a4e5731f149c17057e44700895a1aae7bb0"
+    }
+  ],
+  "skipped": []
+}

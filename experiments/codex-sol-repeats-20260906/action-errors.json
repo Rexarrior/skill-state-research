@@ -1,0 +1,1262 @@
+{
+  "partial": false,
+  "method": "Post-hoc exclusive keyword buckets over recorded error outputs: git, then permissions, then missing file/command/module, then other. Text may contain incidental matches. No command execution, no classification of successful actions, no claim that all nonzero exits are bugs (negative tests can be intentional).",
+  "groups": [
+    {
+      "mode": "v2",
+      "cells": 50,
+      "errors": 201,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 60,
+        "permission-or-sandbox-marker": 42,
+        "other": 95,
+        "missing-command-file-or-module-marker": 4
+      }
+    },
+    {
+      "mode": "v3",
+      "cells": 50,
+      "errors": 263,
+      "skipped": 128,
+      "counts": {
+        "git-not-repository": 77,
+        "permission-or-sandbox-marker": 46,
+        "other": 133,
+        "missing-command-file-or-module-marker": 7
+      }
+    }
+  ],
+  "rows": [
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/csv-insights/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/mini-template/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "permission-or-sandbox-marker": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/http-kv/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/dependency-planner/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 6,
+      "skipped": 1,
+      "counts": {
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1,
+        "other": 3
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 4,
+      "skipped": 3,
+      "counts": {
+        "other": 1,
+        "git-not-repository": 1,
+        "missing-command-file-or-module-marker": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 6,
+      "skipped": 2,
+      "counts": {
+        "other": 3,
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 6,
+      "skipped": 5,
+      "counts": {
+        "other": 3,
+        "git-not-repository": 2,
+        "missing-command-file-or-module-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/csv-insights/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/mini-template/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 5,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "permission-or-sandbox-marker": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/http-kv/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 8,
+      "skipped": 0,
+      "counts": {
+        "other": 5,
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/dependency-planner/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 7,
+      "skipped": 0,
+      "counts": {
+        "other": 4,
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 6,
+      "skipped": 3,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 3,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/csv-insights/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "other": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/mini-template/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 7,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 2,
+        "permission-or-sandbox-marker": 3
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/http-kv/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/dependency-planner/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 3,
+      "skipped": 1,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 7,
+      "skipped": 3,
+      "counts": {
+        "other": 5,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 6,
+      "skipped": 8,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 3,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 9,
+      "skipped": 6,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 5,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 4,
+      "skipped": 2,
+      "counts": {
+        "other": 1,
+        "missing-command-file-or-module-marker": 1,
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 5,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "permission-or-sandbox-marker": 1,
+        "missing-command-file-or-module-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/csv-insights/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/mini-template/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/http-kv/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/dependency-planner/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "permission-or-sandbox-marker": 1,
+        "other": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 4,
+      "skipped": 6,
+      "counts": {
+        "other": 1,
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 7,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1,
+        "other": 4
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/csv-insights/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/mini-template/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 6,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 2,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/http-kv/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 5,
+      "skipped": 0,
+      "counts": {
+        "other": 3,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/dependency-planner/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 8,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 3,
+        "other": 5
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 7,
+      "skipped": 4,
+      "counts": {
+        "other": 5,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 1,
+      "counts": {
+        "other": 3
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 6,
+      "skipped": 10,
+      "counts": {
+        "git-not-repository": 2,
+        "missing-command-file-or-module-marker": 1,
+        "permission-or-sandbox-marker": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 13,
+      "skipped": 5,
+      "counts": {
+        "other": 9,
+        "git-not-repository": 3,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 7,
+      "skipped": 4,
+      "counts": {
+        "git-not-repository": 3,
+        "other": 4
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/csv-insights/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/mini-template/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 6,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 3,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/http-kv/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 5,
+      "skipped": 0,
+      "counts": {
+        "other": 3,
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/dependency-planner/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "missing-command-file-or-module-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 6,
+      "skipped": 1,
+      "counts": {
+        "other": 4,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 7,
+      "skipped": 4,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 2,
+        "permission-or-sandbox-marker": 3
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 19,
+      "skipped": 10,
+      "counts": {
+        "other": 8,
+        "git-not-repository": 7,
+        "permission-or-sandbox-marker": 4
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 3,
+      "skipped": 3,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/csv-insights/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/mini-template/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/http-kv/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 18,
+      "skipped": 0,
+      "counts": {
+        "other": 13,
+        "permission-or-sandbox-marker": 3,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/dependency-planner/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 14,
+      "skipped": 3,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 9,
+        "permission-or-sandbox-marker": 4
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 5,
+      "skipped": 4,
+      "counts": {
+        "other": 1,
+        "permission-or-sandbox-marker": 2,
+        "missing-command-file-or-module-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 5,
+      "skipped": 2,
+      "counts": {
+        "other": 3,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 5,
+      "skipped": 7,
+      "counts": {
+        "other": 5
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/csv-insights/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 9,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 6,
+        "missing-command-file-or-module-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/mini-template/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/http-kv/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 9,
+      "skipped": 0,
+      "counts": {
+        "other": 6,
+        "permission-or-sandbox-marker": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/dependency-planner/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 6,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 4
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 3,
+      "skipped": 3,
+      "counts": {
+        "git-not-repository": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 3
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 5,
+      "skipped": 9,
+      "counts": {
+        "other": 2,
+        "missing-command-file-or-module-marker": 1,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 6,
+      "skipped": 3,
+      "counts": {
+        "other": 3,
+        "git-not-repository": 2,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 2,
+      "skipped": 1,
+      "counts": {
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 5,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 3,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/csv-insights/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/mini-template/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/http-kv/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 3,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/dependency-planner/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 2,
+      "skipped": 1,
+      "counts": {
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 7,
+      "skipped": 3,
+      "counts": {
+        "missing-command-file-or-module-marker": 1,
+        "permission-or-sandbox-marker": 3,
+        "git-not-repository": 2,
+        "other": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 6,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1,
+        "other": 4,
+        "permission-or-sandbox-marker": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "project": "taskboard-cli",
+      "errors": 1,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/csv-insights/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "project": "csv-insights",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/mini-template/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "project": "mini-template",
+      "errors": 7,
+      "skipped": 0,
+      "counts": {
+        "missing-command-file-or-module-marker": 1,
+        "other": 3,
+        "git-not-repository": 1,
+        "permission-or-sandbox-marker": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/http-kv/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "project": "http-kv",
+      "errors": 6,
+      "skipped": 0,
+      "counts": {
+        "other": 3,
+        "permission-or-sandbox-marker": 1,
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/dependency-planner/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "project": "dependency-planner",
+      "errors": 0,
+      "skipped": 0,
+      "counts": {}
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "project": "taskboard-cli",
+      "errors": 2,
+      "skipped": 0,
+      "counts": {
+        "git-not-repository": 2
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/csv-insights/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "project": "csv-insights",
+      "errors": 3,
+      "skipped": 1,
+      "counts": {
+        "other": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/mini-template/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "project": "mini-template",
+      "errors": 4,
+      "skipped": 0,
+      "counts": {
+        "other": 1,
+        "permission-or-sandbox-marker": 2,
+        "git-not-repository": 1
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/http-kv/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "project": "http-kv",
+      "errors": 22,
+      "skipped": 8,
+      "counts": {
+        "other": 15,
+        "permission-or-sandbox-marker": 2,
+        "git-not-repository": 5
+      }
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/dependency-planner/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "project": "dependency-planner",
+      "errors": 2,
+      "skipped": 1,
+      "counts": {
+        "permission-or-sandbox-marker": 2
+      }
+    }
+  ]
+}

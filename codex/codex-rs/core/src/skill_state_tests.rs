@@ -1,6 +1,38 @@
 use super::*;
 use pretty_assertions::assert_eq;
 
+#[test]
+fn tool_observation_preserves_patch_confirmation_and_shell_failure() {
+    use crate::tools::context::ApplyPatchToolOutput;
+    use crate::tools::context::ExecCommandToolOutput;
+    use crate::tools::context::ToolPayload;
+    let payload = ToolPayload::Function {
+        arguments: "{}".to_string(),
+    };
+    let patch = ApplyPatchToolOutput::from_text("Success. Updated files: src/main.ts".to_string());
+    let result = ActionOutcome::from_tool_output("apply_patch", &patch, &payload);
+    assert_eq!(result.result, "Success. Updated files: src/main.ts");
+    assert_eq!(result.status, BatchActionStatus::Success);
+    let shell = ExecCommandToolOutput {
+        event_call_id: String::new(),
+        chunk_id: String::new(),
+        wall_time: std::time::Duration::ZERO,
+        raw_output: b"test failed".to_vec(),
+        truncation_policy: codex_utils_output_truncation::TruncationPolicy::Tokens(1000),
+        max_output_tokens: None,
+        process_id: None,
+        exit_code: Some(7),
+        original_token_count: None,
+        output_omitted_bytes: None,
+        hook_command: None,
+    };
+    let result = ActionOutcome::from_tool_output("exec_command", &shell, &payload);
+    assert_eq!(result.status, BatchActionStatus::Error);
+    let value: Value = serde_json::from_str(&result.result).unwrap();
+    assert_eq!(value["exit_code"], 7);
+    assert_eq!(value["output"], "test failed");
+}
+
 fn function_tool(name: &str) -> ToolSpec {
     ToolSpec::Function(ResponsesApiTool {
         name: name.to_string(),

@@ -1,0 +1,1 @@
+mini-template: Usage: bun run src/cli.ts TEMPLATE_FILE DATA.json

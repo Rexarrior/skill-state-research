@@ -1,0 +1,8 @@
+Reading additional input from stdin...
+2026-09-05T23:46:40.772988Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown
+2026-09-05T23:47:33.645158Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232344Z/skill-state/http-kv/server.py:
+        if length < 0:
+            raise RequestError(400, "invalid Content-Length")
+        if length > MAX_BODY:
+            self.close_connection = True
+            raise RequestError(413, "request body too large")

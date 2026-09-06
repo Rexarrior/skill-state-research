@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-09-04T22:40:19.561Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T202639Z/skill-state/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".selftest.WAu3Pa/bad.json",
+      "bytes": 4,
+      "sha256": "17eed55d881c0dd5fe0935a98d89dd9e52d62aed941f3fb7d17bd490e5aa3e8f"
+    },
+    {
+      "path": ".selftest.WAu3Pa/cycle.json",
+      "bytes": 137,
+      "sha256": "16ef2ef5b570d6981f59cf1f55708971af468587e46c9a9467e03b145e7eec2f"
+    },
+    {
+      "path": ".selftest.WAu3Pa/dupdep.json",
+      "bytes": 81,
+      "sha256": "950c09d8bf8890b67fd1058589db8a786eebf85365d55cba9c285a944bc615e8"
+    },
+    {
+      "path": ".selftest.WAu3Pa/duplicate.json",
+      "bytes": 59,
+      "sha256": "f36315fa257d032faec5b5519998e836c065c4802efb24f76f1fb04d32a72117"
+    },
+    {
+      "path": ".selftest.WAu3Pa/duration.json",
+      "bytes": 36,
+      "sha256": "a1917c385735ca103f805578e3dd33e5b79cc220136888ef83decdc37e26fc3a"
+    },
+    {
+      "path": ".selftest.WAu3Pa/input.json",
+      "bytes": 101,
+      "sha256": "0c5cb725748a6ef884d0c777a8584129b050e1c6cb011ba8eafe4811a51ed76c"
+    },
+    {
+      "path": ".selftest.WAu3Pa/self.json",
+      "bytes": 53,
+      "sha256": "52a81386460dd4738662b9922baad2fc81befd1b018beb8f9310105a563640d6"
+    },
+    {
+      "path": ".selftest.WAu3Pa/stderr",
+      "bytes": 124,
+      "sha256": "9670777848fca51c729aecb5217f39f098408f7fc8509936977f171614851883"
+    },
+    {
+      "path": ".selftest.WAu3Pa/stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".selftest.WAu3Pa/unknown.json",
+      "bytes": 59,
+      "sha256": "1c09a8310f14af2b5985b5c61a93c8b1e5d173b9dd95953028f6f455e83598b5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1119,
+      "sha256": "069829be4019a2d0541d500be45c4da59d801ab9ec55d40f799ee80c403ccffe"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 8161,
+      "sha256": "7d637d855ae3c5faea47dc982f78dfb8e5c9bbc581fb9746c97883f99c3ed068"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,3 @@
+Reading additional input from stdin...
+2026-09-06T02:42:07.780220Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 216ms)... turn_id=01a07497-51bf-7381-ae0d-2972f5eb3f95 retries=1 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-09-06T02:46:00.133717Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown

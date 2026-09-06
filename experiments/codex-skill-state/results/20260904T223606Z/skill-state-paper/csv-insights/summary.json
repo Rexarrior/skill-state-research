@@ -1,0 +1,84 @@
+{
+  "suite": "20260904T223606Z",
+  "project": "csv-insights",
+  "mode": "skill-state-paper",
+  "model": "gpt-5.6-terra",
+  "protocolMode": "paper",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T223606Z/skill-state-paper/csv-insights",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 1522817,
+    "cachedInput": 1377024,
+    "cacheWriteInput": 0,
+    "output": 30227,
+    "reasoning": 4867,
+    "total": 1553044,
+    "samples": 98,
+    "commandExecutions": 97,
+    "fileChanges": 1,
+    "errors": 0,
+    "stateCalls": 98,
+    "stateErrors": 53,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 8,
+    "maxRepeatStreak": 3,
+    "maxStateBytes": 900,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 900007,
+    "threadID": "01a06ea7-b53d-7710-8541-41de7b549219"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

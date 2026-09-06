@@ -1,0 +1,759 @@
+{
+  "partial": false,
+  "discoveredAfterRunsStarted": true,
+  "scope": "Specification-aligned supplementary deletion check on isolated copies of archived projects. Does not replace frozen evaluator results or re-evaluate other task requirements. The original check requires reply.id, not prescribed by SPEC.md.",
+  "outcomes": [
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 1,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:53.773Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-kry3ZF/workspace",
+      "evaluatedAt": "2026-09-06T00:12:53.838Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 1,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:53.871Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-r0xfdZ/workspace",
+      "evaluatedAt": "2026-09-06T00:12:53.937Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 2,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:53.963Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-F99CBk/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.014Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 2,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:54.042Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-rFMuWv/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.114Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 3,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:54.144Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-IHQPex/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.195Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 3,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.225Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-fV0fKB/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.307Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 4,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.340Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-oglyGM/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.413Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 4,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:54.438Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-QTdWMC/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.492Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 5,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.518Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-U8RsNY/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.569Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 5,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:54.593Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-o6vtIs/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.642Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 6,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.666Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-oKKtoT/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.716Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 6,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.742Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-EO61qr/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.795Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 7,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.825Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-a2MulB/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.901Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 7,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:12:54.927Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-OeiIAq/workspace",
+      "evaluatedAt": "2026-09-06T00:12:54.980Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 8,
+      "mode": "v2",
+      "rawCheckPassed": false,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "deleted": 2
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-EQ2Yko/workspace",
+      "evaluatedAt": "2026-09-06T00:12:55.086Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 8,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:55.117Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-VIZHio/workspace",
+      "evaluatedAt": "2026-09-06T00:12:55.192Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 9,
+      "mode": "v2",
+      "rawCheckPassed": false,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "deleted": 2
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-OqZJpB/workspace",
+      "evaluatedAt": "2026-09-06T00:12:55.265Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 9,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "createdAt": "2026-09-06T00:12:55.290Z",
+        "tags": []
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-eR2nfc/workspace",
+      "evaluatedAt": "2026-09-06T00:12:55.341Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/taskboard-cli/summary.json",
+      "repetition": 10,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:21:55.258Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-xEav87/workspace",
+      "evaluatedAt": "2026-09-06T00:21:55.344Z"
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/taskboard-cli/summary.json",
+      "repetition": 10,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "deletedReply": {
+        "id": 2,
+        "title": "Second audit task",
+        "status": "open",
+        "tags": [],
+        "createdAt": "2026-09-06T00:21:55.378Z"
+      },
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/skill-state-delete-audit-ntbbh9/workspace",
+      "evaluatedAt": "2026-09-06T00:21:55.464Z"
+    }
+  ]
+}

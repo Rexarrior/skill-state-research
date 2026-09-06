@@ -1,0 +1,76 @@
+{
+  "suite": "20260904T195726Z",
+  "project": "csv-insights",
+  "mode": "skill-state-paper",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "protocolMode": "paper",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state-paper/csv-insights",
+  "metrics": {
+    "turns": 19,
+    "toolCalls": 19,
+    "stateCalls": 19,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 1,
+    "repeatedActions": 1,
+    "maxRepeatStreak": 2,
+    "maxStateBytes": 808,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 2318,
+    "output": 6990,
+    "reasoning": 389,
+    "cacheRead": 283718,
+    "cacheWrite": 30783,
+    "cost": 0.374819,
+    "durationMs": 121913,
+    "sessionID": "ses_f91fa6f6fffef6PIxi763WaTCf"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

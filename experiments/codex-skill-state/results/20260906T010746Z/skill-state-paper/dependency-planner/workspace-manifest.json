@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-06T01:56:10.427Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T010746Z/skill-state-paper/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 654,
+      "sha256": "d3726d6cf565c8ec071aa7006be4bfcf1a4b0e4ff9ffe82e5054a00c531bf637"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 6968,
+      "sha256": "63d3493e8307d456f00ef8de21ea1f7f96838ec623a043bfa8a888fa061ee80a"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 2756,
+      "sha256": "f05d278ab25676bd4cfeab4d7e133d56ddc262baf291fa74781bb36905d4f0c1"
+    }
+  ],
+  "skipped": []
+}

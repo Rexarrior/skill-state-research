@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-09-04T21:19:57.778Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T203726Z/skill-state/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp-tests/cycle.json",
+      "bytes": 95,
+      "sha256": "ccd1dc2002b2563cc2752660c1247a0766dd9add70b0d390c7b5e0498c670a69"
+    },
+    {
+      "path": ".tmp-tests/dag.json",
+      "bytes": 193,
+      "sha256": "c8bf023831690b03660ffdfd311881fb6ddcb525a313460b5704ddce4d253295"
+    },
+    {
+      "path": ".tmp-tests/empty.json",
+      "bytes": 12,
+      "sha256": "b8cce95f94bb3842447a35cad31d68789df636e11353ab4a75179d86761d804c"
+    },
+    {
+      "path": ".tmp-tests/path-tie.json",
+      "bytes": 176,
+      "sha256": "3e4fb8efe5ee31ce7774af4fe5c2b913ff5b1c8129e9147470fe5328e364bb14"
+    },
+    {
+      "path": ".tmp-tests/tie.json",
+      "bytes": 143,
+      "sha256": "33b4cbf10632cf57883d42faa4acc1bc35bcc262b184acd8fb61d7409239bf25"
+    },
+    {
+      "path": ".tmp-tests/unknown.json",
+      "bytes": 59,
+      "sha256": "1c09a8310f14af2b5985b5c61a93c8b1e5d173b9dd95953028f6f455e83598b5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 575,
+      "sha256": "b537032c1cebd8975d5873848a7c9d6570ed5e2f6cab5f211c284831f2b811df"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 5727,
+      "sha256": "626aa36a33226bfe8e2b5e53cd0c7001f016528775c96594ebee5bd9d2f3b00c"
+    }
+  ],
+  "skipped": []
+}

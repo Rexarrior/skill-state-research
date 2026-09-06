@@ -1,0 +1,83 @@
+{
+  "capturedAt": "2026-09-06T02:31:40.008Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020613Z/skill-state-paper/csv-insights",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1026,
+      "sha256": "1f756fad6c144335b379419a071621e50139a1498b6f68c39c63f2c2486cdc9e"
+    },
+    {
+      "path": "main.py",
+      "bytes": 8001,
+      "sha256": "58bd5fe2711abe40cfd3f48d65f69e8b39aacc4630b8ba29561ed57c6d90e107"
+    },
+    {
+      "path": "test-run.DkdEp7/badnum.csv",
+      "bytes": 11,
+      "sha256": "04088cbba6b3fd581e878908b30a1cf9085e7b87b572f9e1047041615e7d1265"
+    },
+    {
+      "path": "test-run.DkdEp7/badrow.csv",
+      "bytes": 8,
+      "sha256": "bc754457d1d8cdd08417b5e43651814e3a4f1cfc6cd7075aa739922358e57c24"
+    },
+    {
+      "path": "test-run.DkdEp7/data.csv",
+      "bytes": 56,
+      "sha256": "855eb5a40c9775c8d84c702cf38172840249de1c036085f0b2e11b323914d420"
+    },
+    {
+      "path": "test-run.DkdEp7/dup.csv",
+      "bytes": 8,
+      "sha256": "5882246568c97479b3996bc998cf147b09fde195a8da37c596160cabf5942956"
+    },
+    {
+      "path": "test-run.DkdEp7/err",
+      "bytes": 42,
+      "sha256": "e7aa2850e69b26e8f0ebce638c14839c967298341bd6d80ac63adb3eb49f1fe1"
+    },
+    {
+      "path": "test-run.DkdEp7/err2",
+      "bytes": 38,
+      "sha256": "3269e7b10fd44972e19ee291db4b18e2e2083edcf97643755dece8ecbd764884"
+    },
+    {
+      "path": "test-run.DkdEp7/err3",
+      "bytes": 55,
+      "sha256": "04241106221a22204969707854e379989bd7158b548f6033d585484fa0687569"
+    },
+    {
+      "path": "test-run.DkdEp7/err4",
+      "bytes": 50,
+      "sha256": "8578c23cc46106fff3a88c13c14352e23739530da0b450f8ced50757769a86a0"
+    },
+    {
+      "path": "test-run.DkdEp7/out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-run.DkdEp7/out2",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-run.DkdEp7/out3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-run.DkdEp7/out4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "__pycache__",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

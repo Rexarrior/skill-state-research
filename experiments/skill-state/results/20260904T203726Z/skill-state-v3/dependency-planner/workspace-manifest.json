@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-04T21:19:57.780Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T203726Z/skill-state-v3/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 771,
+      "sha256": "57b95d0305585bb3ffcf150aa67b0d50e697b608f5b1fa20ef86b64e6483e97b"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 5427,
+      "sha256": "4e1de8c15e83bc0f04cc7d51d52abad9a0535d1acc0387b499ef1ba03a43fc29"
+    },
+    {
+      "path": "test/fixtures/cycle.json",
+      "bytes": 128,
+      "sha256": "3214078e33d5f6e5790f68eeb587d1160c997982e56fc47dea82be4c5a1073a3"
+    },
+    {
+      "path": "test/fixtures/invalid.json",
+      "bytes": 80,
+      "sha256": "4e45dc4d24e501cb8d6ba54c58b50fc3f13184e99f1081391c35edf3a9ae96ee"
+    },
+    {
+      "path": "test/fixtures/plan.json",
+      "bytes": 342,
+      "sha256": "90d192dcddcd219bf2cea51b20a989ca81c02739d368e0fa9f90f39503b838d3"
+    }
+  ],
+  "skipped": []
+}

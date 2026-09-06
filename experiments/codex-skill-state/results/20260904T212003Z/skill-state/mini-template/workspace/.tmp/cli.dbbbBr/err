@@ -1,0 +1,12 @@
+Error: ENOENT: no such file or directory, open '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T212003Z/skill-state/mini-template/.tmp/cli.dbbbBr/missing.json'
+22 |     const data: unknown = JSON.parse(json);
+23 |     await Bun.write(Bun.stdout, render(template, data));
+24 |   } catch (error) {
+25 |     const message = error instanceof Error ? error.message : String(error);
+26 |     console.error(`Error: ${message}`);
+27 |     Bun.exit(1);
+             ^
+TypeError: Bun.exit is not a function. (In 'Bun.exit(1)', 'Bun.exit' is undefined)
+      at main (/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T212003Z/skill-state/mini-template/src/cli.ts:27:9)
+
+Bun v1.3.6 (macOS arm64)

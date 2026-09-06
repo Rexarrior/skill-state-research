@@ -1,0 +1,118 @@
+{
+  "capturedAt": "2026-09-04T20:47:04.888Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T202639Z/skill-state-paper/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/bad-date.stderr",
+      "bytes": 52,
+      "sha256": "9d4f9ecfd2bb1c8a84fe31a935e50c04baffe7602c0479f356f7fc3a1a833486"
+    },
+    {
+      "path": ".tmp/bad-date.stdout",
+      "bytes": 53,
+      "sha256": "3fabc6cf10747e71212696d5a170d77ec136b3fbe899b58a268081d4ff473566"
+    },
+    {
+      "path": ".tmp/bad-id.stderr",
+      "bytes": 41,
+      "sha256": "0b608c79b3f67028d22f6c4ae92883d9989c175fb123d25c6de47220cc6d046d"
+    },
+    {
+      "path": ".tmp/bad-id.stdout",
+      "bytes": 42,
+      "sha256": "0a6d5ee8c7ffc291d542cd6fdacee5be1e191fb26e21c93c8fa4a513754b1276"
+    },
+    {
+      "path": ".tmp/bad-status.stderr",
+      "bytes": 39,
+      "sha256": "3247afbd250d63b4e1e54e9c51f49e216ab11b7b2af0755bdb4d1f03517fb0b2"
+    },
+    {
+      "path": ".tmp/bad-status.stdout",
+      "bytes": 40,
+      "sha256": "24a428259d4534cf805991a6e7ab063fce69ebcc4797bbb1b7448f2bf993ae0c"
+    },
+    {
+      "path": ".tmp/empty-title.stderr",
+      "bytes": 35,
+      "sha256": "fee01e5123572120da0f9db8dd9a8d8f78d666f725c54e84545a388a7723f6eb"
+    },
+    {
+      "path": ".tmp/empty-title.stdout",
+      "bytes": 36,
+      "sha256": "78cfee845c13df0f965c83ce457ebb35a2e33f931eac40777f1bc95fe34ee8ef"
+    },
+    {
+      "path": ".tmp/malformed.json",
+      "bytes": 7,
+      "sha256": "be302461cda285db3ed2d45fb767b23e08ca8808b35a638009937df22b332d73"
+    },
+    {
+      "path": ".tmp/malformed.stderr",
+      "bytes": 194,
+      "sha256": "740bb72a0d4dbd79db83b04a429f7cac606255d0666251b2e0d1a4957b9a1653"
+    },
+    {
+      "path": ".tmp/malformed.stdout",
+      "bytes": 195,
+      "sha256": "43a33179cf01968aea3749ba35fe3610301efc1bb3bf89520a335ee388ebbe71"
+    },
+    {
+      "path": ".tmp/missing-task.stderr",
+      "bytes": 31,
+      "sha256": "f64141ae6e3ad58585bb93e7228f1d57898ddb15437c8984e0a3eb410c5a4658"
+    },
+    {
+      "path": ".tmp/missing-task.stdout",
+      "bytes": 32,
+      "sha256": "73ec74a0d8e5cee82efa2d96464379b80245ed1ace1c3ca3766ec59d58a620a6"
+    },
+    {
+      "path": ".tmp/missing-title.stderr",
+      "bytes": 42,
+      "sha256": "8406496d6d2f2245737370e405f4b26c18737bab4e52e04632088552f7b5479d"
+    },
+    {
+      "path": ".tmp/missing-title.stdout",
+      "bytes": 43,
+      "sha256": "87f7a918d5f801f31164c411ec330d75526e4806e1b0cd20e2631b1afd21e5c9"
+    },
+    {
+      "path": ".tmp/selftest.json",
+      "bytes": 296,
+      "sha256": "76065a6d64d44cc9e4a13688b47718afe6ec45708a713dd9bac68d5e10fd5d8c"
+    },
+    {
+      "path": ".tmp/unknown-command.stderr",
+      "bytes": 39,
+      "sha256": "35767f571bc4db6915097c1aa35acad9c13712bbd430fb299aa56e3e978a1100"
+    },
+    {
+      "path": ".tmp/unknown-command.stdout",
+      "bytes": 40,
+      "sha256": "f6b826aeeefd0562f4f51178fac824ad4233e1820ce1549394830c6a59931dfc"
+    },
+    {
+      "path": ".tmp/unknown-flag.stderr",
+      "bytes": 31,
+      "sha256": "71834341b4605ef3c74ea266839ec4a12585e5e63c0166c0729bd19bd7809617"
+    },
+    {
+      "path": ".tmp/unknown-flag.stdout",
+      "bytes": 32,
+      "sha256": "857fb1f22960b9d1bd93d8ad3a1f51a311fd9d03d516260bc37d986eeccc80af"
+    },
+    {
+      "path": "README.md",
+      "bytes": 834,
+      "sha256": "93ab65860114dc1c7001b0cf0fcd2fa0bd538157e615f7c8b735f5e5cdd6dc3e"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 9131,
+      "sha256": "277622078edd71f16ec14875c7077928bd4973738d9f3d7a76f5485732997105"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,77 @@
+{
+  "suite": "20260904T195607Z",
+  "project": "dependency-planner",
+  "mode": "skill-state-paper",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "protocolMode": "paper",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 1,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195607Z/skill-state-paper/dependency-planner",
+  "metrics": {
+    "turns": 0,
+    "toolCalls": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "cost": 0,
+    "durationMs": 864
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 1,
+    "total": 7,
+    "score": 0.14285714285714285,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": false,
+        "detail": "error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "empty graph",
+        "passed": false,
+        "detail": "JSON Parse error: Unexpected EOF"
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": false,
+        "detail": "unexpected cycle: error: Module not found \"src/cli.ts\"\n"
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": false,
+        "detail": "unknown dependency accepted"
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": false,
+        "detail": "ENOENT: no such file or directory, open '/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195607Z/skill-state-paper/dependency-planner/README.md'"
+      }
+    ]
+  }
+}

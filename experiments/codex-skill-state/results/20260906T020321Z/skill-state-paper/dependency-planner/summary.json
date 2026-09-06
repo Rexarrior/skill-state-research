@@ -1,0 +1,80 @@
+{
+  "suite": "20260906T020321Z",
+  "project": "dependency-planner",
+  "mode": "skill-state-paper",
+  "model": "gpt-5.6-sol",
+  "protocolMode": "paper",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020321Z/skill-state-paper/dependency-planner",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 585955,
+    "cachedInput": 463104,
+    "cacheWriteInput": 0,
+    "output": 20378,
+    "reasoning": 2081,
+    "total": 606333,
+    "samples": 36,
+    "commandExecutions": 34,
+    "fileChanges": 1,
+    "errors": 0,
+    "stateCalls": 36,
+    "stateErrors": 9,
+    "stateComments": 0,
+    "finishCalls": 1,
+    "repeatedActions": 1,
+    "maxRepeatStreak": 2,
+    "maxStateBytes": 1615,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 466918,
+    "threadID": "01a074a5-eaf1-73a3-81d8-2b63fbb8aefb"
+  },
+  "evaluation": {
+    "project": "dependency-planner",
+    "passed": 7,
+    "total": 7,
+    "score": 1,
+    "checks": [
+      {
+        "name": "deterministic order and parallel layers",
+        "passed": true
+      },
+      {
+        "name": "lexicographic critical-path tie break",
+        "passed": true
+      },
+      {
+        "name": "empty graph",
+        "passed": true
+      },
+      {
+        "name": "concrete deterministic cycle",
+        "passed": true
+      },
+      {
+        "name": "unknown dependency fails",
+        "passed": true
+      },
+      {
+        "name": "duplicate dependencies and invalid duration fail",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

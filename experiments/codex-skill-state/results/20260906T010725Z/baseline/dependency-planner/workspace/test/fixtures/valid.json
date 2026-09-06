@@ -1,0 +1,6 @@
+{
+  "tasks": [
+    { "id": "build", "duration": 3, "dependsOn": ["lint"] },
+    { "id": "lint", "duration": 2 }
+  ]
+}

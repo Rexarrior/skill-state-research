@@ -1,0 +1,1 @@
+Hello, {{user.name}}! {{#each items}}[{{@index}}:{{this}}/{{title}}]{{else}}empty{{/each}}

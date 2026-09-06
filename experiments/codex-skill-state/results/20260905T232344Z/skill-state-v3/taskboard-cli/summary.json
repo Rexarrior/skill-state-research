@@ -1,0 +1,85 @@
+{
+  "suite": "20260905T232344Z",
+  "project": "taskboard-cli",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232344Z/skill-state-v3/taskboard-cli",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 309162,
+    "cachedInput": 204416,
+    "cacheWriteInput": 0,
+    "output": 11166,
+    "reasoning": 1931,
+    "total": 320328,
+    "samples": 17,
+    "commandExecutions": 16,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 17,
+    "stateErrors": 7,
+    "stateComments": 17,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 753,
+    "batchedActions": 19,
+    "multiActionBatches": 2,
+    "failedBatches": 7,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 2,
+    "durationMs": 260097,
+    "threadID": "01a073e2-968b-7e52-a815-65829f608287"
+  },
+  "evaluation": {
+    "project": "taskboard-cli",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "add, normalization, persistence",
+        "passed": true
+      },
+      {
+        "name": "combined list filters",
+        "passed": true
+      },
+      {
+        "name": "done is idempotent",
+        "passed": true
+      },
+      {
+        "name": "delete and missing ids",
+        "passed": true
+      },
+      {
+        "name": "overdue and stats",
+        "passed": true
+      },
+      {
+        "name": "invalid date does not mutate",
+        "passed": true
+      },
+      {
+        "name": "malformed database is preserved",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

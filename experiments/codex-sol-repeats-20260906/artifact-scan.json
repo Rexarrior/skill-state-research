@@ -1,0 +1,7 @@
+{
+  "partial": false,
+  "scanned": 500,
+  "findings": [],
+  "opaqueReasoningFieldsOmitted": 1294,
+  "scope": "Top-level campaign-cell logs/summaries; heuristic plaintext patterns only. Provider response_item/reasoning encrypted_content fields are omitted without decoding or modifying source logs. This is not proof that all confidential information is absent and does not authorize publication."
+}

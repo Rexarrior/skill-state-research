@@ -1,0 +1,7 @@
+{
+  "name": "taskboard-cli",
+  "private": true,
+  "scripts": {
+    "test": "bun test"
+  }
+}

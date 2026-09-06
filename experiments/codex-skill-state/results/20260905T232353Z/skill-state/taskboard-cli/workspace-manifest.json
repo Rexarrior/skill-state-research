@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-09-05T23:27:00.721Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232353Z/skill-state/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.fcd3917377adbff6-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/build/cli.js",
+      "bytes": 8213,
+      "sha256": "6d82198e8dbf91e65a9cad8898e111268e2398eb84e2ec1b452fca25c6ba0500"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": ".tmp/taskboard-smoke.67hCMK/db.json",
+      "bytes": 309,
+      "sha256": "6c11a3cc9f3e30a28bcda5c547b254393182a38bc894bc83f5334cc962ec590d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 748,
+      "sha256": "74411cc2ab6f2d6d554b6bde4bdbd020a2807c734717bf34690d3a305701a351"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "4ecdb6df540c760d48629a669a7ff1822ad5ae4f6c00f3df8b3002b68253e6d8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 8745,
+      "sha256": "ec008460b939367d346ca967d181262ae08b476170e24aabb7fe085da5999002"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 2766,
+      "sha256": "4fb517ba126b4e1027bef77dbba19a2a9bfb5ea02f9064dffa6e79627a0e3b56"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 229,
+      "sha256": "e283f2e74dc96286592a840e68ec6a1c293b2def49b9c26c62723ea4d115c925"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,63 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.560Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/baseline/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 605,
+      "sha256": "e5f327dbab66e62069ee6d40ca367abaeb127dfcac20658af407b399ff68503a"
+    },
+    {
+      "path": "bun.lock",
+      "bytes": 1212,
+      "sha256": "3271f735e29f8c732b22f559c4fee04e4a65c7ec6c66ae7077ea84714f9edad8"
+    },
+    {
+      "path": "package.json",
+      "bytes": 167,
+      "sha256": "a22a92ccf85936977e2533f59065b0b8e88ce94b5e0f1a5fd76f1c0cb71bca69"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 661,
+      "sha256": "a73b6f3cb864153c79af77b4102539bbb0f2c12b89a1a7ada74dbaf1f95af36e"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 7129,
+      "sha256": "2ac98e05b57f47bcea673723c7900f3d420561dcaed3cf5ed2b535d4505fea80"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 487,
+      "sha256": "9781d7375c6c06c07d03a1f5751a9639fc089aba27883da8070eb1e28b8b1871"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 2087,
+      "sha256": "8ca764d3435ce0b17ab961705c84ca77db09e93076decf61db103a1a4be8a826"
+    },
+    {
+      "path": "test/fixtures/example.json",
+      "bytes": 39,
+      "sha256": "37b0f70363193d3d98b9f33b85a890648580b7d0009eb9f9af94da7171b5721d"
+    },
+    {
+      "path": "test/fixtures/example.template",
+      "bytes": 62,
+      "sha256": "af247312c0696e05371e6e10409816840566d98e0baf375528ec133de80eb886"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 177,
+      "sha256": "3f492588cc4288f422f3c3a70416857289ecf93edf8d76e54033e92da87adeed"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "node_modules",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

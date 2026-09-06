@@ -1,0 +1,1 @@
+{"tasks":[{"id":"root","duration":0},{"id":"b","duration":2,"dependsOn":["root"]},{"id":"a","duration":2,"dependsOn":["root"]},{"id":"end","duration":1,"dependsOn":["a","b"]}]}

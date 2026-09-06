@@ -1,0 +1,89 @@
+{
+  "suite": "20260905T235756Z",
+  "project": "http-kv",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T235756Z/skill-state-v3/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 778705,
+    "cachedInput": 440832,
+    "cacheWriteInput": 0,
+    "output": 30534,
+    "reasoning": 4275,
+    "total": 809239,
+    "samples": 40,
+    "commandExecutions": 62,
+    "fileChanges": 2,
+    "errors": 0,
+    "stateCalls": 40,
+    "stateErrors": 19,
+    "stateComments": 40,
+    "finishCalls": 1,
+    "repeatedActions": 1,
+    "maxRepeatStreak": 2,
+    "maxStateBytes": 724,
+    "batchedActions": 75,
+    "multiActionBatches": 21,
+    "failedBatches": 19,
+    "skippedActions": 10,
+    "maxActionsPerBatch": 4,
+    "durationMs": 672445,
+    "threadID": "01a07418-a239-7f61-9267-132934000afc"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 9,
+    "total": 9,
+    "score": 1,
+    "checks": [
+      {
+        "name": "health and JSON headers",
+        "passed": true
+      },
+      {
+        "name": "create, replace and URL-decoded key",
+        "passed": true
+      },
+      {
+        "name": "sorted live keys",
+        "passed": true
+      },
+      {
+        "name": "TTL expires",
+        "passed": true
+      },
+      {
+        "name": "bad requests are JSON 4xx",
+        "passed": true
+      },
+      {
+        "name": "delete status codes",
+        "passed": true
+      },
+      {
+        "name": "persistence across restart",
+        "passed": true
+      },
+      {
+        "name": "unknown route and unsupported method",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

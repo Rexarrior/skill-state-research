@@ -1,0 +1,4508 @@
+{
+  "partial": false,
+  "scope": "Codex descendants linked by parent_thread_id; recorded completed-response usage only, not billed usage or an estimate of interrupted calls",
+  "outcomes": [
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a073e2-775f-7272-b2f6-7228326b714d",
+      "mainInput": 130602,
+      "mainOutput": 7159,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 130602,
+      "observedCombinedOutput": 7159
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a073ed-3945-7900-84f0-6d1820de3ec3",
+      "mainInput": 236871,
+      "mainOutput": 11377,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 236871,
+      "observedCombinedOutput": 11377
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/mini-template/summary.json",
+      "threadID": "01a073f1-11df-7222-9b37-7196c0973152",
+      "mainInput": 166771,
+      "mainOutput": 7736,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 166771,
+      "observedCombinedOutput": 7736
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/http-kv/summary.json",
+      "threadID": "01a073fb-925c-7b83-82b6-08465f41407b",
+      "mainInput": 177074,
+      "mainOutput": 11522,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 85582,
+      "auxiliaryCachedInput": 64512,
+      "auxiliaryOutput": 461,
+      "observedCombinedInput": 262656,
+      "observedCombinedOutput": 11983
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a073ff-7b01-7d50-b84d-681cd85d7865",
+      "mainInput": 162664,
+      "mainOutput": 8828,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 162664,
+      "observedCombinedOutput": 8828
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a073e4-e0e9-75f1-97d8-cb3f372ccf7e",
+      "mainInput": 371211,
+      "mainOutput": 14602,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 371211,
+      "observedCombinedOutput": 14602
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a073e9-df44-7c13-9888-d8ce8e1cf8b3",
+      "mainInput": 170395,
+      "mainOutput": 10232,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 170395,
+      "observedCombinedOutput": 10232
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a073f3-d22b-79c3-b7e0-e69df2dcfbd0",
+      "mainInput": 278128,
+      "mainOutput": 11281,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 278128,
+      "observedCombinedOutput": 11281
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+      "mainInput": 192190,
+      "mainOutput": 10931,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 49861,
+      "auxiliaryCachedInput": 33024,
+      "auxiliaryOutput": 323,
+      "observedCombinedInput": 242051,
+      "observedCombinedOutput": 11254
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07402-7080-7a12-a991-d73f068fb849",
+      "mainInput": 230105,
+      "mainOutput": 10231,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 230105,
+      "observedCombinedOutput": 10231
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a073e6-9193-74e2-80c2-ba0c0145afc6",
+      "mainInput": 139930,
+      "mainOutput": 6191,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 139930,
+      "observedCombinedOutput": 6191
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a073e8-e2db-7213-b689-1f9e7d7b8ae4",
+      "mainInput": 143045,
+      "mainOutput": 7462,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 143045,
+      "observedCombinedOutput": 7462
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/mini-template/summary.json",
+      "threadID": "01a073f1-82ae-7470-b0d5-018488f9a429",
+      "mainInput": 247863,
+      "mainOutput": 10699,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 247863,
+      "observedCombinedOutput": 10699
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/http-kv/summary.json",
+      "threadID": "01a073f5-5132-73d3-b8c6-27bbc75313b0",
+      "mainInput": 259302,
+      "mainOutput": 10241,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 34821,
+      "auxiliaryCachedInput": 17920,
+      "auxiliaryOutput": 341,
+      "observedCombinedInput": 294123,
+      "observedCombinedOutput": 10582
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07401-1663-7222-a94d-eeaab258a6a9",
+      "mainInput": 117102,
+      "mainOutput": 6520,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 117102,
+      "observedCombinedOutput": 6520
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a073e2-968b-7e52-a815-65829f608287",
+      "mainInput": 309162,
+      "mainOutput": 11166,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 309162,
+      "observedCombinedOutput": 11166
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a073eb-770e-7d50-b513-568a8381a11b",
+      "mainInput": 226989,
+      "mainOutput": 8544,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 226989,
+      "observedCombinedOutput": 8544
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a073ee-97e5-7c52-82d4-4072093ae824",
+      "mainInput": 144077,
+      "mainOutput": 8804,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 144077,
+      "observedCombinedOutput": 8804
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a073f9-6544-7e63-adc5-170ea8e9c494",
+      "mainInput": 286676,
+      "mainOutput": 14131,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 39626,
+      "auxiliaryCachedInput": 23040,
+      "auxiliaryOutput": 402,
+      "observedCombinedInput": 326302,
+      "observedCombinedOutput": 14533
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a073fe-47c0-7412-974a-6ee648075b19",
+      "mainInput": 131737,
+      "mainOutput": 8922,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 131737,
+      "observedCombinedOutput": 8922
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a073e2-b7b1-78e0-b4f8-4cdada86040a",
+      "mainInput": 117815,
+      "mainOutput": 6808,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 117815,
+      "observedCombinedOutput": 6808
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a073ee-15ae-7993-914b-63c4643d73e2",
+      "mainInput": 122591,
+      "mainOutput": 6873,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 122591,
+      "observedCombinedOutput": 6873
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/mini-template/summary.json",
+      "threadID": "01a073f0-62b1-7982-8e32-f24ddada9a7e",
+      "mainInput": 239215,
+      "mainOutput": 9845,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 14831,
+      "auxiliaryCachedInput": 4864,
+      "auxiliaryOutput": 126,
+      "observedCombinedInput": 254046,
+      "observedCombinedOutput": 9971
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/http-kv/summary.json",
+      "threadID": "01a073fd-137c-75b2-bdac-e72a28193d9f",
+      "mainInput": 196110,
+      "mainOutput": 8595,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 18775,
+      "auxiliaryCachedInput": 4864,
+      "auxiliaryOutput": 177,
+      "observedCombinedInput": 214885,
+      "observedCombinedOutput": 8772
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07400-4212-7c61-96d7-76bff1f36539",
+      "mainInput": 123756,
+      "mainOutput": 6689,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 123756,
+      "observedCombinedOutput": 6689
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a073e5-01a2-7de3-bfcc-20f85f0bc758",
+      "mainInput": 191868,
+      "mainOutput": 9375,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 191868,
+      "observedCombinedOutput": 9375
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a073e8-2a57-7122-8e7b-0f42d219b8eb",
+      "mainInput": 435872,
+      "mainOutput": 17571,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 435872,
+      "observedCombinedOutput": 17571
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a073f3-d057-7231-a29d-eb18286b083a",
+      "mainInput": 255428,
+      "mainOutput": 12109,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 255428,
+      "observedCombinedOutput": 12109
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a073f7-e2b2-7492-a8f8-12952a6917f3",
+      "mainInput": 391669,
+      "mainOutput": 14091,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 49938,
+      "auxiliaryCachedInput": 24064,
+      "auxiliaryOutput": 252,
+      "observedCombinedInput": 441607,
+      "observedCombinedOutput": 14343
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07402-8349-74c1-b0b5-1414286414a5",
+      "mainInput": 221762,
+      "mainOutput": 10134,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 221762,
+      "observedCombinedOutput": 10134
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a073e5-6430-7903-b2eb-bd988aaaed14",
+      "mainInput": 182848,
+      "mainOutput": 8103,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 182848,
+      "observedCombinedOutput": 8103
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a073e8-2977-77b0-8b88-d6d3bd38c69b",
+      "mainInput": 82193,
+      "mainOutput": 5355,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 82193,
+      "observedCombinedOutput": 5355
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/mini-template/summary.json",
+      "threadID": "01a073ef-ecd8-7e12-82d6-8f0c26f78b34",
+      "mainInput": 156925,
+      "mainOutput": 7500,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 156925,
+      "observedCombinedOutput": 7500
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/http-kv/summary.json",
+      "threadID": "01a073f2-6d97-7f50-8394-d6ead8072f22",
+      "mainInput": 156589,
+      "mainOutput": 11756,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 18993,
+      "auxiliaryCachedInput": 4864,
+      "auxiliaryOutput": 251,
+      "observedCombinedInput": 175582,
+      "observedCombinedOutput": 12007
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a073fe-c54c-7152-a28a-44e4b0e22aa6",
+      "mainInput": 164193,
+      "mainOutput": 9203,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 164193,
+      "observedCombinedOutput": 9203
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a073e2-d8e2-7010-9cd0-90717c17c0e6",
+      "mainInput": 123919,
+      "mainOutput": 7705,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 123919,
+      "observedCombinedOutput": 7705
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a073e9-f25d-7c11-be20-8b44b7ca7cb3",
+      "mainInput": 142685,
+      "mainOutput": 9889,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 142685,
+      "observedCombinedOutput": 9889
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a073ed-2322-7720-905b-f9753c107010",
+      "mainInput": 165042,
+      "mainOutput": 8086,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 165042,
+      "observedCombinedOutput": 8086
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a073f6-4b5c-7150-b4a4-af11a8e5f78a",
+      "mainInput": 230063,
+      "mainOutput": 12508,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 41312,
+      "auxiliaryCachedInput": 22016,
+      "auxiliaryOutput": 254,
+      "observedCombinedInput": 271375,
+      "observedCombinedOutput": 12762
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a073fa-9ecc-75c1-9cc6-4235bd385d38",
+      "mainInput": 240061,
+      "mainOutput": 12489,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 20857,
+      "auxiliaryCachedInput": 6912,
+      "auxiliaryOutput": 264,
+      "observedCombinedInput": 260918,
+      "observedCombinedOutput": 12753
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a073e2-fbda-73a1-b68a-26a04a43cffc",
+      "mainInput": 257322,
+      "mainOutput": 12513,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 257322,
+      "observedCombinedOutput": 12513
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a073ef-2463-7390-89bd-2d18f133d0d9",
+      "mainInput": 160537,
+      "mainOutput": 8807,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 160537,
+      "observedCombinedOutput": 8807
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/mini-template/summary.json",
+      "threadID": "01a073f2-1661-7f33-9fa4-a183a04cfbaa",
+      "mainInput": 209679,
+      "mainOutput": 8433,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 209679,
+      "observedCombinedOutput": 8433
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/http-kv/summary.json",
+      "threadID": "01a07401-0f20-7cd3-9842-302092b8b431",
+      "mainInput": 257386,
+      "mainOutput": 10751,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 58331,
+      "auxiliaryCachedInput": 39168,
+      "auxiliaryOutput": 301,
+      "observedCombinedInput": 315717,
+      "observedCombinedOutput": 11052
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07405-3662-7073-a679-576c1375c3c4",
+      "mainInput": 369614,
+      "mainOutput": 15412,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 369614,
+      "observedCombinedOutput": 15412
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a073e7-1b90-7692-b1ec-d499342b6f45",
+      "mainInput": 263964,
+      "mainOutput": 13319,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 263964,
+      "observedCombinedOutput": 13319
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a073eb-77f3-7de2-a675-f8c30bb3a251",
+      "mainInput": 223857,
+      "mainOutput": 10833,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 223857,
+      "observedCombinedOutput": 10833
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a073f5-13df-7b72-b613-9bf04993bb83",
+      "mainInput": 224870,
+      "mainOutput": 11274,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 43390,
+      "auxiliaryCachedInput": 26112,
+      "auxiliaryOutput": 228,
+      "observedCombinedInput": 268260,
+      "observedCombinedOutput": 11502
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+      "mainInput": 444304,
+      "mainOutput": 23848,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 96555,
+      "auxiliaryCachedInput": 28928,
+      "auxiliaryOutput": 346,
+      "observedCombinedInput": 540859,
+      "observedCombinedOutput": 24194
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a0740a-9ae7-7621-848d-9baf6d78c6e0",
+      "mainInput": 427512,
+      "mainOutput": 20222,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 427512,
+      "observedCombinedOutput": 20222
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a07404-4837-7f72-8cf1-1ee5af7e2aba",
+      "mainInput": 150686,
+      "mainOutput": 7203,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 150686,
+      "observedCombinedOutput": 7203
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a07406-f449-7f91-a914-bc86c8b7b286",
+      "mainInput": 80300,
+      "mainOutput": 5520,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 80300,
+      "observedCombinedOutput": 5520
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/mini-template/summary.json",
+      "threadID": "01a07411-fda1-7972-a727-3622d043a622",
+      "mainInput": 245168,
+      "mainOutput": 8905,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 245168,
+      "observedCombinedOutput": 8905
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/http-kv/summary.json",
+      "threadID": "01a07415-20c9-7382-a532-73f4f6534d96",
+      "mainInput": 194547,
+      "mainOutput": 10260,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 43206,
+      "auxiliaryCachedInput": 25088,
+      "auxiliaryOutput": 291,
+      "observedCombinedInput": 237753,
+      "observedCombinedOutput": 10551
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07426-c3a3-7673-9a10-822a3ecdaa64",
+      "mainInput": 225716,
+      "mainOutput": 8837,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 225716,
+      "observedCombinedOutput": 8837
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a07401-e986-7882-a716-0483d838eb87",
+      "mainInput": 103082,
+      "mainOutput": 7282,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 103082,
+      "observedCombinedOutput": 7282
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+      "mainInput": 295646,
+      "mainOutput": 16323,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 85456,
+      "auxiliaryCachedInput": 61440,
+      "auxiliaryOutput": 337,
+      "observedCombinedInput": 381102,
+      "observedCombinedOutput": 16660
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a0740e-2da6-7e03-a4e1-5ede8c847bfe",
+      "mainInput": 220515,
+      "mainOutput": 11176,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 220515,
+      "observedCombinedOutput": 11176
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a07418-a239-7f61-9267-132934000afc",
+      "mainInput": 778705,
+      "mainOutput": 30534,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 101282,
+      "auxiliaryCachedInput": 57600,
+      "auxiliaryOutput": 467,
+      "observedCombinedInput": 879987,
+      "observedCombinedOutput": 31001
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07422-e9fd-7923-b161-c777e1e99cc3",
+      "mainInput": 288248,
+      "mainOutput": 11545,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 288248,
+      "observedCombinedOutput": 11545
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a07403-504a-77a2-a166-429657039265",
+      "mainInput": 158882,
+      "mainOutput": 8581,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 158882,
+      "observedCombinedOutput": 8581
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a0740f-7556-7221-a6dd-532ef29436f5",
+      "mainInput": 140063,
+      "mainOutput": 7455,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 140063,
+      "observedCombinedOutput": 7455
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/mini-template/summary.json",
+      "threadID": "01a07411-fb1d-74c3-bf08-f8a0b3ba07d2",
+      "mainInput": 193068,
+      "mainOutput": 7761,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 193068,
+      "observedCombinedOutput": 7761
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/http-kv/summary.json",
+      "threadID": "01a0741b-eccd-7653-8923-e88d16d39011",
+      "mainInput": 665302,
+      "mainOutput": 31276,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 335218,
+      "auxiliaryCachedInput": 269312,
+      "auxiliaryOutput": 928,
+      "observedCombinedInput": 1000520,
+      "observedCombinedOutput": 32204
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07426-a27a-73b0-88aa-90d5649fa4da",
+      "mainInput": 114153,
+      "mainOutput": 6393,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 114153,
+      "observedCombinedOutput": 6393
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a07406-494d-7181-b80d-53202e157d4c",
+      "mainInput": 553413,
+      "mainOutput": 16832,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 20050,
+      "auxiliaryCachedInput": 4864,
+      "auxiliaryOutput": 249,
+      "observedCombinedInput": 573463,
+      "observedCombinedOutput": 17081
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a0740c-6dc2-7a41-bff0-d1ed3a9f3407",
+      "mainInput": 179681,
+      "mainOutput": 8467,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 179681,
+      "observedCombinedOutput": 8467
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a07414-9e7c-7493-9a1b-18f0415f6b56",
+      "mainInput": 233750,
+      "mainOutput": 11402,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 233750,
+      "observedCombinedOutput": 11402
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a07418-66d3-7d30-9a94-e02294b7200a",
+      "mainInput": 202011,
+      "mainOutput": 10335,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 33824,
+      "auxiliaryCachedInput": 18944,
+      "auxiliaryOutput": 206,
+      "observedCombinedInput": 235835,
+      "observedCombinedOutput": 10541
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07428-af5f-7fa0-9c49-3efdc13c0279",
+      "mainInput": 251229,
+      "mainOutput": 9810,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 251229,
+      "observedCombinedOutput": 9810
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a07409-8968-70b1-a168-55e77070784f",
+      "mainInput": 158580,
+      "mainOutput": 7953,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 158580,
+      "observedCombinedOutput": 7953
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+      "mainInput": 349632,
+      "mainOutput": 18569,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 77535,
+      "auxiliaryCachedInput": 53248,
+      "auxiliaryOutput": 432,
+      "observedCombinedInput": 427167,
+      "observedCombinedOutput": 19001
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/mini-template/summary.json",
+      "threadID": "01a07418-b927-7552-ab7c-25fe22297837",
+      "mainInput": 148015,
+      "mainOutput": 7672,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 148015,
+      "observedCombinedOutput": 7672
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/http-kv/summary.json",
+      "threadID": "01a0741b-519e-7792-9829-76b1396ec848",
+      "mainInput": 385343,
+      "mainOutput": 20871,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 205979,
+      "auxiliaryCachedInput": 163072,
+      "auxiliaryOutput": 609,
+      "observedCombinedInput": 591322,
+      "observedCombinedOutput": 21480
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07429-2905-7630-8bdc-507299baeb06",
+      "mainInput": 273533,
+      "mainOutput": 14487,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 160002,
+      "auxiliaryCachedInput": 95744,
+      "auxiliaryOutput": 600,
+      "observedCombinedInput": 433535,
+      "observedCombinedOutput": 15087
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a07406-47fb-74d0-ae53-72ca1eed60e6",
+      "mainInput": 170861,
+      "mainOutput": 10079,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 170861,
+      "observedCombinedOutput": 10079
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a07412-9239-7381-a336-a8d300b271f1",
+      "mainInput": 171854,
+      "mainOutput": 8932,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 171854,
+      "observedCombinedOutput": 8932
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a07415-9193-7db3-9b5d-172b8818f431",
+      "mainInput": 171548,
+      "mainOutput": 10063,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 171548,
+      "observedCombinedOutput": 10063
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a07422-7c24-7ad2-a023-5577e5042960",
+      "mainInput": 275220,
+      "mainOutput": 11827,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 19154,
+      "auxiliaryCachedInput": 6912,
+      "auxiliaryOutput": 141,
+      "observedCombinedInput": 294374,
+      "observedCombinedOutput": 11968
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07426-8ac1-7721-a081-f6aa8b2b3885",
+      "mainInput": 120161,
+      "mainOutput": 8507,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 120161,
+      "observedCombinedOutput": 8507
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a07406-67d3-7093-a606-02203cf6f525",
+      "mainInput": 226579,
+      "mainOutput": 9350,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 12829,
+      "auxiliaryCachedInput": 6912,
+      "auxiliaryOutput": 203,
+      "observedCombinedInput": 239408,
+      "observedCombinedOutput": 9553
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a0740f-c36a-7bf0-a532-b4c53981ae11",
+      "mainInput": 80463,
+      "mainOutput": 6274,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 80463,
+      "observedCombinedOutput": 6274
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/mini-template/summary.json",
+      "threadID": "01a07411-bb42-7e02-be0c-e4654f95444d",
+      "mainInput": 134431,
+      "mainOutput": 6781,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 134431,
+      "observedCombinedOutput": 6781
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/http-kv/summary.json",
+      "threadID": "01a0741c-1b96-7431-8939-55b3f55372b2",
+      "mainInput": 179314,
+      "mainOutput": 11624,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 179314,
+      "observedCombinedOutput": 11624
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a0741f-c2b0-79c2-ad18-05bed68eebf1",
+      "mainInput": 121806,
+      "mainOutput": 7410,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 121806,
+      "observedCombinedOutput": 7410
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a07409-dfa1-7a22-b97a-4b7729f2bb5f",
+      "mainInput": 106153,
+      "mainOutput": 7372,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 106153,
+      "observedCombinedOutput": 7372
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a0740c-3944-7772-ba85-cd2eeaccbf53",
+      "mainInput": 171361,
+      "mainOutput": 11035,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 171361,
+      "observedCombinedOutput": 11035
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a07414-09c4-7312-b053-5ea7c209bcf6",
+      "mainInput": 296871,
+      "mainOutput": 13026,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 296871,
+      "observedCombinedOutput": 13026
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a07418-55d0-7430-ae64-9790838312cb",
+      "mainInput": 259457,
+      "mainOutput": 11231,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 63822,
+      "auxiliaryCachedInput": 42240,
+      "auxiliaryOutput": 334,
+      "observedCombinedInput": 323279,
+      "observedCombinedOutput": 11565
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07422-4e96-7412-b315-ff71c6424874",
+      "mainInput": 328851,
+      "mainOutput": 15028,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 75719,
+      "auxiliaryCachedInput": 43008,
+      "auxiliaryOutput": 387,
+      "observedCombinedInput": 404570,
+      "observedCombinedOutput": 15415
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/taskboard-cli/summary.json",
+      "threadID": "01a07414-242d-7d13-bddd-b62b55ebf69a",
+      "mainInput": 102635,
+      "mainOutput": 6068,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 102635,
+      "observedCombinedOutput": 6068
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/csv-insights/summary.json",
+      "threadID": "01a07416-2273-7711-b5e7-33e856650f99",
+      "mainInput": 210875,
+      "mainOutput": 8916,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 57210,
+      "auxiliaryCachedInput": 41216,
+      "auxiliaryOutput": 273,
+      "observedCombinedInput": 268085,
+      "observedCombinedOutput": 9189
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/mini-template/summary.json",
+      "threadID": "01a0741f-ddc4-7140-ad03-ac381ddae36d",
+      "mainInput": 268227,
+      "mainOutput": 9552,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 268227,
+      "observedCombinedOutput": 9552
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/http-kv/summary.json",
+      "threadID": "01a07423-4b39-70b1-a879-e7ee3c211a93",
+      "mainInput": 309213,
+      "mainOutput": 15990,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 50769,
+      "auxiliaryCachedInput": 23040,
+      "auxiliaryOutput": 348,
+      "observedCombinedInput": 359982,
+      "observedCombinedOutput": 16338
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/dependency-planner/summary.json",
+      "threadID": "01a07438-d211-7ba3-8659-b844ef751dc3",
+      "mainInput": 100110,
+      "mainOutput": 5895,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 100110,
+      "observedCombinedOutput": 5895
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/taskboard-cli/summary.json",
+      "threadID": "01a07411-afce-70d0-bfbd-3a7b0b347bdf",
+      "mainInput": 138001,
+      "mainOutput": 7496,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 138001,
+      "observedCombinedOutput": 7496
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/csv-insights/summary.json",
+      "threadID": "01a07419-5a0e-7dd3-842a-8ce25566f0b8",
+      "mainInput": 196282,
+      "mainOutput": 10683,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 196282,
+      "observedCombinedOutput": 10683
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/mini-template/summary.json",
+      "threadID": "01a0741c-c335-7723-af0b-de6fa79bdd0c",
+      "mainInput": 174606,
+      "mainOutput": 9862,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 174606,
+      "observedCombinedOutput": 9862
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/http-kv/summary.json",
+      "threadID": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+      "mainInput": 899653,
+      "mainOutput": 39818,
+      "auxiliaryThreads": 1,
+      "auxiliaryInput": 247350,
+      "auxiliaryCachedInput": 188928,
+      "auxiliaryOutput": 779,
+      "observedCombinedInput": 1147003,
+      "observedCombinedOutput": 40597
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/dependency-planner/summary.json",
+      "threadID": "01a07436-5f6c-7871-b945-c07f4498c7c0",
+      "mainInput": 157905,
+      "mainOutput": 7307,
+      "auxiliaryThreads": 0,
+      "auxiliaryInput": 0,
+      "auxiliaryCachedInput": 0,
+      "auxiliaryOutput": 0,
+      "observedCombinedInput": 157905,
+      "observedCombinedOutput": 7307
+    }
+  ],
+  "descendants": [
+    {
+      "threadID": "01a07406-6837-7d01-89be-308446d2bfe3",
+      "parent": "01a07406-67d3-7093-a606-02203cf6f525",
+      "root": "01a07406-67d3-7093-a606-02203cf6f525",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 12829,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 203,
+        "reasoning_output_tokens": 144,
+        "total_tokens": 13032
+      },
+      "records": [
+        {
+          "thread_id": "01a07406-6837-7d01-89be-308446d2bfe3",
+          "turn_id": "01a07408-9d7a-7070-a7f8-c7b31c0c3e2a",
+          "session_id": "01a07406-67d3-7093-a606-02203cf6f525",
+          "root_turn_id": "01a07406-6835-7c41-9635-89536640fc18",
+          "response_id": "resp_036e99f721ea883f016a9cae3d9d1087d28519e38c606044db",
+          "usage": {
+            "input_tokens": 12829,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 203,
+            "reasoning_output_tokens": 144,
+            "total_tokens": 13032
+          },
+          "turn_token_usage": {
+            "input_tokens": 12829,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 203,
+            "reasoning_output_tokens": 144,
+            "total_tokens": 13032
+          },
+          "thread_token_usage": {
+            "input_tokens": 12829,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 203,
+            "reasoning_output_tokens": 144,
+            "total_tokens": 13032
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+      "parent": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+      "root": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 6,
+      "usage": {
+        "input_tokens": 247350,
+        "cached_input_tokens": 188928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 779,
+        "reasoning_output_tokens": 411,
+        "total_tokens": 248129
+      },
+      "records": [
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a0742c-2fad-7913-a3d1-a48c5558651c",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb7589c7c87d2bf192b7c3f92c545",
+          "usage": {
+            "input_tokens": 20786,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 212,
+            "reasoning_output_tokens": 148,
+            "total_tokens": 20998
+          },
+          "turn_token_usage": {
+            "input_tokens": 20786,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 212,
+            "reasoning_output_tokens": 148,
+            "total_tokens": 20998
+          },
+          "thread_token_usage": {
+            "input_tokens": 20786,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 212,
+            "reasoning_output_tokens": 148,
+            "total_tokens": 20998
+          }
+        },
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a0742e-358f-7692-9fe0-9e4d9e4b8ad1",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb7dd217c87d2b625463ee78da282",
+          "usage": {
+            "input_tokens": 33083,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 33181
+          },
+          "turn_token_usage": {
+            "input_tokens": 33083,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 33181
+          },
+          "thread_token_usage": {
+            "input_tokens": 53869,
+            "cached_input_tokens": 27136,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 310,
+            "reasoning_output_tokens": 181,
+            "total_tokens": 54179
+          }
+        },
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a0742e-84c0-7591-94bf-10e4beeb0e54",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb7f1818087d28942edabb22d69e1",
+          "usage": {
+            "input_tokens": 35566,
+            "cached_input_tokens": 32512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 90,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 35656
+          },
+          "turn_token_usage": {
+            "input_tokens": 35566,
+            "cached_input_tokens": 32512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 90,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 35656
+          },
+          "thread_token_usage": {
+            "input_tokens": 89435,
+            "cached_input_tokens": 59648,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 400,
+            "reasoning_output_tokens": 211,
+            "total_tokens": 89835
+          }
+        },
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a0742f-8f95-7490-b2a8-6d36715c6938",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb836560487d284e1f48f7699f00b",
+          "usage": {
+            "input_tokens": 41821,
+            "cached_input_tokens": 34560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 133,
+            "reasoning_output_tokens": 73,
+            "total_tokens": 41954
+          },
+          "turn_token_usage": {
+            "input_tokens": 41821,
+            "cached_input_tokens": 34560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 133,
+            "reasoning_output_tokens": 73,
+            "total_tokens": 41954
+          },
+          "thread_token_usage": {
+            "input_tokens": 131256,
+            "cached_input_tokens": 94208,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 533,
+            "reasoning_output_tokens": 284,
+            "total_tokens": 131789
+          }
+        },
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a07432-bc4a-7d50-ac38-3bb5499b4e9f",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb906a6c087d28b0a78087c20e14a",
+          "usage": {
+            "input_tokens": 55035,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 134,
+            "reasoning_output_tokens": 74,
+            "total_tokens": 55169
+          },
+          "turn_token_usage": {
+            "input_tokens": 55035,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 134,
+            "reasoning_output_tokens": 74,
+            "total_tokens": 55169
+          },
+          "thread_token_usage": {
+            "input_tokens": 186291,
+            "cached_input_tokens": 134912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 667,
+            "reasoning_output_tokens": 358,
+            "total_tokens": 186958
+          }
+        },
+        {
+          "thread_id": "01a07428-8702-7ad2-a554-a4c6d8745c4a",
+          "turn_id": "01a07433-9bd7-75a0-b96a-578b0c6a8423",
+          "session_id": "01a07428-869d-7121-b2b2-b0fda343d2e1",
+          "root_turn_id": "01a07428-8701-7f71-bc33-a512d65942c2",
+          "response_id": "resp_00201a6ba82777ce016a9cb93fa21887d2ba58ea6d2c6e774f",
+          "usage": {
+            "input_tokens": 61059,
+            "cached_input_tokens": 54016,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 53,
+            "total_tokens": 61171
+          },
+          "turn_token_usage": {
+            "input_tokens": 61059,
+            "cached_input_tokens": 54016,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 53,
+            "total_tokens": 61171
+          },
+          "thread_token_usage": {
+            "input_tokens": 247350,
+            "cached_input_tokens": 188928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 779,
+            "reasoning_output_tokens": 411,
+            "total_tokens": 248129
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f6-4c3b-79c3-8fa0-fb876d4c3135",
+      "parent": "01a073f6-4b5c-7150-b4a4-af11a8e5f78a",
+      "root": "01a073f6-4b5c-7150-b4a4-af11a8e5f78a",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 41312,
+        "cached_input_tokens": 22016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 254,
+        "reasoning_output_tokens": 120,
+        "total_tokens": 41566
+      },
+      "records": [
+        {
+          "thread_id": "01a073f6-4c3b-79c3-8fa0-fb876d4c3135",
+          "turn_id": "01a073f9-6aea-7b40-9e5c-127e40687e07",
+          "session_id": "01a073f6-4b5c-7150-b4a4-af11a8e5f78a",
+          "root_turn_id": "01a073f6-4bde-7c51-b215-eb9f5d7a39ee",
+          "response_id": "resp_0926cb8390ce4ad3016a9caa597cd887d2920eaadcfa5cfa11",
+          "usage": {
+            "input_tokens": 18151,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 100,
+            "total_tokens": 18319
+          },
+          "turn_token_usage": {
+            "input_tokens": 18151,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 100,
+            "total_tokens": 18319
+          },
+          "thread_token_usage": {
+            "input_tokens": 18151,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 100,
+            "total_tokens": 18319
+          }
+        },
+        {
+          "thread_id": "01a073f6-4c3b-79c3-8fa0-fb876d4c3135",
+          "turn_id": "01a073fa-3177-7a30-bbc3-2e13345b2e98",
+          "session_id": "01a073f6-4b5c-7150-b4a4-af11a8e5f78a",
+          "root_turn_id": "01a073f6-4bde-7c51-b215-eb9f5d7a39ee",
+          "response_id": "resp_0926cb8390ce4ad3016a9caa8cb06487d2b797bb40d8b8a86b",
+          "usage": {
+            "input_tokens": 23161,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 23247
+          },
+          "turn_token_usage": {
+            "input_tokens": 23161,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 23247
+          },
+          "thread_token_usage": {
+            "input_tokens": 41312,
+            "cached_input_tokens": 22016,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 254,
+            "reasoning_output_tokens": 120,
+            "total_tokens": 41566
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07408-c1b2-76e3-ba2f-e07624b96fd7",
+      "parent": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+      "root": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 4,
+      "usage": {
+        "input_tokens": 85456,
+        "cached_input_tokens": 61440,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 337,
+        "reasoning_output_tokens": 131,
+        "total_tokens": 85793
+      },
+      "records": [
+        {
+          "thread_id": "01a07408-c1b2-76e3-ba2f-e07624b96fd7",
+          "turn_id": "01a0740a-6707-7523-aaea-117d94bcab4e",
+          "session_id": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+          "root_turn_id": "01a07408-c137-7813-b301-c33368f644e9",
+          "response_id": "resp_0998f691a42a1053016a9caeb28db887d2b60c946801f4c120",
+          "usage": {
+            "input_tokens": 13383,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 122,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 13505
+          },
+          "turn_token_usage": {
+            "input_tokens": 13383,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 122,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 13505
+          },
+          "thread_token_usage": {
+            "input_tokens": 13383,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 122,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 13505
+          }
+        },
+        {
+          "thread_id": "01a07408-c1b2-76e3-ba2f-e07624b96fd7",
+          "turn_id": "01a0740b-313a-72e2-86c2-a420eacf6d71",
+          "session_id": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+          "root_turn_id": "01a07408-c137-7813-b301-c33368f644e9",
+          "response_id": "resp_0998f691a42a1053016a9caee63bcc87d2aec148e736523b2e",
+          "usage": {
+            "input_tokens": 19746,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 27,
+            "total_tokens": 19829
+          },
+          "turn_token_usage": {
+            "input_tokens": 19746,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 27,
+            "total_tokens": 19829
+          },
+          "thread_token_usage": {
+            "input_tokens": 33129,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 205,
+            "reasoning_output_tokens": 131,
+            "total_tokens": 33334
+          }
+        },
+        {
+          "thread_id": "01a07408-c1b2-76e3-ba2f-e07624b96fd7",
+          "turn_id": "01a0740c-2adf-7641-a1db-0e108e80fa92",
+          "session_id": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+          "root_turn_id": "01a07408-c137-7813-b301-c33368f644e9",
+          "response_id": "resp_0998f691a42a1053016a9caf26a37887d2b54aa08e1bab7976",
+          "usage": {
+            "input_tokens": 25039,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 25106
+          },
+          "turn_token_usage": {
+            "input_tokens": 25039,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 25106
+          },
+          "thread_token_usage": {
+            "input_tokens": 58168,
+            "cached_input_tokens": 37120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 272,
+            "reasoning_output_tokens": 131,
+            "total_tokens": 58440
+          }
+        },
+        {
+          "thread_id": "01a07408-c1b2-76e3-ba2f-e07624b96fd7",
+          "turn_id": "01a0740c-74ed-7d13-b480-24572ac4f826",
+          "session_id": "01a07408-c0be-7df0-a52a-1b1efd844d61",
+          "root_turn_id": "01a07408-c137-7813-b301-c33368f644e9",
+          "response_id": "resp_0998f691a42a1053016a9caf390ffc87d2863b3ca43f43dd65",
+          "usage": {
+            "input_tokens": 27288,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 27353
+          },
+          "turn_token_usage": {
+            "input_tokens": 27288,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 27353
+          },
+          "thread_token_usage": {
+            "input_tokens": 85456,
+            "cached_input_tokens": 61440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 337,
+            "reasoning_output_tokens": 131,
+            "total_tokens": 85793
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a0740c-428d-7c41-8628-0e4b704a7d28",
+      "parent": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+      "root": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 4,
+      "usage": {
+        "input_tokens": 77535,
+        "cached_input_tokens": 53248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 432,
+        "reasoning_output_tokens": 164,
+        "total_tokens": 77967
+      },
+      "records": [
+        {
+          "thread_id": "01a0740c-428d-7c41-8628-0e4b704a7d28",
+          "turn_id": "01a0740d-f675-7530-a2d9-ae3b559c9e6b",
+          "session_id": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+          "root_turn_id": "01a0740c-428d-7c41-8628-0e628bf5c500",
+          "response_id": "resp_04c9138e98f4171d016a9caf9bd90c87d2951d54d2fb4cb3b9",
+          "usage": {
+            "input_tokens": 13757,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 13956
+          },
+          "turn_token_usage": {
+            "input_tokens": 13757,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 13956
+          },
+          "thread_token_usage": {
+            "input_tokens": 13757,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 13956
+          }
+        },
+        {
+          "thread_id": "01a0740c-428d-7c41-8628-0e4b704a7d28",
+          "turn_id": "01a0740e-3fb2-7dc3-9992-3a761215eea6",
+          "session_id": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+          "root_turn_id": "01a0740c-428d-7c41-8628-0e628bf5c500",
+          "response_id": "resp_04c9138e98f4171d016a9cafb08b5487d2ac08b2598de62dd9",
+          "usage": {
+            "input_tokens": 16156,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 66,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 16222
+          },
+          "turn_token_usage": {
+            "input_tokens": 16156,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 66,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 16222
+          },
+          "thread_token_usage": {
+            "input_tokens": 29913,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 265,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 30178
+          }
+        },
+        {
+          "thread_id": "01a0740c-428d-7c41-8628-0e4b704a7d28",
+          "turn_id": "01a0740e-dc70-7070-bd5b-0c41bdc8cace",
+          "session_id": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+          "root_turn_id": "01a0740c-428d-7c41-8628-0e628bf5c500",
+          "response_id": "resp_04c9138e98f4171d016a9cafd6984c87d2b2362b704b4a0548",
+          "usage": {
+            "input_tokens": 20378,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20448
+          },
+          "turn_token_usage": {
+            "input_tokens": 20378,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20448
+          },
+          "thread_token_usage": {
+            "input_tokens": 50291,
+            "cached_input_tokens": 33024,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 335,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 50626
+          }
+        },
+        {
+          "thread_id": "01a0740c-428d-7c41-8628-0e4b704a7d28",
+          "turn_id": "01a0740f-e66a-7f40-974d-717c8fe48024",
+          "session_id": "01a0740c-422a-7f53-a49d-4140fdd0b201",
+          "root_turn_id": "01a0740c-428d-7c41-8628-0e628bf5c500",
+          "response_id": "resp_04c9138e98f4171d016a9cb01ab57887d29eeb27ae4ea21b6e",
+          "usage": {
+            "input_tokens": 27244,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 97,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 27341
+          },
+          "turn_token_usage": {
+            "input_tokens": 27244,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 97,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 27341
+          },
+          "thread_token_usage": {
+            "input_tokens": 77535,
+            "cached_input_tokens": 53248,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 432,
+            "reasoning_output_tokens": 164,
+            "total_tokens": 77967
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07401-0ff5-7612-894c-b89c67d0b092",
+      "parent": "01a07401-0f20-7cd3-9842-302092b8b431",
+      "root": "01a07401-0f20-7cd3-9842-302092b8b431",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 58331,
+        "cached_input_tokens": 39168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 301,
+        "reasoning_output_tokens": 106,
+        "total_tokens": 58632
+      },
+      "records": [
+        {
+          "thread_id": "01a07401-0ff5-7612-894c-b89c67d0b092",
+          "turn_id": "01a07403-a4e4-7ce3-bfc8-bbb6ef245adf",
+          "session_id": "01a07401-0f20-7cd3-9842-302092b8b431",
+          "root_turn_id": "01a07401-0f98-7680-839c-4aa9d21fb557",
+          "response_id": "resp_01d8cf7c9db000b5016a9cacf7b66c87d2a43e540a097bbd72",
+          "usage": {
+            "input_tokens": 15785,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 15943
+          },
+          "turn_token_usage": {
+            "input_tokens": 15785,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 15943
+          },
+          "thread_token_usage": {
+            "input_tokens": 15785,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 15943
+          }
+        },
+        {
+          "thread_id": "01a07401-0ff5-7612-894c-b89c67d0b092",
+          "turn_id": "01a07403-e068-76b1-8786-df27b23e4290",
+          "session_id": "01a07401-0f20-7cd3-9842-302092b8b431",
+          "root_turn_id": "01a07401-0f98-7680-839c-4aa9d21fb557",
+          "response_id": "resp_01d8cf7c9db000b5016a9cad06cef087d2b1351cb380998972",
+          "usage": {
+            "input_tokens": 17578,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 84,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 17662
+          },
+          "turn_token_usage": {
+            "input_tokens": 17578,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 84,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 17662
+          },
+          "thread_token_usage": {
+            "input_tokens": 33363,
+            "cached_input_tokens": 22016,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 242,
+            "reasoning_output_tokens": 106,
+            "total_tokens": 33605
+          }
+        },
+        {
+          "thread_id": "01a07401-0ff5-7612-894c-b89c67d0b092",
+          "turn_id": "01a07404-e04b-7c43-bf45-e4bb84520476",
+          "session_id": "01a07401-0f20-7cd3-9842-302092b8b431",
+          "root_turn_id": "01a07401-0f98-7680-839c-4aa9d21fb557",
+          "response_id": "resp_01d8cf7c9db000b5016a9cad48cf5887d2a85607bc2ba26c1f",
+          "usage": {
+            "input_tokens": 24968,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 59,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 25027
+          },
+          "turn_token_usage": {
+            "input_tokens": 24968,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 59,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 25027
+          },
+          "thread_token_usage": {
+            "input_tokens": 58331,
+            "cached_input_tokens": 39168,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 301,
+            "reasoning_output_tokens": 106,
+            "total_tokens": 58632
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f7-c6e2-7d12-aa08-cfcce87395ad",
+      "parent": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+      "root": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 49861,
+        "cached_input_tokens": 33024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 323,
+        "reasoning_output_tokens": 127,
+        "total_tokens": 50184
+      },
+      "records": [
+        {
+          "thread_id": "01a073f7-c6e2-7d12-aa08-cfcce87395ad",
+          "turn_id": "01a073fa-6188-7ab0-aa01-8ba28066e092",
+          "session_id": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+          "root_turn_id": "01a073f7-c684-7aa1-b2ad-d11f77d2cc6b",
+          "response_id": "resp_02378bc11405c961016a9caa98872087d2a3eb8c39ee4332bc",
+          "usage": {
+            "input_tokens": 13915,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 107,
+            "total_tokens": 14086
+          },
+          "turn_token_usage": {
+            "input_tokens": 13915,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 107,
+            "total_tokens": 14086
+          },
+          "thread_token_usage": {
+            "input_tokens": 13915,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 107,
+            "total_tokens": 14086
+          }
+        },
+        {
+          "thread_id": "01a073f7-c6e2-7d12-aa08-cfcce87395ad",
+          "turn_id": "01a073fa-a31c-7ae3-b693-a535624c57de",
+          "session_id": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+          "root_turn_id": "01a073f7-c684-7aa1-b2ad-d11f77d2cc6b",
+          "response_id": "resp_02378bc11405c961016a9caaa93f7087d2ba3056fc1691955a",
+          "usage": {
+            "input_tokens": 15966,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 87,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 16053
+          },
+          "turn_token_usage": {
+            "input_tokens": 15966,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 87,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 16053
+          },
+          "thread_token_usage": {
+            "input_tokens": 29881,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 258,
+            "reasoning_output_tokens": 127,
+            "total_tokens": 30139
+          }
+        },
+        {
+          "thread_id": "01a073f7-c6e2-7d12-aa08-cfcce87395ad",
+          "turn_id": "01a073fb-495f-79f3-a59d-708bcc7ac922",
+          "session_id": "01a073f7-c602-7a00-a2ae-1dcb02159da0",
+          "root_turn_id": "01a073f7-c684-7aa1-b2ad-d11f77d2cc6b",
+          "response_id": "resp_02378bc11405c961016a9caad3d5c887d29848214a54652fe8",
+          "usage": {
+            "input_tokens": 19980,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20045
+          },
+          "turn_token_usage": {
+            "input_tokens": 19980,
+            "cached_input_tokens": 15104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20045
+          },
+          "thread_token_usage": {
+            "input_tokens": 49861,
+            "cached_input_tokens": 33024,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 323,
+            "reasoning_output_tokens": 127,
+            "total_tokens": 50184
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073fd-13dd-7c12-8caf-1a084cef4619",
+      "parent": "01a073fd-137c-75b2-bdac-e72a28193d9f",
+      "root": "01a073fd-137c-75b2-bdac-e72a28193d9f",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 18775,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 177,
+        "reasoning_output_tokens": 115,
+        "total_tokens": 18952
+      },
+      "records": [
+        {
+          "thread_id": "01a073fd-13dd-7c12-8caf-1a084cef4619",
+          "turn_id": "01a073ff-b2c5-72f1-819b-436894ff8f03",
+          "session_id": "01a073fd-137c-75b2-bdac-e72a28193d9f",
+          "root_turn_id": "01a073fd-13dc-73e0-bd8a-eb4f7896dd32",
+          "response_id": "resp_0bbbf6d7cdc50bfc016a9cabf566ac87d2b48d308317510a99",
+          "usage": {
+            "input_tokens": 18775,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 177,
+            "reasoning_output_tokens": 115,
+            "total_tokens": 18952
+          },
+          "turn_token_usage": {
+            "input_tokens": 18775,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 177,
+            "reasoning_output_tokens": 115,
+            "total_tokens": 18952
+          },
+          "thread_token_usage": {
+            "input_tokens": 18775,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 177,
+            "reasoning_output_tokens": 115,
+            "total_tokens": 18952
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+      "parent": "01a0741b-eccd-7653-8923-e88d16d39011",
+      "root": "01a0741b-eccd-7653-8923-e88d16d39011",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 8,
+      "usage": {
+        "input_tokens": 335218,
+        "cached_input_tokens": 269312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 928,
+        "reasoning_output_tokens": 358,
+        "total_tokens": 336146
+      },
+      "records": [
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a0741e-c0ed-7ba3-9781-d8856303487b",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb3e83d8087d28c7671a60e17b970",
+          "usage": {
+            "input_tokens": 17744,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 82,
+            "total_tokens": 17895
+          },
+          "turn_token_usage": {
+            "input_tokens": 17744,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 82,
+            "total_tokens": 17895
+          },
+          "thread_token_usage": {
+            "input_tokens": 17744,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 82,
+            "total_tokens": 17895
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a0741f-6aef-7413-b97f-617ae1c47626",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb413c63487d299964a495c631358",
+          "usage": {
+            "input_tokens": 23544,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 23656
+          },
+          "turn_token_usage": {
+            "input_tokens": 23544,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 23656
+          },
+          "thread_token_usage": {
+            "input_tokens": 41288,
+            "cached_input_tokens": 22016,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 263,
+            "reasoning_output_tokens": 124,
+            "total_tokens": 41551
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07420-77d7-7191-956e-4c76be8e7e5c",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb45941d087d2a5347176a69d288f",
+          "usage": {
+            "input_tokens": 29769,
+            "cached_input_tokens": 23296,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 138,
+            "reasoning_output_tokens": 65,
+            "total_tokens": 29907
+          },
+          "turn_token_usage": {
+            "input_tokens": 29769,
+            "cached_input_tokens": 23296,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 138,
+            "reasoning_output_tokens": 65,
+            "total_tokens": 29907
+          },
+          "thread_token_usage": {
+            "input_tokens": 71057,
+            "cached_input_tokens": 45312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 401,
+            "reasoning_output_tokens": 189,
+            "total_tokens": 71458
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07421-f35e-7441-ab5c-4b5587a352ba",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb4b9b1bc87d292cb01d2fa22321c",
+          "usage": {
+            "input_tokens": 40648,
+            "cached_input_tokens": 29440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 40756
+          },
+          "turn_token_usage": {
+            "input_tokens": 40648,
+            "cached_input_tokens": 29440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 40756
+          },
+          "thread_token_usage": {
+            "input_tokens": 111705,
+            "cached_input_tokens": 74752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 509,
+            "reasoning_output_tokens": 231,
+            "total_tokens": 112214
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07422-4eb9-7a71-86d4-bb32a5d5199a",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb4d10fcc87d28eeeda6d774ff20d",
+          "usage": {
+            "input_tokens": 43699,
+            "cached_input_tokens": 39680,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 97,
+            "reasoning_output_tokens": 24,
+            "total_tokens": 43796
+          },
+          "turn_token_usage": {
+            "input_tokens": 43699,
+            "cached_input_tokens": 39680,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 97,
+            "reasoning_output_tokens": 24,
+            "total_tokens": 43796
+          },
+          "thread_token_usage": {
+            "input_tokens": 155404,
+            "cached_input_tokens": 114432,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 606,
+            "reasoning_output_tokens": 255,
+            "total_tokens": 156010
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07423-56a8-7182-ac5c-6d1796841b03",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb514a7b887d29949e2c27d933223",
+          "usage": {
+            "input_tokens": 50360,
+            "cached_input_tokens": 42752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 115,
+            "reasoning_output_tokens": 41,
+            "total_tokens": 50475
+          },
+          "turn_token_usage": {
+            "input_tokens": 50360,
+            "cached_input_tokens": 42752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 115,
+            "reasoning_output_tokens": 41,
+            "total_tokens": 50475
+          },
+          "thread_token_usage": {
+            "input_tokens": 205764,
+            "cached_input_tokens": 157184,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 721,
+            "reasoning_output_tokens": 296,
+            "total_tokens": 206485
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07425-7909-7a30-88ac-137444ea2ca6",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb5a0f50c87d284b007acbeff4ed6",
+          "usage": {
+            "input_tokens": 62633,
+            "cached_input_tokens": 49920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 62759
+          },
+          "turn_token_usage": {
+            "input_tokens": 62633,
+            "cached_input_tokens": 49920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 62759
+          },
+          "thread_token_usage": {
+            "input_tokens": 268397,
+            "cached_input_tokens": 207104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 847,
+            "reasoning_output_tokens": 352,
+            "total_tokens": 269244
+          }
+        },
+        {
+          "thread_id": "01a0741b-ed34-71a2-999c-ad9f55b266c6",
+          "turn_id": "01a07426-1601-7471-b073-0fe44fa0d1ae",
+          "session_id": "01a0741b-eccd-7653-8923-e88d16d39011",
+          "root_turn_id": "01a0741b-ed33-7eb0-8866-d52158ecc857",
+          "response_id": "resp_0b4ff150a767cebb016a9cb5c943bc87d2930d8cb896705f18",
+          "usage": {
+            "input_tokens": 66821,
+            "cached_input_tokens": 62208,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 6,
+            "total_tokens": 66902
+          },
+          "turn_token_usage": {
+            "input_tokens": 66821,
+            "cached_input_tokens": 62208,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 6,
+            "total_tokens": 66902
+          },
+          "thread_token_usage": {
+            "input_tokens": 335218,
+            "cached_input_tokens": 269312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 928,
+            "reasoning_output_tokens": 358,
+            "total_tokens": 336146
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07415-21d0-7550-acb5-1157629dcc5e",
+      "parent": "01a07415-20c9-7382-a532-73f4f6534d96",
+      "root": "01a07415-20c9-7382-a532-73f4f6534d96",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 43206,
+        "cached_input_tokens": 25088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 291,
+        "reasoning_output_tokens": 160,
+        "total_tokens": 43497
+      },
+      "records": [
+        {
+          "thread_id": "01a07415-21d0-7550-acb5-1157629dcc5e",
+          "turn_id": "01a07417-b87d-7421-adcc-b81584c74d0a",
+          "session_id": "01a07415-20c9-7382-a532-73f4f6534d96",
+          "root_turn_id": "01a07415-2170-7e10-8ebf-3193a4794d8a",
+          "response_id": "resp_041f5c2419089cf2016a9cb21b706887d295a35ef365a1087d",
+          "usage": {
+            "input_tokens": 18517,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 18688
+          },
+          "turn_token_usage": {
+            "input_tokens": 18517,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 18688
+          },
+          "thread_token_usage": {
+            "input_tokens": 18517,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 18688
+          }
+        },
+        {
+          "thread_id": "01a07415-21d0-7550-acb5-1157629dcc5e",
+          "turn_id": "01a07418-69da-7430-a6fa-da81884f49a8",
+          "session_id": "01a07415-20c9-7382-a532-73f4f6534d96",
+          "root_turn_id": "01a07415-2170-7e10-8ebf-3193a4794d8a",
+          "response_id": "resp_041f5c2419089cf2016a9cb2489f1c87d285559d64834394c6",
+          "usage": {
+            "input_tokens": 24689,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 120,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 24809
+          },
+          "turn_token_usage": {
+            "input_tokens": 24689,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 120,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 24809
+          },
+          "thread_token_usage": {
+            "input_tokens": 43206,
+            "cached_input_tokens": 25088,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 291,
+            "reasoning_output_tokens": 160,
+            "total_tokens": 43497
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f5-520c-7911-a5da-e79a6def720a",
+      "parent": "01a073f5-5132-73d3-b8c6-27bbc75313b0",
+      "root": "01a073f5-5132-73d3-b8c6-27bbc75313b0",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 34821,
+        "cached_input_tokens": 17920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 341,
+        "reasoning_output_tokens": 223,
+        "total_tokens": 35162
+      },
+      "records": [
+        {
+          "thread_id": "01a073f5-520c-7911-a5da-e79a6def720a",
+          "turn_id": "01a073f7-c12f-73e1-9c29-61ef687f6221",
+          "session_id": "01a073f5-5132-73d3-b8c6-27bbc75313b0",
+          "root_turn_id": "01a073f5-51ae-7273-85b8-23f03d38d23d",
+          "response_id": "resp_0131006e0921dba9016a9ca9ec665087d2a14d14c282e3401e",
+          "usage": {
+            "input_tokens": 13811,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 256,
+            "reasoning_output_tokens": 198,
+            "total_tokens": 14067
+          },
+          "turn_token_usage": {
+            "input_tokens": 13811,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 256,
+            "reasoning_output_tokens": 198,
+            "total_tokens": 14067
+          },
+          "thread_token_usage": {
+            "input_tokens": 13811,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 256,
+            "reasoning_output_tokens": 198,
+            "total_tokens": 14067
+          }
+        },
+        {
+          "thread_id": "01a073f5-520c-7911-a5da-e79a6def720a",
+          "turn_id": "01a073f8-d1e0-70b0-b768-fbcb55a9f2f6",
+          "session_id": "01a073f5-5132-73d3-b8c6-27bbc75313b0",
+          "root_turn_id": "01a073f5-51ae-7273-85b8-23f03d38d23d",
+          "response_id": "resp_0131006e0921dba9016a9caa32ac7887d28a15e4c9010ef51b",
+          "usage": {
+            "input_tokens": 21010,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 85,
+            "reasoning_output_tokens": 25,
+            "total_tokens": 21095
+          },
+          "turn_token_usage": {
+            "input_tokens": 21010,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 85,
+            "reasoning_output_tokens": 25,
+            "total_tokens": 21095
+          },
+          "thread_token_usage": {
+            "input_tokens": 34821,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 341,
+            "reasoning_output_tokens": 223,
+            "total_tokens": 35162
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f8-f3d5-7c03-9570-54523a14e121",
+      "parent": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+      "root": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 96555,
+        "cached_input_tokens": 28928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 346,
+        "reasoning_output_tokens": 157,
+        "total_tokens": 96901
+      },
+      "records": [
+        {
+          "thread_id": "01a073f8-f3d5-7c03-9570-54523a14e121",
+          "turn_id": "01a073fc-9085-7111-bda1-e5496798b768",
+          "session_id": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+          "root_turn_id": "01a073f8-f3d4-7a40-86bc-b9d7dbc7d2e7",
+          "response_id": "resp_0cff4a5b3a6a9338016a9cab27c3dc87d2a11ca7cf250e7dde",
+          "usage": {
+            "input_tokens": 19934,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 20102
+          },
+          "turn_token_usage": {
+            "input_tokens": 19934,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 20102
+          },
+          "thread_token_usage": {
+            "input_tokens": 19934,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 104,
+            "total_tokens": 20102
+          }
+        },
+        {
+          "thread_id": "01a073f8-f3d5-7c03-9570-54523a14e121",
+          "turn_id": "01a073fe-5596-7060-94a3-8ec2a8e639bf",
+          "session_id": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+          "root_turn_id": "01a073f8-f3d4-7a40-86bc-b9d7dbc7d2e7",
+          "response_id": "resp_0cff4a5b3a6a9338016a9cab9bac8487d2a78455aea60572d6",
+          "usage": {
+            "input_tokens": 32828,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 117,
+            "reasoning_output_tokens": 53,
+            "total_tokens": 32945
+          },
+          "turn_token_usage": {
+            "input_tokens": 32828,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 117,
+            "reasoning_output_tokens": 53,
+            "total_tokens": 32945
+          },
+          "thread_token_usage": {
+            "input_tokens": 52762,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 285,
+            "reasoning_output_tokens": 157,
+            "total_tokens": 53047
+          }
+        },
+        {
+          "thread_id": "01a073f8-f3d5-7c03-9570-54523a14e121",
+          "turn_id": "01a07400-4309-7f73-8aae-fdec00d54600",
+          "session_id": "01a073f8-f374-7a71-8d12-c1d91522cd7a",
+          "root_turn_id": "01a073f8-f3d4-7a40-86bc-b9d7dbc7d2e7",
+          "response_id": "resp_0cff4a5b3a6a9338016a9cac19eed487d28bfd22930da98e3d",
+          "usage": {
+            "input_tokens": 43793,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 43854
+          },
+          "turn_token_usage": {
+            "input_tokens": 43793,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 43854
+          },
+          "thread_token_usage": {
+            "input_tokens": 96555,
+            "cached_input_tokens": 28928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 346,
+            "reasoning_output_tokens": 157,
+            "total_tokens": 96901
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f5-1493-7c31-bfb6-baaee7ec036d",
+      "parent": "01a073f5-13df-7b72-b613-9bf04993bb83",
+      "root": "01a073f5-13df-7b72-b613-9bf04993bb83",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 43390,
+        "cached_input_tokens": 26112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 228,
+        "reasoning_output_tokens": 103,
+        "total_tokens": 43618
+      },
+      "records": [
+        {
+          "thread_id": "01a073f5-1493-7c31-bfb6-baaee7ec036d",
+          "turn_id": "01a073f8-2aa1-7153-ac27-65866e3144a5",
+          "session_id": "01a073f5-13df-7b72-b613-9bf04993bb83",
+          "root_turn_id": "01a073f5-1446-73e0-aac5-5b1572a2e17b",
+          "response_id": "resp_06cc08eb56f573e7016a9caa07673087d2b03c88f16d536fab",
+          "usage": {
+            "input_tokens": 20174,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20237
+          },
+          "turn_token_usage": {
+            "input_tokens": 20174,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20237
+          },
+          "thread_token_usage": {
+            "input_tokens": 20174,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20237
+          }
+        },
+        {
+          "thread_id": "01a073f5-1493-7c31-bfb6-baaee7ec036d",
+          "turn_id": "01a073f8-7efd-7553-aeeb-598ec963280a",
+          "session_id": "01a073f5-13df-7b72-b613-9bf04993bb83",
+          "root_turn_id": "01a073f5-1446-73e0-aac5-5b1572a2e17b",
+          "response_id": "resp_06cc08eb56f573e7016a9caa1d94cc87d2983267a88b36ee66",
+          "usage": {
+            "input_tokens": 23216,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 165,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 23381
+          },
+          "turn_token_usage": {
+            "input_tokens": 23216,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 165,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 23381
+          },
+          "thread_token_usage": {
+            "input_tokens": 43390,
+            "cached_input_tokens": 26112,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 228,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 43618
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+      "parent": "01a07429-2905-7630-8bdc-507299baeb06",
+      "root": "01a07429-2905-7630-8bdc-507299baeb06",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 6,
+      "usage": {
+        "input_tokens": 160002,
+        "cached_input_tokens": 95744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 600,
+        "reasoning_output_tokens": 213,
+        "total_tokens": 160602
+      },
+      "records": [
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742b-0025-7031-9533-73de08bf56b2",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb70b0df487d290e8bd94b4ae2c72",
+          "usage": {
+            "input_tokens": 15085,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 76,
+            "total_tokens": 15226
+          },
+          "turn_token_usage": {
+            "input_tokens": 15085,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 76,
+            "total_tokens": 15226
+          },
+          "thread_token_usage": {
+            "input_tokens": 15085,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 76,
+            "total_tokens": 15226
+          }
+        },
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742b-487a-7811-9933-ef6bc73cda85",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb71e5b0c87d2aae6c655cd54b316",
+          "usage": {
+            "input_tokens": 17886,
+            "cached_input_tokens": 14080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17949
+          },
+          "turn_token_usage": {
+            "input_tokens": 17886,
+            "cached_input_tokens": 14080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17949
+          },
+          "thread_token_usage": {
+            "input_tokens": 32971,
+            "cached_input_tokens": 18944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 204,
+            "reasoning_output_tokens": 76,
+            "total_tokens": 33175
+          }
+        },
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742c-2237-7ea2-92ef-004e44d77c3f",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb755c47887d2bb944d1a6ab7ed7a",
+          "usage": {
+            "input_tokens": 24602,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 24700
+          },
+          "turn_token_usage": {
+            "input_tokens": 24602,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 24700
+          },
+          "thread_token_usage": {
+            "input_tokens": 57573,
+            "cached_input_tokens": 36096,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 302,
+            "reasoning_output_tokens": 110,
+            "total_tokens": 57875
+          }
+        },
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742c-e2a4-7150-ab87-8d22da083ee6",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb7869fac87d28cdc3c9e6ecfc9d8",
+          "usage": {
+            "input_tokens": 29488,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 136,
+            "reasoning_output_tokens": 65,
+            "total_tokens": 29624
+          },
+          "turn_token_usage": {
+            "input_tokens": 29488,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 136,
+            "reasoning_output_tokens": 65,
+            "total_tokens": 29624
+          },
+          "thread_token_usage": {
+            "input_tokens": 87061,
+            "cached_input_tokens": 43008,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 438,
+            "reasoning_output_tokens": 175,
+            "total_tokens": 87499
+          }
+        },
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742d-8db1-75e3-8ed0-7a238b9f8c44",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb7b230b087d2b683dde79c0d8cf0",
+          "usage": {
+            "input_tokens": 34602,
+            "cached_input_tokens": 28416,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 105,
+            "reasoning_output_tokens": 38,
+            "total_tokens": 34707
+          },
+          "turn_token_usage": {
+            "input_tokens": 34602,
+            "cached_input_tokens": 28416,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 105,
+            "reasoning_output_tokens": 38,
+            "total_tokens": 34707
+          },
+          "thread_token_usage": {
+            "input_tokens": 121663,
+            "cached_input_tokens": 71424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 543,
+            "reasoning_output_tokens": 213,
+            "total_tokens": 122206
+          }
+        },
+        {
+          "thread_id": "01a07429-29cc-72b0-aaf6-60b8c05d5a56",
+          "turn_id": "01a0742e-03e2-78b2-8d92-bedfb42809fd",
+          "session_id": "01a07429-2905-7630-8bdc-507299baeb06",
+          "root_turn_id": "01a07429-297f-78c1-a7d4-85f8cb4e9f88",
+          "response_id": "resp_0e3279fd2d91d1ff016a9cb7d0dbb887d2adc8890ce5df7624",
+          "usage": {
+            "input_tokens": 38339,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 57,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 38396
+          },
+          "turn_token_usage": {
+            "input_tokens": 38339,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 57,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 38396
+          },
+          "thread_token_usage": {
+            "input_tokens": 160002,
+            "cached_input_tokens": 95744,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 600,
+            "reasoning_output_tokens": 213,
+            "total_tokens": 160602
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f2-6df9-7633-a646-f1ea2c96fbdb",
+      "parent": "01a073f2-6d97-7f50-8394-d6ead8072f22",
+      "root": "01a073f2-6d97-7f50-8394-d6ead8072f22",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 18993,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 251,
+        "reasoning_output_tokens": 185,
+        "total_tokens": 19244
+      },
+      "records": [
+        {
+          "thread_id": "01a073f2-6df9-7633-a646-f1ea2c96fbdb",
+          "turn_id": "01a073f5-b2fc-7762-be41-e56e43f2ceeb",
+          "session_id": "01a073f2-6d97-7f50-8394-d6ead8072f22",
+          "root_turn_id": "01a073f2-6df8-7f01-a384-f3ea4ae0ffef",
+          "response_id": "resp_0ad6e77b991a70f4016a9ca965bdd487d28e2682266535e42e",
+          "usage": {
+            "input_tokens": 18993,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 251,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 19244
+          },
+          "turn_token_usage": {
+            "input_tokens": 18993,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 251,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 19244
+          },
+          "thread_token_usage": {
+            "input_tokens": 18993,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 251,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 19244
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07418-a2ec-7893-9081-69e4c335eefb",
+      "parent": "01a07418-a239-7f61-9267-132934000afc",
+      "root": "01a07418-a239-7f61-9267-132934000afc",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 101282,
+        "cached_input_tokens": 57600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 467,
+        "reasoning_output_tokens": 271,
+        "total_tokens": 101749
+      },
+      "records": [
+        {
+          "thread_id": "01a07418-a2ec-7893-9081-69e4c335eefb",
+          "turn_id": "01a0741b-63b7-7343-91a7-761f866b15b1",
+          "session_id": "01a07418-a239-7f61-9267-132934000afc",
+          "root_turn_id": "01a07418-a2a0-7040-96b2-f8b02b4a1210",
+          "response_id": "resp_0586c7e761a18147016a9cb30bc31c87d2a246002db9c1a089",
+          "usage": {
+            "input_tokens": 20068,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 163,
+            "total_tokens": 20294
+          },
+          "turn_token_usage": {
+            "input_tokens": 20068,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 163,
+            "total_tokens": 20294
+          },
+          "thread_token_usage": {
+            "input_tokens": 20068,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 163,
+            "total_tokens": 20294
+          }
+        },
+        {
+          "thread_id": "01a07418-a2ec-7893-9081-69e4c335eefb",
+          "turn_id": "01a0741f-7d86-79a3-bac7-631c1feea8bf",
+          "session_id": "01a07418-a239-7f61-9267-132934000afc",
+          "root_turn_id": "01a07418-a2a0-7040-96b2-f8b02b4a1210",
+          "response_id": "resp_0586c7e761a18147016a9cb419471487d2bcd27e0b991132c3",
+          "usage": {
+            "input_tokens": 33844,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 128,
+            "reasoning_output_tokens": 62,
+            "total_tokens": 33972
+          },
+          "turn_token_usage": {
+            "input_tokens": 33844,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 128,
+            "reasoning_output_tokens": 62,
+            "total_tokens": 33972
+          },
+          "thread_token_usage": {
+            "input_tokens": 53912,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 354,
+            "reasoning_output_tokens": 225,
+            "total_tokens": 54266
+          }
+        },
+        {
+          "thread_id": "01a07418-a2ec-7893-9081-69e4c335eefb",
+          "turn_id": "01a07422-4752-7c53-a0b8-cc24357e5d25",
+          "session_id": "01a07418-a239-7f61-9267-132934000afc",
+          "root_turn_id": "01a07418-a2a0-7040-96b2-f8b02b4a1210",
+          "response_id": "resp_0586c7e761a18147016a9cb4cfbf9c87d28d7f53b42b885cf5",
+          "usage": {
+            "input_tokens": 47370,
+            "cached_input_tokens": 33536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 113,
+            "reasoning_output_tokens": 46,
+            "total_tokens": 47483
+          },
+          "turn_token_usage": {
+            "input_tokens": 47370,
+            "cached_input_tokens": 33536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 113,
+            "reasoning_output_tokens": 46,
+            "total_tokens": 47483
+          },
+          "thread_token_usage": {
+            "input_tokens": 101282,
+            "cached_input_tokens": 57600,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 467,
+            "reasoning_output_tokens": 271,
+            "total_tokens": 101749
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f9-660c-7f13-bf00-352bf91aa195",
+      "parent": "01a073f9-6544-7e63-adc5-170ea8e9c494",
+      "root": "01a073f9-6544-7e63-adc5-170ea8e9c494",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 39626,
+        "cached_input_tokens": 23040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 402,
+        "reasoning_output_tokens": 192,
+        "total_tokens": 40028
+      },
+      "records": [
+        {
+          "thread_id": "01a073f9-660c-7f13-bf00-352bf91aa195",
+          "turn_id": "01a073fd-a9ff-72d2-8841-dcb80244d6c6",
+          "session_id": "01a073f9-6544-7e63-adc5-170ea8e9c494",
+          "root_turn_id": "01a073f9-65c0-7cd2-a574-65b40552379e",
+          "response_id": "resp_06f61a80deca4e74016a9cab6fc71487d2ae8df21237a25746",
+          "usage": {
+            "input_tokens": 18929,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 19131
+          },
+          "turn_token_usage": {
+            "input_tokens": 18929,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 19131
+          },
+          "thread_token_usage": {
+            "input_tokens": 18929,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 56,
+            "total_tokens": 19131
+          }
+        },
+        {
+          "thread_id": "01a073f9-660c-7f13-bf00-352bf91aa195",
+          "turn_id": "01a073fd-a9ff-72d2-8841-dcb80244d6c6",
+          "session_id": "01a073f9-6544-7e63-adc5-170ea8e9c494",
+          "root_turn_id": "01a073f9-65c0-7cd2-a574-65b40552379e",
+          "response_id": "resp_06f61a80deca4e74016a9cab74cffc87d286a41ddee14c4cde",
+          "usage": {
+            "input_tokens": 20697,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 200,
+            "reasoning_output_tokens": 136,
+            "total_tokens": 20897
+          },
+          "turn_token_usage": {
+            "input_tokens": 39626,
+            "cached_input_tokens": 23040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 402,
+            "reasoning_output_tokens": 192,
+            "total_tokens": 40028
+          },
+          "thread_token_usage": {
+            "input_tokens": 39626,
+            "cached_input_tokens": 23040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 402,
+            "reasoning_output_tokens": 192,
+            "total_tokens": 40028
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07418-673b-7470-9276-5cbf8b2b55d3",
+      "parent": "01a07418-66d3-7d30-9a94-e02294b7200a",
+      "root": "01a07418-66d3-7d30-9a94-e02294b7200a",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 33824,
+        "cached_input_tokens": 18944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 77,
+        "total_tokens": 34030
+      },
+      "records": [
+        {
+          "thread_id": "01a07418-673b-7470-9276-5cbf8b2b55d3",
+          "turn_id": "01a0741a-ef8d-7171-9f79-30adf54123fa",
+          "session_id": "01a07418-66d3-7d30-9a94-e02294b7200a",
+          "root_turn_id": "01a07418-6739-76c1-9a14-9107fbc1c72d",
+          "response_id": "resp_0cd2f072924fb436016a9cb2ee05c487d28f91aaecca937729",
+          "usage": {
+            "input_tokens": 14941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 77,
+            "total_tokens": 15086
+          },
+          "turn_token_usage": {
+            "input_tokens": 14941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 77,
+            "total_tokens": 15086
+          },
+          "thread_token_usage": {
+            "input_tokens": 14941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 77,
+            "total_tokens": 15086
+          }
+        },
+        {
+          "thread_id": "01a07418-673b-7470-9276-5cbf8b2b55d3",
+          "turn_id": "01a0741b-7b43-7650-b2cf-14c8b3d2f141",
+          "session_id": "01a07418-66d3-7d30-9a94-e02294b7200a",
+          "root_turn_id": "01a07418-6739-76c1-9a14-9107fbc1c72d",
+          "response_id": "resp_0cd2f072924fb436016a9cb311c1bc87d2a85103717291a76f",
+          "usage": {
+            "input_tokens": 18883,
+            "cached_input_tokens": 14080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18944
+          },
+          "turn_token_usage": {
+            "input_tokens": 18883,
+            "cached_input_tokens": 14080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18944
+          },
+          "thread_token_usage": {
+            "input_tokens": 33824,
+            "cached_input_tokens": 18944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 206,
+            "reasoning_output_tokens": 77,
+            "total_tokens": 34030
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07406-4a12-7f43-812e-38060a43d15c",
+      "parent": "01a07406-494d-7181-b80d-53202e157d4c",
+      "root": "01a07406-494d-7181-b80d-53202e157d4c",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 20050,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 249,
+        "reasoning_output_tokens": 185,
+        "total_tokens": 20299
+      },
+      "records": [
+        {
+          "thread_id": "01a07406-4a12-7f43-812e-38060a43d15c",
+          "turn_id": "01a07409-a01a-7d01-8782-8c99ca2cdaa0",
+          "session_id": "01a07406-494d-7181-b80d-53202e157d4c",
+          "root_turn_id": "01a07406-49c3-70b3-9627-71c11f32307c",
+          "response_id": "resp_0a5fb5c1d0fcdda3016a9cae7fe0a887d2be569dac6b4060a7",
+          "usage": {
+            "input_tokens": 20050,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 249,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 20299
+          },
+          "turn_token_usage": {
+            "input_tokens": 20050,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 249,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 20299
+          },
+          "thread_token_usage": {
+            "input_tokens": 20050,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 249,
+            "reasoning_output_tokens": 185,
+            "total_tokens": 20299
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a0741b-527c-7921-846b-4f94bf8181ac",
+      "parent": "01a0741b-519e-7792-9829-76b1396ec848",
+      "root": "01a0741b-519e-7792-9829-76b1396ec848",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 7,
+      "usage": {
+        "input_tokens": 205979,
+        "cached_input_tokens": 163072,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 609,
+        "reasoning_output_tokens": 184,
+        "total_tokens": 206588
+      },
+      "records": [
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a0741e-1e1a-78e2-a7fb-e4b525bccd6d",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb3be831887d2bedceb008f8add4a",
+          "usage": {
+            "input_tokens": 18681,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 83,
+            "total_tokens": 18827
+          },
+          "turn_token_usage": {
+            "input_tokens": 18681,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 83,
+            "total_tokens": 18827
+          },
+          "thread_token_usage": {
+            "input_tokens": 18681,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 83,
+            "total_tokens": 18827
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a0741e-66ce-71d1-a455-4ad12c9b4e59",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb3d185ac87d281fa8f31559d4604",
+          "usage": {
+            "input_tokens": 20949,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 93,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 21042
+          },
+          "turn_token_usage": {
+            "input_tokens": 20949,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 93,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 21042
+          },
+          "thread_token_usage": {
+            "input_tokens": 39630,
+            "cached_input_tokens": 25088,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 239,
+            "reasoning_output_tokens": 114,
+            "total_tokens": 39869
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a0741e-eebd-7023-9145-08b7c6757e79",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb3f45dc487d2b946acc21c51ac60",
+          "usage": {
+            "input_tokens": 24922,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 110,
+            "reasoning_output_tokens": 48,
+            "total_tokens": 25032
+          },
+          "turn_token_usage": {
+            "input_tokens": 24922,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 110,
+            "reasoning_output_tokens": 48,
+            "total_tokens": 25032
+          },
+          "thread_token_usage": {
+            "input_tokens": 64552,
+            "cached_input_tokens": 45312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 349,
+            "reasoning_output_tokens": 162,
+            "total_tokens": 64901
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a0741f-6e22-71e1-a044-a6461098da8b",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb41487ac87d2bd5035700e36bc70",
+          "usage": {
+            "input_tokens": 28736,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 28797
+          },
+          "turn_token_usage": {
+            "input_tokens": 28736,
+            "cached_input_tokens": 24320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 28797
+          },
+          "thread_token_usage": {
+            "input_tokens": 93288,
+            "cached_input_tokens": 69632,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 410,
+            "reasoning_output_tokens": 162,
+            "total_tokens": 93698
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a0741f-a638-7251-9a36-86884d892fba",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb423303087d2abc8a917cddec78b",
+          "usage": {
+            "input_tokens": 30686,
+            "cached_input_tokens": 28416,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 58,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 30744
+          },
+          "turn_token_usage": {
+            "input_tokens": 30686,
+            "cached_input_tokens": 28416,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 58,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 30744
+          },
+          "thread_token_usage": {
+            "input_tokens": 123974,
+            "cached_input_tokens": 98048,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 468,
+            "reasoning_output_tokens": 162,
+            "total_tokens": 124442
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a07420-6083-7560-a23f-4f8eb6f9ceb8",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb452fdcc87d29d428c1108c735ff",
+          "usage": {
+            "input_tokens": 35596,
+            "cached_input_tokens": 30464,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 22,
+            "total_tokens": 35679
+          },
+          "turn_token_usage": {
+            "input_tokens": 35596,
+            "cached_input_tokens": 30464,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 22,
+            "total_tokens": 35679
+          },
+          "thread_token_usage": {
+            "input_tokens": 159570,
+            "cached_input_tokens": 128512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 551,
+            "reasoning_output_tokens": 184,
+            "total_tokens": 160121
+          }
+        },
+        {
+          "thread_id": "01a0741b-527c-7921-846b-4f94bf8181ac",
+          "turn_id": "01a07421-e2b3-7e21-b86f-07861b805679",
+          "session_id": "01a0741b-519e-7792-9829-76b1396ec848",
+          "root_turn_id": "01a0741b-521e-7440-b1ee-c3288c83b34c",
+          "response_id": "resp_0850cb7ac99a734d016a9cb4b5fc5087d2aa3a3e8125eff3a1",
+          "usage": {
+            "input_tokens": 46409,
+            "cached_input_tokens": 34560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 58,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 46467
+          },
+          "turn_token_usage": {
+            "input_tokens": 46409,
+            "cached_input_tokens": 34560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 58,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 46467
+          },
+          "thread_token_usage": {
+            "input_tokens": 205979,
+            "cached_input_tokens": 163072,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 609,
+            "reasoning_output_tokens": 184,
+            "total_tokens": 206588
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f0-638a-7b20-b3e5-fec6b0b5e9fa",
+      "parent": "01a073f0-62b1-7982-8e32-f24ddada9a7e",
+      "root": "01a073f0-62b1-7982-8e32-f24ddada9a7e",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 14831,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 126,
+        "reasoning_output_tokens": 108,
+        "total_tokens": 14957
+      },
+      "records": [
+        {
+          "thread_id": "01a073f0-638a-7b20-b3e5-fec6b0b5e9fa",
+          "turn_id": "01a073f2-b02d-7b43-9c52-265880c3e148",
+          "session_id": "01a073f0-62b1-7982-8e32-f24ddada9a7e",
+          "root_turn_id": "01a073f0-632e-7441-9967-34c02a45cb96",
+          "response_id": "resp_029a55318cd6eb80016a9ca8a09e7487d2b32b870880947b23",
+          "usage": {
+            "input_tokens": 14831,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 108,
+            "total_tokens": 14957
+          },
+          "turn_token_usage": {
+            "input_tokens": 14831,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 108,
+            "total_tokens": 14957
+          },
+          "thread_token_usage": {
+            "input_tokens": 14831,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 108,
+            "total_tokens": 14957
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07422-7c8c-7d70-b73b-4d131d8c6d51",
+      "parent": "01a07422-7c24-7ad2-a023-5577e5042960",
+      "root": "01a07422-7c24-7ad2-a023-5577e5042960",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 19154,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 141,
+        "reasoning_output_tokens": 70,
+        "total_tokens": 19295
+      },
+      "records": [
+        {
+          "thread_id": "01a07422-7c8c-7d70-b73b-4d131d8c6d51",
+          "turn_id": "01a07425-48f8-7861-aeb7-531c0755bdee",
+          "session_id": "01a07422-7c24-7ad2-a023-5577e5042960",
+          "root_turn_id": "01a07422-7c8b-79f3-854d-026ba603a3ca",
+          "response_id": "resp_0dc3708ebe323417016a9cb594640087d285ecb6b846486c36",
+          "usage": {
+            "input_tokens": 19154,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 70,
+            "total_tokens": 19295
+          },
+          "turn_token_usage": {
+            "input_tokens": 19154,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 70,
+            "total_tokens": 19295
+          },
+          "thread_token_usage": {
+            "input_tokens": 19154,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 141,
+            "reasoning_output_tokens": 70,
+            "total_tokens": 19295
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073f7-e313-7792-b432-a9b27702b10d",
+      "parent": "01a073f7-e2b2-7492-a8f8-12952a6917f3",
+      "root": "01a073f7-e2b2-7492-a8f8-12952a6917f3",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 49938,
+        "cached_input_tokens": 24064,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 252,
+        "reasoning_output_tokens": 113,
+        "total_tokens": 50190
+      },
+      "records": [
+        {
+          "thread_id": "01a073f7-e313-7792-b432-a9b27702b10d",
+          "turn_id": "01a073fb-5c69-70f2-b760-9502c50afbb5",
+          "session_id": "01a073f7-e2b2-7492-a8f8-12952a6917f3",
+          "root_turn_id": "01a073f7-e312-7511-9412-6d7066c7cc1f",
+          "response_id": "resp_0d7b650a0b8beb98016a9caad8ef0c87d2afd1a6379cc95ecf",
+          "usage": {
+            "input_tokens": 19580,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 78,
+            "total_tokens": 19726
+          },
+          "turn_token_usage": {
+            "input_tokens": 19580,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 78,
+            "total_tokens": 19726
+          },
+          "thread_token_usage": {
+            "input_tokens": 19580,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 78,
+            "total_tokens": 19726
+          }
+        },
+        {
+          "thread_id": "01a073f7-e313-7792-b432-a9b27702b10d",
+          "turn_id": "01a073fc-c44b-7a81-88bc-3483094937e0",
+          "session_id": "01a073f7-e2b2-7492-a8f8-12952a6917f3",
+          "root_turn_id": "01a073f7-e312-7511-9412-6d7066c7cc1f",
+          "response_id": "resp_0d7b650a0b8beb98016a9cab35b52887d2b9d0e1d8fb258362",
+          "usage": {
+            "input_tokens": 30358,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 106,
+            "reasoning_output_tokens": 35,
+            "total_tokens": 30464
+          },
+          "turn_token_usage": {
+            "input_tokens": 30358,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 106,
+            "reasoning_output_tokens": 35,
+            "total_tokens": 30464
+          },
+          "thread_token_usage": {
+            "input_tokens": 49938,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 252,
+            "reasoning_output_tokens": 113,
+            "total_tokens": 50190
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07418-5647-7113-9d82-2e7b87d061bf",
+      "parent": "01a07418-55d0-7430-ae64-9790838312cb",
+      "root": "01a07418-55d0-7430-ae64-9790838312cb",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 63822,
+        "cached_input_tokens": 42240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 334,
+        "reasoning_output_tokens": 132,
+        "total_tokens": 64156
+      },
+      "records": [
+        {
+          "thread_id": "01a07418-5647-7113-9d82-2e7b87d061bf",
+          "turn_id": "01a0741a-fd9c-7f53-b5b0-27d75faaba28",
+          "session_id": "01a07418-55d0-7430-ae64-9790838312cb",
+          "root_turn_id": "01a07418-5645-7f52-906a-171108a6fae1",
+          "response_id": "resp_03e7fa3ddc953dec016a9cb2f1dc2887d295d07c0554f01e35",
+          "usage": {
+            "input_tokens": 16889,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 17057
+          },
+          "turn_token_usage": {
+            "input_tokens": 16889,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 17057
+          },
+          "thread_token_usage": {
+            "input_tokens": 16889,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 17057
+          }
+        },
+        {
+          "thread_id": "01a07418-5647-7113-9d82-2e7b87d061bf",
+          "turn_id": "01a0741b-7f82-7152-b68e-e410287d6ec0",
+          "session_id": "01a07418-55d0-7430-ae64-9790838312cb",
+          "root_turn_id": "01a07418-5645-7f52-906a-171108a6fae1",
+          "response_id": "resp_03e7fa3ddc953dec016a9cb312c56487d290648791ff1ab589",
+          "usage": {
+            "input_tokens": 21532,
+            "cached_input_tokens": 16128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 21597
+          },
+          "turn_token_usage": {
+            "input_tokens": 21532,
+            "cached_input_tokens": 16128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 21597
+          },
+          "thread_token_usage": {
+            "input_tokens": 38421,
+            "cached_input_tokens": 20992,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 233,
+            "reasoning_output_tokens": 103,
+            "total_tokens": 38654
+          }
+        },
+        {
+          "thread_id": "01a07418-5647-7113-9d82-2e7b87d061bf",
+          "turn_id": "01a0741b-e9c7-7a81-8a85-285b1db72ff0",
+          "session_id": "01a07418-55d0-7430-ae64-9790838312cb",
+          "root_turn_id": "01a07418-5645-7f52-906a-171108a6fae1",
+          "response_id": "resp_03e7fa3ddc953dec016a9cb32df96c87d2aea03a2a17718915",
+          "usage": {
+            "input_tokens": 25401,
+            "cached_input_tokens": 21248,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 101,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 25502
+          },
+          "turn_token_usage": {
+            "input_tokens": 25401,
+            "cached_input_tokens": 21248,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 101,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 25502
+          },
+          "thread_token_usage": {
+            "input_tokens": 63822,
+            "cached_input_tokens": 42240,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 334,
+            "reasoning_output_tokens": 132,
+            "total_tokens": 64156
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07416-22e1-7be0-928a-cfcf02badf89",
+      "parent": "01a07416-2273-7711-b5e7-33e856650f99",
+      "root": "01a07416-2273-7711-b5e7-33e856650f99",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 3,
+      "usage": {
+        "input_tokens": 57210,
+        "cached_input_tokens": 41216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 273,
+        "reasoning_output_tokens": 102,
+        "total_tokens": 57483
+      },
+      "records": [
+        {
+          "thread_id": "01a07416-22e1-7be0-928a-cfcf02badf89",
+          "turn_id": "01a07418-8fb8-7ff2-aa61-1d3034dbeb0b",
+          "session_id": "01a07416-2273-7711-b5e7-33e856650f99",
+          "root_turn_id": "01a07416-22e0-7033-acc0-788d1cd113b8",
+          "response_id": "resp_0eb655611bef192f016a9cb2526a7c87d2b4ec3dd1312c7d9c",
+          "usage": {
+            "input_tokens": 16715,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 106,
+            "reasoning_output_tokens": 49,
+            "total_tokens": 16821
+          },
+          "turn_token_usage": {
+            "input_tokens": 16715,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 106,
+            "reasoning_output_tokens": 49,
+            "total_tokens": 16821
+          },
+          "thread_token_usage": {
+            "input_tokens": 16715,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 106,
+            "reasoning_output_tokens": 49,
+            "total_tokens": 16821
+          }
+        },
+        {
+          "thread_id": "01a07416-22e1-7be0-928a-cfcf02badf89",
+          "turn_id": "01a07418-ce05-77f3-8d18-6a06120ac8ca",
+          "session_id": "01a07416-2273-7711-b5e7-33e856650f99",
+          "root_turn_id": "01a07416-22e0-7033-acc0-788d1cd113b8",
+          "response_id": "resp_0eb655611bef192f016a9cb26259c887d2b5fc3b96ba1e3098",
+          "usage": {
+            "input_tokens": 18666,
+            "cached_input_tokens": 16128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 92,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 18758
+          },
+          "turn_token_usage": {
+            "input_tokens": 18666,
+            "cached_input_tokens": 16128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 92,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 18758
+          },
+          "thread_token_usage": {
+            "input_tokens": 35381,
+            "cached_input_tokens": 23040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 198,
+            "reasoning_output_tokens": 82,
+            "total_tokens": 35579
+          }
+        },
+        {
+          "thread_id": "01a07416-22e1-7be0-928a-cfcf02badf89",
+          "turn_id": "01a07419-236e-7bd0-b9ac-cc353373619c",
+          "session_id": "01a07416-2273-7711-b5e7-33e856650f99",
+          "root_turn_id": "01a07416-22e0-7033-acc0-788d1cd113b8",
+          "response_id": "resp_0eb655611bef192f016a9cb2788fec87d2a4d2e4478bbd2745",
+          "usage": {
+            "input_tokens": 21829,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 21904
+          },
+          "turn_token_usage": {
+            "input_tokens": 21829,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 20,
+            "total_tokens": 21904
+          },
+          "thread_token_usage": {
+            "input_tokens": 57210,
+            "cached_input_tokens": 41216,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 273,
+            "reasoning_output_tokens": 102,
+            "total_tokens": 57483
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073fa-9f2c-7001-8dce-73d778f22b68",
+      "parent": "01a073fa-9ecc-75c1-9cc6-4235bd385d38",
+      "root": "01a073fa-9ecc-75c1-9cc6-4235bd385d38",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 1,
+      "usage": {
+        "input_tokens": 20857,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 264,
+        "reasoning_output_tokens": 201,
+        "total_tokens": 21121
+      },
+      "records": [
+        {
+          "thread_id": "01a073fa-9f2c-7001-8dce-73d778f22b68",
+          "turn_id": "01a073fd-925a-7b61-86e1-9ad47378f2e3",
+          "session_id": "01a073fa-9ecc-75c1-9cc6-4235bd385d38",
+          "root_turn_id": "01a073fa-9f2b-7250-9b91-e472690d5e62",
+          "response_id": "resp_0f78c71df5512737016a9cab69b07c87d2a1af45e0317d7e44",
+          "usage": {
+            "input_tokens": 20857,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 264,
+            "reasoning_output_tokens": 201,
+            "total_tokens": 21121
+          },
+          "turn_token_usage": {
+            "input_tokens": 20857,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 264,
+            "reasoning_output_tokens": 201,
+            "total_tokens": 21121
+          },
+          "thread_token_usage": {
+            "input_tokens": 20857,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 264,
+            "reasoning_output_tokens": 201,
+            "total_tokens": 21121
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a073fb-92bc-7301-b17e-7ddbaa41b060",
+      "parent": "01a073fb-925c-7b83-82b6-08465f41407b",
+      "root": "01a073fb-925c-7b83-82b6-08465f41407b",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 4,
+      "usage": {
+        "input_tokens": 85582,
+        "cached_input_tokens": 64512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 461,
+        "reasoning_output_tokens": 210,
+        "total_tokens": 86043
+      },
+      "records": [
+        {
+          "thread_id": "01a073fb-92bc-7301-b17e-7ddbaa41b060",
+          "turn_id": "01a073fe-2a96-7a12-b468-04acfe2e8e17",
+          "session_id": "01a073fb-925c-7b83-82b6-08465f41407b",
+          "root_turn_id": "01a073fb-92bb-7123-b25f-9fd143f1822b",
+          "response_id": "resp_0d33e50ace238b2d016a9cab90b0a487d2bc8b87ee1efe4b8b",
+          "usage": {
+            "input_tokens": 17457,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 178,
+            "reasoning_output_tokens": 113,
+            "total_tokens": 17635
+          },
+          "turn_token_usage": {
+            "input_tokens": 17457,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 178,
+            "reasoning_output_tokens": 113,
+            "total_tokens": 17635
+          },
+          "thread_token_usage": {
+            "input_tokens": 17457,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 178,
+            "reasoning_output_tokens": 113,
+            "total_tokens": 17635
+          }
+        },
+        {
+          "thread_id": "01a073fb-92bc-7301-b17e-7ddbaa41b060",
+          "turn_id": "01a073fe-752e-7030-9501-418b990cb18d",
+          "session_id": "01a073fb-925c-7b83-82b6-08465f41407b",
+          "root_turn_id": "01a073fb-92bb-7123-b25f-9fd143f1822b",
+          "response_id": "resp_0d33e50ace238b2d016a9caba4457087d29ec1aced1f134173",
+          "usage": {
+            "input_tokens": 19824,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 124,
+            "reasoning_output_tokens": 64,
+            "total_tokens": 19948
+          },
+          "turn_token_usage": {
+            "input_tokens": 19824,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 124,
+            "reasoning_output_tokens": 64,
+            "total_tokens": 19948
+          },
+          "thread_token_usage": {
+            "input_tokens": 37281,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 302,
+            "reasoning_output_tokens": 177,
+            "total_tokens": 37583
+          }
+        },
+        {
+          "thread_id": "01a073fb-92bc-7301-b17e-7ddbaa41b060",
+          "turn_id": "01a073fe-bb47-7f60-a798-a4fb603bbd35",
+          "session_id": "01a073fb-925c-7b83-82b6-08465f41407b",
+          "root_turn_id": "01a073fb-92bb-7123-b25f-9fd143f1822b",
+          "response_id": "resp_0d33e50ace238b2d016a9cabb6051487d2a2d0752a0193a1c1",
+          "usage": {
+            "input_tokens": 22138,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 22211
+          },
+          "turn_token_usage": {
+            "input_tokens": 22138,
+            "cached_input_tokens": 19200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 22211
+          },
+          "thread_token_usage": {
+            "input_tokens": 59419,
+            "cached_input_tokens": 43264,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 375,
+            "reasoning_output_tokens": 187,
+            "total_tokens": 59794
+          }
+        },
+        {
+          "thread_id": "01a073fb-92bc-7301-b17e-7ddbaa41b060",
+          "turn_id": "01a073ff-4a04-7df1-8acd-0fb412a008a2",
+          "session_id": "01a073fb-925c-7b83-82b6-08465f41407b",
+          "root_turn_id": "01a073fb-92bb-7123-b25f-9fd143f1822b",
+          "response_id": "resp_0d33e50ace238b2d016a9cabda368087d2b161f0e0bb24c1cc",
+          "usage": {
+            "input_tokens": 26163,
+            "cached_input_tokens": 21248,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 23,
+            "total_tokens": 26249
+          },
+          "turn_token_usage": {
+            "input_tokens": 26163,
+            "cached_input_tokens": 21248,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 23,
+            "total_tokens": 26249
+          },
+          "thread_token_usage": {
+            "input_tokens": 85582,
+            "cached_input_tokens": 64512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 461,
+            "reasoning_output_tokens": 210,
+            "total_tokens": 86043
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07422-4f00-7de0-8e87-9c6886b4cbd5",
+      "parent": "01a07422-4e96-7412-b315-ff71c6424874",
+      "root": "01a07422-4e96-7412-b315-ff71c6424874",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 4,
+      "usage": {
+        "input_tokens": 75719,
+        "cached_input_tokens": 43008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 130,
+        "total_tokens": 76106
+      },
+      "records": [
+        {
+          "thread_id": "01a07422-4f00-7de0-8e87-9c6886b4cbd5",
+          "turn_id": "01a07424-25d1-76a3-b795-05a04ecec4f2",
+          "session_id": "01a07422-4e96-7412-b315-ff71c6424874",
+          "root_turn_id": "01a07422-4efd-7bc3-adc9-036fd0c69957",
+          "response_id": "resp_0c77f161ec011e29016a9cb549c8ac87d2af533868322fdafa",
+          "usage": {
+            "input_tokens": 13941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 160,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 14101
+          },
+          "turn_token_usage": {
+            "input_tokens": 13941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 160,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 14101
+          },
+          "thread_token_usage": {
+            "input_tokens": 13941,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 160,
+            "reasoning_output_tokens": 88,
+            "total_tokens": 14101
+          }
+        },
+        {
+          "thread_id": "01a07422-4f00-7de0-8e87-9c6886b4cbd5",
+          "turn_id": "01a07424-6dd0-73f1-ac01-34cdf080b86c",
+          "session_id": "01a07422-4e96-7412-b315-ff71c6424874",
+          "root_turn_id": "01a07422-4efd-7bc3-adc9-036fd0c69957",
+          "response_id": "resp_0c77f161ec011e29016a9cb55ce6e087d2ae8c0ce51c3c4c43",
+          "usage": {
+            "input_tokens": 16689,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 16797
+          },
+          "turn_token_usage": {
+            "input_tokens": 16689,
+            "cached_input_tokens": 13056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 42,
+            "total_tokens": 16797
+          },
+          "thread_token_usage": {
+            "input_tokens": 30630,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 268,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 30898
+          }
+        },
+        {
+          "thread_id": "01a07422-4f00-7de0-8e87-9c6886b4cbd5",
+          "turn_id": "01a07424-ee8c-72f3-a241-a948ef591358",
+          "session_id": "01a07422-4e96-7412-b315-ff71c6424874",
+          "root_turn_id": "01a07422-4efd-7bc3-adc9-036fd0c69957",
+          "response_id": "resp_0c77f161ec011e29016a9cb57d7f2887d2ad6d0f3339109e18",
+          "usage": {
+            "input_tokens": 20603,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 55,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20658
+          },
+          "turn_token_usage": {
+            "input_tokens": 20603,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 55,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20658
+          },
+          "thread_token_usage": {
+            "input_tokens": 51233,
+            "cached_input_tokens": 22784,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 323,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 51556
+          }
+        },
+        {
+          "thread_id": "01a07422-4f00-7de0-8e87-9c6886b4cbd5",
+          "turn_id": "01a07425-513c-75e0-8baa-6ab0e2b2208a",
+          "session_id": "01a07422-4e96-7412-b315-ff71c6424874",
+          "root_turn_id": "01a07422-4efd-7bc3-adc9-036fd0c69957",
+          "response_id": "resp_0c77f161ec011e29016a9cb59710d487d2beefe8cab9d92644",
+          "usage": {
+            "input_tokens": 24486,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 64,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 24550
+          },
+          "turn_token_usage": {
+            "input_tokens": 24486,
+            "cached_input_tokens": 20224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 64,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 24550
+          },
+          "thread_token_usage": {
+            "input_tokens": 75719,
+            "cached_input_tokens": 43008,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 387,
+            "reasoning_output_tokens": 130,
+            "total_tokens": 76106
+          }
+        }
+      ]
+    },
+    {
+      "threadID": "01a07423-4bec-7f50-82c3-13a7ef4c2f41",
+      "parent": "01a07423-4b39-70b1-a879-e7ee3c211a93",
+      "root": "01a07423-4b39-70b1-a879-e7ee3c211a93",
+      "kind": {
+        "subagent": {
+          "other": "guardian"
+        }
+      },
+      "models": [
+        "codex-auto-review"
+      ],
+      "callsWithUsage": 2,
+      "usage": {
+        "input_tokens": 50769,
+        "cached_input_tokens": 23040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 348,
+        "reasoning_output_tokens": 201,
+        "total_tokens": 51117
+      },
+      "records": [
+        {
+          "thread_id": "01a07423-4bec-7f50-82c3-13a7ef4c2f41",
+          "turn_id": "01a07426-52c3-7e80-9653-551ae6a3b627",
+          "session_id": "01a07423-4b39-70b1-a879-e7ee3c211a93",
+          "root_turn_id": "01a07423-4b9f-70f3-a959-a8624f68922f",
+          "response_id": "resp_0926df5afbc03282016a9cb5d8c07487d2b6bd16a8f04db570",
+          "usage": {
+            "input_tokens": 18983,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 255,
+            "reasoning_output_tokens": 175,
+            "total_tokens": 19238
+          },
+          "turn_token_usage": {
+            "input_tokens": 18983,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 255,
+            "reasoning_output_tokens": 175,
+            "total_tokens": 19238
+          },
+          "thread_token_usage": {
+            "input_tokens": 18983,
+            "cached_input_tokens": 4864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 255,
+            "reasoning_output_tokens": 175,
+            "total_tokens": 19238
+          }
+        },
+        {
+          "thread_id": "01a07423-4bec-7f50-82c3-13a7ef4c2f41",
+          "turn_id": "01a07428-551f-7b73-8b3b-5cc489299b7c",
+          "session_id": "01a07423-4b39-70b1-a879-e7ee3c211a93",
+          "root_turn_id": "01a07423-4b9f-70f3-a959-a8624f68922f",
+          "response_id": "resp_0926df5afbc03282016a9cb65bf7f887d2ae9314a2c02d18f5",
+          "usage": {
+            "input_tokens": 31786,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 93,
+            "reasoning_output_tokens": 26,
+            "total_tokens": 31879
+          },
+          "turn_token_usage": {
+            "input_tokens": 31786,
+            "cached_input_tokens": 18176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 93,
+            "reasoning_output_tokens": 26,
+            "total_tokens": 31879
+          },
+          "thread_token_usage": {
+            "input_tokens": 50769,
+            "cached_input_tokens": 23040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 348,
+            "reasoning_output_tokens": 201,
+            "total_tokens": 51117
+          }
+        }
+      ]
+    }
+  ]
+}

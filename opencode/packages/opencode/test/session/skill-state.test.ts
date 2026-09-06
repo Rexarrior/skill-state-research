@@ -351,6 +351,29 @@ describe("core SKILL.state protocol", () => {
     ).toThrow("finish must be the sole action")
   })
 
+  test("v3 stops after a shell nonzero exit without rolling back the accepted patch", async () => {
+    const calls: string[] = []
+    const bash = tool({
+      inputSchema: jsonSchema({ type: "object" }),
+      execute() {
+        calls.push("bash")
+        return { title: "failed check", output: "test failed", metadata: { exit: 1 } }
+      },
+    })
+    const transition = SkillState.prepare({
+      state_revision: 0,
+      state_patch: { facts: ["Previously confirmed fact"] },
+      actions: [{ name: "bash", input: {} }, { name: "bash", input: {} }],
+    }, SkillState.initialState, 0, "v3")
+    const result = await SkillState.execute(transition, { bash }, options)
+    const restored = SkillState.context([
+      message("user", [text("Implement")]), message("assistant", [stepFromResult(result)]),
+    ], 3, "v3")
+    expect(calls).toEqual(["bash"])
+    expect(restored.state.facts).toEqual(["Previously confirmed fact"])
+    expect(restored.observations[0]?.actions?.map((action) => action.status)).toEqual(["error", "skipped"])
+  })
+
   test("rejects removed verification state and invalid comments", () => {
     expect(() =>
       SkillState.prepare(

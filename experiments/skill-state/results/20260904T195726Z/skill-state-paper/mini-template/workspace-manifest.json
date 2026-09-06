@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.562Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state-paper/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 834,
+      "sha256": "52b07aea09f7f9679bc10a8a2daec5e7912c0c75c5782726991d74fcb444030f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "e1a45b00bb26e00847eabc1039c20bca395f46e395fa3c22491f6c2d48d55fe8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 663,
+      "sha256": "f1f2344c1dbae71f0a151cb235b7d18782514da673a5f41120615fbdb19d5661"
+    },
+    {
+      "path": "src/engine.test.ts",
+      "bytes": 2074,
+      "sha256": "dacf2397fe6740631669c6407cb010af0ec35d9d48ebf729ada5474a2f11ad5e"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 6507,
+      "sha256": "6379aa9afe156eeae3892aacad5adf6e2ac68978770341fb57f68429eb9ee6e9"
+    }
+  ],
+  "skipped": []
+}

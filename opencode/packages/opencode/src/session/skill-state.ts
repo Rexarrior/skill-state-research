@@ -117,14 +117,7 @@ const statePatchSchema: JSONSchema7 = {
 }
 
 const paperStatePatchSchema: JSONSchema7 = {
-  type: "object",
-  properties: Object.fromEntries(
-    Object.entries(statePatchSchema.properties ?? {}).map(([name, schema]) => [
-      name,
-      { anyOf: [schema, { type: "null" }] },
-    ]),
-  ),
-  additionalProperties: false,
+  ...statePatchSchema,
 }
 
 const v2Protocol = `You are operating under the SKILL.state v2 execution protocol.
@@ -153,7 +146,7 @@ const paperProtocol = `You are operating under the original SKILL.state executio
 
 The task specification below is immutable. The execution state is the only durable memory. Every earlier observation, action, response, and reasoning trace is discarded; only the latest environment observation is available.
 
-On every turn call skill_step exactly once with exactly two fields: state_patch and action. Use state_patch to retain only information required by future execution, using null to delete obsolete dictionary entries. Then choose exactly one environment action. The runtime validates and applies the patch before it executes the action.
+On every turn call skill_step exactly once with exactly two fields: state_patch and action. Use state_patch to retain only information required by future execution, using null to delete obsolete entries inside files. The top-level coding-state fields are required; clear arrays with [] and files with per-entry null deletions. Then choose exactly one environment action. The runtime validates and applies the patch before it executes the action.
 
 Use the finish action only after the implementation is complete and all available tests pass. Do not answer outside skill_step.`
 
@@ -710,7 +703,10 @@ async function resolveToolResult(value: unknown): Promise<ActionResult> {
     output: typeof result.output === "string" ? result.output : (JSON.stringify(result.output) ?? ""),
     metadata: isRecord(result.metadata) ? result.metadata : {},
     attachments: Array.isArray(result.attachments) ? result.attachments : undefined,
-    actionError: false,
+    actionError:
+      isRecord(result.metadata) &&
+      (result.metadata.timeout === true ||
+        (typeof result.metadata.exit === "number" && result.metadata.exit !== 0)),
   }
 }
 

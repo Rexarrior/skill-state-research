@@ -1,0 +1,238 @@
+import { rename } from "node:fs/promises";
+
+type Status = "open" | "done";
+
+interface Task {
+  id: number;
+  title: string;
+  status: Status;
+  createdAt: string;
+  tags: string[];
+  due?: string;
+  completedAt?: string;
+}
+
+interface Database {
+  version: 1;
+  nextId: number;
+  tasks: Task[];
+}
+
+class CliError extends Error {}
+
+const databasePath = process.env.TASKBOARD_FILE || ".taskboard.json";
+
+function fail(message: string): never {
+  throw new CliError(message);
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isIsoTimestamp(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const parsed = new Date(value);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString() === value;
+}
+
+function isDate(value: unknown): value is string {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split("-").map(Number);
+  const parsed = new Date(Date.UTC(year, month - 1, day));
+  return parsed.getUTCFullYear() === year && parsed.getUTCMonth() === month - 1 && parsed.getUTCDate() === day;
+}
+
+function validateTask(value: unknown): value is Task {
+  if (!isRecord(value)) return false;
+  const allowed = new Set(["id", "title", "status", "createdAt", "tags", "due", "completedAt"]);
+  if (Object.keys(value).some((key) => !allowed.has(key))) return false;
+  if (!Number.isSafeInteger(value.id) || (value.id as number) < 1) return false;
+  if (typeof value.title !== "string" || value.title.trim() === "") return false;
+  if (value.status !== "open" && value.status !== "done") return false;
+  if (!isIsoTimestamp(value.createdAt)) return false;
+  if (!Array.isArray(value.tags) || !value.tags.every((tag) => typeof tag === "string" && tag.length > 0)) return false;
+  if (new Set(value.tags).size !== value.tags.length) return false;
+  if (value.tags.some((tag) => tag !== tag.trim().toLowerCase())) return false;
+  if (value.due !== undefined && !isDate(value.due)) return false;
+  if (value.completedAt !== undefined && !isIsoTimestamp(value.completedAt)) return false;
+  if (value.status === "done" && value.completedAt === undefined) return false;
+  if (value.status === "open" && value.completedAt !== undefined) return false;
+  return true;
+}
+
+function validateDatabase(value: unknown): value is Database {
+  if (!isRecord(value)) return false;
+  if (Object.keys(value).some((key) => !["version", "nextId", "tasks"].includes(key))) return false;
+  if (value.version !== 1 || !Number.isSafeInteger(value.nextId) || (value.nextId as number) < 1) return false;
+  if (!Array.isArray(value.tasks) || !value.tasks.every(validateTask)) return false;
+  const ids = value.tasks.map((task) => task.id);
+  if (new Set(ids).size !== ids.length) return false;
+  return ids.every((id) => id < (value.nextId as number));
+}
+
+async function loadDatabase(): Promise<Database> {
+  try {
+    const text = await Bun.file(databasePath).text();
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      fail(`Malformed database: ${databasePath}`);
+    }
+    if (!validateDatabase(parsed)) fail(`Malformed database: ${databasePath}`);
+    return parsed;
+  } catch (error) {
+    if (error instanceof CliError) throw error;
+    if (isRecord(error) && error.code === "ENOENT") return { version: 1, nextId: 1, tasks: [] };
+    fail(`Cannot read database: ${databasePath}`);
+  }
+}
+
+async function saveDatabase(database: Database): Promise<void> {
+  const slash = Math.max(databasePath.lastIndexOf("/"), databasePath.lastIndexOf("\\"));
+  const directory = slash < 0 ? "." : databasePath.slice(0, slash) || "/";
+  const name = slash < 0 ? databasePath : databasePath.slice(slash + 1);
+  const temporaryPath = `${directory}/${name}.tmp-${process.pid}-${crypto.randomUUID()}`;
+  try {
+    await Bun.write(temporaryPath, `${JSON.stringify(database, null, 2)}\n`);
+    await rename(temporaryPath, databasePath);
+  } catch {
+    try {
+      await Bun.file(temporaryPath).delete();
+    } catch {}
+    fail(`Cannot write database: ${databasePath}`);
+  }
+}
+
+function parseOptions(args: string[], definitions: Record<string, boolean>): Record<string, string | true> {
+  const result: Record<string, string | true> = {};
+  for (let index = 0; index < args.length; index++) {
+    const flag = args[index];
+    if (!flag.startsWith("--") || !(flag in definitions)) fail(`Unknown flag: ${flag}`);
+    if (flag in result) fail(`Duplicate flag: ${flag}`);
+    if (definitions[flag]) {
+      const value = args[++index];
+      if (value === undefined || value.startsWith("--")) fail(`Missing value for ${flag}`);
+      result[flag] = value;
+    } else {
+      result[flag] = true;
+    }
+  }
+  return result;
+}
+
+function normalizeTags(raw: string | undefined): string[] {
+  if (raw === undefined || raw.trim() === "") return [];
+  const tags = raw.split(",").map((tag) => tag.trim().toLowerCase());
+  if (tags.some((tag) => tag === "")) fail("Tags must not be empty");
+  return [...new Set(tags)];
+}
+
+function parseId(raw: string | undefined): number {
+  if (raw === undefined || !/^[1-9]\d*$/.test(raw)) fail("ID must be a positive integer");
+  const id = Number(raw);
+  if (!Number.isSafeInteger(id)) fail("ID must be a positive integer");
+  return id;
+}
+
+function localDate(): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+async function run(args: string[]): Promise<unknown> {
+  const command = args.shift();
+  if (!command) fail("Missing command");
+
+  if (command === "add") {
+    const options = parseOptions(args, { "--title": true, "--tags": true, "--due": true });
+    const titleValue = options["--title"];
+    if (typeof titleValue !== "string") fail("Missing required flag: --title");
+    const title = titleValue.trim();
+    if (!title) fail("Title must not be empty");
+    const due = options["--due"];
+    if (due !== undefined && !isDate(due)) fail("Due date must be a valid YYYY-MM-DD date");
+    const database = await loadDatabase();
+    const task: Task = {
+      id: database.nextId++,
+      title,
+      status: "open",
+      createdAt: new Date().toISOString(),
+      tags: normalizeTags(options["--tags"] as string | undefined),
+      ...(typeof due === "string" ? { due } : {}),
+    };
+    database.tasks.push(task);
+    await saveDatabase(database);
+    return task;
+  }
+
+  if (command === "list") {
+    const options = parseOptions(args, { "--status": true, "--tag": true, "--overdue": true });
+    const status = options["--status"];
+    if (status !== undefined && status !== "open" && status !== "done") fail("Status must be open or done");
+    const tag = options["--tag"];
+    if (typeof tag === "string" && tag.trim() === "") fail("Tag must not be empty");
+    const normalizedTag = typeof tag === "string" ? tag.trim().toLowerCase() : undefined;
+    const overdue = options["--overdue"];
+    if (overdue !== undefined && !isDate(overdue)) fail("Overdue date must be a valid YYYY-MM-DD date");
+    const database = await loadDatabase();
+    return database.tasks
+      .filter((task) => status === undefined || task.status === status)
+      .filter((task) => normalizedTag === undefined || task.tags.includes(normalizedTag))
+      .filter((task) => overdue === undefined || (task.status === "open" && task.due !== undefined && task.due < overdue))
+      .sort((left, right) => left.id - right.id);
+  }
+
+  if (command === "done") {
+    if (args.length !== 1) fail(args.length === 0 ? "Missing task ID" : "Unexpected argument");
+    const id = parseId(args[0]);
+    const database = await loadDatabase();
+    const task = database.tasks.find((candidate) => candidate.id === id);
+    if (!task) fail(`Task not found: ${id}`);
+    if (task.status === "open") {
+      task.status = "done";
+      task.completedAt = new Date().toISOString();
+      await saveDatabase(database);
+    }
+    return task;
+  }
+
+  if (command === "delete") {
+    if (args.length !== 1) fail(args.length === 0 ? "Missing task ID" : "Unexpected argument");
+    const id = parseId(args[0]);
+    const database = await loadDatabase();
+    const index = database.tasks.findIndex((task) => task.id === id);
+    if (index < 0) fail(`Task not found: ${id}`);
+    const [task] = database.tasks.splice(index, 1);
+    await saveDatabase(database);
+    return task;
+  }
+
+  if (command === "stats") {
+    if (args.length) fail(`Unknown flag: ${args[0]}`);
+    const database = await loadDatabase();
+    const today = localDate();
+    const open = database.tasks.filter((task) => task.status === "open").length;
+    return {
+      total: database.tasks.length,
+      open,
+      done: database.tasks.length - open,
+      overdue: database.tasks.filter((task) => task.status === "open" && task.due !== undefined && task.due < today).length,
+    };
+  }
+
+  fail(`Unknown command: ${command}`);
+}
+
+try {
+  const result = await run(process.argv.slice(2));
+  console.log(JSON.stringify(result));
+} catch (error) {
+  const message = error instanceof Error ? error.message : "Unexpected error";
+  console.error(JSON.stringify({ error: message }));
+  process.exitCode = 1;
+}

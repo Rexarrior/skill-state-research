@@ -232,6 +232,39 @@ pub(crate) struct ActionOutcome {
     pub(crate) result: String,
 }
 
+impl ActionOutcome {
+    pub(crate) fn from_tool_output(
+        name: &str,
+        output: &dyn codex_tools::ToolOutput,
+        payload: &crate::tools::context::ToolPayload,
+    ) -> Self {
+        // Shell observations need exit codes and live-session handles. Other tools
+        // need their textual result: e.g. apply_patch's Code Mode value is just {}.
+        let value = if matches!(name, "exec_command" | "write_stdin") {
+            output.code_mode_result(payload)
+        } else {
+            Value::String(output.log_output())
+        };
+        let failed = !output.success_for_logging()
+            || (matches!(name, "exec_command" | "write_stdin")
+                && value
+                    .get("exit_code")
+                    .and_then(Value::as_i64)
+                    .is_some_and(|code| code != 0));
+        Self {
+            status: if failed {
+                BatchActionStatus::Error
+            } else {
+                BatchActionStatus::Success
+            },
+            result: match value {
+                Value::String(text) => text,
+                value => serde_json::to_string_pretty(&value).unwrap_or_else(|_| value.to_string()),
+            },
+        }
+    }
+}
+
 impl RuntimeState {
     pub(crate) fn accept(
         &mut self,

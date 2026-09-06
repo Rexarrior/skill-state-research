@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-04T21:19:57.773Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T203726Z/skill-state/http-kv",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 819,
+      "sha256": "a02e79d6321dc3bba77cdc6e899402b770df3b8c12e4a7cc120d15feeca78151"
+    },
+    {
+      "path": "server.py",
+      "bytes": 8567,
+      "sha256": "01f7cd92dfda4481fd812ef87b9bf5822667a09f0c75b4ea17ef0c4d73c1ec17"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "__pycache__",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "sources": {
+    "experiments/article-20260904/data.json": "3b6ba93764ac10f568bfc80c6f2bb56fb63b9ff79b55d9ebc625c62b59dfc497",
+    "experiments/codex-sol-controls-20260906/combined-data.json": "c26b87b31bff36c070574f253edaa13df04fdad654d7994eb3f39727e26f459f"
+  },
+  "figures": [
+    "input-cycles-paper-vs-native",
+    "input-cycles-v2-vs-native",
+    "input-cycles-v3-vs-native",
+    "input-cycles-v3-vs-v2",
+    "input-cycles-all-modes",
+    "codex-sol-ten-repeats-input-cycles-time"
+  ],
+  "repeatValues": [
+    {
+      "repetition": 1,
+      "mode": "native",
+      "inputPerTask": 386734.0,
+      "callsPerTask": 12.6,
+      "minutesPerTask": 4.5159400000000005,
+      "timeouts": 0
+    },
+    {
+      "repetition": 2,
+      "mode": "native",
+      "inputPerTask": 386510.0,
+      "callsPerTask": 12.6,
+      "minutesPerTask": 4.29417,
+      "timeouts": 0
+    },
+    {
+      "repetition": 3,
+      "mode": "native",
+      "inputPerTask": 360075.6,
+      "callsPerTask": 12.2,
+      "minutesPerTask": 3.7086,
+      "timeouts": 0
+    },
+    {
+      "repetition": 4,
+      "mode": "native",
+      "inputPerTask": 375839.2,
+      "callsPerTask": 12.4,
+      "minutesPerTask": 3.89625,
+      "timeouts": 0
+    },
+    {
+      "repetition": 5,
+      "mode": "native",
+      "inputPerTask": 433419.6,
+      "callsPerTask": 13.4,
+      "minutesPerTask": 4.237873333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 6,
+      "mode": "native",
+      "inputPerTask": 447772.6,
+      "callsPerTask": 13.6,
+      "minutesPerTask": 4.46372,
+      "timeouts": 0
+    },
+    {
+      "repetition": 7,
+      "mode": "native",
+      "inputPerTask": 402857.8,
+      "callsPerTask": 12.8,
+      "minutesPerTask": 4.40328,
+      "timeouts": 0
+    },
+    {
+      "repetition": 8,
+      "mode": "native",
+      "inputPerTask": 389402.4,
+      "callsPerTask": 12.6,
+      "minutesPerTask": 4.10668,
+      "timeouts": 0
+    },
+    {
+      "repetition": 9,
+      "mode": "native",
+      "inputPerTask": 303292.2,
+      "callsPerTask": 11.4,
+      "minutesPerTask": 3.853763333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 10,
+      "mode": "native",
+      "inputPerTask": 411603.2,
+      "callsPerTask": 12.8,
+      "minutesPerTask": 4.752793333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 1,
+      "mode": "paper",
+      "inputPerTask": 461418.6,
+      "callsPerTask": 28.6,
+      "minutesPerTask": 6.510503333333333,
+      "timeouts": 1
+    },
+    {
+      "repetition": 2,
+      "mode": "paper",
+      "inputPerTask": 429763.0,
+      "callsPerTask": 26.6,
+      "minutesPerTask": 7.360893333333333,
+      "timeouts": 1
+    },
+    {
+      "repetition": 3,
+      "mode": "paper",
+      "inputPerTask": 415259.6,
+      "callsPerTask": 25.8,
+      "minutesPerTask": 5.687213333333333,
+      "timeouts": 1
+    },
+    {
+      "repetition": 4,
+      "mode": "paper",
+      "inputPerTask": 528417.2,
+      "callsPerTask": 33.0,
+      "minutesPerTask": 7.113326666666667,
+      "timeouts": 1
+    },
+    {
+      "repetition": 5,
+      "mode": "paper",
+      "inputPerTask": 580823.0,
+      "callsPerTask": 36.4,
+      "minutesPerTask": 8.157676666666667,
+      "timeouts": 1
+    },
+    {
+      "repetition": 6,
+      "mode": "paper",
+      "inputPerTask": 665202.6,
+      "callsPerTask": 41.2,
+      "minutesPerTask": 8.218566666666666,
+      "timeouts": 2
+    },
+    {
+      "repetition": 7,
+      "mode": "paper",
+      "inputPerTask": 1367532.8,
+      "callsPerTask": 84.0,
+      "minutesPerTask": 15.000316666666667,
+      "timeouts": 5
+    },
+    {
+      "repetition": 8,
+      "mode": "paper",
+      "inputPerTask": 557774.8,
+      "callsPerTask": 35.0,
+      "minutesPerTask": 8.899026666666666,
+      "timeouts": 1
+    },
+    {
+      "repetition": 9,
+      "mode": "paper",
+      "inputPerTask": 598584.2,
+      "callsPerTask": 37.0,
+      "minutesPerTask": 8.88324,
+      "timeouts": 2
+    },
+    {
+      "repetition": 10,
+      "mode": "paper",
+      "inputPerTask": 858959.0,
+      "callsPerTask": 53.4,
+      "minutesPerTask": 10.636476666666667,
+      "timeouts": 3
+    },
+    {
+      "repetition": 1,
+      "mode": "v2",
+      "inputPerTask": 174796.4,
+      "callsPerTask": 10.0,
+      "minutesPerTask": 3.465463333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 2,
+      "mode": "v2",
+      "inputPerTask": 181448.4,
+      "callsPerTask": 10.4,
+      "minutesPerTask": 3.2293700000000003,
+      "timeouts": 0
+    },
+    {
+      "repetition": 3,
+      "mode": "v2",
+      "inputPerTask": 159897.4,
+      "callsPerTask": 9.2,
+      "minutesPerTask": 2.9354666666666667,
+      "timeouts": 0
+    },
+    {
+      "repetition": 4,
+      "mode": "v2",
+      "inputPerTask": 148549.6,
+      "callsPerTask": 8.6,
+      "minutesPerTask": 3.0238766666666668,
+      "timeouts": 0
+    },
+    {
+      "repetition": 5,
+      "mode": "v2",
+      "inputPerTask": 250907.6,
+      "callsPerTask": 13.8,
+      "minutesPerTask": 4.26073,
+      "timeouts": 0
+    },
+    {
+      "repetition": 6,
+      "mode": "v2",
+      "inputPerTask": 179283.4,
+      "callsPerTask": 10.4,
+      "minutesPerTask": 3.076836666666667,
+      "timeouts": 0
+    },
+    {
+      "repetition": 7,
+      "mode": "v2",
+      "inputPerTask": 254293.6,
+      "callsPerTask": 14.2,
+      "minutesPerTask": 4.537223333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 8,
+      "mode": "v2",
+      "inputPerTask": 263020.6,
+      "callsPerTask": 14.6,
+      "minutesPerTask": 5.178903333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 9,
+      "mode": "v2",
+      "inputPerTask": 148518.6,
+      "callsPerTask": 8.6,
+      "minutesPerTask": 3.03736,
+      "timeouts": 0
+    },
+    {
+      "repetition": 10,
+      "mode": "v2",
+      "inputPerTask": 198212.0,
+      "callsPerTask": 11.4,
+      "minutesPerTask": 3.4441200000000003,
+      "timeouts": 0
+    },
+    {
+      "repetition": 1,
+      "mode": "v3",
+      "inputPerTask": 248405.8,
+      "callsPerTask": 13.0,
+      "minutesPerTask": 4.316776666666667,
+      "timeouts": 0
+    },
+    {
+      "repetition": 2,
+      "mode": "v3",
+      "inputPerTask": 219728.2,
+      "callsPerTask": 12.0,
+      "minutesPerTask": 3.8459833333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 3,
+      "mode": "v3",
+      "inputPerTask": 299319.8,
+      "callsPerTask": 15.8,
+      "minutesPerTask": 4.79576,
+      "timeouts": 0
+    },
+    {
+      "repetition": 4,
+      "mode": "v3",
+      "inputPerTask": 180354.0,
+      "callsPerTask": 9.8,
+      "minutesPerTask": 3.688283333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 5,
+      "mode": "v3",
+      "inputPerTask": 316901.4,
+      "callsPerTask": 16.6,
+      "minutesPerTask": 5.884573333333334,
+      "timeouts": 0
+    },
+    {
+      "repetition": 6,
+      "mode": "v3",
+      "inputPerTask": 337239.2,
+      "callsPerTask": 17.6,
+      "minutesPerTask": 5.615883333333334,
+      "timeouts": 0
+    },
+    {
+      "repetition": 7,
+      "mode": "v3",
+      "inputPerTask": 284016.8,
+      "callsPerTask": 15.2,
+      "minutesPerTask": 4.299763333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 8,
+      "mode": "v3",
+      "inputPerTask": 181928.8,
+      "callsPerTask": 9.6,
+      "minutesPerTask": 3.5047566666666667,
+      "timeouts": 0
+    },
+    {
+      "repetition": 9,
+      "mode": "v3",
+      "inputPerTask": 232538.6,
+      "callsPerTask": 12.2,
+      "minutesPerTask": 4.156913333333333,
+      "timeouts": 0
+    },
+    {
+      "repetition": 10,
+      "mode": "v3",
+      "inputPerTask": 313289.4,
+      "callsPerTask": 16.4,
+      "minutesPerTask": 5.49359,
+      "timeouts": 1
+    }
+  ],
+  "primaryCells": 120,
+  "additionalCells": 200,
+  "policy": "Frozen inputs read-only. No model calls. Figure point values retained for QA."
+}

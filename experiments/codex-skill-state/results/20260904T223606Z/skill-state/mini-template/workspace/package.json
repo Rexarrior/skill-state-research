@@ -1,0 +1,7 @@
+{
+  "name": "mini-template",
+  "private": true,
+  "scripts": {
+    "test": "bun test"
+  }
+}

@@ -1,0 +1,572 @@
+{
+  "comparisons": [
+    {
+      "runtime": "OpenCode",
+      "model": "sol",
+      "modes": [
+        {
+          "mode": "native",
+          "checks": 40,
+          "input": 1480680,
+          "vsNative": 0,
+          "calls": 59,
+          "averageInputPerCall": 25096.271186440677,
+          "cleanRuns": 5,
+          "finished": 0
+        },
+        {
+          "mode": "paper",
+          "checks": 40,
+          "input": 1967954,
+          "vsNative": 0.329087986600751,
+          "calls": 119,
+          "averageInputPerCall": 16537.428571428572,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v2",
+          "checks": 40,
+          "input": 563281,
+          "vsNative": -0.6195795175189778,
+          "calls": 32,
+          "averageInputPerCall": 17602.53125,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v3",
+          "checks": 40,
+          "input": 674403,
+          "vsNative": -0.5445315665775184,
+          "calls": 37,
+          "averageInputPerCall": 18227.108108108107,
+          "cleanRuns": 5,
+          "finished": 5
+        }
+      ],
+      "v3vsV2": 0.1972763150186141
+    },
+    {
+      "runtime": "OpenCode",
+      "model": "terra",
+      "modes": [
+        {
+          "mode": "native",
+          "checks": 40,
+          "input": 1073652,
+          "vsNative": 0,
+          "calls": 47,
+          "averageInputPerCall": 22843.659574468085,
+          "cleanRuns": 5,
+          "finished": 0
+        },
+        {
+          "mode": "paper",
+          "checks": 39,
+          "input": 2121319,
+          "vsNative": 0.9757975582404728,
+          "calls": 129,
+          "averageInputPerCall": 16444.333333333332,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v2",
+          "checks": 38,
+          "input": 1162696,
+          "vsNative": 0.08293562532366172,
+          "calls": 65,
+          "averageInputPerCall": 17887.63076923077,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v3",
+          "checks": 39,
+          "input": 1083885,
+          "vsNative": 0.009531021224754355,
+          "calls": 58,
+          "averageInputPerCall": 18687.672413793105,
+          "cleanRuns": 5,
+          "finished": 5
+        }
+      ],
+      "v3vsV2": -0.06778298024591123
+    },
+    {
+      "runtime": "Codex",
+      "model": "sol",
+      "modes": [
+        {
+          "mode": "native",
+          "checks": 40,
+          "input": 1640364,
+          "vsNative": 0,
+          "calls": 62,
+          "averageInputPerCall": 26457.483870967742,
+          "cleanRuns": 5,
+          "finished": 0
+        },
+        {
+          "mode": "paper",
+          "checks": 39,
+          "input": 4185286,
+          "vsNative": 1.5514373639021581,
+          "calls": 259,
+          "averageInputPerCall": 16159.405405405405,
+          "cleanRuns": 2,
+          "finished": 2
+        },
+        {
+          "mode": "v2",
+          "checks": 40,
+          "input": 1397264,
+          "vsNative": -0.14819881440948468,
+          "calls": 77,
+          "averageInputPerCall": 18146.285714285714,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v3",
+          "checks": 40,
+          "input": 1280086,
+          "vsNative": -0.21963295951386397,
+          "calls": 67,
+          "averageInputPerCall": 19105.761194029852,
+          "cleanRuns": 5,
+          "finished": 5
+        }
+      ],
+      "v3vsV2": -0.08386246264127606
+    },
+    {
+      "runtime": "Codex",
+      "model": "terra",
+      "modes": [
+        {
+          "mode": "native",
+          "checks": 39,
+          "input": 1526797,
+          "vsNative": 0,
+          "calls": 56,
+          "averageInputPerCall": 27264.23214285714,
+          "cleanRuns": 5,
+          "finished": 0
+        },
+        {
+          "mode": "paper",
+          "checks": 25,
+          "input": 6744338,
+          "vsNative": 3.4173115351942664,
+          "calls": 435,
+          "averageInputPerCall": 15504.225287356321,
+          "cleanRuns": 2,
+          "finished": 2
+        },
+        {
+          "mode": "v2",
+          "checks": 39,
+          "input": 1000050,
+          "vsNative": -0.3450013328556448,
+          "calls": 58,
+          "averageInputPerCall": 17242.241379310344,
+          "cleanRuns": 5,
+          "finished": 5
+        },
+        {
+          "mode": "v3",
+          "checks": 39,
+          "input": 1092484,
+          "vsNative": -0.28446021311281067,
+          "calls": 62,
+          "averageInputPerCall": 17620.709677419356,
+          "cleanRuns": 5,
+          "finished": 5
+        }
+      ],
+      "v3vsV2": 0.09242937853107347
+    }
+  ],
+  "repetitions": [
+    {
+      "model": "sol",
+      "attempts": [
+        {
+          "repetition": 0,
+          "v2": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 0,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1397264,
+            "cached": 740096,
+            "cacheWrite": 0,
+            "output": 72196,
+            "calls": 77,
+            "durationMs": 1651210,
+            "stateErrors": 25,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 0,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1280086,
+            "cached": 618752,
+            "cacheWrite": 0,
+            "output": 59653,
+            "calls": 67,
+            "durationMs": 1395826,
+            "stateErrors": 20,
+            "actions": 112,
+            "multiBatches": 26,
+            "failedBatches": 20,
+            "skippedActions": 9,
+            "maxBatch": 7
+          },
+          "ratio": -0.08386246264127606
+        },
+        {
+          "repetition": 1,
+          "v2": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 1,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1273218,
+            "cached": 707584,
+            "cacheWrite": 0,
+            "output": 65077,
+            "calls": 72,
+            "durationMs": 1540028,
+            "stateErrors": 23,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 1,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1067675,
+            "cached": 644480,
+            "cacheWrite": 0,
+            "output": 65552,
+            "calls": 56,
+            "durationMs": 1430658,
+            "stateErrors": 27,
+            "actions": 117,
+            "multiBatches": 28,
+            "failedBatches": 27,
+            "skippedActions": 23,
+            "maxBatch": 6
+          },
+          "ratio": -0.161435826386369
+        },
+        {
+          "repetition": 2,
+          "v2": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 2,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1065343,
+            "cached": 608256,
+            "cacheWrite": 0,
+            "output": 53008,
+            "calls": 61,
+            "durationMs": 1260661,
+            "stateErrors": 20,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "sol",
+            "repetition": 2,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1539278,
+            "cached": 828672,
+            "cacheWrite": 0,
+            "output": 73080,
+            "calls": 81,
+            "durationMs": 1652076,
+            "stateErrors": 33,
+            "actions": 130,
+            "multiBatches": 31,
+            "failedBatches": 33,
+            "skippedActions": 10,
+            "maxBatch": 6
+          },
+          "ratio": 0.4448661135427745
+        }
+      ],
+      "aggregateInputRatio": 0.040476735393119245,
+      "v3LowerInputAttempts": 2,
+      "v2Checks": 120,
+      "v3Checks": 119
+    },
+    {
+      "model": "terra",
+      "attempts": [
+        {
+          "repetition": 0,
+          "v2": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 0,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1000050,
+            "cached": 557056,
+            "cacheWrite": 0,
+            "output": 34160,
+            "calls": 58,
+            "durationMs": 842456,
+            "stateErrors": 21,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 0,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1092484,
+            "cached": 762112,
+            "cacheWrite": 0,
+            "output": 41145,
+            "calls": 62,
+            "durationMs": 1000687,
+            "stateErrors": 21,
+            "actions": 71,
+            "multiBatches": 6,
+            "failedBatches": 21,
+            "skippedActions": 2,
+            "maxBatch": 3
+          },
+          "ratio": 0.09242937853107347
+        },
+        {
+          "repetition": 1,
+          "v2": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 1,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 40,
+            "checks": 40,
+            "projectsPassed": 5,
+            "projectsSucceeded": 5,
+            "completed": 5,
+            "finished": 5,
+            "input": 1695519,
+            "cached": 1066752,
+            "cacheWrite": 0,
+            "output": 47117,
+            "calls": 96,
+            "durationMs": 1231128,
+            "stateErrors": 31,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 1,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1476275,
+            "cached": 1098752,
+            "cacheWrite": 0,
+            "output": 48473,
+            "calls": 81,
+            "durationMs": 1232889,
+            "stateErrors": 33,
+            "actions": 96,
+            "multiBatches": 12,
+            "failedBatches": 33,
+            "skippedActions": 8,
+            "maxBatch": 4
+          },
+          "ratio": -0.12930789923321417
+        },
+        {
+          "repetition": 2,
+          "v2": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 2,
+            "mode": "v2",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1038586,
+            "cached": 583680,
+            "cacheWrite": 0,
+            "output": 33902,
+            "calls": 60,
+            "durationMs": 860593,
+            "stateErrors": 15,
+            "actions": 0,
+            "multiBatches": 0,
+            "failedBatches": 0,
+            "skippedActions": 0,
+            "maxBatch": 0
+          },
+          "v3": {
+            "runtime": "Codex",
+            "model": "terra",
+            "repetition": 2,
+            "mode": "v3",
+            "cells": 5,
+            "passed": 39,
+            "checks": 40,
+            "projectsPassed": 4,
+            "projectsSucceeded": 4,
+            "completed": 5,
+            "finished": 5,
+            "input": 1337564,
+            "cached": 1000960,
+            "cacheWrite": 0,
+            "output": 39461,
+            "calls": 75,
+            "durationMs": 993220,
+            "stateErrors": 22,
+            "actions": 85,
+            "multiBatches": 7,
+            "failedBatches": 22,
+            "skippedActions": 4,
+            "maxBatch": 5
+          },
+          "ratio": 0.2878702389595085
+        }
+      ],
+      "aggregateInputRatio": 0.04610628107296022,
+      "v3LowerInputAttempts": 1,
+      "v2Checks": 118,
+      "v3Checks": 117
+    }
+  ],
+  "auxiliaryRepetitions": [
+    {
+      "model": "sol",
+      "v2": {
+        "cells": 15,
+        "mainInput": 3735825,
+        "auxiliaryInput": 1102973,
+        "observedCombinedInput": 4838798
+      },
+      "v3": {
+        "cells": 15,
+        "mainInput": 3887039,
+        "auxiliaryInput": 544978,
+        "observedCombinedInput": 4432017
+      },
+      "combinedInputRatio": -0.08406653883877768,
+      "scope": "Observed input summed across main and auxiliary models; not a monetary cost comparison."
+    },
+    {
+      "model": "terra",
+      "v2": {
+        "cells": 15,
+        "mainInput": 3734155,
+        "auxiliaryInput": 421478,
+        "observedCombinedInput": 4155633
+      },
+      "v3": {
+        "cells": 15,
+        "mainInput": 3906323,
+        "auxiliaryInput": 953032,
+        "observedCombinedInput": 4859355
+      },
+      "combinedInputRatio": 0.16934171039646673,
+      "scope": "Observed input summed across main and auxiliary models; not a monetary cost comparison."
+    }
+  ]
+}

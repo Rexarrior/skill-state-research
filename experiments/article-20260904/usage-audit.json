@@ -1,0 +1,16 @@
+{
+  "partial": false,
+  "openCodeSteps": 546,
+  "comparedOpenCodeTotals": 545,
+  "codexUsageRecords": 1658,
+  "missingTotals": [
+    {
+      "source": "experiments/skill-state/results/20260904T203726Z/baseline/taskboard-cli/summary.json",
+      "reason": "unknown",
+      "input": 0,
+      "output": 0
+    }
+  ],
+  "issues": [],
+  "scope": "OpenCode step_finish events and Codex completed-response usage records are the recorded turn/sample counters. They are not a count of all HTTP attempts/retries or auxiliary calls. Missing SDK totals are listed, not invented."
+}

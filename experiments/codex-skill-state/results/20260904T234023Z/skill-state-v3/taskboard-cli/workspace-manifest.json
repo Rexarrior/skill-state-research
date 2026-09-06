@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-09-04T23:53:20.918Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T234023Z/skill-state-v3/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 609,
+      "sha256": "6bb8ffa33afaa20c1f7fefd78d6bbb6c79d48de51038717473e6fa3a4899a6f4"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 6829,
+      "sha256": "d3a4e79fcd9b3ef3316a0bca31ac0689f82cff2f9bebf103aea4ca1f6791bc34"
+    }
+  ],
+  "skipped": []
+}

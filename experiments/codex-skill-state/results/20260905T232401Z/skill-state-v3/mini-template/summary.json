@@ -1,0 +1,85 @@
+{
+  "suite": "20260905T232401Z",
+  "project": "mini-template",
+  "mode": "skill-state-v3",
+  "model": "gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232401Z/skill-state-v3/mini-template",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 165042,
+    "cachedInput": 73728,
+    "cacheWriteInput": 0,
+    "output": 8086,
+    "reasoning": 1539,
+    "total": 173128,
+    "samples": 9,
+    "commandExecutions": 9,
+    "fileChanges": 1,
+    "errors": 0,
+    "stateCalls": 9,
+    "stateErrors": 4,
+    "stateComments": 9,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 874,
+    "batchedActions": 11,
+    "multiActionBatches": 1,
+    "failedBatches": 4,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 3,
+    "durationMs": 182717,
+    "threadID": "01a073ed-2322-7720-905b-f9753c107010"
+  },
+  "evaluation": {
+    "project": "mini-template",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "escaping, raw values, comments, missing",
+        "passed": true
+      },
+      {
+        "name": "nested if and else",
+        "passed": true
+      },
+      {
+        "name": "each context, root fallback and indices",
+        "passed": true
+      },
+      {
+        "name": "nested loops",
+        "passed": true
+      },
+      {
+        "name": "specified truthiness",
+        "passed": true
+      },
+      {
+        "name": "structural errors include line and column",
+        "passed": true
+      },
+      {
+        "name": "objects are rejected as scalar",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

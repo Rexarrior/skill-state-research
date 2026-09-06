@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-09-06T02:01:41.346Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T010725Z/baseline/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 731,
+      "sha256": "d1129036cf0d569fea491ca9fd36d853d71f3a4a2f4373e09bd191fa8b979203"
+    },
+    {
+      "path": "package.json",
+      "bytes": 117,
+      "sha256": "2669c9c343dc51087d154f181bd49538731a9a6185329b33284258c402e87ecf"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 11231,
+      "sha256": "6fa690fdfb9ce9395e450c57c8be48b190719a1b9202bd9b243b777a820371a1"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 4653,
+      "sha256": "4b5041586bfd5c7b482088f1c27a1f7e91f2c8cd3dead1238a57eb890b264c44"
+    },
+    {
+      "path": "test/fixtures/cycle.json",
+      "bytes": 128,
+      "sha256": "3214078e33d5f6e5790f68eeb587d1160c997982e56fc47dea82be4c5a1073a3"
+    },
+    {
+      "path": "test/fixtures/valid.json",
+      "bytes": 118,
+      "sha256": "c173ce696969a01e94b5e9685a66b32c3067ee70df0f6d37682e9c3b111ac289"
+    }
+  ],
+  "skipped": []
+}

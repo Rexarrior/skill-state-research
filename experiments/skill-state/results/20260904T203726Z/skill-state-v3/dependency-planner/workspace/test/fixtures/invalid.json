@@ -1,0 +1,5 @@
+{
+  "tasks": [
+    { "id": "a", "duration": 1, "dependsOn": ["missing"] }
+  ]
+}

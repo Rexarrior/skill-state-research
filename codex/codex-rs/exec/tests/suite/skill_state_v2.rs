@@ -35,6 +35,95 @@ fn declared_tool_names(request: &ResponsesRequest) -> Vec<String> {
 }
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn exec_state_modes_require_finish_after_plain_assistant_answer() -> anyhow::Result<()> {
+    for mode in ["paper", "v2", "v3"] {
+        let test = test_codex_exec();
+        let server = start_mock_server().await;
+        let action = json!({"name":"finish", "input":{"message":"Finished through the protocol."}});
+        let finish = match mode {
+            "paper" => json!({"state_patch":{}, "action":action}),
+            "v2" => json!({"state_revision":0, "state_patch":{}, "action":action}),
+            _ => json!({"state_revision":0, "state_patch":{}, "actions":[action]}),
+        };
+        let mock = mount_sse_sequence(
+            &server,
+            vec![
+                sse(vec![
+                    ev_response_created("plain"),
+                    ev_assistant_message("plain-msg", "Premature answer"),
+                    ev_completed("plain"),
+                ]),
+                sse(vec![
+                    ev_response_created("finish"),
+                    ev_function_call("finish-call", "skill_step", &finish.to_string()),
+                    ev_completed("finish"),
+                ]),
+            ],
+        )
+        .await;
+        let output = test
+            .cmd_with_server(&server)
+            .env("CODEX_SKILL_STATE_MODE", mode)
+            .arg("--skip-git-repo-check")
+            .arg("Implement the finish fixture")
+            .output()?;
+        assert!(output.status.success(), "{mode}: {:?}", output.status);
+        let requests = mock.requests();
+        assert_eq!(requests.len(), 2, "{mode} must continue after plain text");
+        assert!(!serde_json::to_string(&requests[1].input())?.contains("Premature answer"));
+        assert!(String::from_utf8_lossy(&output.stdout).contains("Finished through the protocol."));
+    }
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+#[ignore = "requires local shell fixture authority; this host's managed approval service rejects mock-provider commands"]
+async fn exec_v3_skips_remaining_actions_after_nonzero_shell_exit() -> anyhow::Result<()> {
+    let test = test_codex_exec();
+    let server = start_mock_server().await;
+    let batch = json!({"state_revision":0, "state_patch":{}, "actions":[
+        {"name":"exec_command", "input":{"cmd":"exit 7", "yield_time_ms":1000}},
+        {"name":"exec_command", "input":{"cmd":"printf must-not-execute"}}
+    ]});
+    let finish = json!({"state_revision":1, "state_patch":{}, "actions":[
+        {"name":"finish", "input":{"message":"Observed expected failure."}}
+    ]});
+    let mock = mount_sse_sequence(
+        &server,
+        vec![
+            sse(vec![
+                ev_response_created("batch"),
+                ev_function_call("batch-call", "skill_step", &batch.to_string()),
+                ev_completed("batch"),
+            ]),
+            sse(vec![
+                ev_response_created("finish"),
+                ev_function_call("finish-call", "skill_step", &finish.to_string()),
+                ev_completed("finish"),
+            ]),
+        ],
+    )
+    .await;
+    let output = test
+        .cmd_with_server(&server)
+        .env("CODEX_SKILL_STATE_MODE", "v3")
+        .arg("--skip-git-repo-check")
+        .arg("--dangerously-bypass-approvals-and-sandbox")
+        .arg("Exercise shell failure handling")
+        .output()?;
+    assert!(output.status.success());
+    let requests = mock.requests();
+    assert_eq!(requests.len(), 2);
+    let input = serde_json::to_string(&requests[1].input())?;
+    assert!(input.contains("skipped"), "{input}");
+    assert!(
+        input.contains("exit_code"),
+        "expected a completed shell result, not an approval failure"
+    );
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn exec_rebuilds_each_request_as_p_sigma_and_bounded_observations() -> anyhow::Result<()> {
     let test = test_codex_exec();
     let server = start_mock_server().await;

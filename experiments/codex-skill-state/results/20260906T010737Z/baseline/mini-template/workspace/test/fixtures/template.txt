@@ -1,0 +1,4 @@
+Hello, {{name}}!
+{{#each items}}item {{@index}}: {{{this}}}
+{{else}}no items
+{{/each}}

@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-09-05T23:51:07.020Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T232410Z/skill-state-v3/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.ffded3cfffbeddcb-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "README.md",
+      "bytes": 879,
+      "sha256": "d5e5df50d6f4da0ddde96f390a5208aee9d19385380a682e240fa65de99f6c6a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 150,
+      "sha256": "f0fa2460311b960db58021b1cb906c1bc47ed541b128621af25c3a25379af261"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 681,
+      "sha256": "baca41e3bd6694d29073c1092d3bda99099fffdba4d2fa77c6f07c152b2cf1b9"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 6877,
+      "sha256": "087a40398b9b8b540bef3586011a16dec9efb4471d93b82db498a725417696f0"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 2026,
+      "sha256": "9189f2f36cce67d0d9d6575bc162b408dca0ba24b12bc5f26f0c4d5eecdf0a94"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 227,
+      "sha256": "ecbc7b67910d8668c7e79f132334647de21d4a587b38beec21e82b6d4db3c909"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,215 @@
+{
+  "case": "Repeated silent successful compile in a valid Paper run",
+  "source": "experiments/skill-state/results/20260904T195726Z/skill-state-paper/http-kv/events.jsonl",
+  "outcomes": [
+    {
+      "mode": "baseline",
+      "source": "experiments/skill-state/results/20260904T195726Z/baseline/http-kv/summary.json",
+      "checks": "9/9",
+      "calls": 14,
+      "input": 380167,
+      "exit": 0,
+      "timedOut": false,
+      "finishCalls": 0
+    },
+    {
+      "mode": "skill-state-paper",
+      "source": "experiments/skill-state/results/20260904T195726Z/skill-state-paper/http-kv/summary.json",
+      "checks": "9/9",
+      "calls": 45,
+      "input": 740760,
+      "exit": 0,
+      "timedOut": false,
+      "finishCalls": 1
+    },
+    {
+      "mode": "skill-state",
+      "source": "experiments/skill-state/results/20260904T195726Z/skill-state/http-kv/summary.json",
+      "checks": "9/9",
+      "calls": 8,
+      "input": 145054,
+      "exit": 0,
+      "timedOut": false,
+      "finishCalls": 1
+    },
+    {
+      "mode": "skill-state-v3",
+      "source": "experiments/skill-state/results/20260904T195726Z/skill-state-v3/http-kv/summary.json",
+      "checks": "9/9",
+      "calls": 7,
+      "input": 130759,
+      "exit": 0,
+      "timedOut": false,
+      "finishCalls": 1
+    }
+  ],
+  "sequence": [
+    {
+      "revision": 22,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 23,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 24,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 25,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 26,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 27,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 28,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 29,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 30,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 31,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 32,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 33,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 34,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 35,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 36,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 37,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 38,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 39,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 40,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 41,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    },
+    {
+      "revision": 42,
+      "command": "python3 -m py_compile server.py",
+      "exit": 0,
+      "output": "(no output)"
+    }
+  ],
+  "nextSteps": [
+    {
+      "revision": 43,
+      "name": "bash",
+      "command": "python3 -m py_compile server.py && ls -la",
+      "exit": 0,
+      "output": "total 32\ndrwxr-xr-x@ 5 rexarrior  staff    160 Sep  4 23:24 .\ndrwxr-xr-x@ 6 rexarrior  staff    192 Sep  4 23:21 ..\n-rw-r--r--@ 1 rexarrior  staff    "
+    },
+    {
+      "revision": 44,
+      "name": "bash",
+      "command": "python3 - <<'PY'\nimport json, os, signal, subprocess, tempfile, time, urllib.error, urllib.parse, ur",
+      "exit": 0,
+      "output": "self-test passed\n"
+    },
+    {
+      "revision": 45,
+      "name": "finish",
+      "output": "Implemented `server.py` and `README.md`. Syntax compilation and the end-to-end API, TTL, persistence, restart, and shutdown self-test all passed."
+    }
+  ],
+  "limits": "The shell command repeats, not necessarily every parameter (timeout varies). This is an illustrative trajectory, not a controlled causal test. All four complete outcomes are retained.",
+  "emptyWorkspace": {
+    "source": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/http-kv/summary.json",
+    "archive": "experiments/codex-skill-state/results/20260904T223606Z/skill-state-paper/http-kv/workspace-manifest.json",
+    "calls": 106,
+    "files": 0,
+    "checks": "0/9",
+    "timedOut": true,
+    "execCalls": 106,
+    "callsContainingFileInventory": 105,
+    "lastCommands": [
+      "pwd; rg --files -uu",
+      "pwd; rg --files -uu -g '!/.git'",
+      "pwd && rg --files -uu",
+      "pwd && rg --files -g '!*__pycache__*' -g '!*.pyc' && find . -maxdepth 2 -name AGENTS.md -print",
+      "pwd && rg --files -g '!*__pycache__*' -g '!*.pyc' && find . -maxdepth 2 -name AGENTS.md -print"
+    ],
+    "evaluatorError": "Error: bad server banner: \"\"",
+    "limits": "No files were present after the run; 0/9 is the harness score for failure to start, not nine independent implementation defects."
+  }
+}

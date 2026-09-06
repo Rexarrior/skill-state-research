@@ -1,0 +1,103 @@
+{
+  "capturedAt": "2026-09-05T23:23:28.622Z",
+  "source": {
+    "capturedAt": "2026-09-04T20:26:20.604Z",
+    "baseCommit": "08c908c2aa5f274fe0165c4b8c635ef16d52346c",
+    "patchSha256": "ed196e6f1d926555aa4bfa7578458a000e5547f34b22245b09df3cd7484d0da3",
+    "files": {
+      "opencode/packages/opencode/src/session/skill-state.ts": "f2612b07b26f6e041bfdf406a6de1649cd02e2e22ee8d0326b4c21b59bea3c31",
+      "opencode/packages/opencode/src/session/prompt.ts": "f1ebc547abd33759441ad932b440845729f2a2fb71c086715d8e40a11006e366",
+      "codex/codex-rs/core/src/skill_state.rs": "84b49f44efdcbdfee4e7362453c0772b8ba84cf561e1352f83de64d2498bbe4a",
+      "codex/codex-rs/core/src/skill_state_paper.rs": "b1686f326e74ff0318069083733fca4e54fe73740c18a1e7c49cc25d34e06e8d",
+      "codex/codex-rs/core/src/session/turn.rs": "61b07b5aec71c3df69a801010c576919b3454a6d156a472438327a1e8fc9cc57",
+      "codex/codex-rs/core/src/tools/parallel.rs": "131a2ec5b3ef35245e341ed66a78cd342c72760c0eb657fa6bd3ea63e1524260",
+      "experiments/skill-state/scripts/run.ts": "5cb8fd13297e11f71946c3ccbd35583fdb9c75a3bf44aec707d4ddb759cc7135",
+      "experiments/codex-skill-state/scripts/run.ts": "25e38c4ba2ca192547525b49d0d4bfdc7fe6512b6bd98fd39d5aae7bfafb0c07",
+      "experiments/skill-state/scripts/evaluate.ts": "b3585d9d15e037821d1f13e9bc324f200d3b0dd6d80c74f6d99ff01103dadf62",
+      "experiments/skill-state/prompts/one-shot.txt": "cab1588d1c9ba78e09e1cbe182cbc85c6bf45491a7002dfdeaf4cba9391d2b46",
+      "experiments/skill-state/projects/taskboard-cli/SPEC.md": "5283ab5d807e5e8437632ed692a2413b44d24cbc40ba5695ff3268760ff003c5",
+      "experiments/skill-state/projects/csv-insights/SPEC.md": "f82b69a20387950a3f7984ab12de3e3f944fb4209d4d9a3daf35bca70aa04409",
+      "experiments/skill-state/projects/mini-template/SPEC.md": "5fa368cd875c9e2f4aa645cba8a1ba91bff35cb4211331e44c0bd24867055da5",
+      "experiments/skill-state/projects/http-kv/SPEC.md": "04cabd1910194dd7b8163f5853d0a49b7f644ced59175bbeaa72f43aea97edd8",
+      "experiments/skill-state/projects/dependency-planner/SPEC.md": "190125ac0285fbc68ef2eeac7e6b187357a69648ea3e737bd7dfac6b5da8f096"
+    }
+  },
+  "binaries": {
+    "baseline": {
+      "path": "<nda context deleted, size :99 chars>",
+      "version": "codex-cli 0.0.0",
+      "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc",
+      "codeModeHostPath": "<nda context deleted, size :114 chars>",
+      "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630"
+    },
+    "skill-state": {
+      "path": "<nda context deleted, size :99 chars>",
+      "version": "codex-cli 0.0.0",
+      "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+    },
+    "skill-state-v3": {
+      "path": "<nda context deleted, size :99 chars>",
+      "version": "codex-cli 0.0.0",
+      "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+    },
+    "skill-state-paper": {
+      "path": "<nda context deleted, size :99 chars>",
+      "version": "codex-cli 0.0.0",
+      "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+    }
+  },
+  "protectedFiles": {
+    "articles/linkedin-post.md": "892f516040752a4079a1aadace9dfb2f18e2ee6d12ff31772f2bc695fdd97f41",
+    "articles/idea_review.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "articles/skill-state-in-coding-agents.md": "eb2d8af2effcedc04e277b8a41c50253d61e1ae1fa6f33cb14f80207bb479f6f",
+    "articles/README.md": "80e29f95cb62c640f83b54999ae1055c338f578e522a23e445db3c793f48d6e8",
+    "articles/figures/input-by-task.png": "eee841db5b1632617bd05590dffb4e5e5cb1a3d38e257171a1203a6e4c607624",
+    "articles/figures/input-v2-vs-native.png": "fd5f83ed146f0ede42ea8a8f0882a75bcb8ead80f6a465b206330b1f7b520b2e",
+    "articles/figures/input-v2-vs-native.svg": "b81217e3d7aebd599943a8eae712aa81632a360e6e6a7b42ab662b029d0c9866",
+    "articles/figures/input-by-task.svg": "e06a5fae9c7d6afb6600aaf3d6e1617c2404f08b66a0c232723aea11eaf18321",
+    "articles/figures/input-paper-vs-native.svg": "593abcaefad02c3401e81af633963738b1268989bc4d7264d52cf95bfd699a65",
+    "articles/figures/input-v3-vs-native.svg": "567e27100b46fd558a855319a79ab63604b75a6a5ee0f16da7c2745d86b8ff0d",
+    "articles/figures/input-v3-vs-v2.png": "9440764b91c139c0017bc7d0720432bced71176f80a39728ecd172e3b3ee94f5",
+    "articles/figures/input-v3-vs-v2.svg": "9b6eeb14662151898e5a45b0c08af4f6a442fd1d143bb879c1b8c205810747e8",
+    "articles/figures/input-v3-vs-native.png": "995b57ed3f9409026e0d359eb2cfdee456db75d1fa0d403f4ac6c5f0e49408e7",
+    "articles/figures/input-paper-vs-native.png": "c3a376e2b9dea167c06ce00dba9fdddde0a5881a23597d3fa63e3d7e2b106814",
+    "experiments/article-20260904/source-manifest.json": "d98de732235c7e1257a7ff28de5412402d0baa23403edb5f035a6b21aca3431b",
+    "experiments/article-20260904/host-context-audit.ts": "8f6887c8f6d02e62cd0df36b266111b9b12e5ab630b4e919b96aa8b978adbfe9",
+    "experiments/article-20260904/verify-usage.ts": "7afee4d43024bc62236d195b2796c5c336a2eb1f077d22ba597496d71f432ffb",
+    "experiments/article-20260904/auxiliary-usage.ts": "32a819dba13aacff9f57478fceca5c70b311d81b72786db7496445bfd34f126c",
+    "experiments/article-20260904/publication-tables.md": "b5e1b49c62192a45bdac56deb8f6b97deb64e47e4167bc2aab620ec1e6774cf4",
+    "experiments/article-20260904/plot.py": "bed15946e82252189472d3fcd0cd29d0f9e61902b6fbdb1c2a0cffb02f8913e7",
+    "experiments/article-20260904/trace-cases.json": "c722945c6a05c2c330ef183dc759e126be51f66609385f9b6aee034311fa2e09",
+    "experiments/article-20260904/source.patch": "ed196e6f1d926555aa4bfa7578458a000e5547f34b22245b09df3cd7484d0da3",
+    "experiments/article-20260904/REPORT.md": "354a19e13d59a5fa81644564a7e1f38d91e9f1348fa6525f2edd7fefb03215f1",
+    "experiments/article-20260904/suites.json": "0ee6e7fcbb8d6f852ba645c19e436be87aae4d93228ed2b230bea533f978e362",
+    "experiments/article-20260904/AUXILIARY-USAGE.md": "09027f159f4574cca81b5f9438306153fdcc4285ef0160d1ae98821eb98ea265",
+    "experiments/article-20260904/environment.ts": "b1d5c15cf6f293b6d8ad6e40cbfb4c81b3500aec1beae2a239133ee49c5bafec",
+    "experiments/article-20260904/capture.ts": "7d5ef5e9f7d1bf6447690973e78f47ae34b1b29168d313d0d721d1ba6b115d6c",
+    "experiments/article-20260904/verify-publication.ts": "895205660426a3304df1145221e542d44df4823ca36b036dbbfadfca56dbc3e2",
+    "experiments/article-20260904/publication-tables.ts": "e5977ba4b060999f17a042924e838709b916c62c29d216029cb31c51a6f1f293",
+    "experiments/article-20260904/archive-workspaces.ts": "5a326fb9fadb398dea68bbc410b007dea271fb742030d03d4a4624129fe03920",
+    "experiments/article-20260904/comparisons.json": "1f8118e95d657c2404de588e9681e8df0639240571b94b336197218e6fd5e6d3",
+    "experiments/article-20260904/data.json": "3b6ba93764ac10f568bfc80c6f2bb56fb63b9ff79b55d9ebc625c62b59dfc497",
+    "experiments/article-20260904/README.md": "ed78c430dd4a1f20bb993251aee4a3977833f8a9452280466ddcd1aaaae755b0",
+    "experiments/article-20260904/trace-audit.json": "dfefbee25b6e81ad906c21faf10d71598f50130bd9e550f92ea89723b70927f9",
+    "experiments/article-20260904/WORKLOG.md": "c29f64ceb9303002a9ddbe6459ca545c02048e83dd4cf5cab3f779af7a92e438",
+    "experiments/article-20260904/scan-artifacts.ts": "d8ae4f122423f481f91dab926e36287243431c253280b16f5845875018963159",
+    "experiments/article-20260904/VERIFICATION.md": "6e5e096098967f78b601123ee0ab45dee4804ae96ffd70a12a55a91e41f561c0",
+    "experiments/article-20260904/build-report.ts": "f6e2f2773a653f05f6cf74b0589c8f0dfde838aa39e8801c4263eed3016227b0",
+    "experiments/article-20260904/host-context-audit.json": "0ab022d4185b4b7eb8428c54c394d4098de6f8ae4fb7c47c0bd93d932cf56a58",
+    "experiments/article-20260904/auxiliary-usage.json": "0d1a5a7d8c633264ac71d82bb11cc46619bc771ffe020627556903401ed5636c",
+    "experiments/article-20260904/trace-cases.ts": "ff4c112ade3469f7ca1fd5a53a96fc7bf611ca31edbb0f775a72c04ea2c91be7",
+    "experiments/article-20260904/usage-audit.json": "5fc459fe66c59db16cd7a30c40f657c0ef0cd822c95d52e04b3706800dac2edf",
+    "experiments/article-20260904/environment.json": "cb7bf2cd148bf502975a7332ef9c0111be5fa4f14a9f3b1765dd6f1d1266a6b5",
+    "experiments/article-20260904/audit-traces.ts": "546474ee79fa1b19998464fa25d3387709b713a63352758f1b092b773184c66a",
+    "experiments/article-20260904/publication-qa.json": "693842bb2635feda87ba80379eaad044eb024c177c26ae7e5a4b6606a1fe32e2",
+    "experiments/article-20260904/PROTOCOL.md": "682b38da86f225b7243308d21303084f53ba521380d4945e015c853ed05c4893",
+    "experiments/article-20260904/artifact-scan.json": "16214aa6e0cc82b86828831c2828fec56ef25cb203cbbe9f9fe6f1fd45227f86",
+    "experiments/article-20260904/diagnostics/pre-output-fix-source-manifest.json": "a046a588e18dc04b086c1d3631cf294b94e404a8dab025acd39f2b319b165d35",
+    "experiments/article-20260904/diagnostics/paper-empty-patch-result.jsonl": "6b3a91c703f1089a56f8f6b5f3001e62f498129bc54cbe5f1d01cff9c9ed86b2",
+    "experiments/article-20260904/diagnostics/pre-output-fix-source.patch": "9e99bd64da427c00597eaaaead6fe29ea09d582440c26b3ad37740061783f055"
+  },
+  "protocolSha256": "15c59e60cbbe69358f50fad24730578ec38fe86129f6eff7d1e3ac7a51418c6a",
+  "orchestrationSha256": "c843bd519073eb177e65bb6a3f3000069a9861023ac04ea88e2ff4793465fc83"
+}

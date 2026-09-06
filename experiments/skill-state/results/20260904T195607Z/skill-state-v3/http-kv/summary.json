@@ -1,0 +1,49 @@
+{
+  "suite": "20260904T195607Z",
+  "project": "http-kv",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-sol",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 1,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195607Z/skill-state-v3/http-kv",
+  "metrics": {
+    "turns": 0,
+    "toolCalls": 0,
+    "stateCalls": 0,
+    "stateErrors": 0,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 0,
+    "maxStateBytes": 0,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "cost": 0,
+    "durationMs": 872
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

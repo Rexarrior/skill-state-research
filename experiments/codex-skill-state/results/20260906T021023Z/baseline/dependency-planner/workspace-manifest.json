@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-09-06T03:40:15.610Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T021023Z/baseline/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 685,
+      "sha256": "6c8c46af5f1d2aa1ec7ef07d101fd9a4a75039e21dc79719022a5ca0a3fb1472"
+    },
+    {
+      "path": "examples/input.json",
+      "bytes": 118,
+      "sha256": "85f505c52b8dca4a5de3fb7f3d6156ecb97f0f82c4bb8a0bf927c7884753ee04"
+    },
+    {
+      "path": "package.json",
+      "bytes": 117,
+      "sha256": "2669c9c343dc51087d154f181bd49538731a9a6185329b33284258c402e87ecf"
+    },
+    {
+      "path": "src/cli.test.ts",
+      "bytes": 2749,
+      "sha256": "a6643e6990d02ceafc282d03620496624182801b6239fbe273da825430607796"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 8751,
+      "sha256": "215f3cbefac1b14f0271e6c9d22877f4025f43da288708a8d455e973c3de3fa5"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 211,
+      "sha256": "8e1dfbd6f12e1ed2f3ae8bac54d189d767261378ea006ee7fb2579706dfa7785"
+    }
+  ],
+  "skipped": []
+}

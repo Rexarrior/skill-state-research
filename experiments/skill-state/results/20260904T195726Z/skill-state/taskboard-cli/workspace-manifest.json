@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.550Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 724,
+      "sha256": "e2e08e042526ee3a790fdbfc89876e88c06d32fec13310b25e8fa51ddefb1249"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "4ecdb6df540c760d48629a669a7ff1822ad5ae4f6c00f3df8b3002b68253e6d8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 8294,
+      "sha256": "37af27083a9572219ce6733ae739e04e1bff96912a00d892507a08ac54332bbd"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 3089,
+      "sha256": "8f00a7fffe0b27a89dc454bef20bf816a386c5ba8676f0eac24599140d9fa1c1"
+    }
+  ],
+  "skipped": []
+}

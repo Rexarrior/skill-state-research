@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "nextId": 2,
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Smoke task",
+      "status": "done",
+      "createdAt": "2026-09-05T23:26:12.087Z",
+      "tags": [
+        "work",
+        "cli"
+      ],
+      "due": "2099-12-31",
+      "completedAt": "2026-09-05T23:26:12.115Z"
+    }
+  ]
+}

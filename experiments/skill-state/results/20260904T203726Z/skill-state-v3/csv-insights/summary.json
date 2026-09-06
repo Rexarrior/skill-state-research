@@ -1,0 +1,77 @@
+{
+  "suite": "20260904T203726Z",
+  "project": "csv-insights",
+  "mode": "skill-state-v3",
+  "model": "openai-yandex-team/gpt-5.6-terra",
+  "observationWindow": 3,
+  "protocolMode": "v3",
+  "prompt": "Implement the project described in the attached specification. Work autonomously until the implementation is complete and all available tests pass. Do not ask questions. Stay inside the project directory.",
+  "exitCode": 0,
+  "timedOut": false,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T203726Z/skill-state-v3/csv-insights",
+  "metrics": {
+    "turns": 8,
+    "toolCalls": 8,
+    "stateCalls": 8,
+    "stateErrors": 0,
+    "stateComments": 8,
+    "finishCalls": 1,
+    "repeatedActions": 0,
+    "maxRepeatStreak": 1,
+    "maxStateBytes": 978,
+    "batchedActions": 11,
+    "multiActionBatches": 3,
+    "failedBatches": 1,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 2,
+    "input": 976,
+    "output": 5152,
+    "reasoning": 489,
+    "cacheRead": 105791,
+    "cacheWrite": 44639,
+    "cost": 0.0908022,
+    "durationMs": 79753,
+    "sessionID": "ses_f91c8bbd1ffeDcSJewxxYJOq9L"
+  },
+  "evaluation": {
+    "project": "csv-insights",
+    "passed": 8,
+    "total": 8,
+    "score": 1,
+    "checks": [
+      {
+        "name": "RFC CSV parse and filters",
+        "passed": true
+      },
+      {
+        "name": "sum and average use decimal output",
+        "passed": true
+      },
+      {
+        "name": "CSV output quoting",
+        "passed": true
+      },
+      {
+        "name": "unknown columns fail",
+        "passed": true
+      },
+      {
+        "name": "invalid numeric cell identifies location",
+        "passed": true
+      },
+      {
+        "name": "ragged records fail",
+        "passed": true
+      },
+      {
+        "name": "input is not modified",
+        "passed": true
+      },
+      {
+        "name": "README exists",
+        "passed": true
+      }
+    ]
+  }
+}

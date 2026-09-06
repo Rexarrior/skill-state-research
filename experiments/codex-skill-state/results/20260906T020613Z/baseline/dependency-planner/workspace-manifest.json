@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-06T03:10:55.522Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020613Z/baseline/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 757,
+      "sha256": "c5b4c6f63f88aa6bc7443ee5578d53889d4681590dc13d1d8ec5a28d55ee3715"
+    },
+    {
+      "path": "examples/input.json",
+      "bytes": 118,
+      "sha256": "da7703af298751320d2d7815e3dbfaebb3b56f24bbae071c8dff146ee9948e19"
+    },
+    {
+      "path": "package.json",
+      "bytes": 117,
+      "sha256": "2669c9c343dc51087d154f181bd49538731a9a6185329b33284258c402e87ecf"
+    },
+    {
+      "path": "src/cli.test.ts",
+      "bytes": 4246,
+      "sha256": "e1c5ad6e5f5bf2af3e3f89e5f3124647f7978be4784e0d075ed45680bf63c28a"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 9371,
+      "sha256": "8c816297d55945be4cd7a763f468ebd98014038a04ae6301b0d26d39150d12c2"
+    }
+  ],
+  "skipped": []
+}

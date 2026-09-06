@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-09-06T00:05:43.434Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260905T235756Z/skill-state/taskboard-cli",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".smoke.t6Cyit/board.json",
+      "bytes": 49,
+      "sha256": "4c1654516c67961191a38ceb1ca1f33e3e96ee9b982bf0db0a9846ca82d4aada"
+    },
+    {
+      "path": "README.md",
+      "bytes": 787,
+      "sha256": "777ec36d16a996956c77bf44cd7ede3648fe60db2e80b4c93fe129077eff18cc"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "4ecdb6df540c760d48629a669a7ff1822ad5ae4f6c00f3df8b3002b68253e6d8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 9144,
+      "sha256": "731ddd2dd962b9c1dd08be9242fdea813ddcd932e7c749fece32d52157e5dbe6"
+    },
+    {
+      "path": "test/cli.test.ts",
+      "bytes": 2678,
+      "sha256": "bcb6efd797f7636b8c0023c840dc0984d4e2dbc3ea6f13a6e2ffe0a095ca2522"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 227,
+      "sha256": "670d7c377663ece77be48918ec802e87eeb2fb7415a7844e9f6701c7468ad27e"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,6 @@
+{
+  "name": "mini-template",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "bun test", "render": "bun run src/cli.ts" }
+}

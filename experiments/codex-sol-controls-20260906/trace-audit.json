@@ -1,0 +1,14 @@
+{
+  "partial": false,
+  "batches": 0,
+  "rejectedBatches": 0,
+  "failures": 0,
+  "skipped": 0,
+  "coverage": {
+    "parsedShellResults": 629,
+    "unparsedShellResults": 1283,
+    "note": "Non-JSON shell results (including truncated results and textual errors) cannot be exit-checked here. Batch stop ordering is checked from recorded statuses, not independently re-executed."
+  },
+  "findings": [],
+  "excerpts": []
+}

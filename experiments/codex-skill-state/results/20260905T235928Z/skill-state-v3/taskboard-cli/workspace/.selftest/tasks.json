@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "nextId": 3,
+  "tasks": [
+    {
+      "id": 1,
+      "title": "First task",
+      "status": "done",
+      "tags": [
+        "work",
+        "urgent"
+      ],
+      "createdAt": "2026-09-06T00:06:29.743Z",
+      "due": "2026-09-05",
+      "completedAt": "2026-09-06T00:06:29.800Z"
+    }
+  ]
+}

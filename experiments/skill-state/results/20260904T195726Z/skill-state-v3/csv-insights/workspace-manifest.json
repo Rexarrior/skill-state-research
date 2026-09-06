@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.556Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state-v3/csv-insights",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 863,
+      "sha256": "29031d430f374fdf06253e5b7ee3fcfe80dfceebfa9bc313fdd99087f9071418"
+    },
+    {
+      "path": "main.py",
+      "bytes": 7280,
+      "sha256": "5f4cfaf245c29e70176301ce0a5c36b30ca2fb4135c59f0e9090183f7d357010"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "__pycache__",
+      "reason": "dependency/cache/VCS directory"
+    }
+  ]
+}

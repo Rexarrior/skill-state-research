@@ -1,0 +1,98 @@
+{
+  "capturedAt": "2026-09-06T00:25:45.090Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T000251Z/skill-state-v3/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": ".tmp/.b8d2d772ffdffafd-00000000.hm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/bunx-501-typescript@latest/package.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": ".tmp/cli.lizy8l/cli.js",
+      "bytes": 6510,
+      "sha256": "713000751543587df6da3aa71a049dbedbbc7cf6a8a3162bb004be9521179b71"
+    },
+    {
+      "path": ".tmp/cli.lizy8l/data.json",
+      "bytes": 16,
+      "sha256": "a5edb92a2a52d2801eb6613ced283ef4c8d3668a18b55b195a076ffc9bfd2250"
+    },
+    {
+      "path": ".tmp/cli.lizy8l/stderr",
+      "bytes": 216,
+      "sha256": "df49bfae25a6fe768a69197ab75c0c4c57a141c8725883b232a24682b9f82361"
+    },
+    {
+      "path": ".tmp/cli.lizy8l/stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/cli.lizy8l/template.txt",
+      "bytes": 16,
+      "sha256": "838699db3d050c549492b82091605737f5a036103f3a5a445d02ff136412059e"
+    },
+    {
+      "path": ".tmp/final.VO8b7k/cli.js",
+      "bytes": 6510,
+      "sha256": "713000751543587df6da3aa71a049dbedbbc7cf6a8a3162bb004be9521179b71"
+    },
+    {
+      "path": ".tmp/final.VO8b7k/data.json",
+      "bytes": 16,
+      "sha256": "a5edb92a2a52d2801eb6613ced283ef4c8d3668a18b55b195a076ffc9bfd2250"
+    },
+    {
+      "path": ".tmp/final.VO8b7k/stderr",
+      "bytes": 218,
+      "sha256": "0a947816cc0243699f6973e4f6f875de1cf1575bbf465f426a7b72f2e6ac077c"
+    },
+    {
+      "path": ".tmp/final.VO8b7k/stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/final.VO8b7k/template.txt",
+      "bytes": 16,
+      "sha256": "838699db3d050c549492b82091605737f5a036103f3a5a445d02ff136412059e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 850,
+      "sha256": "4d8f7f5cc47a61ada872d43564fa9180809eb7f80380402e7e4eeb87e5c7e98b"
+    },
+    {
+      "path": "package.json",
+      "bytes": 255,
+      "sha256": "0cbf2b0f80054e227d6ab30ef0570b6baaea9813b9b4d2af8201a2849089a19a"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 862,
+      "sha256": "e75dff4eaa1a6e35b2ee6aaf208e666058f9a2eab59433a1964bf2eac5d3bb9b"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 6607,
+      "sha256": "6bb47c031505442c373e5c9a18fba6bd273a9d7948ae8df8a13cee58d5647a99"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 2662,
+      "sha256": "e18ff927a99d36c308d21d9dbe25a2cdf471265f9f37d644754d58da8daccfc7"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 221,
+      "sha256": "e3845670a16e00f294b254d234a3fb41cae120e93bfb7d3cb0281ce89f167ba9"
+    }
+  ],
+  "skipped": []
+}

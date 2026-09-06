@@ -9,16 +9,28 @@ and Jonghyun Chung.
 SKILL.state replaces the growing agent transcript with explicit mutable execution state. The original-paper mode sends
 the immutable task specification (`P`), current structured state (`Sigma`), and only the latest observation (`O`). V2
 sends a bounded structured observation window. The experimental v3 keeps that window but lets one transition contain
-an unlimited array of actions, executed strictly sequentially. In every state mode the runtime validates the complete
-transition before applying its patch or executing an action.
+an unlimited array of actions, executed strictly sequentially. State modes preflight the envelope, resulting state,
+action names and basic input kinds. Full tool-specific parameter validation may still occur during dispatch;
+see the [validation-boundary audit](./experiments/PAPER-CONFORMANCE.md#validation-boundary-of-the-tested-v3-implementation).
 
 Both implementations live in the OpenCode and Codex cores rather than plugins. The provider receives one
 reconstructed state message instead of being asked to read a state file itself.
+
+## Technical article and fresh campaign
+
+The [technical article](./articles/skill-state-in-coding-agents.md) and [short LinkedIn draft](./articles/linkedin-post.md)
+are based on a completed **120-run campaign** (September 4–5, 2026), not selected historical cells.
+OpenCode/Sol V2 passed 40/40 checks with **62.0% less full main-loop input** than Native. V3 did not provide a stable
+main-loop input advantage across three Codex attempts; auxiliary reviewer accounting can change the comparison's sign.
+The article discloses the configured-host context, instruction-role and tool differences, domain-schema choices,
+timeouts, and the distinction between input volume and monetary cost.
+See the [campaign journal](./journals/ARTICLE-20260904.md) and [complete report](./experiments/article-20260904/REPORT.md).
 
 ## Repository layout
 
 - [`journals/`](./journals/) — consolidated research journal covering the historical OpenCode plugin, both OpenCode
   core revisions, the Codex port, cross-model results, limitations, and links to every detailed report.
+- [`articles/`](./articles/) — publication-ready local technical text, short post, and data-generated figures.
 - [`experiments/PAPER-ORIGINAL.md`](./experiments/PAPER-ORIGINAL.md) — original paper-mode contract and launch commands
   for both core implementations.
 - [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
@@ -41,9 +53,13 @@ reconstructed state message instead of being asked to read a state file itself.
 - [`journals/V3-BATCHED-ACTIONS.md`](./journals/V3-BATCHED-ACTIONS.md) — consolidated OpenCode/Codex v3 benchmark and
   links to detailed reports and raw suites.
 
-## Current results
+## Historical pilot results
 
 These are exploratory one-shot samples, not statistically powered measurements.
+The OpenCode percentages in these older reports use `input + cache.read`, which omits cache.write. See the
+[accounting correction](./journals/TOKEN-ACCOUNTING-CORRECTION.md) before interpreting them as full input.
+The [new article campaign](./experiments/article-20260904/) audits Paper and all four modes on a frozen corrected
+runtime; its report explicitly states whether the full planned matrix has completed.
 
 ### GPT-5.6 Terra, structured observations, `k=3`
 

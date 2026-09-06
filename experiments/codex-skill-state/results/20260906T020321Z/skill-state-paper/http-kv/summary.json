@@ -1,0 +1,57 @@
+{
+  "suite": "20260906T020321Z",
+  "project": "http-kv",
+  "mode": "skill-state-paper",
+  "model": "gpt-5.6-sol",
+  "protocolMode": "paper",
+  "oneShot": true,
+  "binary": {
+    "path": "<nda context deleted, size :99 chars>",
+    "version": "codex-cli 0.0.0",
+    "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+  },
+  "exitCode": 143,
+  "timedOut": true,
+  "cellTimeoutMs": 900000,
+  "workspace": "/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020321Z/skill-state-paper/http-kv",
+  "rolloutPath": "<nda context deleted, size :114 chars>",
+  "metrics": {
+    "input": 508731,
+    "cachedInput": 450432,
+    "cacheWriteInput": 0,
+    "output": 8240,
+    "reasoning": 1104,
+    "total": 516971,
+    "samples": 33,
+    "commandExecutions": 9,
+    "fileChanges": 0,
+    "errors": 0,
+    "stateCalls": 32,
+    "stateErrors": 3,
+    "stateComments": 0,
+    "finishCalls": 0,
+    "repeatedActions": 12,
+    "maxRepeatStreak": 5,
+    "maxStateBytes": 835,
+    "batchedActions": 0,
+    "multiActionBatches": 0,
+    "failedBatches": 0,
+    "skippedActions": 0,
+    "maxActionsPerBatch": 0,
+    "durationMs": 900015,
+    "threadID": "01a07498-2dc3-79b3-ae8f-12f299590dcc"
+  },
+  "evaluation": {
+    "project": "http-kv",
+    "passed": 0,
+    "total": 9,
+    "score": 0,
+    "checks": [
+      {
+        "name": "evaluator completed",
+        "passed": false,
+        "detail": "Error: bad server banner: \"\""
+      }
+    ]
+  }
+}

@@ -33,7 +33,7 @@ pub(super) fn prompt(task: &str, state: &ExecutionState, observation: Option<&st
     format!(
         "You are operating under the original SKILL.state execution protocol from the paper.\n\
 The execution state is your only durable memory. Previous observations, actions, responses, and reasoning are unavailable.\n\
-On every step, call skill_step exactly once with exactly two fields: state_patch and action. Use null in nested dictionaries to delete obsolete entries.\n\
+On every step, call skill_step exactly once with exactly two fields: state_patch and action. Use null inside files to delete obsolete entries. Top-level coding-state fields are required; clear arrays with [] and files with per-entry null deletions.\n\
 The runtime validates and applies the patch before executing exactly one action. Use finish only when the task is complete.\n\
 \nInstructions:\n{task}\n\
 \nSkill Execution State:\n{state_json}\n\
@@ -43,37 +43,34 @@ The runtime validates and applies the patch before executing exactly one action.
 
 pub(super) fn state_patch_schema() -> JsonSchema {
     let nullable = |schema| JsonSchema::any_of(vec![schema, JsonSchema::null(None)], None);
-    let strings = || nullable(JsonSchema::array(JsonSchema::string(None), None));
+    let strings = || JsonSchema::array(JsonSchema::string(None), None);
     JsonSchema::object(
         BTreeMap::from([
             (
                 "status".to_string(),
-                nullable(JsonSchema::string_enum(
+                JsonSchema::string_enum(
                     ["working", "blocked", "done"]
                         .into_iter()
                         .map(|value| Value::String(value.to_string()))
                         .collect(),
                     None,
-                )),
+                ),
             ),
             ("plan".to_string(), strings()),
             ("completed".to_string(), strings()),
             (
                 "files".to_string(),
-                nullable(JsonSchema::object(
+                JsonSchema::object(
                     BTreeMap::new(),
                     None,
                     Some(AdditionalProperties::Schema(Box::new(nullable(
                         JsonSchema::string(None),
                     )))),
-                )),
+                ),
             ),
             ("facts".to_string(), strings()),
             ("decisions".to_string(), strings()),
-            (
-                "next_action".to_string(),
-                nullable(JsonSchema::string(None)),
-            ),
+            ("next_action".to_string(), JsonSchema::string(None)),
         ]),
         None,
         Some(false.into()),

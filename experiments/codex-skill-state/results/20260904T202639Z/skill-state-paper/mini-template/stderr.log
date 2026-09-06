@@ -1,0 +1,3 @@
+Reading additional input from stdin...
+2026-09-04T21:34:15.127948Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260904T202639Z/skill-state-paper/mini-template/test/engine.test.ts:
+    "Duplicate else at line 1, column 19",

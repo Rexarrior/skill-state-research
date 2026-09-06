@@ -1,0 +1,140 @@
+{
+  "startedAt": "2026-09-05T23:23:28.624Z",
+  "endedAt": "2026-09-06T01:00:01.699Z",
+  "status": "complete",
+  "plannedCells": 100,
+  "maxWorkers": 5,
+  "pid": 69405,
+  "attempts": [
+    {
+      "repetition": 1,
+      "modes": [
+        "v2",
+        "v3"
+      ],
+      "status": "complete",
+      "suite": "20260905T232335Z",
+      "worker": 1,
+      "startedAt": "2026-09-05T23:23:28.625Z",
+      "endedAt": "2026-09-06T00:02:39.114Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 2,
+      "modes": [
+        "v3",
+        "v2"
+      ],
+      "status": "complete",
+      "suite": "20260905T232344Z",
+      "worker": 2,
+      "startedAt": "2026-09-05T23:23:28.625Z",
+      "endedAt": "2026-09-05T23:59:21.471Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 3,
+      "modes": [
+        "v2",
+        "v3"
+      ],
+      "status": "complete",
+      "suite": "20260905T232353Z",
+      "worker": 3,
+      "startedAt": "2026-09-05T23:23:28.625Z",
+      "endedAt": "2026-09-06T00:02:35.771Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 4,
+      "modes": [
+        "v3",
+        "v2"
+      ],
+      "status": "complete",
+      "suite": "20260905T232401Z",
+      "worker": 4,
+      "startedAt": "2026-09-05T23:23:28.625Z",
+      "endedAt": "2026-09-05T23:57:49.479Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 5,
+      "modes": [
+        "v2",
+        "v3"
+      ],
+      "status": "complete",
+      "suite": "20260905T232410Z",
+      "worker": 5,
+      "startedAt": "2026-09-05T23:23:28.625Z",
+      "endedAt": "2026-09-06T00:15:02.496Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 6,
+      "modes": [
+        "v3",
+        "v2"
+      ],
+      "status": "complete",
+      "suite": "20260905T235756Z",
+      "worker": 4,
+      "startedAt": "2026-09-05T23:57:49.479Z",
+      "endedAt": "2026-09-06T00:41:28.521Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 7,
+      "modes": [
+        "v2",
+        "v3"
+      ],
+      "status": "complete",
+      "suite": "20260905T235928Z",
+      "worker": 2,
+      "startedAt": "2026-09-05T23:59:21.471Z",
+      "endedAt": "2026-09-06T00:43:48.620Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 8,
+      "modes": [
+        "v3",
+        "v2"
+      ],
+      "status": "complete",
+      "suite": "20260906T000243Z",
+      "worker": 3,
+      "startedAt": "2026-09-06T00:02:35.771Z",
+      "endedAt": "2026-09-06T00:46:18.104Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 9,
+      "modes": [
+        "v2",
+        "v3"
+      ],
+      "status": "complete",
+      "suite": "20260906T000251Z",
+      "worker": 1,
+      "startedAt": "2026-09-06T00:02:39.114Z",
+      "endedAt": "2026-09-06T00:38:52.896Z",
+      "exitCode": 0
+    },
+    {
+      "repetition": 10,
+      "modes": [
+        "v3",
+        "v2"
+      ],
+      "status": "complete",
+      "suite": "20260906T001510Z",
+      "worker": 5,
+      "startedAt": "2026-09-06T00:15:02.496Z",
+      "endedAt": "2026-09-06T01:00:01.694Z",
+      "exitCode": 0
+    }
+  ]
+}

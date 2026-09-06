@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.567Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state-v3/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 589,
+      "sha256": "8469644afe71aab0f981788e17bdda442385538f76ade47917196b617197024e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 112,
+      "sha256": "e1a45b00bb26e00847eabc1039c20bca395f46e395fa3c22491f6c2d48d55fe8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 624,
+      "sha256": "77a5d76e36c8cc3d192ffa84d81701064f9a5aaa47e606b7438bfd64791b8c89"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 5924,
+      "sha256": "c56610c6634231b2c4b6a6820c6f75f45ace1153e1132b088c76d69616047cde"
+    },
+    {
+      "path": "src/runtime.d.ts",
+      "bytes": 235,
+      "sha256": "e5a0fa9d21486f9996260e248359f9f28b837096762a18902158a6131060cdf7"
+    },
+    {
+      "path": "test/engine.test.ts",
+      "bytes": 1918,
+      "sha256": "cbece4740cc6cc70c4ee02553406d0459a04308e15f4e68174147321356835e7"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 215,
+      "sha256": "b345690246f2fe557bf6455f0dcbd14b7477a25b4bc37b63fa3ea3ede1edf36e"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-09-04T20:36:24.574Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/opencode-skill-state-one-shot/20260904T195726Z/skill-state-paper/dependency-planner",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 685,
+      "sha256": "f3e3e68254dbca1ac814eeeed784cd6cfd1f4096dde4f05c058c76bb9290bff8"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 7000,
+      "sha256": "6263085d5d0c02e0713cd202743e5f532f4da8c435b50f46d29cf92a5eb5c57d"
+    }
+  ],
+  "skipped": []
+}

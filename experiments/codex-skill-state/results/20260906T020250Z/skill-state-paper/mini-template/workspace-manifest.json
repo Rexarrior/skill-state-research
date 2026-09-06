@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-09-06T02:59:21.397Z",
+  "sourceWorkspace": "/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-skill-state-one-shot/20260906T020250Z/skill-state-paper/mini-template",
+  "phase": "after runner completion and external evaluation",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 797,
+      "sha256": "13eca74dc7c2f721bc435636d8fbed9179da9d7d04b8907e497718a73240f33f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 150,
+      "sha256": "f0fa2460311b960db58021b1cb906c1bc47ed541b128621af25c3a25379af261"
+    },
+    {
+      "path": "src/cli.ts",
+      "bytes": 678,
+      "sha256": "da2e8741e00b369b1e448671fa43141a5b3ac433abd671a37028e5b414baa668"
+    },
+    {
+      "path": "src/engine.test.ts",
+      "bytes": 2545,
+      "sha256": "e2e973df53d1a5ebed229d7e233484e9ba54064eb56f0794720e3aeda7a10d81"
+    },
+    {
+      "path": "src/engine.ts",
+      "bytes": 6791,
+      "sha256": "9d1043695721fff8222c559ac67e80d83fb94c34905f4e1ed637e448c47c5c4a"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 211,
+      "sha256": "fd849d3e4c0b4add1a02e57a08d4298ea422d96516a441c0dadb53b5efd2ebdf"
+    }
+  ],
+  "skipped": []
+}

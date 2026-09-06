@@ -1,0 +1,2241 @@
+{
+  "partial": false,
+  "groups": [
+    {
+      "mode": "native",
+      "cells": 50,
+      "missingProfile": 0,
+      "hashes": [
+        "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+      ]
+    },
+    {
+      "mode": "paper",
+      "cells": 50,
+      "missingProfile": 0,
+      "hashes": [
+        "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+      ]
+    },
+    {
+      "mode": "v2",
+      "cells": 50,
+      "missingProfile": 0,
+      "hashes": [
+        "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+      ]
+    },
+    {
+      "mode": "v3",
+      "cells": 50,
+      "missingProfile": 0,
+      "hashes": [
+        "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+      ]
+    }
+  ],
+  "distinctNormalizedProfileHashes": 1,
+  "cells": [
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232335Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232344Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232353Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232401Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T232410Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235756Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260905T235928Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000243Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T000251Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/taskboard-cli/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/csv-insights/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/mini-template/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/http-kv/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state/dependency-planner/summary.json",
+      "mode": "v2",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/taskboard-cli/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/csv-insights/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/mini-template/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/http-kv/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T001510Z/skill-state-v3/dependency-planner/summary.json",
+      "mode": "v3",
+      "phase": "earlier-v2-v3",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010725Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010737Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010746Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010756Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T010805Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T015507Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020250Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020321Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T020613Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/baseline/taskboard-cli/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/baseline/csv-insights/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/baseline/mini-template/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/baseline/http-kv/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/baseline/dependency-planner/summary.json",
+      "mode": "native",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/skill-state-paper/taskboard-cli/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/skill-state-paper/csv-insights/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/skill-state-paper/mini-template/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/skill-state-paper/http-kv/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    },
+    {
+      "source": "experiments/codex-skill-state/results/20260906T021023Z/skill-state-paper/dependency-planner/summary.json",
+      "mode": "paper",
+      "phase": "later-native-paper",
+      "messages": [
+        {
+          "bytes": 12938,
+          "sha256": "2414b9e7a341323e19d5e74158524ea233c9fe5fd8564b1e11a310c20f6f0607"
+        }
+      ]
+    }
+  ],
+  "scope": "Initial host-profile user messages only, not system/tool schemas or provider wire captures. Replaces exact per-cell workspace and realpath strings and current_date tag. No prompt text exported. Distinct hashes require review; equality only covers this normalized subset."
+}
