@@ -1,0 +1,290 @@
+{
+  "checkedAt": "2026-09-06T17:59:33.457Z",
+  "cells": 120,
+  "tableRowsMatch": true,
+  "editorialPlaceholders": false,
+  "archivedFilesVerified": 441,
+  "auxiliaryCellsVerified": 80,
+  "artifactScanFindings": 0,
+  "hostContextCellsVerified": 80,
+  "articleWordsExcludingCode": 5707,
+  "checkedLinks": [
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../opencode/packages/opencode/src/session/skill-state.ts"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../codex/codex-rs/core/src/skill_state.rs"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../journals/README.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/projects/taskboard-cli/SPEC.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/projects/csv-insights/SPEC.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/projects/mini-template/SPEC.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/projects/http-kv/SPEC.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/projects/dependency-planner/SPEC.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/skill-state/scripts/evaluate.ts"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/PAPER-CONFORMANCE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/host-context-audit.json"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../journals/TOKEN-ACCOUNTING-CORRECTION.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/VERIFICATION.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/PROTOCOL.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-paper-vs-native.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-v2-vs-native.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-v3-vs-native.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-v3-vs-v2.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-all-modes.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-by-task.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-sol-controls-20260906/COMPARE-FOUR.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-sol-repeats-20260906/EVALUATOR-NOTE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/codex-sol-ten-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-sol-controls-20260906/RESULTS.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-sol-controls-20260906/READING-LOOP-NOTE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/trace-audit.json"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/trace-cases.json"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/AUXILIARY-USAGE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-sol-controls-20260906/AUXILIARY-USAGE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/REPORT.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/article-20260904/PROTOCOL.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../journals/RESEARCH-ARTICLE-PLAN.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./update-20260906/README.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./skill-state-in-coding-agents.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./linkedin-post.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "../experiments/article-20260904/README.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "../journals/RESEARCH-ARTICLE-PLAN.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/input-cycles-paper-vs-native.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/input-cycles-v2-vs-native.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/input-cycles-v3-vs-native.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/input-cycles-v3-vs-v2.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/codex-sol-ten-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./PROTOCOL.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "../PAPER-CONFORMANCE.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./source-manifest.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./source.patch"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./environment.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./usage-audit.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./host-context-audit.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./VERIFICATION.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./REPORT.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./data.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./suites.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./trace-audit.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./trace-cases.json"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./AUXILIARY-USAGE.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "../../articles/skill-state-in-coding-agents.md"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "../../articles/figures/input-by-task.png"
+    },
+    {
+      "file": "experiments/article-20260904/README.md",
+      "href": "./publication-qa.json"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../skill-state/results/20260904T195726Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T202639Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../skill-state/results/20260904T203726Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T212003Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T220955Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T223606Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T225135Z/report.md"
+    },
+    {
+      "file": "experiments/article-20260904/REPORT.md",
+      "href": "../codex-skill-state/results/20260904T234023Z/report.md"
+    }
+  ],
+  "figuresVerified": [
+    "input-cycles-paper-vs-native",
+    "input-cycles-v2-vs-native",
+    "input-cycles-v3-vs-native",
+    "input-cycles-v3-vs-v2",
+    "input-cycles-all-modes",
+    "codex-sol-ten-repeats-input-cycles-time"
+  ],
+  "limits": "Local link existence and numeric table consistency; external publication URLs and manual prose/visual review are separate checks."
+}

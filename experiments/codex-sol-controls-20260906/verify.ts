@@ -1,7 +1,9 @@
 // Isolated native/paper campaign copy; never run analysis scripts in the prior campaign.
 import path from "node:path"
+import { loadArtifactIntegrity, verifyRecordedBinary, verificationOutput } from "../../scripts/artifact-integrity"
 
 const here = import.meta.dir, root = path.resolve(here, "../..")
+const integrity = await loadArtifactIntegrity(root)
 const read = (name: string) => Bun.file(path.join(here, name)).json()
 const data = await read("data.json"), run = await read("run.json")
 if (data.missing || data.rows.length !== 100 || run.status !== "complete" || run.attempts.length !== 10)
@@ -46,11 +48,10 @@ for (const child of auxiliary.descendants) for (const key of ["input_tokens", "o
 const manifest = await read("source-manifest.json")
 const hash = async (file: string) => new Bun.CryptoHasher("sha256").update(new Uint8Array(await Bun.file(file).arrayBuffer())).digest("hex")
 const binary = manifest.binaries["skill-state"]
-if (await hash(binary.path) !== binary.sha256) throw new Error("Codex executable changed after the start")
-if (await hash(manifest.binaries.baseline.codeModeHostPath) !== manifest.binaries.baseline.codeModeHostSha256)
-  throw new Error("Native Code Mode companion changed after the start")
+const binaryChecks = [await verifyRecordedBinary(binary.path, binary.sha256),
+  await verifyRecordedBinary(manifest.binaries.baseline.codeModeHostPath, manifest.binaries.baseline.codeModeHostSha256)]
 for (const [file, expected] of Object.entries({ ...manifest.source.files, ...manifest.protectedFiles }))
-  if (await hash(path.join(root, file)) !== expected) throw new Error(`Protected source/article file changed: ${file}`)
+  await integrity.verify(file, expected as string)
 if (await hash(path.join(here, "run.ts")) !== manifest.orchestrationSha256 || await hash(path.join(here, "PROTOCOL.md")) !== manifest.protocolSha256)
   throw new Error("Dispatch protocol changed after the start")
 const events = run.attempts.flatMap((a: any) => [
@@ -73,9 +74,7 @@ for (const row of data.rows) {
   for (const file of archive.files) {
     const location = path.resolve(directory, "workspace", file.path)
     if (!location.startsWith(path.join(directory, "workspace") + path.sep)) throw new Error("Archive path escapes destination")
-    const bytes = new Uint8Array(await Bun.file(location).arrayBuffer())
-    if (bytes.length !== file.bytes || new Bun.CryptoHasher("sha256").update(bytes).digest("hex") !== file.sha256)
-      throw new Error(`Archive hash mismatch: ${row.source}/${file.path}`)
+    await integrity.verify(path.relative(root, location), file.sha256, file.bytes)
     archivedFiles++
   }
 }
@@ -90,9 +89,10 @@ for (const name of ["README.md", "RESULTS.md", "REPORT.md", "COMPARE-FOUR.md", "
   }
 }
 const result = { checkedAt: new Date().toISOString(), status: "passed", cells: 100, uniqueMainSessions: 100, pairedAttempts: 10,
+  binaryChecks,
   combinedCells: 200, normalizedProfileHashes: context.distinctNormalizedProfileHashes,
   archives, archivedFiles, protectedFiles: Object.keys(manifest.protectedFiles).length, maximumSuiteWorkers: maximum,
   auxiliaryThreads: auxiliary.descendants.length, supplementaryDeletionProjects: deletion.outcomes.length, links,
   scope: "Recorded suite intervals, usage, archive hashes and source/article preservation; not a guarantee about all unrecorded HTTP requests or scientific generalizability." }
-await Bun.write(path.join(here, "verification.json"), JSON.stringify(result, null, 2) + "\n")
+await Bun.write(verificationOutput(root, "codex-sol-controls"), JSON.stringify(result, null, 2) + "\n")
 console.log(JSON.stringify(result))

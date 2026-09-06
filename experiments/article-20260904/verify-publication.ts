@@ -1,6 +1,8 @@
 import path from "node:path"
+import { loadArtifactIntegrity, verificationOutput } from "../../scripts/artifact-integrity"
 
 const root = path.resolve(import.meta.dir, "../..")
+const integrity = await loadArtifactIntegrity(root)
 const data = await Bun.file(path.join(import.meta.dir, "data.json")).json()
 if (data.missing || data.rows.length !== 120) throw new Error("Cannot sign off an incomplete campaign")
 for (const name of ["trace-audit.json", "usage-audit.json"]) {
@@ -26,9 +28,7 @@ for (const row of data.rows) {
   for (const file of archive.files) {
     const location = path.resolve(directory, "workspace", file.path)
     if (!location.startsWith(path.join(directory, "workspace") + path.sep)) throw new Error("Invalid archive path")
-    const bytes = new Uint8Array(await Bun.file(location).arrayBuffer())
-    if (bytes.length !== file.bytes || new Bun.CryptoHasher("sha256").update(bytes).digest("hex") !== file.sha256)
-      throw new Error(`Archived workspace changed: ${row.source}: ${file.path}`)
+    await integrity.verify(path.relative(root, location), file.sha256, file.bytes)
     archivedFiles++
   }
 }
@@ -48,7 +48,7 @@ for (const file of files) {
   }
 }
 const body = await Bun.file(path.join(root, files[0])).text()
-const figures = ["input-by-task", "input-paper-vs-native", "input-v2-vs-native", "input-v3-vs-native", "input-v3-vs-v2"]
+const figures: string[] = (await Bun.file(path.join(root, "articles/update-20260906/figure-data.json")).json()).figures
 for (const figure of figures) {
   if (!body.includes(`](./figures/${figure}.png)`)) throw new Error(`Missing article figure: ${figure}`)
   for (const suffix of ["png", "svg"]) {
@@ -60,7 +60,7 @@ const tables = await Bun.file(path.join(import.meta.dir, "publication-tables.md"
 for (const line of tables.split("\n").filter((line) => line.startsWith("|")))
   if (!body.includes(line)) throw new Error(`Article diverges from generated table: ${line}`)
 const words = body.replace(/```[\s\S]*?```/g, "").split(/\s+/).filter(Boolean).length
-await Bun.write(path.join(import.meta.dir, "publication-qa.json"), JSON.stringify({
+await Bun.write(verificationOutput(root, "article-publication"), JSON.stringify({
   checkedAt: new Date().toISOString(), cells: data.rows.length, tableRowsMatch: true, editorialPlaceholders: false,
   archivedFilesVerified: archivedFiles, auxiliaryCellsVerified: auxiliary.outcomes.length, artifactScanFindings: scan.findings.length,
   hostContextCellsVerified: hostContext.cells.length,

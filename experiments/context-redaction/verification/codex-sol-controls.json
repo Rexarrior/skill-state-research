@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-09-06T17:59:33.580Z",
+  "status": "passed",
+  "cells": 100,
+  "uniqueMainSessions": 100,
+  "pairedAttempts": 10,
+  "binaryChecks": [
+    {
+      "status": "not-rechecked",
+      "reason": "The historical host path was redacted.",
+      "sha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc"
+    },
+    {
+      "status": "not-rechecked",
+      "reason": "The historical host path was redacted.",
+      "sha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630"
+    }
+  ],
+  "combinedCells": 200,
+  "normalizedProfileHashes": 1,
+  "archives": 100,
+  "archivedFiles": 448,
+  "protectedFiles": 971,
+  "maximumSuiteWorkers": 5,
+  "auxiliaryThreads": 26,
+  "supplementaryDeletionProjects": 20,
+  "links": 134,
+  "scope": "Recorded suite intervals, usage, archive hashes and source/article preservation; not a guarantee about all unrecorded HTTP requests or scientific generalizability."
+}

@@ -1,6 +1,8 @@
 import path from "node:path"
+import { loadArtifactIntegrity, verificationOutput } from "../../scripts/artifact-integrity"
 
 const root = path.resolve(import.meta.dir, "../..")
+const integrity = await loadArtifactIntegrity(root)
 const read = (file: string) => Bun.file(path.join(root, file)).json()
 const hash = async (file: string) => new Bun.CryptoHasher("sha256")
   .update(new Uint8Array(await Bun.file(path.join(root, file)).arrayBuffer())).digest("hex")
@@ -17,7 +19,7 @@ const frozen = await read("experiments/codex-sol-controls-20260906/source-manife
 let protectedFiles = 0
 for (const [file, expected] of Object.entries({ ...frozen.source.files, ...frozen.protectedFiles })) {
   if (allowedEditorialEdits.includes(file)) continue
-  if (await hash(file) !== expected) throw new Error(`Unexpected frozen-file change: ${file}`)
+  await integrity.verify(file, expected as string)
   protectedFiles++
 }
 const original = await read("experiments/article-20260904/data.json")
@@ -87,5 +89,5 @@ const qa = { checkedAt: new Date().toISOString(), status: "passed", originalCell
   repeatPointsVerified: plots.repeatValues.length, figureHashes: figHashes, localLinks: links,
   articleSha256: await hash(articleFile),
   scope: "Local data, tables, plotted point values, links and frozen files; not scientific validation or external publication." }
-await Bun.write(path.join(import.meta.dir, "qa.json"), JSON.stringify(qa, null, 2) + "\n")
+await Bun.write(verificationOutput(root, "article-update"), JSON.stringify(qa, null, 2) + "\n")
 console.log(JSON.stringify(qa))

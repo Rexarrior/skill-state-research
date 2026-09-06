@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-09-06T17:59:33.572Z",
+  "status": "passed",
+  "originalCells": 120,
+  "additionalCells": 200,
+  "oldAndNewTablesMatch": true,
+  "frozenFilesVerified": 984,
+  "allowedEditorialEdits": [
+    "articles/skill-state-in-coding-agents.md",
+    "articles/README.md"
+  ],
+  "repeatPointsVerified": 40,
+  "figureHashes": {
+    "articles/figures/input-cycles-paper-vs-native.png": "ab0b3a90fa90415330abbff7a3b3a8059c8b1e0fef1dc396eddff77ea00fbc0a",
+    "articles/figures/input-cycles-paper-vs-native.svg": "c1f96d9c1725f1bcb4256f383ecc2f2210d4b1d84375840855093370e0ab43b9",
+    "articles/figures/input-cycles-v2-vs-native.png": "e70e250fa8208a229d93bb75d4da7d038d9aa2ed22def8e1c22cff9411644e3c",
+    "articles/figures/input-cycles-v2-vs-native.svg": "96be9e1ec3e5e6e107412454dcc02ef63efdecfd452d9ce570d1658bdd5cbbd7",
+    "articles/figures/input-cycles-v3-vs-native.png": "f55a32ce74045c5b6ee38990bce74ee75ae2467d67950ee893e38d9f4609f448",
+    "articles/figures/input-cycles-v3-vs-native.svg": "30c049dba067633bf876900d370e9874f4f56968d254f66e967b831c57e2885d",
+    "articles/figures/input-cycles-v3-vs-v2.png": "2ef71e2afc510eaf3b867b74959640d7be1b85992c057291d70f0c7fd7222be4",
+    "articles/figures/input-cycles-v3-vs-v2.svg": "72473248b4ec2afa5046ff05212b757ab779bb33df1a133f06442bf7b7ba1e83",
+    "articles/figures/input-cycles-all-modes.png": "c05c9a680216183f4680479de102b79f851da8c80c438cc72bb7e2822d9603d0",
+    "articles/figures/input-cycles-all-modes.svg": "6d57c3629b6c5193c38d3e95bd3279715b857142a73d0cae96df521b11631425",
+    "articles/figures/codex-sol-ten-repeats-input-cycles-time.png": "1f6908c5766e1b2a9a72b7ef05d56d542d47a6b106f6abb840f8932b6fa4db09",
+    "articles/figures/codex-sol-ten-repeats-input-cycles-time.svg": "8d040a528707dc6f9808ef38de5419cecfb00ee43667cc129811f7bc58cf6c7f"
+  },
+  "localLinks": 58,
+  "articleSha256": "7bb206797275abfa73be6144a7b0460c5b6219fab8957f72a4f626cfef7044ea",
+  "scope": "Local data, tables, plotted point values, links and frozen files; not scientific validation or external publication."
+}
