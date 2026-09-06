@@ -20,6 +20,12 @@ from pathlib import Path
 MARKER = re.compile(r"<nda context deleted, size :\d+ chars>")
 SKIP_DIRS = {".git", "node_modules", "target", ".venv", "__pycache__"}
 OUTPUT_KEYS = {"output", "stdout", "stderr", "aggregated_output", "result", "preview"}
+INLINE_PRIVATE = re.compile(
+    r"(?:/(?:Users|home)/[A-Za-z0-9._-]+(?:/[A-Za-z0-9._@+~%=-]+)*)"
+    r"|(?:[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})"
+    r"|(?:[A-Za-z0-9._-]+\.(?:yandex-team\.ru|yandex\.net|corp\.yandex))"
+    r"|(?:\b(?:sk|rk)-[A-Za-z0-9]{20,}\b|\bghp_[A-Za-z0-9]{30,}\b|\bgithub_pat_[A-Za-z0-9_]{40,}\b)"
+)
 
 
 def marker(text):
@@ -144,6 +150,8 @@ class Redactor:
                       lambda m: self.hide(m[0]), text)
         for tag in ("skills_instructions", "available_skills"):
             text = re.sub(rf"<{tag}>[\s\S]*?</{tag}>", lambda m: self.hide(m[0]), text)
+        if "/Users/" in text or "/home/" in text or "@" in text or "yandex" in text.casefold() or "sk-" in text or "rk-" in text or "ghp_" in text or "github_pat_" in text:
+            text = INLINE_PRIVATE.sub(lambda match: self.hide(match[0]), text)
         return self.hide(original) if self.private(text) else text
 
     def walk(self, value, tainted_ids=frozenset()):

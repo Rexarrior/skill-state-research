@@ -48,6 +48,14 @@ class RedactionTests(unittest.TestCase):
         self.assertEqual(result["part"]["state"]["output"], marker("closed text"))
         self.assertEqual(result["part"]["state"]["time"]["end"], 20)
 
+    def test_redacts_host_identifiers_inside_mixed_output(self):
+        source = "read /Users/rexarrior/.stefania/rules.md; contact researcher@example.com via api.yandex-team.ru"
+        cleaned = self.redactor.string(source)
+        self.assertNotIn("/Users/", cleaned)
+        self.assertNotIn("@example.com", cleaned)
+        self.assertNotIn("yandex-team.ru", cleaned)
+        self.assertIn("<nda context deleted, size :", cleaned)
+
     def test_preserves_unrelated_runtime_code_and_text(self):
         self.assertEqual(self.redactor.string("Implement a CSV parser"), "Implement a CSV parser")
         raw = b"// PRIVATE_PROFILE is a synthetic test fixture\n"
