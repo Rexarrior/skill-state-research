@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T17:59:33.572Z",
+  "checkedAt": "2026-09-07T22:51:13.930Z",
   "status": "passed",
   "originalCells": 120,
   "additionalCells": 200,
@@ -24,7 +24,7 @@
     "articles/figures/codex-sol-ten-repeats-input-cycles-time.png": "1f6908c5766e1b2a9a72b7ef05d56d542d47a6b106f6abb840f8932b6fa4db09",
     "articles/figures/codex-sol-ten-repeats-input-cycles-time.svg": "8d040a528707dc6f9808ef38de5419cecfb00ee43667cc129811f7bc58cf6c7f"
   },
-  "localLinks": 58,
-  "articleSha256": "7bb206797275abfa73be6144a7b0460c5b6219fab8957f72a4f626cfef7044ea",
+  "localLinks": 57,
+  "articleSha256": "61d559497186d52499cabd81163bae0c343579e3e59b3c28201d69709a3c8762",
   "scope": "Local data, tables, plotted point values, links and frozen files; not scientific validation or external publication."
 }
