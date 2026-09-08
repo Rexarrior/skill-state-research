@@ -1,0 +1,10 @@
+{
+  "name": "taskboard-cli",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "test": "bun test"
+  }
+}

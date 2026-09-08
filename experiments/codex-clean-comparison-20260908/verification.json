@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-09-08T14:49:36.812Z",
+  "status": "passed",
+  "sessions": 200,
+  "archivedFiles": 804,
+  "initialContextsChecked": 200,
+  "publicationFiles": 821,
+  "localRawVerified": 1042,
+  "localRawUnavailable": 0,
+  "supplementaryChecks": 40,
+  "scope": "Arithmetic, fingerprints and declared outcomes; no new model calls and no re-evaluation of all task requirements."
+}

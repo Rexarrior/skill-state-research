@@ -1,0 +1,6 @@
+{
+  "name": "dependency-planner",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "bun test", "plan": "bun run src/cli.ts plan" }
+}

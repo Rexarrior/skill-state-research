@@ -1,0 +1,13 @@
+{
+  "name": "taskboard-cli",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "taskboard": "./taskboard"
+  },
+  "scripts": {
+    "taskboard": "bun run taskboard.ts",
+    "test": "bun test"
+  }
+}

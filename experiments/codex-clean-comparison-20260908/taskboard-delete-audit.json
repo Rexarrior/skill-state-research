@@ -1,0 +1,1214 @@
+{
+  "declaredBeforeCampaigns": true,
+  "outcomes": [
+    {
+      "id": "sol/1/native/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 1,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.284Z"
+    },
+    {
+      "id": "sol/1/paper/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 1,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.406Z"
+    },
+    {
+      "id": "sol/1/v2/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 1,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.488Z"
+    },
+    {
+      "id": "sol/1/v3/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 1,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.573Z"
+    },
+    {
+      "id": "sol/2/paper/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 2,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.657Z"
+    },
+    {
+      "id": "sol/2/v2/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 2,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.741Z"
+    },
+    {
+      "id": "sol/2/v3/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 2,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.854Z"
+    },
+    {
+      "id": "sol/2/native/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 2,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.945Z"
+    },
+    {
+      "id": "sol/3/paper/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 3,
+      "mode": "paper",
+      "rawCheckPassed": false,
+      "supplementaryPassed": false,
+      "checks": [
+        {
+          "name": "CLI entrypoint exists",
+          "passed": false
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:26.945Z"
+    },
+    {
+      "id": "sol/3/v2/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 3,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.061Z"
+    },
+    {
+      "id": "sol/3/v3/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 3,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.149Z"
+    },
+    {
+      "id": "sol/3/native/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 3,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.264Z"
+    },
+    {
+      "id": "sol/4/paper/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 4,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.378Z"
+    },
+    {
+      "id": "sol/4/v2/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 4,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.459Z"
+    },
+    {
+      "id": "sol/4/v3/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 4,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.543Z"
+    },
+    {
+      "id": "sol/4/native/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 4,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.653Z"
+    },
+    {
+      "id": "sol/5/paper/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 5,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.736Z"
+    },
+    {
+      "id": "sol/5/v2/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 5,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.845Z"
+    },
+    {
+      "id": "sol/5/v3/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 5,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:27.965Z"
+    },
+    {
+      "id": "sol/5/native/taskboard-cli",
+      "cohort": "sol",
+      "repetition": 5,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.080Z"
+    },
+    {
+      "id": "astra/1/native/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 1,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.189Z"
+    },
+    {
+      "id": "astra/1/paper/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 1,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.287Z"
+    },
+    {
+      "id": "astra/1/v2/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 1,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.386Z"
+    },
+    {
+      "id": "astra/1/v3/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 1,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.464Z"
+    },
+    {
+      "id": "astra/2/paper/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 2,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.562Z"
+    },
+    {
+      "id": "astra/2/v2/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 2,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.662Z"
+    },
+    {
+      "id": "astra/2/v3/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 2,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.760Z"
+    },
+    {
+      "id": "astra/2/native/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 2,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.859Z"
+    },
+    {
+      "id": "astra/3/paper/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 3,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:28.936Z"
+    },
+    {
+      "id": "astra/3/v2/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 3,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.036Z"
+    },
+    {
+      "id": "astra/3/v3/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 3,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.135Z"
+    },
+    {
+      "id": "astra/3/native/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 3,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.237Z"
+    },
+    {
+      "id": "astra/4/paper/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 4,
+      "mode": "paper",
+      "rawCheckPassed": false,
+      "supplementaryPassed": false,
+      "checks": [
+        {
+          "name": "CLI entrypoint exists",
+          "passed": false
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.238Z"
+    },
+    {
+      "id": "astra/4/v2/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 4,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.335Z"
+    },
+    {
+      "id": "astra/4/v3/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 4,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.438Z"
+    },
+    {
+      "id": "astra/4/native/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 4,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.539Z"
+    },
+    {
+      "id": "astra/5/paper/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 5,
+      "mode": "paper",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.636Z"
+    },
+    {
+      "id": "astra/5/v2/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 5,
+      "mode": "v2",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.743Z"
+    },
+    {
+      "id": "astra/5/v3/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 5,
+      "mode": "v3",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.849Z"
+    },
+    {
+      "id": "astra/5/native/taskboard-cli",
+      "cohort": "astra",
+      "repetition": 5,
+      "mode": "native",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-08T14:30:29.950Z"
+    }
+  ],
+  "scope": "Isolated copies of all 40 archived CLI projects. No model calls, source fixes or original score replacement. Other task requirements not re-evaluated."
+}

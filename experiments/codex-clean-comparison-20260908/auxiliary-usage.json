@@ -1,0 +1,2463 @@
+{
+  "capturedAt": "2026-09-08T14:31:56.019Z",
+  "outcomes": [
+    {
+      "id": "sol/1/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v2/taskboard-cli",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18516,
+      "cachedInput": 4864,
+      "output": 130
+    },
+    {
+      "id": "sol/1/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 84677,
+      "cachedInput": 47360,
+      "output": 335
+    },
+    {
+      "id": "sol/1/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 36271,
+      "cachedInput": 26880,
+      "output": 263
+    },
+    {
+      "id": "sol/1/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 39294,
+      "cachedInput": 18944,
+      "output": 278
+    },
+    {
+      "id": "sol/1/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/paper/dependency-planner",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 73800,
+      "cachedInput": 44288,
+      "output": 375
+    },
+    {
+      "id": "sol/1/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/1/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/paper/csv-insights",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 42705,
+      "cachedInput": 23040,
+      "output": 199
+    },
+    {
+      "id": "sol/2/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 88923,
+      "cachedInput": 50432,
+      "output": 409
+    },
+    {
+      "id": "sol/2/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 37969,
+      "cachedInput": 26880,
+      "output": 336
+    },
+    {
+      "id": "sol/2/paper/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 42214,
+      "cachedInput": 23040,
+      "output": 339
+    },
+    {
+      "id": "sol/2/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 4,
+      "input": 117722,
+      "cachedInput": 82944,
+      "output": 386
+    },
+    {
+      "id": "sol/2/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/2/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v3/mini-template",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18791,
+      "cachedInput": 4864,
+      "output": 232
+    },
+    {
+      "id": "sol/3/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 63004,
+      "cachedInput": 39168,
+      "output": 340
+    },
+    {
+      "id": "sol/3/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 4,
+      "input": 64895,
+      "cachedInput": 48128,
+      "output": 500
+    },
+    {
+      "id": "sol/3/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 64642,
+      "cachedInput": 37120,
+      "output": 466
+    },
+    {
+      "id": "sol/3/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/paper/dependency-planner",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18838,
+      "cachedInput": 4864,
+      "output": 160
+    },
+    {
+      "id": "sol/3/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/3/paper/csv-insights",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 19227,
+      "cachedInput": 4864,
+      "output": 301
+    },
+    {
+      "id": "sol/4/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 12021,
+      "cachedInput": 4864,
+      "output": 156
+    },
+    {
+      "id": "sol/4/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 24686,
+      "cachedInput": 9728,
+      "output": 216
+    },
+    {
+      "id": "sol/4/paper/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 39957,
+      "cachedInput": 23040,
+      "output": 281
+    },
+    {
+      "id": "sol/4/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 27866,
+      "cachedInput": 15872,
+      "output": 219
+    },
+    {
+      "id": "sol/4/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v3/mini-template",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 16253,
+      "cachedInput": 4864,
+      "output": 164
+    },
+    {
+      "id": "sol/4/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/4/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v3/dependency-planner",
+      "auxiliaryThreads": 1,
+      "calls": 6,
+      "input": 116885,
+      "cachedInput": 92672,
+      "output": 557
+    },
+    {
+      "id": "sol/5/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v3/csv-insights",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 25030,
+      "cachedInput": 14848,
+      "output": 188
+    },
+    {
+      "id": "sol/5/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/paper/csv-insights",
+      "auxiliaryThreads": 1,
+      "calls": 3,
+      "input": 70195,
+      "cachedInput": 46336,
+      "output": 270
+    },
+    {
+      "id": "sol/5/v3/mini-template",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 19497,
+      "cachedInput": 4864,
+      "output": 275
+    },
+    {
+      "id": "sol/5/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 4,
+      "input": 56814,
+      "cachedInput": 33792,
+      "output": 298
+    },
+    {
+      "id": "sol/5/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "sol/5/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 41843,
+      "cachedInput": 9728,
+      "output": 279
+    },
+    {
+      "id": "sol/5/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 38855,
+      "cachedInput": 18944,
+      "output": 250
+    },
+    {
+      "id": "astra/1/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 17993,
+      "cachedInput": 4864,
+      "output": 166
+    },
+    {
+      "id": "astra/1/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 23253,
+      "cachedInput": 14848,
+      "output": 241
+    },
+    {
+      "id": "astra/1/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 17875,
+      "cachedInput": 4864,
+      "output": 145
+    },
+    {
+      "id": "astra/1/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/1/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18212,
+      "cachedInput": 4864,
+      "output": 138
+    },
+    {
+      "id": "astra/2/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 23954,
+      "cachedInput": 14848,
+      "output": 236
+    },
+    {
+      "id": "astra/2/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 15007,
+      "cachedInput": 4864,
+      "output": 180
+    },
+    {
+      "id": "astra/2/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/2/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 30395,
+      "cachedInput": 9728,
+      "output": 210
+    },
+    {
+      "id": "astra/3/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 23669,
+      "cachedInput": 14848,
+      "output": 228
+    },
+    {
+      "id": "astra/3/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 47205,
+      "cachedInput": 22016,
+      "output": 260
+    },
+    {
+      "id": "astra/3/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/3/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18397,
+      "cachedInput": 4864,
+      "output": 169
+    },
+    {
+      "id": "astra/4/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 11001,
+      "cachedInput": 4864,
+      "output": 205
+    },
+    {
+      "id": "astra/4/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v2/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/4/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/native/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/paper/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v2/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v3/dependency-planner",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/paper/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v2/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v3/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/native/taskboard-cli",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v2/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v3/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/native/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/paper/csv-insights",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v3/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/native/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/paper/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v2/mini-template",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/native/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 10957,
+      "cachedInput": 4864,
+      "output": 174
+    },
+    {
+      "id": "astra/5/paper/http-kv",
+      "auxiliaryThreads": 0,
+      "calls": 0,
+      "input": 0,
+      "cachedInput": 0,
+      "output": 0
+    },
+    {
+      "id": "astra/5/v2/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 1,
+      "input": 18018,
+      "cachedInput": 4864,
+      "output": 137
+    },
+    {
+      "id": "astra/5/v3/http-kv",
+      "auxiliaryThreads": 1,
+      "calls": 2,
+      "input": 29549,
+      "cachedInput": 17920,
+      "output": 327
+    }
+  ],
+  "descendants": [
+    {
+      "threadID": "01a07feb-239b-7941-b6fe-67ee67f115ad",
+      "parent": "01a07feb-2337-7161-ba35-03c8f8c5401a",
+      "root": "01a07feb-2337-7161-ba35-03c8f8c5401a",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11001,
+          "cachedInput": 4864,
+          "output": 205
+        }
+      ]
+    },
+    {
+      "threadID": "01a080ef-cefe-7441-a5e2-00eac843e827",
+      "parent": "01a080ef-cea0-70b0-ad18-8144386123e4",
+      "root": "01a080ef-cea0-70b0-ad18-8144386123e4",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11484,
+          "cachedInput": 4864,
+          "output": 161
+        },
+        {
+          "input": 14837,
+          "cachedInput": 11008,
+          "output": 64
+        },
+        {
+          "input": 18846,
+          "cachedInput": 14080,
+          "output": 92
+        },
+        {
+          "input": 19728,
+          "cachedInput": 18176,
+          "output": 183
+        }
+      ]
+    },
+    {
+      "threadID": "01a08107-8eaf-7c01-b978-dbc88a7e0bb2",
+      "parent": "01a08107-8e4e-7bd0-9837-82c3a7231dd3",
+      "root": "01a08107-8e4e-7bd0-9837-82c3a7231dd3",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 12021,
+          "cachedInput": 4864,
+          "output": 156
+        }
+      ]
+    },
+    {
+      "threadID": "01a0801c-6e56-7460-bf4d-50bfb583ca41",
+      "parent": "01a0801c-6d93-70f1-b325-099522c49d7e",
+      "root": "01a0801c-6d93-70f1-b325-099522c49d7e",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18018,
+          "cachedInput": 4864,
+          "output": 137
+        }
+      ]
+    },
+    {
+      "threadID": "01a080f5-8361-70f0-8dbe-56365ebbee96",
+      "parent": "01a080f5-82f9-77e3-be45-e897fd508015",
+      "root": "01a080f5-82f9-77e3-be45-e897fd508015",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18838,
+          "cachedInput": 4864,
+          "output": 160
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f8f-ca3f-7d62-a278-fe9c3cc71fa6",
+      "parent": "01a07f8f-c9e1-7300-882e-669c08f41a8e",
+      "root": "01a07f8f-c9e1-7300-882e-669c08f41a8e",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18212,
+          "cachedInput": 4864,
+          "output": 138
+        }
+      ]
+    },
+    {
+      "threadID": "01a080d4-56fe-75d0-ad82-10432730ae7c",
+      "parent": "01a080d4-569e-7a11-86ec-b97de9ccdd8d",
+      "root": "01a080d4-569e-7a11-86ec-b97de9ccdd8d",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10908,
+          "cachedInput": 4864,
+          "output": 179
+        },
+        {
+          "input": 12768,
+          "cachedInput": 9984,
+          "output": 89
+        },
+        {
+          "input": 14293,
+          "cachedInput": 12032,
+          "output": 68
+        }
+      ]
+    },
+    {
+      "threadID": "01a080b9-39ae-7481-a10c-b53dfc72ef59",
+      "parent": "01a080b9-38ed-7020-bc20-d7ecb07023a3",
+      "root": "01a080b9-38ed-7020-bc20-d7ecb07023a3",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 16937,
+          "cachedInput": 4864,
+          "output": 153
+        },
+        {
+          "input": 27326,
+          "cachedInput": 16128,
+          "output": 98
+        },
+        {
+          "input": 40414,
+          "cachedInput": 26368,
+          "output": 84
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f7c-3314-7973-884e-02681f3e771e",
+      "parent": "01a07f7c-32af-7aa0-9bdc-1fac2415f5fd",
+      "root": "01a07f7c-32af-7aa0-9bdc-1fac2415f5fd",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17875,
+          "cachedInput": 4864,
+          "output": 145
+        }
+      ]
+    },
+    {
+      "threadID": "01a080ab-6198-7ab0-b4f6-7e24b7d6ffbd",
+      "parent": "01a080ab-60b4-77e3-a121-7d5fece98497",
+      "root": "01a080ab-60b4-77e3-a121-7d5fece98497",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18516,
+          "cachedInput": 4864,
+          "output": 130
+        }
+      ]
+    },
+    {
+      "threadID": "01a08109-5449-7e12-8d44-28d604a9e4cb",
+      "parent": "01a08109-53e7-73e0-8ff2-3e10bebb9c7b",
+      "root": "01a08109-53e7-73e0-8ff2-3e10bebb9c7b",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18731,
+          "cachedInput": 4864,
+          "output": 194
+        },
+        {
+          "input": 21226,
+          "cachedInput": 18176,
+          "output": 87
+        }
+      ]
+    },
+    {
+      "threadID": "01a080c8-9edf-7f21-984c-fd390c2e0e0a",
+      "parent": "01a080c8-9e7d-7362-9598-19ea8751fb17",
+      "root": "01a080c8-9e7d-7362-9598-19ea8751fb17",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 19155,
+          "cachedInput": 4864,
+          "output": 134
+        },
+        {
+          "input": 23550,
+          "cachedInput": 18176,
+          "output": 65
+        }
+      ]
+    },
+    {
+      "threadID": "01a080be-6c82-7720-961c-1850920a408e",
+      "parent": "01a080be-6bbf-7673-b2b5-b961498a6620",
+      "root": "01a080be-6bbf-7673-b2b5-b961498a6620",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 15002,
+          "cachedInput": 4864,
+          "output": 175
+        },
+        {
+          "input": 24292,
+          "cachedInput": 14080,
+          "output": 103
+        }
+      ]
+    },
+    {
+      "threadID": "01a0810c-25e6-75b3-922a-0f9c7f0f5ede",
+      "parent": "01a0810c-257f-7212-b427-1768bc04b115",
+      "root": "01a0810c-257f-7212-b427-1768bc04b115",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11848,
+          "cachedInput": 4864,
+          "output": 162
+        },
+        {
+          "input": 16018,
+          "cachedInput": 11008,
+          "output": 57
+        }
+      ]
+    },
+    {
+      "threadID": "01a080bb-5b64-7c10-9639-2568964cf08e",
+      "parent": "01a080bb-5b00-72b0-b287-4c7bac06b364",
+      "root": "01a080bb-5b00-72b0-b287-4c7bac06b364",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10188,
+          "cachedInput": 4864,
+          "output": 144
+        },
+        {
+          "input": 12521,
+          "cachedInput": 9984,
+          "output": 65
+        },
+        {
+          "input": 13562,
+          "cachedInput": 12032,
+          "output": 54
+        }
+      ]
+    },
+    {
+      "threadID": "01a08120-1c51-7851-994a-d4a821c1fe16",
+      "parent": "01a08120-1b95-74a2-b4de-f7c9f2746206",
+      "root": "01a08120-1b95-74a2-b4de-f7c9f2746206",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 16253,
+          "cachedInput": 4864,
+          "output": 164
+        }
+      ]
+    },
+    {
+      "threadID": "01a08127-60c6-7c52-b1e6-ecdf8c8dc8c3",
+      "parent": "01a08127-6061-7960-838f-8aca10d8d799",
+      "root": "01a08127-6061-7960-838f-8aca10d8d799",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 12210,
+          "cachedInput": 4864,
+          "output": 146
+        },
+        {
+          "input": 14415,
+          "cachedInput": 12032,
+          "output": 89
+        },
+        {
+          "input": 16407,
+          "cachedInput": 14080,
+          "output": 59
+        },
+        {
+          "input": 22795,
+          "cachedInput": 16128,
+          "output": 96
+        },
+        {
+          "input": 23913,
+          "cachedInput": 22272,
+          "output": 57
+        },
+        {
+          "input": 27145,
+          "cachedInput": 23296,
+          "output": 110
+        }
+      ]
+    },
+    {
+      "threadID": "01a0801d-68ea-71b0-be40-09a5670a69f4",
+      "parent": "01a0801d-6822-7aa2-a836-851b1d75a11f",
+      "root": "01a0801d-6822-7aa2-a836-851b1d75a11f",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 13935,
+          "cachedInput": 4864,
+          "output": 182
+        },
+        {
+          "input": 15614,
+          "cachedInput": 13056,
+          "output": 145
+        }
+      ]
+    },
+    {
+      "threadID": "01a08019-8a99-70b1-bebb-f7e4395a3efe",
+      "parent": "01a08019-8a3e-7782-a7fb-657933e18ea4",
+      "root": "01a08019-8a3e-7782-a7fb-657933e18ea4",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10957,
+          "cachedInput": 4864,
+          "output": 174
+        }
+      ]
+    },
+    {
+      "threadID": "01a080f1-10fa-7543-b2de-b049ac9bcea7",
+      "parent": "01a080f1-1092-7660-9e6c-17005e2a6a89",
+      "root": "01a080f1-1092-7660-9e6c-17005e2a6a89",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 15088,
+          "cachedInput": 4864,
+          "output": 206
+        },
+        {
+          "input": 18610,
+          "cachedInput": 14080,
+          "output": 138
+        },
+        {
+          "input": 30944,
+          "cachedInput": 18176,
+          "output": 122
+        }
+      ]
+    },
+    {
+      "threadID": "01a080e9-18a0-76f0-a25d-e30ffb12ea01",
+      "parent": "01a080e9-17d8-7f53-9373-040bd6327b49",
+      "root": "01a080e9-17d8-7f53-9373-040bd6327b49",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18791,
+          "cachedInput": 4864,
+          "output": 232
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f8f-f7b0-7a82-a21e-2ecbc2022033",
+      "parent": "01a07f8f-f74b-7081-b6f4-03e022c3dcb5",
+      "root": "01a07f8f-f74b-7081-b6f4-03e022c3dcb5",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10977,
+          "cachedInput": 4864,
+          "output": 167
+        },
+        {
+          "input": 12977,
+          "cachedInput": 9984,
+          "output": 69
+        }
+      ]
+    },
+    {
+      "threadID": "01a07fd8-3b6d-7b22-885f-a97173486aa8",
+      "parent": "01a07fd8-3b08-7500-9e95-5ee25a3d1f2a",
+      "root": "01a07fd8-3b08-7500-9e95-5ee25a3d1f2a",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17930,
+          "cachedInput": 4864,
+          "output": 122
+        },
+        {
+          "input": 29275,
+          "cachedInput": 17152,
+          "output": 138
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f94-5950-7df0-bde7-243f87bc3332",
+      "parent": "01a07f94-58ea-7be3-bd8d-37cb859b21aa",
+      "root": "01a07f94-58ea-7be3-bd8d-37cb859b21aa",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 15007,
+          "cachedInput": 4864,
+          "output": 180
+        }
+      ]
+    },
+    {
+      "threadID": "01a08108-96fc-75b3-abb1-cb9942dc020a",
+      "parent": "01a08108-969b-7831-a7b2-316bffc354b8",
+      "root": "01a08108-969b-7831-a7b2-316bffc354b8",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10805,
+          "cachedInput": 4864,
+          "output": 156
+        },
+        {
+          "input": 13881,
+          "cachedInput": 4864,
+          "output": 60
+        }
+      ]
+    },
+    {
+      "threadID": "01a080ed-dbc1-7032-99ab-e2597d3fb25f",
+      "parent": "01a080ed-db5e-71d3-ac95-990dbd344042",
+      "root": "01a080ed-db5e-71d3-ac95-990dbd344042",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 12515,
+          "cachedInput": 4864,
+          "output": 158
+        },
+        {
+          "input": 22927,
+          "cachedInput": 12032,
+          "output": 98
+        },
+        {
+          "input": 27562,
+          "cachedInput": 22272,
+          "output": 84
+        }
+      ]
+    },
+    {
+      "threadID": "01a08133-c8f0-7f02-96d9-c4d307fcb407",
+      "parent": "01a08133-c890-7d81-812e-7e9529c78f1b",
+      "root": "01a08133-c890-7d81-812e-7e9529c78f1b",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 19545,
+          "cachedInput": 4864,
+          "output": 124
+        },
+        {
+          "input": 22789,
+          "cachedInput": 19200,
+          "output": 59
+        },
+        {
+          "input": 27861,
+          "cachedInput": 22272,
+          "output": 87
+        }
+      ]
+    },
+    {
+      "threadID": "01a080d5-446c-7fb2-8837-5a7cfba5e0e6",
+      "parent": "01a080d5-4403-79b1-93e9-ed5689aee75b",
+      "root": "01a080d5-4403-79b1-93e9-ed5689aee75b",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 19073,
+          "cachedInput": 4864,
+          "output": 243
+        },
+        {
+          "input": 23141,
+          "cachedInput": 18176,
+          "output": 96
+        }
+      ]
+    },
+    {
+      "threadID": "01a0813a-72aa-7501-acbd-78c327a0d696",
+      "parent": "01a0813a-7244-7d60-aab7-0693c2b9a810",
+      "root": "01a0813a-7244-7d60-aab7-0693c2b9a810",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11718,
+          "cachedInput": 4864,
+          "output": 129
+        },
+        {
+          "input": 14009,
+          "cachedInput": 11008,
+          "output": 68
+        },
+        {
+          "input": 14839,
+          "cachedInput": 4864,
+          "output": 49
+        },
+        {
+          "input": 16248,
+          "cachedInput": 13056,
+          "output": 52
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f79-4869-7ba3-86c1-753662528cad",
+      "parent": "01a07f79-480b-7b00-a3b6-97f25470fb19",
+      "root": "01a07f79-480b-7b00-a3b6-97f25470fb19",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11042,
+          "cachedInput": 4864,
+          "output": 172
+        },
+        {
+          "input": 12211,
+          "cachedInput": 9984,
+          "output": 69
+        }
+      ]
+    },
+    {
+      "threadID": "01a080d8-2f43-7302-8d98-ac464f504cc0",
+      "parent": "01a080d8-2ee6-7bb0-9f21-9f64518ea1dd",
+      "root": "01a080d8-2ee6-7bb0-9f21-9f64518ea1dd",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 16622,
+          "cachedInput": 4864,
+          "output": 157
+        },
+        {
+          "input": 29617,
+          "cachedInput": 16128,
+          "output": 67
+        },
+        {
+          "input": 33500,
+          "cachedInput": 29440,
+          "output": 85
+        },
+        {
+          "input": 37983,
+          "cachedInput": 32512,
+          "output": 77
+        }
+      ]
+    },
+    {
+      "threadID": "01a08131-d074-7803-8822-155a60d4196a",
+      "parent": "01a08131-cfa9-79b3-9493-8d90df51fdd5",
+      "root": "01a08131-cfa9-79b3-9493-8d90df51fdd5",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 10150,
+          "cachedInput": 4864,
+          "output": 115
+        },
+        {
+          "input": 14880,
+          "cachedInput": 9984,
+          "output": 73
+        }
+      ]
+    },
+    {
+      "threadID": "01a08141-a29b-7a00-866d-9f24d01bdfe2",
+      "parent": "01a08141-a236-7100-8c5e-f7ce8512de85",
+      "root": "01a08141-a236-7100-8c5e-f7ce8512de85",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 14665,
+          "cachedInput": 4864,
+          "output": 155
+        },
+        {
+          "input": 24190,
+          "cachedInput": 14080,
+          "output": 95
+        }
+      ]
+    },
+    {
+      "threadID": "01a080d4-5664-7cd1-b632-1b5c81ea156a",
+      "parent": "01a080d4-5606-76e2-9432-324539e4f774",
+      "root": "01a080d4-5606-76e2-9432-324539e4f774",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17844,
+          "cachedInput": 4864,
+          "output": 168
+        },
+        {
+          "input": 28921,
+          "cachedInput": 17152,
+          "output": 108
+        },
+        {
+          "input": 42158,
+          "cachedInput": 28416,
+          "output": 133
+        }
+      ]
+    },
+    {
+      "threadID": "01a07fd3-4e9f-7423-b0ca-3aec52e47a5e",
+      "parent": "01a07fd3-4dd0-7430-83a2-194bba5e3fcf",
+      "root": "01a07fd3-4dd0-7430-83a2-194bba5e3fcf",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 12574,
+          "cachedInput": 4864,
+          "output": 149
+        },
+        {
+          "input": 17821,
+          "cachedInput": 4864,
+          "output": 61
+        }
+      ]
+    },
+    {
+      "threadID": "01a080c2-1806-7170-9dbf-68f0fb934471",
+      "parent": "01a080c2-17a7-7be1-8fe9-dd33f52541a1",
+      "root": "01a080c2-17a7-7be1-8fe9-dd33f52541a1",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17388,
+          "cachedInput": 4864,
+          "output": 127
+        },
+        {
+          "input": 22743,
+          "cachedInput": 17152,
+          "output": 68
+        },
+        {
+          "input": 33669,
+          "cachedInput": 22272,
+          "output": 180
+        }
+      ]
+    },
+    {
+      "threadID": "01a07fd4-1f7b-7fb1-9aef-0f5ce1cb9edd",
+      "parent": "01a07fd4-1f18-7122-9a00-eea5eba74e4b",
+      "root": "01a07fd4-1f18-7122-9a00-eea5eba74e4b",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 11002,
+          "cachedInput": 4864,
+          "output": 156
+        },
+        {
+          "input": 12667,
+          "cachedInput": 9984,
+          "output": 72
+        }
+      ]
+    },
+    {
+      "threadID": "01a08134-42e6-7060-b232-fba633ebd224",
+      "parent": "01a08134-4284-70c0-8c4e-23bb2ee570c0",
+      "root": "01a08134-4284-70c0-8c4e-23bb2ee570c0",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 19497,
+          "cachedInput": 4864,
+          "output": 275
+        }
+      ]
+    },
+    {
+      "threadID": "01a08104-91d0-7bf1-be50-6e1fc7b5872b",
+      "parent": "01a08104-90fc-7ef3-8ba2-f50a3ae7d237",
+      "root": "01a08104-90fc-7ef3-8ba2-f50a3ae7d237",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 19227,
+          "cachedInput": 4864,
+          "output": 301
+        }
+      ]
+    },
+    {
+      "threadID": "01a07fea-5a95-71d2-88e6-e6ac6286260e",
+      "parent": "01a07fea-5a38-7a13-ba3d-e62bc52815ba",
+      "root": "01a07fea-5a38-7a13-ba3d-e62bc52815ba",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 18397,
+          "cachedInput": 4864,
+          "output": 169
+        }
+      ]
+    },
+    {
+      "threadID": "01a0813e-9d9a-7151-afa9-10bb780234fa",
+      "parent": "01a0813e-9d34-77a3-8c9c-8cf681aae94b",
+      "root": "01a0813e-9d34-77a3-8c9c-8cf681aae94b",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17840,
+          "cachedInput": 4864,
+          "output": 193
+        },
+        {
+          "input": 24003,
+          "cachedInput": 4864,
+          "output": 86
+        }
+      ]
+    },
+    {
+      "threadID": "01a07f78-c30d-7d91-bba7-34ab65bc693c",
+      "parent": "01a07f78-c2af-71d2-9d89-5cd885b2dbc7",
+      "root": "01a07f78-c2af-71d2-9d89-5cd885b2dbc7",
+      "models": [
+        "codex-auto-review"
+      ],
+      "usage": [
+        {
+          "input": 17993,
+          "cachedInput": 4864,
+          "output": 166
+        }
+      ]
+    }
+  ],
+  "scope": "Recorded usage of descendants linked by parent_thread_id, no prompts or reasoning exported. Not billed cost; interrupted calls may have no usage record."
+}

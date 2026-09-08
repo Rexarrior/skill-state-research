@@ -1,0 +1,1 @@
+{"order":["lint","build","test"],"layers":[["lint"],["build","test"]],"earliest":{"lint":{"start":0,"finish":2},"build":{"start":2,"finish":5},"test":{"start":2,"finish":6}},"totalDuration":6,"criticalPath":["lint","test"]}

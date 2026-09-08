@@ -1,0 +1,9 @@
+{
+  "name": "mini-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/cli.ts --outdir dist --target bun",
+    "test": "bun test"
+  }
+}

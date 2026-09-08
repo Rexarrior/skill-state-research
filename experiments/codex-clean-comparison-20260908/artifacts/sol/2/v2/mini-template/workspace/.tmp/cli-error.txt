@@ -1,0 +1,1 @@
+mini-template: ENOENT: no such file or directory, open '/private/var/folders/0q/2rdtymtx2yvgjq38pr1pm2lc0000gn/T/codex-sol-clean-one-shot/20260908T113826Z-d414dbfc-25b0-4455-8cda-5cdd218b38de/skill-state/mini-template/.tmp/missing.json'

@@ -1,0 +1,13 @@
+{
+  "name": "dependency-planner",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "dependency-planner": "dist/dependency-planner.js"
+  },
+  "scripts": {
+    "build": "bun build src/cli.ts --target=bun --outfile=dist/dependency-planner.js",
+    "start": "bun run src/cli.ts",
+    "test": "bun test"
+  }
+}

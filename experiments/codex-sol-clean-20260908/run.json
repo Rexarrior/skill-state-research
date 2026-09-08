@@ -1,0 +1,1012 @@
+{
+  "model": "gpt-5.6-sol",
+  "status": "complete",
+  "plannedCells": 100,
+  "maxWorkers": 5,
+  "startedAt": "2026-09-08T10:58:12.646Z",
+  "endedAt": "2026-09-08T13:53:29.658Z",
+  "isolation": "restored",
+  "stopReason": null,
+  "cells": [
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T105828Z-3da8d6e3-c610-4f28-b93f-d0b7f3d8629d/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T10:58:20.290Z",
+      "endedAt": "2026-09-08T11:03:47.080Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T105828Z-3cf373c9-89b2-4e4d-92c5-acf68bd56709/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T10:58:20.291Z",
+      "endedAt": "2026-09-08T11:13:28.848Z",
+      "worker": 2
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T105828Z-2ce2d48b-6a76-4c32-bad7-01a74d55db58/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T10:58:20.291Z",
+      "endedAt": "2026-09-08T11:04:13.231Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T105828Z-0d3d62a1-d382-4c29-8866-86e9f52ba7db/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T10:58:20.291Z",
+      "endedAt": "2026-09-08T11:02:56.173Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T105828Z-a7c084e1-94af-4e21-b4b9-7fcd0610383d/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T10:58:20.291Z",
+      "endedAt": "2026-09-08T11:13:28.982Z",
+      "worker": 5
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T110303Z-3213861b-2fce-4409-b433-86e266529ea0/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:02:56.187Z",
+      "endedAt": "2026-09-08T11:09:36.416Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T110354Z-ea86d3ac-7b6e-4cd7-b4a8-0a24c7d74d9c/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:03:47.098Z",
+      "endedAt": "2026-09-08T11:10:17.259Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T110420Z-596a5920-24a2-47eb-9b98-f4d5e39c4d9c/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:04:13.247Z",
+      "endedAt": "2026-09-08T11:10:40.375Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T110943Z-9e04bb35-1e7c-4973-950d-ee98a86eac95/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:09:36.431Z",
+      "endedAt": "2026-09-08T11:15:49.835Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T111024Z-8373c262-fc08-4715-9ca1-56c8cbc9543a/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:10:17.274Z",
+      "endedAt": "2026-09-08T11:15:52.095Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T111047Z-dba5b6b4-07b8-4696-8dc0-a07091275a9c/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:10:40.390Z",
+      "endedAt": "2026-09-08T11:19:10.312Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T111336Z-9c2f0db7-37a1-46b0-a2d0-dbf87194dcf2/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:13:28.865Z",
+      "endedAt": "2026-09-08T11:23:07.374Z",
+      "worker": 2
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T111336Z-3a2bc7df-a2a8-4ce6-bc04-763a97122b3f/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:13:28.997Z",
+      "endedAt": "2026-09-08T11:28:31.130Z",
+      "worker": 5
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T111557Z-d4fe0b2f-cbe1-40b8-a160-7cadb6a74120/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:15:49.849Z",
+      "endedAt": "2026-09-08T11:23:11.476Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T111559Z-45b76a04-206a-4a1b-a888-8883aec2e3dd/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:15:52.108Z",
+      "endedAt": "2026-09-08T11:31:08.361Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T111917Z-39f77fdf-a8a5-4644-a25e-ca47e14aac08/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:19:10.326Z",
+      "endedAt": "2026-09-08T11:27:55.558Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T112314Z-399cb58b-50d1-49fb-a1f6-add74a2fb07a/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:23:07.390Z",
+      "endedAt": "2026-09-08T11:30:19.240Z",
+      "worker": 2
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T112318Z-4a50ef64-9295-4033-b25e-06ef39e9d9a5/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:23:11.490Z",
+      "endedAt": "2026-09-08T11:38:19.069Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T112802Z-d63a1437-763a-4f00-bd58-ec6416dc571c/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:27:55.574Z",
+      "endedAt": "2026-09-08T11:32:53.664Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T112838Z-b28a8bb3-19f2-47be-9130-8fc9e5d3ef83/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:28:31.157Z",
+      "endedAt": "2026-09-08T11:35:14.276Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T113026Z-f3b2976f-bb42-4795-bc1a-f4c82b761889/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:30:19.254Z",
+      "endedAt": "2026-09-08T11:41:23.398Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T113115Z-3e2199a6-bcf6-4f79-9ffd-3e29a8131c65/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:31:08.378Z",
+      "endedAt": "2026-09-08T11:38:32.146Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T113301Z-861cb433-9f55-4a14-b836-66e190f50513/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:32:53.679Z",
+      "endedAt": "2026-09-08T11:43:06.804Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T113521Z-696a423b-5884-49f7-ba2c-75f561a5198a/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T11:35:14.290Z",
+      "endedAt": "2026-09-08T11:42:09.182Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T113826Z-d414dbfc-25b0-4455-8cda-5cdd218b38de/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:38:19.083Z",
+      "endedAt": "2026-09-08T11:43:07.014Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T113839Z-ea761c66-8829-4dfa-a927-efb520b611ce/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:38:32.160Z",
+      "endedAt": "2026-09-08T11:44:07.920Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T114130Z-cdf7e4a8-7df3-4874-87fe-9bc2817e8974/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:41:23.417Z",
+      "endedAt": "2026-09-08T11:47:19.305Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T114216Z-89cac4bd-5ea6-4724-a240-8423f1812550/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T11:42:09.195Z",
+      "endedAt": "2026-09-08T11:57:16.930Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T114314Z-69a8fd62-d674-4a10-a1d3-fe8c5641213a/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:43:06.821Z",
+      "endedAt": "2026-09-08T11:58:25.808Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T114314Z-d1235789-d383-45d9-b331-e71a489b04c5/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:43:07.027Z",
+      "endedAt": "2026-09-08T11:52:27.782Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T114415Z-56444a69-3735-4bf0-90fd-d96afc423b39/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:44:07.933Z",
+      "endedAt": "2026-09-08T11:53:24.572Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T114726Z-71af5703-0b42-42b9-ae27-0bc3350fabe7/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T11:47:19.318Z",
+      "endedAt": "2026-09-08T12:02:35.538Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T115235Z-b8e656a2-bb4d-48c7-b540-5dc960a479f6/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:52:27.797Z",
+      "endedAt": "2026-09-08T12:00:03.082Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T115332Z-29e7f3c3-301a-416e-b822-aa74f3219855/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:53:24.589Z",
+      "endedAt": "2026-09-08T11:58:22.354Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T115724Z-b19622d3-b136-4ac6-b50c-ec37ba07bd38/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:57:16.947Z",
+      "endedAt": "2026-09-08T12:03:37.799Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T115829Z-ea12c5c9-d16e-40c5-bf1a-d44d0784974b/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T11:58:22.368Z",
+      "endedAt": "2026-09-08T12:05:46.846Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T115833Z-8feef556-42db-4fbb-915f-86f9e2004f93/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T11:58:25.826Z",
+      "endedAt": "2026-09-08T12:13:33.357Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T120010Z-6957a148-f07d-4c9b-a56c-4c98c20764df/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:00:03.097Z",
+      "endedAt": "2026-09-08T12:03:56.943Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T120242Z-4804d984-f2fc-4504-8db5-d6058d8e7eca/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:02:35.557Z",
+      "endedAt": "2026-09-08T12:10:59.794Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T120345Z-da41af66-9531-40b1-a9a4-cfc4f64a51c1/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:03:37.815Z",
+      "endedAt": "2026-09-08T12:08:42.763Z",
+      "worker": 5
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T120404Z-9c47a072-c375-479e-b179-114d746a9340/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T12:03:56.957Z",
+      "endedAt": "2026-09-08T12:08:32.518Z",
+      "worker": 4
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T120553Z-6ebd8385-054a-4a6e-b4b7-ba42091f47da/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T12:05:46.863Z",
+      "endedAt": "2026-09-08T12:13:07.383Z",
+      "worker": 1
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T120839Z-fa0cc18b-8f0b-4fa7-a3ae-d0203d77c841/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T12:08:32.531Z",
+      "endedAt": "2026-09-08T12:14:29.818Z",
+      "worker": 4
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T120849Z-7e4f6c33-453c-421b-a9a3-260773c6f27e/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T12:08:42.776Z",
+      "endedAt": "2026-09-08T12:18:07.329Z",
+      "worker": 5
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T121106Z-d5a2a827-a243-4fb6-b9d7-6ae1ec7576e1/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:10:59.808Z",
+      "endedAt": "2026-09-08T12:19:21.426Z",
+      "worker": 2
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T121314Z-c5f95fae-11c7-4b33-8095-a8d83e33fee8/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:13:07.401Z",
+      "endedAt": "2026-09-08T12:22:28.677Z",
+      "worker": 1
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T121340Z-f3fc8a47-480b-41ae-8f41-fb7a0e6f0fec/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:13:33.375Z",
+      "endedAt": "2026-09-08T12:28:49.227Z",
+      "worker": 3
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T121437Z-6e5ee8a0-5718-44ba-b0a6-ff0848fd5a11/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:14:29.833Z",
+      "endedAt": "2026-09-08T12:23:56.425Z",
+      "worker": 4
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T121814Z-34553471-32fa-4f17-8126-2e36899459a0/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:18:07.342Z",
+      "endedAt": "2026-09-08T12:23:31.905Z",
+      "worker": 5
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T121928Z-4d474dff-e72b-4494-a567-d9e33822aeb8/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:19:21.448Z",
+      "endedAt": "2026-09-08T12:34:28.622Z",
+      "worker": 2
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T122236Z-2a886bea-ad40-432e-9ff8-74f4f7462d36/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:22:28.693Z",
+      "endedAt": "2026-09-08T12:27:46.221Z",
+      "worker": 1
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T122339Z-6d6962be-c15c-4d2f-a4cc-db3943ec8708/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:23:31.918Z",
+      "endedAt": "2026-09-08T12:30:44.989Z",
+      "worker": 5
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T122403Z-380ed832-b7dd-4067-bc23-c293c91dc0e0/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:23:56.451Z",
+      "endedAt": "2026-09-08T12:39:03.845Z",
+      "worker": 4
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T122753Z-7776d3c6-c4f4-4713-85bf-edc11dc61ae6/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:27:46.236Z",
+      "endedAt": "2026-09-08T12:34:02.324Z",
+      "worker": 1
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T122856Z-ce342ee5-2a52-463f-ae37-c961d101b590/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:28:49.260Z",
+      "endedAt": "2026-09-08T12:34:26.746Z",
+      "worker": 3
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T123052Z-074bdf51-e771-48d9-a6e8-f42dbd8044ab/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:30:45.002Z",
+      "endedAt": "2026-09-08T12:35:43.130Z",
+      "worker": 5
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T123409Z-07621c75-7960-40c1-8576-1bb28e9b1c9e/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T12:34:02.338Z",
+      "endedAt": "2026-09-08T12:44:18.926Z",
+      "worker": 1
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T123434Z-750e5b35-9c28-4f7d-9d00-ada9f410ca5b/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T12:34:26.759Z",
+      "endedAt": "2026-09-08T12:40:11.278Z",
+      "worker": 3
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T123435Z-804684b5-95c2-4049-bb1d-5cd90424cb5a/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T12:34:28.638Z",
+      "endedAt": "2026-09-08T12:40:59.961Z",
+      "worker": 2
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T123550Z-1e9ef51c-1731-4644-9935-d84cfcebddf6/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T12:35:43.145Z",
+      "endedAt": "2026-09-08T12:50:50.492Z",
+      "worker": 5
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T123911Z-2515cd91-500f-45b4-a0e6-9883668b0f4a/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:39:03.859Z",
+      "endedAt": "2026-09-08T12:44:04.301Z",
+      "worker": 4
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T124018Z-cad69c8c-0113-4177-8af7-250f8668d409/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:40:11.296Z",
+      "endedAt": "2026-09-08T12:48:20.164Z",
+      "worker": 3
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T124107Z-ec9c0b71-a452-440a-91bc-ccc687534445/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:40:59.975Z",
+      "endedAt": "2026-09-08T12:56:15.849Z",
+      "worker": 2
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T124411Z-2681368a-52bc-40a5-9a82-df0c6eb2c92b/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T12:44:04.316Z",
+      "endedAt": "2026-09-08T12:50:39.718Z",
+      "worker": 4
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T124426Z-579bd516-ce0a-478d-941a-f38bad07d5ad/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:44:18.939Z",
+      "endedAt": "2026-09-08T12:51:10.413Z",
+      "worker": 1
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T124827Z-1b11c55a-82ca-4af3-bbd1-0f471f080a30/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:48:20.186Z",
+      "endedAt": "2026-09-08T13:00:15.436Z",
+      "worker": 3
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T125046Z-f885225f-7814-4ecb-a670-1d87405f83d6/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:50:39.738Z",
+      "endedAt": "2026-09-08T12:55:44.470Z",
+      "worker": 4
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T125057Z-8baf7cff-6f0e-41d4-b7fc-e9805f973fa7/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T12:50:50.506Z",
+      "endedAt": "2026-09-08T12:56:21.107Z",
+      "worker": 5
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T125117Z-a0847903-9b15-4e1d-bab2-89eeca1bf0e0/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:51:10.427Z",
+      "endedAt": "2026-09-08T13:06:17.831Z",
+      "worker": 1
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T125551Z-b7519787-eaa4-4f0c-8eca-baf394a9a014/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:55:44.482Z",
+      "endedAt": "2026-09-08T13:00:18.322Z",
+      "worker": 4
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T125623Z-3b6580d5-a4d0-41ed-ba08-a4d3c048228f/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:56:15.872Z",
+      "endedAt": "2026-09-08T13:00:45.572Z",
+      "worker": 2
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T125628Z-63f72213-a884-447e-83ea-345a5db46d84/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T12:56:21.121Z",
+      "endedAt": "2026-09-08T13:01:35.082Z",
+      "worker": 5
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T130022Z-bf331960-eb77-4a50-a052-40dbde8526db/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:00:15.450Z",
+      "endedAt": "2026-09-08T13:05:52.413Z",
+      "worker": 3
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T130025Z-e78ee0a5-2f54-48f1-ab60-29d38f1ac4d7/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:00:18.334Z",
+      "endedAt": "2026-09-08T13:07:23.385Z",
+      "worker": 4
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T130052Z-f675e571-97f3-434d-8e0c-24f6ed435bde/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:00:45.586Z",
+      "endedAt": "2026-09-08T13:05:59.545Z",
+      "worker": 2
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T130142Z-826995dd-838b-4c26-b39b-7e333288d403/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:01:35.095Z",
+      "endedAt": "2026-09-08T13:16:37.572Z",
+      "worker": 5
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T130559Z-83287d9d-0422-4ac9-ac82-ba0939e136b1/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:05:52.427Z",
+      "endedAt": "2026-09-08T13:10:58.420Z",
+      "worker": 3
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T130606Z-49396e4c-e4ba-43ab-9622-9189b10629e8/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:05:59.560Z",
+      "endedAt": "2026-09-08T13:12:15.186Z",
+      "worker": 2
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T130625Z-f88f929c-56e7-47da-a5d0-745e228d08ed/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:06:17.848Z",
+      "endedAt": "2026-09-08T13:12:14.401Z",
+      "worker": 1
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T130730Z-cb1c3681-1622-4530-8811-b77b8d84d354/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:07:23.402Z",
+      "endedAt": "2026-09-08T13:13:48.912Z",
+      "worker": 4
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T131105Z-7c7359fc-4b8d-4eb0-af0c-ee265fedc734/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T13:10:58.433Z",
+      "endedAt": "2026-09-08T13:16:49.585Z",
+      "worker": 3
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T131222Z-163d9b97-aa98-4344-8113-dd2c2f4ca71a/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T13:12:14.418Z",
+      "endedAt": "2026-09-08T13:27:22.187Z",
+      "worker": 1
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T131222Z-4cfd9d9c-0fad-4f37-9624-3aa6ee90f55e/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T13:12:15.201Z",
+      "endedAt": "2026-09-08T13:17:33.283Z",
+      "worker": 2
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T131356Z-e3432994-2fd7-4475-a06e-9d5cd543cab1/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T13:13:48.930Z",
+      "endedAt": "2026-09-08T13:21:24.605Z",
+      "worker": 4
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T131644Z-d2e8c31f-2a75-44e1-81d9-5deb13be5d9a/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T13:16:37.590Z",
+      "endedAt": "2026-09-08T13:31:45.269Z",
+      "worker": 5
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T131656Z-1ad6eb3a-4581-4fd6-b840-c01630574865/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T13:16:49.598Z",
+      "endedAt": "2026-09-08T13:22:15.046Z",
+      "worker": 3
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T131740Z-4849a60c-d7a5-4c85-92c0-6aa0456d54c9/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T13:17:33.296Z",
+      "endedAt": "2026-09-08T13:25:12.484Z",
+      "worker": 2
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T132131Z-dd38eff6-b53e-413c-9e4e-be5cf71803a7/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T13:21:24.621Z",
+      "endedAt": "2026-09-08T13:26:41.663Z",
+      "worker": 4
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T132222Z-927ec53d-8faa-4f80-a4f6-edefdbed58bd/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:22:15.062Z",
+      "endedAt": "2026-09-08T13:27:53.630Z",
+      "worker": 3
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T132519Z-057baa1c-773a-4c28-bb43-9f33b517ffa0/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:25:12.498Z",
+      "endedAt": "2026-09-08T13:33:02.455Z",
+      "worker": 2
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T132649Z-ef67693f-0e49-4708-88ba-170d8161b544/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:26:41.680Z",
+      "endedAt": "2026-09-08T13:33:00.389Z",
+      "worker": 4
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T132729Z-9e36d66b-ed77-4b91-aec8-61fa0647f54f/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T13:27:22.200Z",
+      "endedAt": "2026-09-08T13:42:30.133Z",
+      "worker": 1
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T132800Z-598e8061-978d-474e-8e05-e256228a1bde/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:27:53.643Z",
+      "endedAt": "2026-09-08T13:34:39.087Z",
+      "worker": 3
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T133152Z-f45af4eb-df1f-40ea-a1c2-ae48baa0372f/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:31:45.284Z",
+      "endedAt": "2026-09-08T13:38:10.561Z",
+      "worker": 5
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T133307Z-69e3c7c9-96b5-4263-a956-21c1238a6cf3/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:33:00.404Z",
+      "endedAt": "2026-09-08T13:48:07.982Z",
+      "worker": 4
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T133309Z-5854cbdb-114b-4bfb-a140-2b5738ad8d7a/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T13:33:02.467Z",
+      "endedAt": "2026-09-08T13:39:11.832Z",
+      "worker": 2
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T133446Z-2a1eaadb-0f5b-4e73-ba06-a0dde379e6b9/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T13:34:39.100Z",
+      "endedAt": "2026-09-08T13:43:23.866Z",
+      "worker": 3
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T133818Z-4994d524-22d1-44ee-a855-7064557d91c3/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T13:38:10.577Z",
+      "endedAt": "2026-09-08T13:53:29.636Z",
+      "worker": 5
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T133919Z-4049c896-d7e7-4509-b81f-f5a673f4e760/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T13:39:11.848Z",
+      "endedAt": "2026-09-08T13:48:17.230Z",
+      "worker": 2
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T134237Z-07f44c18-83ab-458a-8363-5df6d3c87f3f/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T13:42:30.147Z",
+      "endedAt": "2026-09-08T13:50:52.966Z",
+      "worker": 1
+    }
+  ]
+}
