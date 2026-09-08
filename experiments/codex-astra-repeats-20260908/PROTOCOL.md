@@ -5,7 +5,7 @@ not a replacement for any earlier outcome and not a clean between-model ablation
 
 - Model: `gpt-6-astra`, medium reasoning. Existing account authentication, no purchased resets.
 - Five full repeats × five existing projects × Native/Paper/V2/V3 = 100 sessions.
-- One main CLI process at a time; the existing permission reviewer remains enabled.
+- Up to five main CLI processes at a time (user revision approved before dispatch); the existing permission reviewer remains enabled.
   Its subsidiary calls are accounted for separately, not counted as main agent cycles.
 - Same Codex binary and Code Mode companion as the Sol repeat campaign; verify SHA-256 before dispatch.
 - Same one-shot text, specifications, original evaluator and 900,000 ms timeout per session.
@@ -14,7 +14,7 @@ not a replacement for any earlier outcome and not a clean between-model ablation
   the complete schedule is saved before the first session. Five repeats cannot perfectly balance four modes.
 - No outcome-dependent retries, best-of selection or timeout replacement. An infrastructure error,
   rate limit, authentication/model rejection, missing usage, or detected host-context contamination
-  stops further dispatch. An ordinary coding failure or timeout remains an outcome.
+  stops further dispatch; already-started workers are drained before global files are restored. An ordinary coding failure or timeout remains an outcome.
 - Every outcome records its actual start/end time; timed-out durations are censored, not completion times.
 
 ## Deliberately changed host context
@@ -28,13 +28,13 @@ ignored user configuration and ignored execution-policy rules, as in the earlier
 
 Project instruction discovery is disabled with `project_doc_max_bytes=0`. In this exact Codex source,
 global `AGENTS.md` and `AGENTS.override.md` are loaded separately and are **not** disabled by that setting.
-Moving them requires the user's additional approval; `run.ts --with-global-instructions` records this choice.
+The user approved moving them on 2026-09-08; `run.ts --with-global-instructions` records this choice.
 Without that approval the campaign must not start if either file exists. No global configuration or auth file is edited.
 Initial rollout messages are checked for a skill catalog and host-profile markers without printing their contents.
 This check is an audit of recorded messages, not a network packet capture or a proof of complete environmental isolation.
 
 This differs from historical Sol conditions. Comparisons among the four Astra modes use the same cleaned host setup;
-differences between Astra and historical Sol may reflect model, context, day/load and concurrency together.
+differences between Astra and historical Sol may reflect model, context and day/load together. Both repeat campaigns allow up to five main CLI processes; actual overlap and auxiliary work can still differ.
 The experiment does not measure an independent variable called “intelligence.”
 
 ## Measurements and publication
@@ -55,8 +55,7 @@ The article's author revision is preserved; editorial changes and this cohort ar
 
 ## Interruption and recovery
 
-Normal completion, an orchestration error, SIGINT, SIGTERM or SIGHUP triggers restoration in `finally`.
+Normal completion, an orchestration error, SIGINT, SIGTERM or SIGHUP triggers restoration in `finally`, after all workers settle. Signals stop all active process groups; a 10-second grace period precedes SIGKILL. Suite identifiers include a UUID to prevent concurrent workspace collisions.
 Uncatchable termination or a reboot cannot execute that handler: `.private/isolation.json` points to the durable ledger.
 Recovery is `bun isolation.ts restore ABSOLUTE_LEDGER_PATH`. The command is idempotent and verifies restored fingerprints.
 Resumption must not overwrite or silently retry a started session; inspect `run.json` first.
-

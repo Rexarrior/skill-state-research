@@ -4,11 +4,13 @@ import { mkdir, rename } from "node:fs/promises"
 import { spawn } from "node:child_process"
 import { assertSuspended, discover, exists, restore, suspend } from "./isolation"
 import { loadArtifactIntegrity } from "../../scripts/artifact-integrity"
+import { runPool } from "./pool"
 
 const here = import.meta.dir
 const root = path.resolve(here, "../..")
 const privateDir = path.join(here, ".private")
 const runner = path.join(here, "runner.ts")
+const maxWorkers = 5
 const settings = { CODEX_SKILL_STATE_MODEL: "gpt-6-astra", CODEX_SKILL_STATE_MAX_CONCURRENCY: "1",
   CODEX_SKILL_STATE_OBSERVATION_WINDOW: "3", CODEX_SKILL_STATE_TIMEOUT_MS: "900000" }
 const env = { ...process.env, ...settings }
@@ -30,7 +32,7 @@ for (const [file, expected] of Object.entries(historical.source.files)) {
   await integrity.verify(file, expected as string)
   files[file] = await hash(path.join(root, file))
 }
-for (const file of ["runner.ts", "run.ts", "isolation.ts", "PROTOCOL.md"])
+for (const file of ["runner.ts", "run.ts", "pool.ts", "isolation.ts", "PROTOCOL.md"])
   files[path.relative(root, path.join(here, file))] = await hash(path.join(here, file))
 const doctor = Bun.spawn(["bun", runner, "doctor"], { cwd: root, env, stdout: "pipe", stderr: "pipe" })
 const [doctorText, doctorError, doctorExit] = await Promise.all([
@@ -47,7 +49,7 @@ if (Object.values(info.binaries).some(binary => (binary as { sha256: string }).s
     info.binaries.baseline.codeModeHostSha256 !== companionHash) throw new Error("Unexpected benchmark executable")
 await Bun.write(path.join(here, "source-manifest.json"), JSON.stringify({ capturedAt: new Date().toISOString(),
   files, executableSha256: mainHash, codeModeHostSha256: companionHash, settings,
-  globalInstructionIsolationAuthorized: includeInstructions,
+  maxWorkers, globalInstructionIsolationAuthorized: includeInstructions,
   historicalReference: "../codex-sol-repeats-20260906/source-manifest.json",
   note: "Current cleaned-source hashes, independently checked against the reviewed redaction snapshot; historical binary unchanged." }, null, 2) + "\n")
 
@@ -59,39 +61,44 @@ const cells = Array.from({ length: 5 }, (_, repeat) => {
     const offset = (repeat + position) % 4
     return [...modes.slice(offset), ...modes.slice(0, offset)].map(mode => ({
       repetition: repeat + 1, project, mode, status: "pending", source: null as string | null,
-      startedAt: null as string | null, endedAt: null as string | null,
+      startedAt: null as string | null, endedAt: null as string | null, worker: null as number | null,
     }))
   })
 }).flat()
-const state = { model: "gpt-6-astra", status: "preparing", plannedCells: 100, maxWorkers: 1,
+const state = { model: "gpt-6-astra", status: "preparing", plannedCells: 100, maxWorkers,
   startedAt: new Date().toISOString(), endedAt: null as string | null,
   isolation: "pending", stopReason: null as string | null, cells }
-async function save() {
-  const next = path.join(here, "run.next.json")
-  await Bun.write(next, JSON.stringify(state, null, 2) + "\n")
-  await rename(next, path.join(here, "run.json"))
+let saveQueue = Promise.resolve()
+function save() {
+  const snapshot = JSON.stringify(state, null, 2) + "\n"
+  saveQueue = saveQueue.then(async () => {
+    const next = path.join(here, "run.next.json")
+    await Bun.write(next, snapshot)
+    await rename(next, path.join(here, "run.json"))
+  })
+  return saveQueue
 }
 await save()
 let interrupted = false
-let active: ReturnType<typeof spawn> | undefined
+const active = new Set<ReturnType<typeof spawn>>()
 let ledger: Awaited<ReturnType<typeof suspend>> | undefined
-let killTimer: ReturnType<typeof setTimeout> | undefined
-function stopGroup() {
-  if (!active?.pid) return
-  const pid = active.pid
+const killTimers = new Map<ReturnType<typeof spawn>, ReturnType<typeof setTimeout>>()
+function stopGroup(child: ReturnType<typeof spawn>) {
+  if (!child.pid) return
+  const pid = child.pid
   try { process.kill(-pid, "SIGTERM") } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ESRCH") throw error
   }
-  if (!killTimer) killTimer = setTimeout(() => {
-    if (active?.pid !== pid) return
+  if (!killTimers.has(child)) killTimers.set(child, setTimeout(() => {
+    if (!active.has(child)) return
     try { process.kill(-pid, "SIGKILL") } catch (error) {
       if ((error as NodeJS.ErrnoException).code !== "ESRCH") throw error
     }
-  }, 10000)
+  }, 10000))
 }
 for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"] as const) process.on(signal, () => {
   interrupted = true
-  stopGroup()
+  for (const child of active) stopGroup(child)
 })
 
 try {
@@ -101,28 +108,30 @@ try {
   state.status = "running"
   await save()
   console.log(JSON.stringify({ event: "isolated", roots: ledger.entries.length, planned: cells.length }))
-  for (const cell of cells) {
+  await runPool(cells, maxWorkers, async (cell, worker) => {
     if (interrupted) throw new Error("Interrupted by signal")
-    await assertSuspended(ledger)
+    await assertSuspended(ledger!)
+    cell.worker = worker
     cell.status = "running"
     cell.startedAt = new Date().toISOString()
     await save()
     console.log(JSON.stringify({ event: "start", repetition: cell.repetition, project: cell.project, mode: cell.mode }))
-    active = spawn("bun", [runner, "one", cell.project, cell.mode], { cwd: root, env, detached: true,
+    const child = spawn("bun", [runner, "one", cell.project, cell.mode], { cwd: root, env, detached: true,
       stdio: ["ignore", "pipe", "pipe"] })
+    active.add(child)
     const stdout: Buffer[] = [], stderr: Buffer[] = []
-    active.stdout!.on("data", chunk => stdout.push(Buffer.from(chunk)))
-    active.stderr!.on("data", chunk => stderr.push(Buffer.from(chunk)))
-    const outerTimeout = setTimeout(() => { interrupted = true; stopGroup() }, 1020000)
+    child.stdout!.on("data", chunk => stdout.push(Buffer.from(chunk)))
+    child.stderr!.on("data", chunk => stderr.push(Buffer.from(chunk)))
+    const outerTimeout = setTimeout(() => { interrupted = true; for (const item of active) stopGroup(item) }, 1020000)
     const code = await new Promise<number | null>((resolve, reject) => {
-      active!.once("error", reject)
-      active!.once("close", code => resolve(code))
+      child.once("error", reject)
+      child.once("close", code => resolve(code))
     }).finally(() => {
       clearTimeout(outerTimeout)
-      if (killTimer) clearTimeout(killTimer)
-      killTimer = undefined
+      if (killTimers.has(child)) clearTimeout(killTimers.get(child))
+      killTimers.delete(child)
+      active.delete(child)
     })
-    active = undefined
     const out = Buffer.concat(stdout).toString(), err = Buffer.concat(stderr).toString()
     const label = `${cell.repetition}-${cell.project}-${cell.mode}`
     await Bun.write(path.join(privateDir, label + ".stdout.log"), out)
@@ -164,16 +173,17 @@ try {
     if (infrastructure) throw new Error("Provider infrastructure/model/limit error; no further dispatch")
     if (!summary.metrics.samples) throw new Error("No recorded model usage; no further dispatch")
     if (initial.some(item => item.skills || item.hostProfile)) throw new Error("Host context remains in rollout; no further dispatch")
-    await assertSuspended(ledger)
-    await Bun.sleep(1200)
-  }
+    await assertSuspended(ledger!)
+  }, () => interrupted)
+  if (interrupted) throw new Error("Interrupted by signal or orchestration timeout")
+  if (cells.some(cell => cell.status !== "complete")) throw new Error("Campaign did not finish all planned cells")
   for (const [file, expected] of Object.entries(files)) if (await hash(path.join(root, file)) !== expected)
     throw new Error("Frozen source changed during campaign")
   state.status = "complete"
 } catch (error) {
   state.status = interrupted ? "interrupted" : "needs-attention"
   state.stopReason = error instanceof Error ? error.message : "Unexpected orchestration error"
-  stopGroup()
+  for (const child of active) stopGroup(child)
   console.log(JSON.stringify({ event: "stopped", reason: state.stopReason }))
 } finally {
   state.endedAt = new Date().toISOString()

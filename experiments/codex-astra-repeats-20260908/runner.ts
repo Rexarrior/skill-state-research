@@ -112,7 +112,7 @@ function suiteID() {
   return new Date()
     .toISOString()
     .replace(/[-:]/g, "")
-    .replace(/\.\d{3}Z$/, "Z")
+    .replace(/\.\d{3}Z$/, "Z") + "-" + crypto.randomUUID()
 }
 
 function promptFor(specification: string) {
