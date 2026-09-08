@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-08",
+  "status": "passed-with-documented-host-limitation",
+  "coreTests": {
+    "command": "just test --offline -p codex-core --lib -E 'test(skill_state)'",
+    "nextestRunId": "360c71ed-a77d-43cc-aec2-0287c3237cb1",
+    "passed": 18,
+    "failed": 0,
+    "scope": "SKILL.state module only; includes all three modes, large transition history round-trip, admission and UTF-8 bounds."
+  },
+  "cliTests": {
+    "command": "just test --offline -p codex-exec --test all -E 'test(~skill_state_v2)' --retries 0",
+    "nextestRunId": "98f27c2f-6f32-47c8-acf0-2867ae226085",
+    "passed": 7,
+    "failed": 0,
+    "ignoredInScope": [
+      "exec_v3_skips_remaining_actions_after_nonzero_shell_exit (pre-existing host limitation)",
+      "exec_large_context_preserves_state_and_observation_on_wire (new; shell fixture rejected by managed approval service)"
+    ],
+    "scope": "Real codex-exec with localhost mock-provider. Large state and large validation feedback survive provider requests; native loop remains native.",
+    "limitation": "The large ordinary shell-result fixture failed because CreateProcess returned approval request failed, not because output was truncated. Both printf and a prepared-file read were rejected. This test remains explicitly ignored, not counted as a pass. Large normal ActionOutcome is covered by core tests, not the full shell-to-provider path."
+  },
+  "orchestratorTests": {
+    "command": "bun test ./contract.test.ts ./isolation.test.ts ./isolation-guard.test.ts ./pool.test.ts ./audit-context.test.ts",
+    "passed": 13,
+    "failed": 0,
+    "scope": "Five-worker admission, 100 unique scheduled cells, restoration, isolation guard, unchanged runner contract and numeric-only audit."
+  },
+  "format": {
+    "command": "just fmt",
+    "exitCode": 0,
+    "note": "Run after Rust tests as required by codex/AGENTS.md. Tests were not rerun after formatting; changes inspected."
+  },
+  "patch": {
+    "reverseApplyCheck": true,
+    "whitespaceCheck": true,
+    "changedSourceFiles": 5,
+    "scope": "Four constants, history-only transition allowance, and tests. No native policy, tool schema or protocol prose change."
+  },
+  "historicalSourceChecks": "Passed for the frozen Sol source and both Astra source records, without rewriting historical manifests.",
+  "benchmarkModelCallsDuringPreflight": 0,
+  "note": "Build hashes are recorded separately after compilation. No benchmark outcome has been selected or retried during preflight."
+}

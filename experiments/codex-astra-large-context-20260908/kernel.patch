@@ -1,0 +1,419 @@
+diff --git a/codex/codex-rs/core/src/skill_state.rs b/codex/codex-rs/core/src/skill_state.rs
+index 799761dd..e7414fc8 100644
+--- a/codex/codex-rs/core/src/skill_state.rs
++++ b/codex/codex-rs/core/src/skill_state.rs
+@@ -27,6 +27,10 @@ use std::sync::Arc;
+ #[path = "skill_state_paper.rs"]
+ mod paper;
+ 
++#[path = "skill_state_history.rs"]
++mod history;
++pub(crate) use history::history_envelope;
++
+ pub(crate) const TOOL_NAME: &str = "skill_step";
+ pub const V2_SESSION_SOURCE: &str = "codex";
+ const V2_PROTOCOL: &str = "skill.state/v2";
+@@ -34,11 +38,11 @@ const V3_PROTOCOL: &str = "skill.state/v3";
+ const PAPER_PROTOCOL: &str = "skill.state/paper";
+ const DEFAULT_OBSERVATION_WINDOW: usize = 3;
+ const MAX_OBSERVATION_WINDOW: usize = 8;
+-const MAX_STATE_BYTES: usize = 32 * 1024;
++const MAX_STATE_BYTES: usize = 2 * 1024 * 1024;
+ const MAX_COMMENT_BYTES: usize = 1024;
+-const MAX_ACTION_REQUEST_BYTES: usize = 64 * 1024;
+-const MAX_OBSERVATION_INPUT_BYTES: usize = 3 * 1024;
+-const MAX_RESULT_BYTES: usize = 4 * 1024;
++const MAX_ACTION_REQUEST_BYTES: usize = 2 * 1024 * 1024;
++const MAX_OBSERVATION_INPUT_BYTES: usize = 2 * 1024 * 1024;
++const MAX_RESULT_BYTES: usize = 2 * 1024 * 1024;
+ 
+ #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+ #[serde(rename_all = "snake_case")]
+diff --git a/codex/codex-rs/core/src/skill_state_history.rs b/codex/codex-rs/core/src/skill_state_history.rs
+new file mode 100644
+index 00000000..8faef061
+--- /dev/null
++++ b/codex/codex-rs/core/src/skill_state_history.rs
+@@ -0,0 +1,29 @@
++use codex_history::CodexHarnessMetadata;
++use codex_history::ResponseItemEnvelope;
++use codex_protocol::models::FunctionCallOutputBody;
++use codex_protocol::models::ResponseItem;
++use codex_utils_output_truncation::approx_tokens_from_byte_count;
++
++/// Each field is already bounded by SKILL.state. A second text truncation of
++/// this JSON container would corrupt the next snapshot (including on resume).
++/// This allowance is history metadata, not additional provider-visible text.
++pub(crate) fn history_envelope(item: ResponseItem) -> ResponseItemEnvelope {
++    let metadata = match &item {
++        ResponseItem::FunctionCallOutput { name, output, .. }
++            if name.as_deref() == Some(super::TOOL_NAME) =>
++        {
++            match &output.body {
++                FunctionCallOutputBody::Text(text) => Some(CodexHarnessMetadata {
++                    fallback_token_limit_override: Some(
++                        usize::try_from(approx_tokens_from_byte_count(text.len()))
++                            .unwrap_or(usize::MAX),
++                    ),
++                    ..Default::default()
++                }),
++                _ => None,
++            }
++        }
++        _ => None,
++    };
++    ResponseItemEnvelope { item, metadata }
++}
+diff --git a/codex/codex-rs/core/src/skill_state_tests.rs b/codex/codex-rs/core/src/skill_state_tests.rs
+index 9a07417b..25cd6813 100644
+--- a/codex/codex-rs/core/src/skill_state_tests.rs
++++ b/codex/codex-rs/core/src/skill_state_tests.rs
+@@ -138,7 +138,7 @@ fn transition_round_trips_state_and_observation() {
+ #[test]
+ fn accepts_large_action_but_bounds_observation_input() {
+     let mut runtime = RuntimeState::default();
+-    let command = "x".repeat(MAX_OBSERVATION_INPUT_BYTES * 2);
++    let command = "x".repeat(128 * 1024);
+     let accepted = runtime
+         .accept(
+             Snapshot::default(),
+@@ -166,12 +166,137 @@ fn accepts_large_action_but_bounds_observation_input() {
+         panic!("v2 should persist a single observation")
+     };
+     let input = &observation.input;
+-    assert_eq!(input.get("truncated").and_then(Value::as_bool), Some(true));
+     assert_eq!(
+-        input.get("original_bytes").and_then(Value::as_u64),
+-        Some((MAX_OBSERVATION_INPUT_BYTES * 2 + 14) as u64)
++        input,
++        &serde_json::json!({"command": "x".repeat(128 * 1024)})
++    );
++}
++
++#[test]
++fn large_context_retains_state_input_and_result_through_history_and_prompt() {
++    use crate::context_manager::ContextManager;
++    use codex_utils_output_truncation::TruncationPolicy;
++    for mode in [ProtocolMode::Paper, ProtocolMode::V2, ProtocolMode::V3] {
++        let mut runtime = RuntimeState::default();
++        let fact = format!("{}state-tail", "ф".repeat(48 * 1024));
++        let command = format!("{}input-tail", "i".repeat(128 * 1024));
++        let result = format!("{}result-tail", "я".repeat(128 * 1024));
++        let accepted = runtime
++            .accept(
++                Snapshot::default(),
++                StepRequest {
++                    mode,
++                    state_revision: (mode != ProtocolMode::Paper).then_some(0),
++                    state_patch: serde_json::json!({"facts": [fact]}),
++                    comment: None,
++                    actions: vec![RequestedAction {
++                        name: "exec_command".to_string(),
++                        input: serde_json::json!({"command": command}),
++                    }],
++                },
++                &[function_tool("exec_command")],
++            )
++            .unwrap();
++        let output = transition_output(
++            "large".to_string(),
++            accepted,
++            vec![ActionOutcome {
++                status: BatchActionStatus::Success,
++                result: result.clone(),
++            }],
++        );
++        let envelope = history_envelope(output.clone());
++        let mut history = ContextManager::new();
++        history.record_annotated_items(&[envelope.clone()], TruncationPolicy::Tokens(100));
++        let retained = history.raw_items().cloned().collect::<Vec<_>>();
++        assert_eq!(retained, vec![output]);
++        let restored = snapshot(&retained, mode);
++        assert_eq!(restored.revision, 1);
++        assert_eq!(restored.state.facts, vec![fact.clone()]);
++        match &restored.observations[0] {
++            Observation::Single(o) => {
++                assert_eq!(o.input, serde_json::json!({"command": command}));
++                assert_eq!(o.result, result);
++            }
++            Observation::Batch(o) => {
++                assert_eq!(o.actions[0].input, serde_json::json!({"command": command}));
++                assert_eq!(o.actions[0].result, result);
++            }
++        }
++        let visible = serde_json::to_string(&provider_input(&retained, mode)).unwrap();
++        assert!(visible.contains("state-tail"));
++        assert!(visible.contains("result-tail"));
++        assert_eq!(visible.contains("input-tail"), mode != ProtocolMode::Paper);
++        let restored_metadata: codex_history::CodexHarnessMetadata =
++            serde_json::from_str(&serde_json::to_string(&envelope.metadata.unwrap()).unwrap())
++                .unwrap();
++        let mut resumed = ContextManager::new();
++        resumed.record_annotated_items(
++            &[codex_history::ResponseItemEnvelope {
++                item: retained[0].clone(),
++                metadata: Some(restored_metadata),
++            }],
++            TruncationPolicy::Tokens(100),
++        );
++        assert_eq!(resumed.raw_items().cloned().collect::<Vec<_>>(), retained);
++    }
++}
++
++#[test]
++fn large_context_still_rejects_oversized_state_and_action_atomically() {
++    for mode in [ProtocolMode::Paper, ProtocolMode::V2, ProtocolMode::V3] {
++        for oversized_state in [true, false] {
++            let mut runtime = RuntimeState::default();
++            let mut step = request(0, "exec_command");
++            step.mode = mode;
++            step.state_revision = (mode != ProtocolMode::Paper).then_some(0);
++            step.comment = None;
++            if oversized_state {
++                step.state_patch = serde_json::json!({"facts": ["s".repeat(2 * 1024 * 1024)]});
++            } else {
++                step.actions[0].input = serde_json::json!({"command": "i".repeat(2 * 1024 * 1024)});
++            }
++            assert!(
++                runtime
++                    .accept(Snapshot::default(), step, &[function_tool("exec_command")])
++                    .is_err()
++            );
++            assert_eq!(runtime.current.as_ref().unwrap().revision, 0);
++            assert_eq!(
++                runtime.current.as_ref().unwrap().state,
++                ExecutionState::default()
++            );
++        }
++    }
++}
++
++#[test]
++fn large_context_over_budget_previews_are_utf8_safe() {
++    let result = truncate_utf8("я".repeat(2 * 1024 * 1024), MAX_RESULT_BYTES);
++    assert_eq!(
++        result,
++        format!("{}\n…[truncated by SKILL.state]", "я".repeat(1024 * 1024))
++    );
++    let input = bounded_action_input(serde_json::json!({"text": "я".repeat(2 * 1024 * 1024)}));
++    assert_eq!(input["truncated"], true);
++    assert!(serde_json::to_vec(&input).unwrap().len() <= MAX_OBSERVATION_INPUT_BYTES);
++}
++
++#[test]
++fn large_context_envelope_does_not_change_native_outputs() {
++    let mut output = rejected_output(
++        "native".to_string(),
++        ProtocolMode::V2,
++        Snapshot::default(),
++        "error".to_string(),
++    );
++    if let ResponseItem::FunctionCallOutput { name, .. } = &mut output {
++        *name = Some("exec_command".to_string());
++    }
++    assert_eq!(
++        history_envelope(output.clone()),
++        codex_history::ResponseItemEnvelope::new(output)
+     );
+-    assert!(serde_json::to_vec(input).unwrap().len() <= MAX_OBSERVATION_INPUT_BYTES);
+ }
+ 
+ #[test]
+diff --git a/codex/codex-rs/core/src/tools/parallel.rs b/codex/codex-rs/core/src/tools/parallel.rs
+index f943f11f..fb3a81b5 100644
+--- a/codex/codex-rs/core/src/tools/parallel.rs
++++ b/codex/codex-rs/core/src/tools/parallel.rs
+@@ -111,7 +111,7 @@ impl ToolCallRuntime {
+         let history_items = history.raw_items().cloned().collect::<Vec<_>>();
+         let persisted = crate::skill_state::snapshot(&history_items, mode);
+         let ToolPayload::Function { arguments } = &call.payload else {
+-            return Ok(ResponseItemEnvelope::new(
++            return Ok(crate::skill_state::history_envelope(
+                 crate::skill_state::rejected_output(
+                     call.call_id,
+                     mode,
+@@ -123,7 +123,7 @@ impl ToolCallRuntime {
+         let request = match crate::skill_state::decode_request(arguments, mode) {
+             Ok(request) => request,
+             Err(message) => {
+-                return Ok(ResponseItemEnvelope::new(
++                return Ok(crate::skill_state::history_envelope(
+                     crate::skill_state::rejected_output(call.call_id, mode, persisted, message),
+                 ));
+             }
+@@ -136,7 +136,7 @@ impl ToolCallRuntime {
+         {
+             Ok(accepted) => accepted,
+             Err(message) => {
+-                return Ok(ResponseItemEnvelope::new(
++                return Ok(crate::skill_state::history_envelope(
+                     crate::skill_state::rejected_output(call.call_id, mode, persisted, message),
+                 ));
+             }
+@@ -215,7 +215,7 @@ impl ToolCallRuntime {
+                 break;
+             }
+         }
+-        Ok(ResponseItemEnvelope::new(
++        Ok(crate::skill_state::history_envelope(
+             crate::skill_state::transition_output(call.call_id, accepted, outcomes),
+         ))
+     }
+diff --git a/codex/codex-rs/exec/tests/suite/skill_state_v2.rs b/codex/codex-rs/exec/tests/suite/skill_state_v2.rs
+index d6dfa304..c123ca25 100644
+--- a/codex/codex-rs/exec/tests/suite/skill_state_v2.rs
++++ b/codex/codex-rs/exec/tests/suite/skill_state_v2.rs
+@@ -34,6 +34,153 @@ fn declared_tool_names(request: &ResponsesRequest) -> Vec<String> {
+     names
+ }
+ 
++#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
++#[ignore = "requires local shell fixture authority; managed approval service rejects mock-provider file reads on this host"]
++async fn exec_large_context_preserves_state_and_observation_on_wire() -> anyhow::Result<()> {
++    for mode in ["paper", "v2", "v3"] {
++        let test = test_codex_exec();
++        let server = start_mock_server().await;
++        let fact = format!("{}state-tail-marker", "s".repeat(64 * 1024));
++        let result = format!("{}result-tail-marker", "r".repeat(20 * 1024));
++        std::fs::write(test.cwd_path().join("large-observation.txt"), &result)?;
++        let action = json!({"name": "exec_command", "input": {
++            "cmd": "cat large-observation.txt",
++            "max_output_tokens": 20000,
++            "yield_time_ms": 1000
++        }});
++        let mut first = json!({"state_patch": {"facts": [fact]}});
++        let mut finish = json!({"state_patch": {}});
++        let finish_action =
++            json!({"name": "finish", "input": {"message": "Large context fixture complete."}});
++        if mode != "paper" {
++            first["state_revision"] = json!(0);
++            finish["state_revision"] = json!(1);
++        }
++        if mode == "v3" {
++            first["actions"] = json!([action]);
++            finish["actions"] = json!([finish_action]);
++        } else {
++            first["action"] = action;
++            finish["action"] = finish_action;
++        }
++        let mock = mount_sse_sequence(
++            &server,
++            vec![
++                sse(vec![
++                    ev_response_created("large-1"),
++                    ev_function_call("large-call-1", "skill_step", &first.to_string()),
++                    ev_completed("large-1"),
++                ]),
++                sse(vec![
++                    ev_response_created("large-2"),
++                    ev_function_call("large-call-2", "skill_step", &finish.to_string()),
++                    ev_completed("large-2"),
++                ]),
++            ],
++        )
++        .await;
++        let output = test
++            .cmd_with_server(&server)
++            .env("CODEX_SKILL_STATE_MODE", mode)
++            .arg("--skip-git-repo-check")
++            .arg("-s")
++            .arg("danger-full-access")
++            .arg("Exercise the large-context fixture")
++            .output()?;
++        assert!(output.status.success(), "{mode}: {:?}", output.status);
++        let requests = mock.requests();
++        assert_eq!(requests.len(), 2);
++        let groups = requests[1].message_input_text_groups("user");
++        assert_eq!(groups.len(), 1);
++        let prompt = groups[0].join("\n");
++        assert!(
++            prompt.contains(&fact),
++            "{mode}: state must not be truncated"
++        );
++        let observation = if mode == "paper" {
++            prompt.split_once("Latest Observation:\n").unwrap().1
++        } else if mode == "v3" {
++            prompt.split_once("Recent Batch Observations").unwrap().1
++        } else {
++            prompt.split_once("Recent Observations").unwrap().1
++        };
++        assert!(
++            observation.contains(&result),
++            "{mode}: result must survive the wire; observation bytes={}, prefix={}",
++            observation.len(),
++            observation.chars().take(700).collect::<String>()
++        );
++        assert!(!observation.contains("[truncated by SKILL.state]"));
++        assert!(
++            String::from_utf8_lossy(&output.stdout).contains("Large context fixture complete.")
++        );
++    }
++    Ok(())
++}
++
++#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
++async fn exec_large_context_preserves_state_and_validation_feedback_on_wire() -> anyhow::Result<()>
++{
++    for mode in ["paper", "v2", "v3"] {
++        let test = test_codex_exec();
++        let server = start_mock_server().await;
++        let fact = format!("{}state-tail-marker", "s".repeat(64 * 1024));
++        let invalid_tool = format!("{}feedback-tail-marker", "x".repeat(20 * 1024));
++        let actions = [
++            json!({"name": "exec_command", "input": {"cmd": "pwd"}}),
++            json!({"name": invalid_tool, "input": {}}),
++            json!({"name": "finish", "input": {"message": "Large feedback fixture complete."}}),
++        ];
++        let mut responses = Vec::new();
++        for (index, action) in actions.into_iter().enumerate() {
++            let mut step = json!({"state_patch": {}});
++            if index == 0 {
++                step["state_patch"] = json!({"facts": [fact]});
++            }
++            if mode != "paper" {
++                step["state_revision"] = json!(index.min(1));
++            }
++            if mode == "v3" {
++                step["actions"] = json!([action]);
++            } else {
++                step["action"] = action;
++            }
++            let id = format!("large-feedback-{index}");
++            responses.push(sse(vec![
++                ev_response_created(&id),
++                ev_function_call(&format!("call-{id}"), "skill_step", &step.to_string()),
++                ev_completed(&id),
++            ]));
++        }
++        let mock = mount_sse_sequence(&server, responses).await;
++        let output = test
++            .cmd_with_server(&server)
++            .env("CODEX_SKILL_STATE_MODE", mode)
++            .arg("--skip-git-repo-check")
++            .arg("Exercise large state and validation feedback")
++            .output()?;
++        assert!(output.status.success(), "{mode}: {:?}", output.status);
++        let requests = mock.requests();
++        assert_eq!(requests.len(), 3);
++        for request in &requests[1..] {
++            let groups = request.message_input_text_groups("user");
++            assert_eq!(groups.len(), 1);
++            assert!(groups[0].join("\n").contains(&fact));
++        }
++        let prompt = requests[2].message_input_text_groups("user")[0].join("\n");
++        assert!(
++            prompt.contains(&invalid_tool),
++            "{mode}: large feedback was truncated"
++        );
++        assert!(prompt.contains("is not available in this step's tool plan"));
++        assert!(!prompt.contains("[truncated by SKILL.state]"));
++        assert!(
++            String::from_utf8_lossy(&output.stdout).contains("Large feedback fixture complete.")
++        );
++    }
++    Ok(())
++}
++
+ #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+ async fn exec_state_modes_require_finish_after_plain_assistant_answer() -> anyhow::Result<()> {
+     for mode in ["paper", "v2", "v3"] {

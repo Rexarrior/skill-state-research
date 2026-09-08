@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-09-08T15:26:46.206Z",
+  "baseCommit": "85630a5b6d89465ed52cdb0ad56eec15f07fdfae",
+  "patchSha256": "84933c7bd9f3d865753c206e1fbdd553a9f823564f7f613fedcb0d00c89a3e70",
+  "files": {
+    ".private/source/codex/codex-rs/core/src/skill_state.rs": "f1490cf8a5f8115ff17e578256cb85b4cdfbe35357e422bc02e44e030ae4b380",
+    ".private/source/codex/codex-rs/core/src/skill_state_history.rs": "80a4e19c8d0d2d1f48737b86fbb1cd182a9d7f0561f17e11fd8596e62dadb4d4",
+    ".private/source/codex/codex-rs/core/src/skill_state_tests.rs": "83cd38427331baf10770252614fbf949a379f9881178409a1e8148ad30d59d1a",
+    ".private/source/codex/codex-rs/core/src/tools/parallel.rs": "bbcbb4979dd2a35a6c66a04c6c62ba5cc7522916a7af06687458eff779623e57",
+    ".private/source/codex/codex-rs/exec/tests/suite/skill_state_v2.rs": "75f7a496f4afd1b80543f618b3a9c69ded69f88654b184cb74862c7aa77c1f7f",
+    ".private/source/codex/codex-rs/Cargo.lock": "50e3ba6763cb2ac8ce154991c757662efa65fa5d0fe529489bcc54a846aafba7",
+    ".private/source/codex/codex-rs/Cargo.toml": "d0da87a7ea903a8bd17a61d9164cbffdbab9031d00c90f90ff040cde58feca9f",
+    ".private/source/codex/codex-rs/rust-toolchain.toml": "570656042681cfd8795403a455baf9a33035331a07db0645e866bbcea89a3d64"
+  },
+  "executableSha256": "6c573e7f919cce1968def7ec067afbcdf3f2b4a76c7811178ac5715ac84997ee",
+  "oldExecutableSha256": "24f20642b36e3341bf23994e873b96e0dd43f5c986549998c0688f22a1a2d8bc",
+  "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630",
+  "limitsBytes": {
+    "state": 2097152,
+    "actionInput": 2097152,
+    "observationInput": 2097152,
+    "observationResult": 2097152,
+    "comment": 1024
+  },
+  "build": "cargo build --offline -p codex-cli --bin codex (default dev profile)",
+  "source": "Detached sparse worktree; original source and executable are untouched.",
+  "history": "Per-transition persisted fallback allowance prevents JSON container truncation."
+}
