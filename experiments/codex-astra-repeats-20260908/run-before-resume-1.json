@@ -1,0 +1,1012 @@
+{
+  "model": "gpt-6-astra",
+  "status": "needs-attention",
+  "plannedCells": 100,
+  "maxWorkers": 5,
+  "startedAt": "2026-09-08T05:12:04.946Z",
+  "endedAt": "2026-09-08T06:12:22.870Z",
+  "isolation": "restored",
+  "stopReason": "A suspended global source has reappeared; dispatch stopped",
+  "cells": [
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T051213Z-f067ca7a-f932-49c0-a3d5-7e952d6142fe/baseline/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T05:12:05.135Z",
+      "endedAt": "2026-09-08T05:15:58.224Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T051213Z-17279553-afcd-4d7e-9a88-50c962c85b40/skill-state-paper/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T05:12:05.134Z",
+      "endedAt": "2026-09-08T05:27:13.398Z",
+      "worker": 2
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T051213Z-a643a585-a328-4601-bc01-f191f8643789/skill-state/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T05:12:05.135Z",
+      "endedAt": "2026-09-08T05:16:22.416Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T051213Z-a26112bc-7114-4bc2-8bd6-bba507beefd4/skill-state-v3/taskboard-cli/summary.json",
+      "startedAt": "2026-09-08T05:12:05.135Z",
+      "endedAt": "2026-09-08T05:16:56.227Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T051213Z-86383391-edb1-4689-b390-ad8b43e977bc/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:12:05.141Z",
+      "endedAt": "2026-09-08T05:27:13.515Z",
+      "worker": 5
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T051605Z-75766e97-5f8e-4b24-870c-39619f042258/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:15:58.227Z",
+      "endedAt": "2026-09-08T05:19:30.738Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T051629Z-dbdbad90-2560-455b-998d-067ab7695087/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:16:22.419Z",
+      "endedAt": "2026-09-08T05:19:42.141Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T051703Z-f04c5732-bcc0-4764-b62b-3fe77491aa80/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:16:56.229Z",
+      "endedAt": "2026-09-08T05:19:36.034Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T051938Z-b66bc112-e0c9-42c0-8e63-8ba4a5d6d567/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:19:30.740Z",
+      "endedAt": "2026-09-08T05:24:02.648Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T051943Z-2ce72ff2-b243-42f8-91a3-67427c1d305b/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:19:36.036Z",
+      "endedAt": "2026-09-08T05:23:21.448Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T051949Z-a27cdad5-a9d7-4fe1-994f-cf77ac2292f6/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:19:42.143Z",
+      "endedAt": "2026-09-08T05:23:28.473Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T052328Z-55ab1e42-1ce9-4387-8926-c7795eaebd91/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:23:21.450Z",
+      "endedAt": "2026-09-08T05:38:28.769Z",
+      "worker": 4
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T052335Z-94e92221-3dde-4282-81f7-83ae3367a807/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:23:28.474Z",
+      "endedAt": "2026-09-08T05:30:35.708Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T052409Z-40b5c40e-1409-4b31-8663-3c7d59b98059/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:24:02.651Z",
+      "endedAt": "2026-09-08T05:28:15.656Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T052720Z-5cbcdb2c-d9b9-4fd8-9fa0-13ddc429589c/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:27:13.403Z",
+      "endedAt": "2026-09-08T05:42:29.194Z",
+      "worker": 2
+    },
+    {
+      "repetition": 1,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T052720Z-51ea8e05-d2c8-4fae-975e-672d252098a3/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:27:13.519Z",
+      "endedAt": "2026-09-08T05:42:29.295Z",
+      "worker": 5
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T052822Z-69540c99-35ff-464b-b9d2-5e3087d02c4e/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:28:15.660Z",
+      "endedAt": "2026-09-08T05:32:17.064Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T053042Z-19e9172f-7b79-4a95-85e5-98f1a08857cd/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:30:35.713Z",
+      "endedAt": "2026-09-08T05:45:42.953Z",
+      "worker": 3
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T053224Z-dc7bcaeb-6675-4ff1-bd82-fd2328b5c497/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:32:17.066Z",
+      "endedAt": "2026-09-08T05:36:09.543Z",
+      "worker": 1
+    },
+    {
+      "repetition": 1,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T053616Z-0e78ff0b-0e46-4794-99bf-991aa7b277f6/skill-state-v3/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:36:09.546Z",
+      "endedAt": "2026-09-08T05:40:05.442Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T053835Z-c4078ba6-8903-4a52-abc2-ca607355fb58/skill-state-paper/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:38:28.775Z",
+      "endedAt": "2026-09-08T05:53:36.434Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T054012Z-3c8a2d29-6911-4020-8259-7f8e02ed2d41/skill-state/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:40:05.444Z",
+      "endedAt": "2026-09-08T05:43:49.009Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T054236Z-f7ddd0f8-4602-4174-aca5-1862fced16ae/skill-state-v3/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:42:29.207Z",
+      "endedAt": "2026-09-08T05:46:41.441Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T054236Z-66c914ad-fca0-4486-a878-68ee41dc2f72/baseline/csv-insights/summary.json",
+      "startedAt": "2026-09-08T05:42:29.300Z",
+      "endedAt": "2026-09-08T05:45:28.678Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T054356Z-dfd89513-974b-4570-b369-f73b670f321b/skill-state/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:43:49.012Z",
+      "endedAt": "2026-09-08T05:48:37.673Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T054535Z-0eb00312-f8c1-48af-b79f-7bc00e0b55bf/skill-state-v3/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:45:28.680Z",
+      "endedAt": "2026-09-08T05:49:36.490Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T054550Z-8b314858-48fe-48ea-b05c-7f7ee0cbc65f/baseline/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:45:42.957Z",
+      "endedAt": "2026-09-08T05:48:49.318Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T054648Z-293791e9-6634-4436-8042-85ad3af054b2/skill-state-paper/mini-template/summary.json",
+      "startedAt": "2026-09-08T05:46:41.443Z",
+      "endedAt": "2026-09-08T06:01:48.668Z",
+      "worker": 2
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "complete",
+      "source": ".private/results/20260908T054844Z-411c04e1-9665-42ce-94ef-34f587ee9038/skill-state-v3/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:48:37.676Z",
+      "endedAt": "2026-09-08T05:57:15.440Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T054856Z-ece8bd6b-516d-4a02-9ce3-4a5918b40cb9/baseline/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:48:49.320Z",
+      "endedAt": "2026-09-08T05:54:03.017Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T054943Z-83a59905-8b34-4ff8-a2da-521d7da71c3d/skill-state-paper/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:49:36.492Z",
+      "endedAt": "2026-09-08T06:04:52.180Z",
+      "worker": 5
+    },
+    {
+      "repetition": 2,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T055343Z-346869ce-d4b2-42c8-94cd-17df322bb18c/skill-state/http-kv/summary.json",
+      "startedAt": "2026-09-08T05:53:36.440Z",
+      "endedAt": "2026-09-08T06:08:52.170Z",
+      "worker": 4
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "complete",
+      "source": ".private/results/20260908T055410Z-974c9ad8-c2f5-4da1-b23a-6b0220315d7f/baseline/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:54:03.022Z",
+      "endedAt": "2026-09-08T05:57:41.857Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "complete",
+      "source": ".private/results/20260908T055722Z-2e3ab256-4b4b-441c-a672-f985b1b49488/skill-state-paper/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:57:15.445Z",
+      "endedAt": "2026-09-08T06:12:22.864Z",
+      "worker": 1
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "complete",
+      "source": ".private/results/20260908T055748Z-1f93e9e8-889f-4c52-8dc4-5100d2cb18af/skill-state/dependency-planner/summary.json",
+      "startedAt": "2026-09-08T05:57:41.858Z",
+      "endedAt": "2026-09-08T06:01:38.923Z",
+      "worker": 3
+    },
+    {
+      "repetition": 2,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 2,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 3,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 4,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "dependency-planner",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "taskboard-cli",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "csv-insights",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "mini-template",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "baseline",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "paper",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "v2",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    },
+    {
+      "repetition": 5,
+      "project": "http-kv",
+      "mode": "v3",
+      "status": "pending",
+      "source": null,
+      "startedAt": null,
+      "endedAt": null,
+      "worker": null
+    }
+  ]
+}

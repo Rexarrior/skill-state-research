@@ -26,6 +26,7 @@ for (const day of days) {
     try { metadata = JSON.parse(prefix.split("\n")[0]!) } catch { continue }
     if (metadata.type !== "session_meta" || typeof metadata.payload?.cwd !== "string" ||
         !metadata.payload.cwd.startsWith(path.join(tmpdir(), "codex-astra-one-shot") + path.sep)) continue
+    if (metadata.payload.parent_thread_id) continue // Permission-reviewer descendants are not main workers.
     const folder = metadata.payload.cwd.split(path.sep)
     const models = new Set<string>()
     let calls = 0, input = 0, initialSkills = false, initialHostProfile = false, modelStarted = false
@@ -50,4 +51,4 @@ for (const day of days) {
 console.log(JSON.stringify({ status: run.status, isolation: run.isolation, planned: run.plannedCells, maxWorkers: run.maxWorkers,
   completed: run.cells.filter((cell: { status: string }) => cell.status === "complete").length,
   active: run.cells.filter((cell: { status: string }) => cell.status === "running"), live,
-  scope: "Progress and recorded initial-context flags; no prompt text exported, partial response lines ignored." }, null, 2))
+  scope: "Main-session progress and recorded initial-context flags; descendants excluded, no prompt text exported, partial response lines ignored." }, null, 2))
