@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T17:59:33.732Z",
+  "checkedAt": "2026-09-08T14:45:57.022Z",
   "status": "passed",
   "files": 3919,
   "scope": "Exact SHA-256 and byte sizes of the cleaned snapshot; not a rerun of the benchmarks or a reconstruction of deleted context."

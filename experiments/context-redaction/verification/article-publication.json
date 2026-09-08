@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T17:59:33.457Z",
+  "checkedAt": "2026-09-08T14:49:58.108Z",
   "cells": 120,
   "tableRowsMatch": true,
   "editorialPlaceholders": false,
@@ -7,7 +7,7 @@
   "auxiliaryCellsVerified": 80,
   "artifactScanFindings": 0,
   "hostContextCellsVerified": 80,
-  "articleWordsExcludingCode": 5707,
+  "articleWordsExcludingCode": 6871,
   "checkedLinks": [
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -52,6 +52,10 @@
     {
       "file": "articles/skill-state-in-coding-agents.md",
       "href": "../experiments/article-20260904/host-context-audit.json"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-clean-comparison-20260908/README.md"
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -107,7 +111,23 @@
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",
-      "href": "../experiments/codex-sol-controls-20260906/READING-LOOP-NOTE.md"
+      "href": "./figures/codex-sol-clean-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-clean-comparison-20260908/REPORT-sol.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/codex-astra-clean-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-clean-comparison-20260908/REPORT-astra.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../journals/CODEX-ASTRA-NATIVE-EFFICIENCY-AUDIT-20260908.md"
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -140,6 +160,10 @@
     {
       "file": "articles/README.md",
       "href": "./update-20260906/README.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./update-20260908/README.md"
     },
     {
       "file": "articles/README.md",
@@ -176,6 +200,14 @@
     {
       "file": "articles/README.md",
       "href": "./figures/codex-sol-ten-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/codex-sol-clean-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/codex-astra-clean-five-repeats-input-cycles-time.png"
     },
     {
       "file": "experiments/article-20260904/README.md",
