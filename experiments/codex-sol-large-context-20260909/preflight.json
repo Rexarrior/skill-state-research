@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-09",
+  "status": "passed-with-reused-kernel-evidence",
+  "reusedBinary": "../codex-astra-large-context-20260908/build-manifest.json",
+  "coreTests": {
+    "command": "just test --offline -p codex-core --lib -E 'test(skill_state)'",
+    "nextestRunId": "360c71ed-a77d-43cc-aec2-0287c3237cb1",
+    "passed": 18,
+    "failed": 0,
+    "scope": "SKILL.state module only; includes all three modes, large transition history round-trip, admission and UTF-8 bounds.",
+    "reusedFrom": "../codex-astra-large-context-20260908/preflight.json",
+    "rerun": false
+  },
+  "cliTests": {
+    "command": "just test --offline -p codex-exec --test all -E 'test(~skill_state_v2)' --retries 0",
+    "nextestRunId": "98f27c2f-6f32-47c8-acf0-2867ae226085",
+    "passed": 7,
+    "failed": 0,
+    "ignoredInScope": [
+      "exec_v3_skips_remaining_actions_after_nonzero_shell_exit (pre-existing host limitation)",
+      "exec_large_context_preserves_state_and_observation_on_wire (new; shell fixture rejected by managed approval service)"
+    ],
+    "scope": "Real codex-exec with localhost mock-provider. Large state and large validation feedback survive provider requests; native loop remains native.",
+    "limitation": "The large ordinary shell-result fixture failed because CreateProcess returned approval request failed, not because output was truncated. Both printf and a prepared-file read were rejected. This test remains explicitly ignored, not counted as a pass. Large normal ActionOutcome is covered by core tests, not the full shell-to-provider path.",
+    "reusedFrom": "../codex-astra-large-context-20260908/preflight.json",
+    "rerun": false
+  },
+  "orchestratorTests": {
+    "command": "bun test ./contract.test.ts ./isolation.test.ts ./isolation-guard.test.ts ./pool.test.ts ./audit-context.test.ts",
+    "passed": 13,
+    "failed": 0,
+    "expectCalls": 65,
+    "runOn": "2026-09-09",
+    "scope": "Fresh Sol schedule and runner contract; unchanged isolation, worker draining, and numeric audit."
+  },
+  "format": {
+    "command": "just fmt",
+    "exitCode": 0,
+    "note": "Run after Rust tests as required by codex/AGENTS.md. Tests were not rerun after formatting; changes inspected.",
+    "reusedFrom": "../codex-astra-large-context-20260908/preflight.json",
+    "rerun": false
+  },
+  "patch": {
+    "reverseApplyCheck": true,
+    "whitespaceCheck": true,
+    "changedSourceFiles": 5,
+    "scope": "Four constants, history-only transition allowance, and tests. No native policy, tool schema or protocol prose change.",
+    "reusedFrom": "../codex-astra-large-context-20260908/preflight.json",
+    "sourceModified": false
+  },
+  "doctor": {
+    "ok": true,
+    "model": "gpt-5.6-sol",
+    "observationWindow": 3,
+    "cellTimeoutMs": 900000,
+    "outerWorkers": 5,
+    "executableSha256": "6c573e7f919cce1968def7ec067afbcdf3f2b4a76c7811178ac5715ac84997ee",
+    "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630"
+  },
+  "references": [
+    {
+      "cohort": "codex-astra-large-context-20260908",
+      "status": "complete",
+      "isolation": "restored",
+      "cells": 100,
+      "verifiedFiles": 45
+    },
+    {
+      "cohort": "codex-sol-clean-20260908",
+      "status": "complete",
+      "isolation": "restored",
+      "cells": 100,
+      "verifiedFiles": 31
+    }
+  ],
+  "benchmarkModelCallsDuringPreflight": 0,
+  "note": "Kernel and Rust tests were not changed or rerun. The exact tested Astra binary is reused; Sol runner tests, source integrity and doctor were checked afresh. No benchmark outcomes selected or retried."
+}
