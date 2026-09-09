@@ -1,0 +1,6 @@
+{
+  "tasks": [
+    { "id": "second", "duration": 3, "dependsOn": ["first"] },
+    { "id": "first", "duration": 2 }
+  ]
+}

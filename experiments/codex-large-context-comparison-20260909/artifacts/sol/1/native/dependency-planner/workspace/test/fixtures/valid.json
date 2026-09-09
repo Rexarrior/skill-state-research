@@ -1,0 +1,8 @@
+{
+  "tasks": [
+    { "id": "package", "duration": 2, "dependsOn": ["compile"] },
+    { "id": "lint", "duration": 1 },
+    { "id": "compile", "duration": 3, "dependsOn": ["lint"] },
+    { "id": "docs", "duration": 2 }
+  ]
+}

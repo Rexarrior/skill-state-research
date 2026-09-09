@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-08T14:49:58.108Z",
+  "checkedAt": "2026-09-09T13:34:03.209Z",
   "cells": 120,
   "tableRowsMatch": true,
   "editorialPlaceholders": false,
@@ -7,7 +7,7 @@
   "auxiliaryCellsVerified": 80,
   "artifactScanFindings": 0,
   "hostContextCellsVerified": 80,
-  "articleWordsExcludingCode": 6871,
+  "articleWordsExcludingCode": 7977,
   "checkedLinks": [
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -131,6 +131,26 @@
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-astra-large-context-20260908/PROTOCOL.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/codex-astra-large-context-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-large-context-comparison-20260909/REPORT-astra.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/codex-sol-large-context-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-large-context-comparison-20260909/REPORT-sol.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
       "href": "../experiments/article-20260904/trace-audit.json"
     },
     {
@@ -164,6 +184,10 @@
     {
       "file": "articles/README.md",
       "href": "./update-20260908/README.md"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./update-20260909/README.md"
     },
     {
       "file": "articles/README.md",
@@ -208,6 +232,14 @@
     {
       "file": "articles/README.md",
       "href": "./figures/codex-astra-clean-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/codex-astra-large-context-five-repeats-input-cycles-time.png"
+    },
+    {
+      "file": "articles/README.md",
+      "href": "./figures/codex-sol-large-context-five-repeats-input-cycles-time.png"
     },
     {
       "file": "experiments/article-20260904/README.md",

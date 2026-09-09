@@ -8,6 +8,10 @@
 Обновление 2026-09-08: отдельно добавлены ещё по 100 сессий Sol и Astra без глобальных скиллов,
 два рисунка и рассуждение о длине траектории. [Новый пакет и проверка](./update-20260908/README.md).
 
+Обновление 2026-09-09: после первой Astra добавлены разбор обрезки наблюдений и две серии
+с лимитами 2 МиБ — ещё по 100 сессий Astra и Sol. Две таблицы, два рисунка и уточнённые выводы.
+[Дополнение и проверка](./update-20260909/README.md).
+
 - [Техническая статья: SKILL.state в coding-агентах](./skill-state-in-coding-agents.md).
 - [Короткий пост для LinkedIn](./linkedin-post.md).
 - [Экспериментальный пакет статьи](../experiments/article-20260904/README.md): условия, исходники, сырые журналы,
@@ -19,16 +23,19 @@
 
 ## Перенос на площадки
 
-В статье восемь рисунков: общий график всех четырёх режимов и отдельные сравнения
+В статье десять рисунков: общий график всех четырёх режимов и отдельные сравнения
 [Paper / Native](./figures/input-cycles-paper-vs-native.png), [V2 / Native](./figures/input-cycles-v2-vs-native.png),
 [V3 / Native](./figures/input-cycles-v3-vs-native.png), [V3 / V2](./figures/input-cycles-v3-vs-v2.png),
 а также [десять повторов Sol](./figures/codex-sol-ten-repeats-input-cycles-time.png),
-[чистая серия Sol](./figures/codex-sol-clean-five-repeats-input-cycles-time.png) и
-[чистая серия Astra](./figures/codex-astra-clean-five-repeats-input-cycles-time.png).
-На всех восьми рисунках input и число обращений показаны рядом. На рисунках повторов добавлено фактическое время.
+[чистая серия Sol](./figures/codex-sol-clean-five-repeats-input-cycles-time.png),
+[чистая серия Astra](./figures/codex-astra-clean-five-repeats-input-cycles-time.png),
+[Astra с расширенными лимитами](./figures/codex-astra-large-context-five-repeats-input-cycles-time.png) и
+[Sol с расширенными лимитами](./figures/codex-sol-large-context-five-repeats-input-cycles-time.png).
+На всех десяти рисунках input и число обращений показаны рядом. На рисунках повторов добавлено фактическое время.
 Парные графики используют абсолютный вход основной попытки; общий — отношение к Native.
 Первое дополнение PNG/SVG строилось `articles/update-20260906/build.py`; два новых рисунка создаёт
-`articles/update-20260908/build.py`, без перезаписи старых. Прежние input-only рисунки
+`articles/update-20260908/build.py`, а рисунки расширенных лимитов — `articles/update-20260909/build.py`,
+без перезаписи старых. Прежние input-only рисунки
 и их скрипт `experiments/article-20260904/plot.py` сохранены без изменений.
 
 Технический текст рассчитан на Хабр или блог. Относительные ссылки работают внутри репозитория; при переносе текста

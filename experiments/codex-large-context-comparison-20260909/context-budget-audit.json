@@ -1,0 +1,3804 @@
+{
+  "audits": [
+    {
+      "id": "sol/1/native/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 15,
+      "input": 330747,
+      "output": 9251,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/paper/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 21,
+      "input": 315535,
+      "output": 18289,
+      "transitions": 21,
+      "malformedTransitions": 0,
+      "maxStateBytes": 2942,
+      "maxInputBytes": 11309,
+      "maxResultBytes": 14458,
+      "maxTransitionBytes": 18547,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v2/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 95775,
+      "output": 6804,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1071,
+      "maxInputBytes": 15426,
+      "maxResultBytes": 784,
+      "maxTransitionBytes": 16500,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v3/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 151315,
+      "output": 8722,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 807,
+      "maxInputBytes": 15216,
+      "maxResultBytes": 13673,
+      "maxTransitionBytes": 17404,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/paper/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 172344,
+      "output": 10571,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1993,
+      "maxInputBytes": 10710,
+      "maxResultBytes": 10476,
+      "maxTransitionBytes": 12479,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v2/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 206449,
+      "output": 13541,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 970,
+      "maxInputBytes": 10210,
+      "maxResultBytes": 10509,
+      "maxTransitionBytes": 16549,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v3/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 142057,
+      "output": 10641,
+      "transitions": 7,
+      "malformedTransitions": 0,
+      "maxStateBytes": 849,
+      "maxInputBytes": 10618,
+      "maxResultBytes": 23305,
+      "maxTransitionBytes": 26718,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/native/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 191219,
+      "output": 9844,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v2/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 189482,
+      "output": 8143,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1066,
+      "maxInputBytes": 12718,
+      "maxResultBytes": 1173,
+      "maxTransitionBytes": 13767,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v3/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 211894,
+      "output": 11716,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 705,
+      "maxInputBytes": 14218,
+      "maxResultBytes": 13880,
+      "maxTransitionBytes": 16522,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/native/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 13,
+      "input": 307335,
+      "output": 11826,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/paper/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 32,
+      "input": 472954,
+      "output": 21103,
+      "transitions": 32,
+      "malformedTransitions": 0,
+      "maxStateBytes": 2384,
+      "maxInputBytes": 12642,
+      "maxResultBytes": 12028,
+      "maxTransitionBytes": 14880,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v3/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 207083,
+      "output": 11417,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 798,
+      "maxInputBytes": 23724,
+      "maxResultBytes": 22127,
+      "maxTransitionBytes": 24930,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/native/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 15,
+      "input": 417917,
+      "output": 16318,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/paper/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 38,
+      "input": 594320,
+      "output": 23849,
+      "transitions": 38,
+      "malformedTransitions": 0,
+      "maxStateBytes": 2323,
+      "maxInputBytes": 14072,
+      "maxResultBytes": 13092,
+      "maxTransitionBytes": 15706,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v2/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 138403,
+      "output": 8282,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 831,
+      "maxInputBytes": 20966,
+      "maxResultBytes": 5581,
+      "maxTransitionBytes": 21964,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/native/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 221223,
+      "output": 11352,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/paper/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 162153,
+      "output": 10910,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1929,
+      "maxInputBytes": 14757,
+      "maxResultBytes": 13516,
+      "maxTransitionBytes": 16821,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v2/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 5,
+      "input": 80105,
+      "output": 6183,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1009,
+      "maxInputBytes": 11819,
+      "maxResultBytes": 1133,
+      "maxTransitionBytes": 12832,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/1/v3/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 193953,
+      "output": 10051,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 918,
+      "maxInputBytes": 11815,
+      "maxResultBytes": 16575,
+      "maxTransitionBytes": 19274,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/paper/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 17,
+      "input": 239367,
+      "output": 12066,
+      "transitions": 17,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1187,
+      "maxInputBytes": 11455,
+      "maxResultBytes": 11220,
+      "maxTransitionBytes": 13414,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v2/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 96486,
+      "output": 5887,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 605,
+      "maxInputBytes": 10193,
+      "maxResultBytes": 296,
+      "maxTransitionBytes": 10857,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v3/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 100129,
+      "output": 6439,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 559,
+      "maxInputBytes": 9731,
+      "maxResultBytes": 9594,
+      "maxTransitionBytes": 11351,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/native/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 13,
+      "input": 306143,
+      "output": 11889,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v2/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 219882,
+      "output": 9816,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 956,
+      "maxInputBytes": 13919,
+      "maxResultBytes": 9862,
+      "maxTransitionBytes": 15155,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v3/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 110567,
+      "output": 8340,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1316,
+      "maxInputBytes": 12800,
+      "maxResultBytes": 15349,
+      "maxTransitionBytes": 18116,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/native/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 210856,
+      "output": 10517,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/paper/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 22,
+      "input": 333893,
+      "output": 17444,
+      "transitions": 22,
+      "malformedTransitions": 0,
+      "maxStateBytes": 3127,
+      "maxInputBytes": 8057,
+      "maxResultBytes": 13858,
+      "maxTransitionBytes": 18321,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v3/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 248372,
+      "output": 13488,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 918,
+      "maxInputBytes": 22241,
+      "maxResultBytes": 15212,
+      "maxTransitionBytes": 29833,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/native/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 232276,
+      "output": 12707,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/paper/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 32,
+      "input": 492894,
+      "output": 22958,
+      "transitions": 32,
+      "malformedTransitions": 0,
+      "maxStateBytes": 2138,
+      "maxInputBytes": 15396,
+      "maxResultBytes": 17205,
+      "maxTransitionBytes": 20029,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v2/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 139747,
+      "output": 9882,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 899,
+      "maxInputBytes": 22297,
+      "maxResultBytes": 4982,
+      "maxTransitionBytes": 23270,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/native/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 184910,
+      "output": 10844,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/paper/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 31,
+      "input": 437864,
+      "output": 19295,
+      "transitions": 31,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1714,
+      "maxInputBytes": 11686,
+      "maxResultBytes": 11410,
+      "maxTransitionBytes": 14149,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v2/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 173024,
+      "output": 9113,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 695,
+      "maxInputBytes": 12695,
+      "maxResultBytes": 12252,
+      "maxTransitionBytes": 14187,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v3/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 181386,
+      "output": 11535,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 862,
+      "maxInputBytes": 11504,
+      "maxResultBytes": 7889,
+      "maxTransitionBytes": 17147,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/paper/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 156192,
+      "output": 8932,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1905,
+      "maxInputBytes": 10008,
+      "maxResultBytes": 9774,
+      "maxTransitionBytes": 11940,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v2/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 154959,
+      "output": 7198,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 833,
+      "maxInputBytes": 14846,
+      "maxResultBytes": 14676,
+      "maxTransitionBytes": 17314,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/v3/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 123217,
+      "output": 7923,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 918,
+      "maxInputBytes": 16185,
+      "maxResultBytes": 662,
+      "maxTransitionBytes": 17371,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/2/native/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 213209,
+      "output": 8607,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v2/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 14,
+      "input": 248992,
+      "output": 9798,
+      "transitions": 14,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1309,
+      "maxInputBytes": 13559,
+      "maxResultBytes": 20603,
+      "maxTransitionBytes": 23625,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v3/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 132173,
+      "output": 8817,
+      "transitions": 7,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1103,
+      "maxInputBytes": 15091,
+      "maxResultBytes": 16719,
+      "maxTransitionBytes": 20039,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/native/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 14,
+      "input": 328724,
+      "output": 11370,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/paper/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 38,
+      "input": 535524,
+      "output": 24423,
+      "transitions": 38,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1643,
+      "maxInputBytes": 13966,
+      "maxResultBytes": 2047,
+      "maxTransitionBytes": 15654,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v3/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 243414,
+      "output": 14067,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1229,
+      "maxInputBytes": 15376,
+      "maxResultBytes": 20800,
+      "maxTransitionBytes": 23633,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/native/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 15,
+      "input": 393545,
+      "output": 13021,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/paper/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 67,
+      "input": 943131,
+      "output": 22876,
+      "transitions": 67,
+      "malformedTransitions": 0,
+      "maxStateBytes": 987,
+      "maxInputBytes": 15363,
+      "maxResultBytes": 11653,
+      "maxTransitionBytes": 16451,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v2/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 142305,
+      "output": 9422,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 937,
+      "maxInputBytes": 21321,
+      "maxResultBytes": 6572,
+      "maxTransitionBytes": 22267,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/native/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 15,
+      "input": 356439,
+      "output": 10495,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/paper/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 27,
+      "input": 383972,
+      "output": 14747,
+      "transitions": 27,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1865,
+      "maxInputBytes": 11340,
+      "maxResultBytes": 11020,
+      "maxTransitionBytes": 13507,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v2/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 16,
+      "input": 270433,
+      "output": 12666,
+      "transitions": 16,
+      "malformedTransitions": 0,
+      "maxStateBytes": 852,
+      "maxInputBytes": 9365,
+      "maxResultBytes": 15308,
+      "maxTransitionBytes": 17662,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v3/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 160302,
+      "output": 8190,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 945,
+      "maxInputBytes": 12826,
+      "maxResultBytes": 15720,
+      "maxTransitionBytes": 17591,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/paper/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 19,
+      "input": 281208,
+      "output": 14235,
+      "transitions": 19,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1346,
+      "maxInputBytes": 11154,
+      "maxResultBytes": 11386,
+      "maxTransitionBytes": 13956,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v2/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 182018,
+      "output": 8213,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 844,
+      "maxInputBytes": 13919,
+      "maxResultBytes": 21109,
+      "maxTransitionBytes": 23864,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v3/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 121740,
+      "output": 7641,
+      "transitions": 7,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1046,
+      "maxInputBytes": 10343,
+      "maxResultBytes": 10254,
+      "maxTransitionBytes": 13216,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/native/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 218062,
+      "output": 10187,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v2/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 99537,
+      "output": 6064,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 759,
+      "maxInputBytes": 10445,
+      "maxResultBytes": 11304,
+      "maxTransitionBytes": 13315,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/v3/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 5,
+      "input": 79567,
+      "output": 6375,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1001,
+      "maxInputBytes": 10490,
+      "maxResultBytes": 677,
+      "maxTransitionBytes": 11311,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/native/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 160529,
+      "output": 8037,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/3/paper/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 115111,
+      "output": 7616,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1502,
+      "maxInputBytes": 13620,
+      "maxResultBytes": 13292,
+      "maxTransitionBytes": 16010,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v3/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 210557,
+      "output": 15691,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 721,
+      "maxInputBytes": 18404,
+      "maxResultBytes": 32189,
+      "maxTransitionBytes": 35212,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/native/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 13,
+      "input": 318256,
+      "output": 11959,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/paper/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 34,
+      "input": 497385,
+      "output": 21285,
+      "transitions": 34,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1783,
+      "maxInputBytes": 14295,
+      "maxResultBytes": 15217,
+      "maxTransitionBytes": 17401,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v2/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 171969,
+      "output": 12332,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 827,
+      "maxInputBytes": 16300,
+      "maxResultBytes": 17283,
+      "maxTransitionBytes": 19942,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/native/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 180812,
+      "output": 9190,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/paper/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 125717,
+      "output": 8460,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1437,
+      "maxInputBytes": 14285,
+      "maxResultBytes": 1089,
+      "maxTransitionBytes": 15655,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v2/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 160638,
+      "output": 7897,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 785,
+      "maxInputBytes": 13582,
+      "maxResultBytes": 1598,
+      "maxTransitionBytes": 14574,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v3/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 161913,
+      "output": 9418,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 902,
+      "maxInputBytes": 15265,
+      "maxResultBytes": 8283,
+      "maxTransitionBytes": 16541,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/paper/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 32,
+      "input": 451895,
+      "output": 15205,
+      "transitions": 32,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1433,
+      "maxInputBytes": 10911,
+      "maxResultBytes": 10640,
+      "maxTransitionBytes": 13237,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v2/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 182532,
+      "output": 7292,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 612,
+      "maxInputBytes": 13518,
+      "maxResultBytes": 13298,
+      "maxTransitionBytes": 15418,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v3/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 173989,
+      "output": 8351,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 408,
+      "maxInputBytes": 13661,
+      "maxResultBytes": 13566,
+      "maxTransitionBytes": 15770,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/native/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 10,
+      "input": 205832,
+      "output": 9067,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v2/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 128399,
+      "output": 7813,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 692,
+      "maxInputBytes": 14050,
+      "maxResultBytes": 1196,
+      "maxTransitionBytes": 14871,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v3/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 5,
+      "input": 84383,
+      "output": 6992,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 884,
+      "maxInputBytes": 10427,
+      "maxResultBytes": 10315,
+      "maxTransitionBytes": 15920,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/native/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 173529,
+      "output": 10032,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/paper/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 15,
+      "input": 217951,
+      "output": 10445,
+      "transitions": 15,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1590,
+      "maxInputBytes": 14141,
+      "maxResultBytes": 10027,
+      "maxTransitionBytes": 15205,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v3/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 169484,
+      "output": 10214,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 734,
+      "maxInputBytes": 12727,
+      "maxResultBytes": 12636,
+      "maxTransitionBytes": 15241,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/native/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 181777,
+      "output": 8576,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/paper/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 14,
+      "input": 202486,
+      "output": 9295,
+      "transitions": 14,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1514,
+      "maxInputBytes": 11661,
+      "maxResultBytes": 12214,
+      "maxTransitionBytes": 14769,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/4/v2/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 149507,
+      "output": 7167,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1207,
+      "maxInputBytes": 14000,
+      "maxResultBytes": 8800,
+      "maxTransitionBytes": 15149,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/native/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 16,
+      "input": 368717,
+      "output": 11248,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/paper/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 157051,
+      "output": 7868,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1602,
+      "maxInputBytes": 11762,
+      "maxResultBytes": 10581,
+      "maxTransitionBytes": 13259,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v2/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 13,
+      "input": 219886,
+      "output": 9703,
+      "transitions": 13,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1177,
+      "maxInputBytes": 12244,
+      "maxResultBytes": 14178,
+      "maxTransitionBytes": 16889,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v3/dependency-planner",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 232691,
+      "output": 15175,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 915,
+      "maxInputBytes": 10035,
+      "maxResultBytes": 10012,
+      "maxTransitionBytes": 20574,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/paper/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 34,
+      "input": 516360,
+      "output": 24440,
+      "transitions": 34,
+      "malformedTransitions": 0,
+      "maxStateBytes": 3026,
+      "maxInputBytes": 14906,
+      "maxResultBytes": 44145,
+      "maxTransitionBytes": 48051,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v2/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 102722,
+      "output": 7480,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 943,
+      "maxInputBytes": 15002,
+      "maxResultBytes": 8038,
+      "maxTransitionBytes": 16062,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v3/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 5,
+      "input": 83779,
+      "output": 6981,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 734,
+      "maxInputBytes": 14472,
+      "maxResultBytes": 946,
+      "maxTransitionBytes": 15369,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/native/taskboard-cli",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 137713,
+      "output": 8128,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v2/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 6,
+      "input": 101667,
+      "output": 7145,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 890,
+      "maxInputBytes": 12536,
+      "maxResultBytes": 15243,
+      "maxTransitionBytes": 18510,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v3/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 9,
+      "input": 181287,
+      "output": 10750,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 699,
+      "maxInputBytes": 9712,
+      "maxResultBytes": 14951,
+      "maxTransitionBytes": 23422,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/native/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 7,
+      "input": 141698,
+      "output": 9464,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/paper/csv-insights",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 11,
+      "input": 157015,
+      "output": 8613,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1653,
+      "maxInputBytes": 13951,
+      "maxResultBytes": 13599,
+      "maxTransitionBytes": 16289,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v3/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 19,
+      "input": 331455,
+      "output": 12863,
+      "transitions": 19,
+      "malformedTransitions": 0,
+      "maxStateBytes": 845,
+      "maxInputBytes": 11583,
+      "maxResultBytes": 17626,
+      "maxTransitionBytes": 21106,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/native/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 263301,
+      "output": 9660,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/paper/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 35,
+      "input": 500073,
+      "output": 23510,
+      "transitions": 35,
+      "malformedTransitions": 0,
+      "maxStateBytes": 3207,
+      "maxInputBytes": 8034,
+      "maxResultBytes": 13455,
+      "maxTransitionBytes": 17614,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v2/mini-template",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 146057,
+      "output": 7977,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 794,
+      "maxInputBytes": 12651,
+      "maxResultBytes": 12218,
+      "maxTransitionBytes": 14597,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/native/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 12,
+      "input": 322671,
+      "output": 17205,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/paper/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 48,
+      "input": 752296,
+      "output": 24232,
+      "transitions": 48,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1446,
+      "maxInputBytes": 14735,
+      "maxResultBytes": 13696,
+      "maxTransitionBytes": 16365,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v2/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 14,
+      "input": 275609,
+      "output": 15595,
+      "transitions": 14,
+      "malformedTransitions": 0,
+      "maxStateBytes": 875,
+      "maxInputBytes": 13769,
+      "maxResultBytes": 21715,
+      "maxTransitionBytes": 24269,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "sol/5/v3/http-kv",
+      "models": [
+        "gpt-5.6-sol"
+      ],
+      "calls": 8,
+      "input": 142997,
+      "output": 10108,
+      "transitions": 8,
+      "malformedTransitions": 0,
+      "maxStateBytes": 819,
+      "maxInputBytes": 15200,
+      "maxResultBytes": 23110,
+      "maxTransitionBytes": 25617,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/native/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89336,
+      "output": 5799,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/paper/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 41,
+      "input": 602427,
+      "output": 14628,
+      "transitions": 41,
+      "malformedTransitions": 0,
+      "maxStateBytes": 848,
+      "maxInputBytes": 13874,
+      "maxResultBytes": 14129,
+      "maxTransitionBytes": 16477,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v2/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 78808,
+      "output": 5278,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 813,
+      "maxInputBytes": 8782,
+      "maxResultBytes": 724,
+      "maxTransitionBytes": 9805,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v3/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 99382,
+      "output": 5677,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 750,
+      "maxInputBytes": 8520,
+      "maxResultBytes": 768,
+      "maxTransitionBytes": 9420,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/paper/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 16,
+      "input": 238592,
+      "output": 6057,
+      "transitions": 16,
+      "malformedTransitions": 0,
+      "maxStateBytes": 847,
+      "maxInputBytes": 10565,
+      "maxResultBytes": 10793,
+      "maxTransitionBytes": 12232,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v2/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60306,
+      "output": 4079,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 852,
+      "maxInputBytes": 13041,
+      "maxResultBytes": 863,
+      "maxTransitionBytes": 14622,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v3/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60908,
+      "output": 4042,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 783,
+      "maxInputBytes": 12512,
+      "maxResultBytes": 802,
+      "maxTransitionBytes": 14082,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/native/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 68025,
+      "output": 4117,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v2/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 61577,
+      "output": 4984,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 779,
+      "maxInputBytes": 14056,
+      "maxResultBytes": 917,
+      "maxTransitionBytes": 15846,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v3/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 62185,
+      "output": 4841,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 644,
+      "maxInputBytes": 13921,
+      "maxResultBytes": 1032,
+      "maxTransitionBytes": 15694,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/native/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89239,
+      "output": 5645,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/paper/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 87988,
+      "output": 4891,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 661,
+      "maxInputBytes": 12557,
+      "maxResultBytes": 12687,
+      "maxTransitionBytes": 14259,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v3/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 182839,
+      "output": 6761,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 779,
+      "maxInputBytes": 11880,
+      "maxResultBytes": 11944,
+      "maxTransitionBytes": 13695,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/native/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 239540,
+      "output": 7874,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/paper/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 57,
+      "input": 901494,
+      "output": 19822,
+      "transitions": 57,
+      "malformedTransitions": 0,
+      "maxStateBytes": 686,
+      "maxInputBytes": 14773,
+      "maxResultBytes": 15765,
+      "maxTransitionBytes": 18738,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v2/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 17,
+      "input": 315203,
+      "output": 7284,
+      "transitions": 17,
+      "malformedTransitions": 0,
+      "maxStateBytes": 688,
+      "maxInputBytes": 11169,
+      "maxResultBytes": 18979,
+      "maxTransitionBytes": 20831,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 2,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/native/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 74763,
+      "output": 6844,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/paper/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 9,
+      "input": 134048,
+      "output": 7605,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 680,
+      "maxInputBytes": 12946,
+      "maxResultBytes": 13152,
+      "maxTransitionBytes": 14910,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v2/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 62196,
+      "output": 5532,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 929,
+      "maxInputBytes": 16315,
+      "maxResultBytes": 1470,
+      "maxTransitionBytes": 18498,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/1/v3/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 80450,
+      "output": 5997,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 544,
+      "maxInputBytes": 8637,
+      "maxResultBytes": 1703,
+      "maxTransitionBytes": 9862,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/paper/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 11,
+      "input": 161101,
+      "output": 7331,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 842,
+      "maxInputBytes": 13036,
+      "maxResultBytes": 13273,
+      "maxTransitionBytes": 14871,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v2/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60182,
+      "output": 3720,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 846,
+      "maxInputBytes": 12044,
+      "maxResultBytes": 1023,
+      "maxTransitionBytes": 13818,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v3/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 61081,
+      "output": 3931,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 778,
+      "maxInputBytes": 12672,
+      "maxResultBytes": 1105,
+      "maxTransitionBytes": 14510,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/native/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 71994,
+      "output": 5339,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v2/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 84448,
+      "output": 5478,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 781,
+      "maxInputBytes": 15420,
+      "maxResultBytes": 4371,
+      "maxTransitionBytes": 20744,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v3/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 61995,
+      "output": 4762,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 953,
+      "maxInputBytes": 13393,
+      "maxResultBytes": 840,
+      "maxTransitionBytes": 15000,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/native/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 116762,
+      "output": 6776,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/paper/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 63,
+      "input": 983669,
+      "output": 18035,
+      "transitions": 63,
+      "malformedTransitions": 0,
+      "maxStateBytes": 775,
+      "maxInputBytes": 11905,
+      "maxResultBytes": 12142,
+      "maxTransitionBytes": 13589,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v3/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 9,
+      "input": 163695,
+      "output": 6306,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 953,
+      "maxInputBytes": 18669,
+      "maxResultBytes": 18630,
+      "maxTransitionBytes": 23694,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/native/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 9,
+      "input": 199882,
+      "output": 6758,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/paper/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 72,
+      "input": 1185785,
+      "output": 18445,
+      "transitions": 71,
+      "malformedTransitions": 0,
+      "maxStateBytes": 624,
+      "maxInputBytes": 16398,
+      "maxResultBytes": 17390,
+      "maxTransitionBytes": 21359,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v2/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 9,
+      "input": 152323,
+      "output": 5870,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 969,
+      "maxInputBytes": 11499,
+      "maxResultBytes": 17471,
+      "maxTransitionBytes": 19336,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/native/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 73079,
+      "output": 6142,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/paper/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 71,
+      "input": 1007409,
+      "output": 17682,
+      "transitions": 71,
+      "malformedTransitions": 0,
+      "maxStateBytes": 658,
+      "maxInputBytes": 8206,
+      "maxResultBytes": 7209,
+      "maxTransitionBytes": 9045,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v2/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79049,
+      "output": 5711,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 631,
+      "maxInputBytes": 8882,
+      "maxResultBytes": 1772,
+      "maxTransitionBytes": 9730,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v3/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 80208,
+      "output": 5593,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 761,
+      "maxInputBytes": 8669,
+      "maxResultBytes": 2265,
+      "maxTransitionBytes": 10363,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/paper/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 11,
+      "input": 160538,
+      "output": 6042,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 674,
+      "maxInputBytes": 13201,
+      "maxResultBytes": 13343,
+      "maxTransitionBytes": 15316,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v2/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 61498,
+      "output": 4955,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 810,
+      "maxInputBytes": 14203,
+      "maxResultBytes": 612,
+      "maxTransitionBytes": 15559,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/v3/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 62630,
+      "output": 5401,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1070,
+      "maxInputBytes": 15531,
+      "maxResultBytes": 752,
+      "maxTransitionBytes": 17086,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/2/native/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89331,
+      "output": 5753,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v2/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 83123,
+      "output": 5754,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 668,
+      "maxInputBytes": 15468,
+      "maxResultBytes": 2484,
+      "maxTransitionBytes": 18687,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v3/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 81465,
+      "output": 5058,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 622,
+      "maxInputBytes": 13614,
+      "maxResultBytes": 776,
+      "maxTransitionBytes": 14800,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/native/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89228,
+      "output": 5619,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/paper/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 34,
+      "input": 485256,
+      "output": 9841,
+      "transitions": 34,
+      "malformedTransitions": 0,
+      "maxStateBytes": 495,
+      "maxInputBytes": 12668,
+      "maxResultBytes": 12772,
+      "maxTransitionBytes": 15069,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v3/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 11,
+      "input": 196093,
+      "output": 6621,
+      "transitions": 11,
+      "malformedTransitions": 0,
+      "maxStateBytes": 582,
+      "maxInputBytes": 11054,
+      "maxResultBytes": 11118,
+      "maxTransitionBytes": 13281,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/native/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 7,
+      "input": 144153,
+      "output": 6500,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/paper/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 13,
+      "input": 181578,
+      "output": 27245,
+      "transitions": 13,
+      "malformedTransitions": 0,
+      "maxStateBytes": 481,
+      "maxInputBytes": 10861,
+      "maxResultBytes": 299,
+      "maxTransitionBytes": 11612,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v2/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 17,
+      "input": 307024,
+      "output": 7225,
+      "transitions": 17,
+      "malformedTransitions": 0,
+      "maxStateBytes": 869,
+      "maxInputBytes": 10954,
+      "maxResultBytes": 18698,
+      "maxTransitionBytes": 20272,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/native/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89791,
+      "output": 6057,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/paper/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 39,
+      "input": 552031,
+      "output": 15294,
+      "transitions": 39,
+      "malformedTransitions": 0,
+      "maxStateBytes": 752,
+      "maxInputBytes": 13846,
+      "maxResultBytes": 14032,
+      "maxTransitionBytes": 15397,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v2/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79795,
+      "output": 5657,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 681,
+      "maxInputBytes": 8694,
+      "maxResultBytes": 2675,
+      "maxTransitionBytes": 11302,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v3/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 80944,
+      "output": 6041,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 772,
+      "maxInputBytes": 10304,
+      "maxResultBytes": 1803,
+      "maxTransitionBytes": 11409,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/paper/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 15,
+      "input": 217960,
+      "output": 6555,
+      "transitions": 15,
+      "malformedTransitions": 0,
+      "maxStateBytes": 637,
+      "maxInputBytes": 12046,
+      "maxResultBytes": 12188,
+      "maxTransitionBytes": 13405,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v2/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 3,
+      "input": 46737,
+      "output": 4650,
+      "transitions": 3,
+      "malformedTransitions": 0,
+      "maxStateBytes": 924,
+      "maxInputBytes": 14020,
+      "maxResultBytes": 688,
+      "maxTransitionBytes": 15406,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v3/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79949,
+      "output": 5334,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 575,
+      "maxInputBytes": 8957,
+      "maxResultBytes": 788,
+      "maxTransitionBytes": 9748,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/native/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 73114,
+      "output": 5882,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v2/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 78834,
+      "output": 4384,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 727,
+      "maxInputBytes": 13089,
+      "maxResultBytes": 969,
+      "maxTransitionBytes": 14819,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/v3/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60714,
+      "output": 3692,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 836,
+      "maxInputBytes": 11593,
+      "maxResultBytes": 867,
+      "maxTransitionBytes": 13180,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/native/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 89075,
+      "output": 4663,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/3/paper/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 19,
+      "input": 275081,
+      "output": 6336,
+      "transitions": 19,
+      "malformedTransitions": 0,
+      "maxStateBytes": 669,
+      "maxInputBytes": 11657,
+      "maxResultBytes": 11846,
+      "maxTransitionBytes": 13274,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v3/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 183443,
+      "output": 6786,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 778,
+      "maxInputBytes": 17787,
+      "maxResultBytes": 18318,
+      "maxTransitionBytes": 22572,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/native/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 207528,
+      "output": 5711,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/paper/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 75,
+      "input": 1228379,
+      "output": 17834,
+      "transitions": 75,
+      "malformedTransitions": 0,
+      "maxStateBytes": 669,
+      "maxInputBytes": 15883,
+      "maxResultBytes": 16916,
+      "maxTransitionBytes": 20942,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v2/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 9,
+      "input": 152297,
+      "output": 5802,
+      "transitions": 9,
+      "malformedTransitions": 0,
+      "maxStateBytes": 650,
+      "maxInputBytes": 10612,
+      "maxResultBytes": 17211,
+      "maxTransitionBytes": 18518,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/native/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 97706,
+      "output": 6506,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/paper/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 66,
+      "input": 968169,
+      "output": 16328,
+      "transitions": 66,
+      "malformedTransitions": 0,
+      "maxStateBytes": 665,
+      "maxInputBytes": 11051,
+      "maxResultBytes": 11287,
+      "maxTransitionBytes": 12425,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v2/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 78414,
+      "output": 5125,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 683,
+      "maxInputBytes": 8700,
+      "maxResultBytes": 752,
+      "maxTransitionBytes": 9521,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v3/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 76521,
+      "output": 4915,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 921,
+      "maxInputBytes": 13490,
+      "maxResultBytes": 715,
+      "maxTransitionBytes": 15018,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/paper/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 147083,
+      "output": 8528,
+      "transitions": 10,
+      "malformedTransitions": 0,
+      "maxStateBytes": 719,
+      "maxInputBytes": 13770,
+      "maxResultBytes": 14073,
+      "maxTransitionBytes": 16156,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v2/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 81755,
+      "output": 5689,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 704,
+      "maxInputBytes": 16488,
+      "maxResultBytes": 530,
+      "maxTransitionBytes": 17766,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v3/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79854,
+      "output": 5552,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 821,
+      "maxInputBytes": 8738,
+      "maxResultBytes": 765,
+      "maxTransitionBytes": 9692,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/native/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 73075,
+      "output": 5835,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v2/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60031,
+      "output": 3729,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 786,
+      "maxInputBytes": 12405,
+      "maxResultBytes": 653,
+      "maxTransitionBytes": 13765,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v3/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60513,
+      "output": 3368,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 544,
+      "maxInputBytes": 10706,
+      "maxResultBytes": 525,
+      "maxTransitionBytes": 11851,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/native/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 87871,
+      "output": 5176,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/paper/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 57,
+      "input": 868819,
+      "output": 14303,
+      "transitions": 57,
+      "malformedTransitions": 0,
+      "maxStateBytes": 635,
+      "maxInputBytes": 10962,
+      "maxResultBytes": 12223,
+      "maxTransitionBytes": 13640,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v3/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 106168,
+      "output": 5667,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 718,
+      "maxInputBytes": 14784,
+      "maxResultBytes": 3260,
+      "maxTransitionBytes": 18956,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/native/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 113074,
+      "output": 5925,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/paper/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 86,
+      "input": 1206742,
+      "output": 14759,
+      "transitions": 86,
+      "malformedTransitions": 0,
+      "maxStateBytes": 398,
+      "maxInputBytes": 184,
+      "maxResultBytes": 417,
+      "maxTransitionBytes": 1118,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/4/v2/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 62189,
+      "output": 5283,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1060,
+      "maxInputBytes": 15467,
+      "maxResultBytes": 1785,
+      "maxTransitionBytes": 18065,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/native/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 73993,
+      "output": 6298,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/paper/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 58,
+      "input": 822313,
+      "output": 14472,
+      "transitions": 58,
+      "malformedTransitions": 0,
+      "maxStateBytes": 787,
+      "maxInputBytes": 13737,
+      "maxResultBytes": 13751,
+      "maxTransitionBytes": 15145,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v2/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 78656,
+      "output": 5414,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 626,
+      "maxInputBytes": 8682,
+      "maxResultBytes": 1685,
+      "maxTransitionBytes": 9512,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v3/dependency-planner",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79076,
+      "output": 5032,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 597,
+      "maxInputBytes": 7694,
+      "maxResultBytes": 1811,
+      "maxTransitionBytes": 9562,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/paper/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 83,
+      "input": 1167179,
+      "output": 17190,
+      "transitions": 83,
+      "malformedTransitions": 0,
+      "maxStateBytes": 545,
+      "maxInputBytes": 184,
+      "maxResultBytes": 417,
+      "maxTransitionBytes": 1288,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v2/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 79180,
+      "output": 5490,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 792,
+      "maxInputBytes": 9463,
+      "maxResultBytes": 715,
+      "maxTransitionBytes": 10321,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v3/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 82524,
+      "output": 5509,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 691,
+      "maxInputBytes": 15702,
+      "maxResultBytes": 811,
+      "maxTransitionBytes": 17302,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/native/taskboard-cli",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 72950,
+      "output": 5673,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v2/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60689,
+      "output": 4324,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 815,
+      "maxInputBytes": 14159,
+      "maxResultBytes": 762,
+      "maxTransitionBytes": 15622,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v3/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 60755,
+      "output": 3612,
+      "transitions": 4,
+      "malformedTransitions": 0,
+      "maxStateBytes": 687,
+      "maxInputBytes": 11520,
+      "maxResultBytes": 810,
+      "maxTransitionBytes": 12955,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/native/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 4,
+      "input": 71585,
+      "output": 4956,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/paper/csv-insights",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 74,
+      "input": 1098495,
+      "output": 17698,
+      "transitions": 74,
+      "malformedTransitions": 0,
+      "maxStateBytes": 845,
+      "maxInputBytes": 7860,
+      "maxResultBytes": 8137,
+      "maxTransitionBytes": 9513,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v3/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 5,
+      "input": 76718,
+      "output": 4751,
+      "transitions": 5,
+      "malformedTransitions": 0,
+      "maxStateBytes": 1111,
+      "maxInputBytes": 13201,
+      "maxResultBytes": 1029,
+      "maxTransitionBytes": 15063,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/native/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 112636,
+      "output": 5981,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/paper/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 12,
+      "input": 175846,
+      "output": 6067,
+      "transitions": 12,
+      "malformedTransitions": 0,
+      "maxStateBytes": 696,
+      "maxInputBytes": 12337,
+      "maxResultBytes": 12467,
+      "maxTransitionBytes": 14080,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v2/mini-template",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 6,
+      "input": 99157,
+      "output": 5336,
+      "transitions": 6,
+      "malformedTransitions": 0,
+      "maxStateBytes": 698,
+      "maxInputBytes": 8196,
+      "maxResultBytes": 3086,
+      "maxTransitionBytes": 9679,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/native/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 10,
+      "input": 226205,
+      "output": 8148,
+      "transitions": 0,
+      "malformedTransitions": 0,
+      "maxStateBytes": 0,
+      "maxInputBytes": 0,
+      "maxResultBytes": 0,
+      "maxTransitionBytes": 0,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/paper/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 29,
+      "input": 460431,
+      "output": 11465,
+      "transitions": 29,
+      "malformedTransitions": 0,
+      "maxStateBytes": 961,
+      "maxInputBytes": 16943,
+      "maxResultBytes": 17855,
+      "maxTransitionBytes": 21752,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v2/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 16,
+      "input": 290990,
+      "output": 6890,
+      "transitions": 16,
+      "malformedTransitions": 0,
+      "maxStateBytes": 591,
+      "maxInputBytes": 16582,
+      "maxResultBytes": 17519,
+      "maxTransitionBytes": 21394,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    },
+    {
+      "id": "astra/5/v3/http-kv",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "calls": 7,
+      "input": 119586,
+      "output": 5288,
+      "transitions": 7,
+      "malformedTransitions": 0,
+      "maxStateBytes": 655,
+      "maxInputBytes": 10360,
+      "maxResultBytes": 5219,
+      "maxTransitionBytes": 12241,
+      "inputPreviews": 0,
+      "skillResultTruncations": 0,
+      "earlierToolTruncationMarkers": 0,
+      "scope": "Persisted main rollout, not a packet capture. Earlier truncation markers are heuristic, not proof of exact bytes lost."
+    }
+  ]
+}

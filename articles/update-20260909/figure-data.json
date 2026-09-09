@@ -1,0 +1,386 @@
+{
+  "sources": {
+    "experiments/codex-large-context-comparison-20260909/statistics.json": "c323d441e9f05aed68fb1a066b911d8ca7c95f9cad9117e0b0765932c09d841d"
+  },
+  "figures": [
+    {
+      "cohort": "sol",
+      "name": "codex-sol-large-context-five-repeats-input-cycles-time",
+      "hashes": {
+        "articles/figures/codex-sol-large-context-five-repeats-input-cycles-time.png": "00840a59600ff472b67b7d1b876a6325c82222d83faac9e5f5d35f7b02226abe",
+        "articles/figures/codex-sol-large-context-five-repeats-input-cycles-time.svg": "733956e7f71084582790b005554d084e5bd22b5ade7ab320032240291db3bfe3"
+      }
+    },
+    {
+      "cohort": "astra",
+      "name": "codex-astra-large-context-five-repeats-input-cycles-time",
+      "hashes": {
+        "articles/figures/codex-astra-large-context-five-repeats-input-cycles-time.png": "196cc8849252f1033b07acc76b8ec2335f3c184b2f8086c4a35a7193a695e074",
+        "articles/figures/codex-astra-large-context-five-repeats-input-cycles-time.svg": "6973e5e89564f6eeb2ac181bf30d4caaa9dfface648761b26b79358988438a5f"
+      }
+    }
+  ],
+  "points": [
+    {
+      "cohort": "astra",
+      "mode": "native",
+      "repetition": 1,
+      "inputPerTask": 112180.6,
+      "callsPerTask": 5.6,
+      "minutesPerTask": 3.4899066666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "native",
+      "repetition": 2,
+      "inputPerTask": 110209.6,
+      "callsPerTask": 5.6,
+      "minutesPerTask": 3.7971833333333334,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "native",
+      "repetition": 3,
+      "inputPerTask": 97072.2,
+      "callsPerTask": 5.2,
+      "minutesPerTask": 3.2873966666666665,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "native",
+      "repetition": 4,
+      "inputPerTask": 115850.8,
+      "callsPerTask": 6,
+      "minutesPerTask": 3.71989,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "native",
+      "repetition": 5,
+      "inputPerTask": 111473.8,
+      "callsPerTask": 5.6,
+      "minutesPerTask": 3.5463833333333334,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "paper",
+      "repetition": 1,
+      "inputPerTask": 392909.8,
+      "callsPerTask": 25.8,
+      "minutesPerTask": 7.471743333333333,
+      "timeouts": 1
+    },
+    {
+      "cohort": "astra",
+      "mode": "paper",
+      "repetition": 2,
+      "inputPerTask": 699700.4,
+      "callsPerTask": 45.6,
+      "minutesPerTask": 10.674846666666667,
+      "timeouts": 2
+    },
+    {
+      "cohort": "astra",
+      "mode": "paper",
+      "repetition": 3,
+      "inputPerTask": 342381.2,
+      "callsPerTask": 24,
+      "minutesPerTask": 8.59968,
+      "timeouts": 1
+    },
+    {
+      "cohort": "astra",
+      "mode": "paper",
+      "repetition": 4,
+      "inputPerTask": 883838.4,
+      "callsPerTask": 58.8,
+      "minutesPerTask": 12.379903333333333,
+      "timeouts": 3
+    },
+    {
+      "cohort": "astra",
+      "mode": "paper",
+      "repetition": 5,
+      "inputPerTask": 744852.8,
+      "callsPerTask": 51.2,
+      "minutesPerTask": 10.8953,
+      "timeouts": 2
+    },
+    {
+      "cohort": "astra",
+      "mode": "v2",
+      "repetition": 1,
+      "inputPerTask": 115618,
+      "callsPerTask": 6.8,
+      "minutesPerTask": 3.38802,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v2",
+      "repetition": 2,
+      "inputPerTask": 87500,
+      "callsPerTask": 5.4,
+      "minutesPerTask": 3.0582766666666665,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v2",
+      "repetition": 3,
+      "inputPerTask": 119102.6,
+      "callsPerTask": 7,
+      "minutesPerTask": 3.4324066666666666,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v2",
+      "repetition": 4,
+      "inputPerTask": 86937.2,
+      "callsPerTask": 5.4,
+      "minutesPerTask": 3.074666666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v2",
+      "repetition": 5,
+      "inputPerTask": 121734.4,
+      "callsPerTask": 7.2,
+      "minutesPerTask": 3.403313333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v3",
+      "repetition": 1,
+      "inputPerTask": 97152.8,
+      "callsPerTask": 5.8,
+      "minutesPerTask": 3.3043666666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v3",
+      "repetition": 2,
+      "inputPerTask": 85921.8,
+      "callsPerTask": 5.2,
+      "minutesPerTask": 3.073593333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v3",
+      "repetition": 3,
+      "inputPerTask": 99833,
+      "callsPerTask": 6,
+      "minutesPerTask": 3.2608966666666666,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v3",
+      "repetition": 4,
+      "inputPerTask": 101299.8,
+      "callsPerTask": 6,
+      "minutesPerTask": 3.234506666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "v3",
+      "repetition": 5,
+      "inputPerTask": 83731.8,
+      "callsPerTask": 5.2,
+      "minutesPerTask": 3.198166666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "native",
+      "repetition": 1,
+      "inputPerTask": 293688.2,
+      "callsPerTask": 12.4,
+      "minutesPerTask": 6.94587,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "native",
+      "repetition": 2,
+      "inputPerTask": 229478.8,
+      "callsPerTask": 10.4,
+      "minutesPerTask": 6.3039966666666665,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "native",
+      "repetition": 3,
+      "inputPerTask": 291459.8,
+      "callsPerTask": 12.4,
+      "minutesPerTask": 6.24733,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "native",
+      "repetition": 4,
+      "inputPerTask": 212041.2,
+      "callsPerTask": 9.8,
+      "minutesPerTask": 5.659623333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "native",
+      "repetition": 5,
+      "inputPerTask": 246820,
+      "callsPerTask": 10.8,
+      "minutesPerTask": 6.449836666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "paper",
+      "repetition": 1,
+      "inputPerTask": 343461.2,
+      "callsPerTask": 22.8,
+      "minutesPerTask": 10.568606666666666,
+      "timeouts": 1
+    },
+    {
+      "cohort": "sol",
+      "mode": "paper",
+      "repetition": 2,
+      "inputPerTask": 332042,
+      "callsPerTask": 22.6,
+      "minutesPerTask": 9.762436666666666,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "paper",
+      "repetition": 3,
+      "inputPerTask": 451789.2,
+      "callsPerTask": 31.8,
+      "minutesPerTask": 10.398963333333333,
+      "timeouts": 2
+    },
+    {
+      "cohort": "sol",
+      "mode": "paper",
+      "repetition": 4,
+      "inputPerTask": 299086.8,
+      "callsPerTask": 20.8,
+      "minutesPerTask": 7.894603333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "paper",
+      "repetition": 5,
+      "inputPerTask": 416559,
+      "callsPerTask": 27.8,
+      "minutesPerTask": 10.80347,
+      "timeouts": 2
+    },
+    {
+      "cohort": "sol",
+      "mode": "v2",
+      "repetition": 1,
+      "inputPerTask": 142042.8,
+      "callsPerTask": 8.4,
+      "minutesPerTask": 5.105066666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v2",
+      "repetition": 2,
+      "inputPerTask": 156819.6,
+      "callsPerTask": 9,
+      "minutesPerTask": 4.985363333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v2",
+      "repetition": 3,
+      "inputPerTask": 188657,
+      "callsPerTask": 10.8,
+      "minutesPerTask": 5.61266,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v2",
+      "repetition": 4,
+      "inputPerTask": 158609,
+      "callsPerTask": 9.4,
+      "minutesPerTask": 5.060316666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v2",
+      "repetition": 5,
+      "inputPerTask": 169188.2,
+      "callsPerTask": 9.4,
+      "minutesPerTask": 5.623896666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v3",
+      "repetition": 1,
+      "inputPerTask": 181260.4,
+      "callsPerTask": 9.6,
+      "minutesPerTask": 6.213963333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v3",
+      "repetition": 2,
+      "inputPerTask": 152734.2,
+      "callsPerTask": 8.2,
+      "minutesPerTask": 5.573853333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v3",
+      "repetition": 3,
+      "inputPerTask": 147439.2,
+      "callsPerTask": 8,
+      "minutesPerTask": 5.35703,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v3",
+      "repetition": 4,
+      "inputPerTask": 160065.2,
+      "callsPerTask": 8.6,
+      "minutesPerTask": 5.960373333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "v3",
+      "repetition": 5,
+      "inputPerTask": 194441.8,
+      "callsPerTask": 10.6,
+      "minutesPerTask": 6.522263333333333,
+      "timeouts": 0
+    }
+  ],
+  "policy": "Only two new figures. No model calls; old figures not regenerated. All outcomes and common cross-model panel scales."
+}

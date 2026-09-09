@@ -1,0 +1,10 @@
+{
+  "name": "mini-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "check": "bun test && bunx tsc --noEmit"
+  }
+}

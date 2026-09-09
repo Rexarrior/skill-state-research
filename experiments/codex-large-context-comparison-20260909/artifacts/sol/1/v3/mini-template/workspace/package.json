@@ -1,0 +1,9 @@
+{
+  "name": "mini-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "check": "bunx tsc --noEmit"
+  }
+}
