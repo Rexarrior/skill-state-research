@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-10T08:34:45.396Z",
+  "checkedAt": "2026-09-10T09:02:50.042Z",
   "cells": 120,
   "tableRowsMatch": true,
   "editorialPlaceholders": false,
@@ -7,7 +7,7 @@
   "auxiliaryCellsVerified": 80,
   "artifactScanFindings": 0,
   "hostContextCellsVerified": 80,
-  "articleWordsExcludingCode": 8349,
+  "articleWordsExcludingCode": 8911,
   "checkedLinks": [
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -91,14 +91,6 @@
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",
-      "href": "./figures/input-cycles-all-modes.png"
-    },
-    {
-      "file": "articles/skill-state-in-coding-agents.md",
-      "href": "./figures/input-by-task.png"
-    },
-    {
-      "file": "articles/skill-state-in-coding-agents.md",
       "href": "../experiments/codex-sol-controls-20260906/COMPARE-FOUR.md"
     },
     {
@@ -152,6 +144,18 @@
     {
       "file": "articles/skill-state-in-coding-agents.md",
       "href": "../experiments/codex-large-context-comparison-20260909/REPORT-sol.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/codex-paper2-20260910/PROTOCOL.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-cycles-all-modes.png"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "./figures/input-by-task.png"
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",

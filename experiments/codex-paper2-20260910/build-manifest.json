@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-10T09:02:39.554Z",
+  "baseCommit": "85630a5b6d89465ed52cdb0ad56eec15f07fdfae",
+  "patchSha256": "8197a11c880a7f2a68e46a292f0e6b7c27f364976f614c439e9a68bf325e8097",
+  "files": {
+    ".private/source/codex/codex-rs/core/src/skill_state.rs": "c9eee317eace360ff2bb1ca023da4328cd7114f26c5081060d2c6fd8f3c49631",
+    ".private/source/codex/codex-rs/core/src/skill_state_history.rs": "80a4e19c8d0d2d1f48737b86fbb1cd182a9d7f0561f17e11fd8596e62dadb4d4",
+    ".private/source/codex/codex-rs/core/src/skill_state_paper2.rs": "b34e81fab3064f44081fdc23206c25dca776125bdb227d2e1536ffc8aab19ec3",
+    ".private/source/codex/codex-rs/core/src/skill_state_tests.rs": "5cedf8580182615ef9feb8f783462acae47edf3b05fae5b97c3a358260a2ad64",
+    ".private/source/codex/codex-rs/core/src/tools/parallel.rs": "bbcbb4979dd2a35a6c66a04c6c62ba5cc7522916a7af06687458eff779623e57",
+    ".private/source/codex/codex-rs/exec/src/lib.rs": "ed76c5facab92aa541ed86621577afce6a23293a1f845411bbb42e0b5ad5e4c7",
+    ".private/source/codex/codex-rs/exec/tests/suite/skill_state_v2.rs": "0f56c213c9c7bff9dd5c00f196203678a1598e0c8fb426ea9ed0a1eb60563b14",
+    ".private/source/codex/codex-rs/Cargo.lock": "50e3ba6763cb2ac8ce154991c757662efa65fa5d0fe529489bcc54a846aafba7",
+    ".private/source/codex/codex-rs/Cargo.toml": "d0da87a7ea903a8bd17a61d9164cbffdbab9031d00c90f90ff040cde58feca9f",
+    ".private/source/codex/codex-rs/rust-toolchain.toml": "570656042681cfd8795403a455baf9a33035331a07db0645e866bbcea89a3d64"
+  },
+  "executableSha256": "8df4737c51e74fbdece624d3d90ea83414bdf1ee80e57f227d66b8213c9784d3",
+  "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630",
+  "historicalExecutableSha256": "6c573e7f919cce1968def7ec067afbcdf3f2b4a76c7811178ac5715ac84997ee",
+  "limitsBytes": {
+    "state": 2097152,
+    "actionInput": 2097152,
+    "observationInput": 2097152,
+    "observationResult": 2097152,
+    "comment": 1024
+  },
+  "mode": "paper2",
+  "protocol": "skill.state/paper2",
+  "observationWindow": 1,
+  "comment": false,
+  "modelRevision": false,
+  "source": "Separate sparse worktree; Paper2 changes only the latest observation versus large-context Paper."
+}

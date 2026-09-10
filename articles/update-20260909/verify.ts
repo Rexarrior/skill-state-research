@@ -13,11 +13,15 @@ for (const [file, expected] of Object.entries(figures.sources))
 if (figures.figures.length !== 2 || JSON.stringify(figures.points) !== JSON.stringify(stats.repeats))
   throw new Error("Wrong new figure count/values")
 const names: Record<string, string> = { native: "Native", paper: "Paper", v2: "V2", v3: "V3" }
-const newStart = article.indexOf("#### Astra с расширенными лимитами:")
-const split = article.indexOf("#### Sol с теми же лимитами:")
-const end = article.indexOf("### Что видно в траекториях")
-if (!(article.indexOf("#### Бонус: Astra") < article.indexOf("#### Кажется, я слишком") &&
-      article.indexOf("#### Кажется, я слишком") < newStart && newStart < split && split < end))
+const newStart = article.indexOf("### Astra с расширенными лимитами:")
+const split = article.indexOf("### Sol с теми же лимитами:")
+const end = article.indexOf("## Результаты")
+if (!(article.indexOf("## Повторы Codex") < newStart &&
+      end < article.indexOf("## Что видно в прогонах") &&
+      article.indexOf("## Что видно в прогонах") < article.indexOf("## Токены — ещё не стоимость")))
+  throw new Error("Repeats, overall results and trajectory discussion must remain in that order")
+if (!(article.indexOf("### Бонус: Astra") < article.indexOf("### Кажется, я слишком") &&
+      article.indexOf("### Кажется, я слишком") < newStart && newStart < split && split < end))
   throw new Error("Unexpected section order")
 for (const cohort of ["astra", "sol"]) {
   const section = cohort === "astra" ? article.slice(newStart, split) : article.slice(split, end)

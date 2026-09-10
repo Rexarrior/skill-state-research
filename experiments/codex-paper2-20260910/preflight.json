@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-10",
+  "status": "passed-with-documented-host-limitation",
+  "coreTests": {
+    "command": "just test --offline -p codex-core --lib -E 'test(skill_state)'",
+    "nextestRunId": "025b357b-bfd1-4268-be35-f801790049f6",
+    "passed": 20,
+    "failed": 0,
+    "scope": "Four modes; Paper2 exact latest observation, admission, recursive merge, protocol isolation, large history, state/input bounds. Not the full Codex test suite."
+  },
+  "cliTests": {
+    "command": "just test --offline -p codex-exec --test all -E 'test(~skill_state_v2)' --retries 0",
+    "nextestRunId": "8977fd53-df8c-4649-8780-8c06f41f57d4",
+    "passed": 8,
+    "failed": 0,
+    "ignoredInScope": [
+      "exec_v3_skips_remaining_actions_after_nonzero_shell_exit",
+      "exec_large_context_preserves_state_and_observation_on_wire"
+    ],
+    "scope": "Actual CLI requests to localhost mock-provider; Paper2 action+result with window setting 8 still uses one O, large state/validation feedback and mandatory finish. Prior Paper and native tests retained.",
+    "limitation": "Two inherited shell fixtures remain ignored because the host's managed approval service rejects them. A sandbox-only attempt failed all eight tests before assertions because binding a mock-server port was forbidden; the run above passed with local-server permission. No benchmark outcomes exist from this diagnostic."
+  },
+  "orchestratorTests": {
+    "passed": 12,
+    "failed": 0,
+    "scope": "50 unique model/task/repeat cells, TS parse, reused five-worker pool, failure drain, source isolation/restoration and numeric-only audit."
+  },
+  "clippy": {
+    "command": "just fix --offline -p codex-core -p codex-exec --lib",
+    "exitCode": 0,
+    "note": "Needed localhost lock-port permission. One inherited clone-to-slice warning was fixed manually without semantic change. An unrelated unused-import autofix was reverted; no unrelated source changes retained."
+  },
+  "format": {
+    "command": "just fmt",
+    "exitCode": 0,
+    "note": "Passed with access to local uv cache after sandbox-only formatter could not open it. Formatting was run after Rust tests; tests were not rerun afterward per subtree instructions."
+  },
+  "benchmarkModelCallsDuringPreflight": 0,
+  "note": "CLI build and source fingerprints recorded separately after compilation; no model outcomes selected or retried."
+}
