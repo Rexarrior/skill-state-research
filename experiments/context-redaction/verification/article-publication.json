@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-09T13:34:03.209Z",
+  "checkedAt": "2026-09-10T08:34:45.396Z",
   "cells": 120,
   "tableRowsMatch": true,
   "editorialPlaceholders": false,
@@ -7,7 +7,7 @@
   "auxiliaryCellsVerified": 80,
   "artifactScanFindings": 0,
   "hostContextCellsVerified": 80,
-  "articleWordsExcludingCode": 7977,
+  "articleWordsExcludingCode": 8349,
   "checkedLinks": [
     {
       "file": "articles/skill-state-in-coding-agents.md",
@@ -48,6 +48,10 @@
     {
       "file": "articles/skill-state-in-coding-agents.md",
       "href": "../experiments/PAPER-CONFORMANCE.md"
+    },
+    {
+      "file": "articles/skill-state-in-coding-agents.md",
+      "href": "../experiments/PAPER-CONFORMANCE-20260910.md"
     },
     {
       "file": "articles/skill-state-in-coding-agents.md",

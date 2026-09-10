@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-09T16:29:19.403Z",
+  "checkedAt": "2026-09-10T08:34:45.227Z",
   "status": "passed",
   "newSessions": 200,
   "totalArticleOutcomes": 720,
@@ -7,7 +7,7 @@
   "newFigures": 2,
   "preservedOldFigures": 8,
   "checkedNewPoints": 40,
-  "localLinks": 87,
-  "articleSha256": "0954644630222405cd582f8e76515a6e586a14a307fca741afbf7513245ae233",
+  "localLinks": 88,
+  "articleSha256": "d58b02ee53e68bf0c435e08b023de3d638e80e13f1275d55bd060689de33b866",
   "scope": "New tables, plotted values, all ten figure hashes, preservation of old figures and links. Not causal validation or external publication."
 }
