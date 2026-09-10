@@ -1,0 +1,834 @@
+{
+  "rows": [
+    {
+      "id": "gpt-5.6-sol/1/taskboard-cli",
+      "cohort": "sol",
+      "calls": 30,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 25,
+        "error": 5
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 17,
+      "maxStateBytes": 2946,
+      "source": ".private/results/20260910T124122Z-369b28f4-8744-4297-81fc-037fa46e5c0b/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "55474b72e11e8716aba33f268f61304c0a7d7bd0d5a83abe05aa594cebd54ced"
+    },
+    {
+      "id": "gpt-6-astra/1/taskboard-cli",
+      "cohort": "astra",
+      "calls": 80,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 9,
+        "success": 71
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 77,
+      "maxStateBytes": 746,
+      "source": ".private/results/20260910T124122Z-b7f1bbd4-19e6-406f-b7ab-c2c613a9650e/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "e8d7a7b8b61046c7ad3d0fbe01cc940ed8a8302e794344c8715e4ea9d7b91ff8"
+    },
+    {
+      "id": "gpt-6-astra/1/csv-insights",
+      "cohort": "astra",
+      "calls": 84,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 2,
+        "success": 82
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 81,
+      "maxStateBytes": 819,
+      "source": ".private/results/20260910T124122Z-a62077c4-e24f-4766-9502-cc52a3f27adb/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "36ed6b67e2c52f0d59bc29c632cc69ee2fcd0f6b8e4f249b262fd31ee6556bd8"
+    },
+    {
+      "id": "gpt-5.6-sol/1/csv-insights",
+      "cohort": "sol",
+      "calls": 12,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 2,
+        "success": 10
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 5,
+      "maxStateBytes": 1605,
+      "source": ".private/results/20260910T124122Z-26f77765-157c-43fd-9aea-d1c0974cfc9c/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "95a815647255a76731c513e9cf98ce298fe8a464f08ad1a34847fd63d1444ea9"
+    },
+    {
+      "id": "gpt-5.6-sol/1/mini-template",
+      "cohort": "sol",
+      "calls": 11,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 9,
+        "error": 2
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 5,
+      "maxStateBytes": 2241,
+      "source": ".private/results/20260910T124122Z-c69126c7-19ad-45d7-84c2-38eee554d2e0/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "6927f7486ba8d06674c5b1ceac94d49af43520372fb7ddb416d9eae78bc144f4"
+    },
+    {
+      "id": "gpt-6-astra/1/mini-template",
+      "cohort": "astra",
+      "calls": 76,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 5,
+        "success": 71
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 71,
+      "maxStateBytes": 679,
+      "source": ".private/results/20260910T124712Z-81c96cab-eb88-47ac-8622-481fe71072e3/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "66e4a15d25a3429aa3dbbdcf9abddcf7b86ac04a35f06c327d3f16cecdec2af9"
+    },
+    {
+      "id": "gpt-6-astra/1/http-kv",
+      "cohort": "astra",
+      "calls": 101,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 34,
+        "success": 67
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 98,
+      "maxStateBytes": 460,
+      "source": ".private/results/20260910T124736Z-feb4e173-2e06-4840-8e17-e6c6768a8e75/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "d836872d4e9b6c570dcad9ac1a1dff8b1ecd618f0d788c2efc3880b0629e6069"
+    },
+    {
+      "id": "gpt-5.6-sol/1/http-kv",
+      "cohort": "sol",
+      "calls": 13,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 10,
+        "error": 3
+      },
+      "inputPreviews": 4,
+      "resultTruncations": 6,
+      "maxStateBytes": 1452,
+      "source": ".private/results/20260910T125321Z-d4084ae6-bb28-4e48-ad8f-46bd83d07ec0/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "5e48dd80abe4dd9825642c52b7a8ff285da154f3ece3ee4b59fb21bfc3fc3bae"
+    },
+    {
+      "id": "gpt-5.6-sol/1/dependency-planner",
+      "cohort": "sol",
+      "calls": 11,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 9,
+        "error": 2
+      },
+      "inputPreviews": 2,
+      "resultTruncations": 5,
+      "maxStateBytes": 1684,
+      "source": ".private/results/20260910T125630Z-2b7edcb3-47c3-48a5-bce8-0e132a3ec329/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "d19f5caafd4ecb27fc463201099235476d0718d0f5fe617f946bf6e641eaca0a"
+    },
+    {
+      "id": "gpt-6-astra/1/dependency-planner",
+      "cohort": "astra",
+      "calls": 85,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "success": 78,
+        "error": 7
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 82,
+      "maxStateBytes": 587,
+      "source": ".private/results/20260910T125630Z-9b79b001-799b-4176-bb9b-a49db051106f/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "6587398c44a1f6ffb176d2865b619cf9831228f9b09797ae022944b7a084b174"
+    },
+    {
+      "id": "gpt-6-astra/2/csv-insights",
+      "cohort": "astra",
+      "calls": 85,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 4,
+        "success": 81
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 82,
+      "maxStateBytes": 605,
+      "source": ".private/results/20260910T130142Z-a36f2e9a-f040-4af9-b0f2-ec6ff1f6af25/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "60cf1d067cd7ae50a935467269ac79d8f3587bd27429b68170143893026c81a0"
+    },
+    {
+      "id": "gpt-5.6-sol/2/csv-insights",
+      "cohort": "sol",
+      "calls": 13,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 4,
+        "success": 9
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 2,
+      "maxStateBytes": 1829,
+      "source": ".private/results/20260910T130220Z-ab3c72ef-75df-4ebd-b161-5d4caadbd13a/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "c2c044ff849e284ce0b2489047a4ec05648f2fe423b0859f5f80ca75bdcc34fe"
+    },
+    {
+      "id": "gpt-5.6-sol/2/mini-template",
+      "cohort": "sol",
+      "calls": 40,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "success": 38,
+        "error": 2
+      },
+      "inputPreviews": 2,
+      "resultTruncations": 34,
+      "maxStateBytes": 2076,
+      "source": ".private/results/20260910T130247Z-d667d6aa-ae28-4c9e-99f7-58ce29342fea/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "70584672364a0b3cd9eefb4db8be256eeb02c1c9190e61907017b67caa7d2a6b"
+    },
+    {
+      "id": "gpt-6-astra/2/mini-template",
+      "cohort": "astra",
+      "calls": 78,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "success": 74,
+        "error": 4
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 75,
+      "maxStateBytes": 714,
+      "source": ".private/results/20260910T130252Z-8af3ac42-42c5-4e7b-8c45-c01fa2f93711/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "0928825e1b19ee47bd5fb54d701b7d59ddba3ad631ee70f3414097bdd70edbd7"
+    },
+    {
+      "id": "gpt-6-astra/2/http-kv",
+      "cohort": "astra",
+      "calls": 101,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 9,
+        "success": 92
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 98,
+      "maxStateBytes": 473,
+      "source": ".private/results/20260910T130848Z-c5d7f31d-7f40-46cf-aa6d-9197747f5b0b/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "b867187dc3f7dd7a1cf734e54dd585dbf83dad149d25de3f3a3e16d84f947aed"
+    },
+    {
+      "id": "gpt-5.6-sol/2/http-kv",
+      "cohort": "sol",
+      "calls": 7,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 2,
+        "success": 5
+      },
+      "inputPreviews": 3,
+      "resultTruncations": 0,
+      "maxStateBytes": 1446,
+      "source": ".private/results/20260910T131138Z-1df5381f-3004-4a5c-aa2e-eafa8f2fdf7a/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "83dfe0b34ae69200150676c5571c73272caed5e72f91735eb084e18cb948902e"
+    },
+    {
+      "id": "gpt-5.6-sol/2/dependency-planner",
+      "cohort": "sol",
+      "calls": 12,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 3,
+        "success": 9
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 3,
+      "maxStateBytes": 1498,
+      "source": ".private/results/20260910T131650Z-e851a99b-38d9-4310-9858-0bbce48688e3/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "ae29c26110bc6a40b1392af609482be750f6a725fa43032b6aca960731651b25"
+    },
+    {
+      "id": "gpt-6-astra/2/dependency-planner",
+      "cohort": "astra",
+      "calls": 94,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 13,
+        "success": 81
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 89,
+      "maxStateBytes": 507,
+      "source": ".private/results/20260910T131750Z-f9e3f0f0-f9b1-4e4b-8c4f-0a7d58b9617e/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "d8db59cc0fd267a2bbc26ad649f1c200fe537034ff95cc80e6b2089766343860"
+    },
+    {
+      "id": "gpt-6-astra/2/taskboard-cli",
+      "cohort": "astra",
+      "calls": 83,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 8,
+        "success": 75
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 80,
+      "maxStateBytes": 629,
+      "source": ".private/results/20260910T131755Z-cdf53130-ac48-4cb3-af6b-35539b561ab2/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "b63e47fc9328c5e3a0e9c6ea8035dd0e6af81948486eb90feb76d4effa653436"
+    },
+    {
+      "id": "gpt-5.6-sol/2/taskboard-cli",
+      "cohort": "sol",
+      "calls": 30,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 5,
+        "success": 25
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 21,
+      "maxStateBytes": 2092,
+      "source": ".private/results/20260910T131759Z-29b9fd62-961b-4695-a28f-264eee5b1a5d/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "22172d8eae4c470663b21032f80928a2309ae440c27fca9a810d12761d80f4b9"
+    },
+    {
+      "id": "gpt-5.6-sol/3/mini-template",
+      "cohort": "sol",
+      "calls": 27,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 24,
+        "error": 3
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 17,
+      "maxStateBytes": 2835,
+      "source": ".private/results/20260910T132214Z-87eaab0b-b5e1-4771-ad0d-3fcaf99ecadf/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "5e0385a50d7564a87beda139a877cdeddd29c6244b1cdd752cce04648ba674b6"
+    },
+    {
+      "id": "gpt-6-astra/3/mini-template",
+      "cohort": "astra",
+      "calls": 80,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "success": 72,
+        "error": 8
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 76,
+      "maxStateBytes": 676,
+      "source": ".private/results/20260910T132404Z-d80ca7d6-5ccf-451b-9af9-6ef33c4c05b9/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "86b7bb85480ecb4abb0acb1508ab67e97b557a7aba206e10c921bdfb771390f7"
+    },
+    {
+      "id": "gpt-6-astra/3/http-kv",
+      "cohort": "astra",
+      "calls": 91,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 9,
+        "success": 82
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 88,
+      "maxStateBytes": 662,
+      "source": ".private/results/20260910T133045Z-f520d10b-6c65-43c4-a9d9-5e27023308c3/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "c9e9e249ff6ab669278c4c382e76fc434fa74dd5fb7d2cdcd3201f8bf6abfd68"
+    },
+    {
+      "id": "gpt-5.6-sol/3/http-kv",
+      "cohort": "sol",
+      "calls": 35,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "success": 30,
+        "error": 4
+      },
+      "inputPreviews": 3,
+      "resultTruncations": 25,
+      "maxStateBytes": 2218,
+      "source": ".private/results/20260910T133257Z-4605aeca-3d55-4297-8b28-b6b9892fa6b2/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "baf644a0cde5cf4fff7f3b191a75003f44014cca1c5272e3e8bd3cc700636e03"
+    },
+    {
+      "id": "gpt-5.6-sol/3/dependency-planner",
+      "cohort": "sol",
+      "calls": 27,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 11,
+        "success": 16
+      },
+      "inputPreviews": 7,
+      "resultTruncations": 14,
+      "maxStateBytes": 2395,
+      "source": ".private/results/20260910T133302Z-b3d65c76-cae4-4e27-90f9-ae8705ac8768/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "5cc01c032e26baa7f2ad2006fa284d8a284e80391357a95e0c1b4e1fac83476d"
+    },
+    {
+      "id": "gpt-6-astra/3/dependency-planner",
+      "cohort": "astra",
+      "calls": 91,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 10,
+        "success": 81
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 88,
+      "maxStateBytes": 581,
+      "source": ".private/results/20260910T133449Z-e49ca774-5a48-45fb-848c-d46cbf9b6b54/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "a46c22f0cc18d3d4a4898aade0f3566d86aa102d44e0f7f1ab7aa3616acebd83"
+    },
+    {
+      "id": "gpt-6-astra/3/taskboard-cli",
+      "cohort": "astra",
+      "calls": 72,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 10,
+        "success": 62
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 70,
+      "maxStateBytes": 873,
+      "source": ".private/results/20260910T133911Z-8a0842f8-c776-4788-98be-0937d5cdb22f/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "0684d9ca61a603f4e9e377b943adec6cc868c21a259e97028a7edfb8e3be7a97"
+    },
+    {
+      "id": "gpt-5.6-sol/3/taskboard-cli",
+      "cohort": "sol",
+      "calls": 15,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 4,
+        "success": 11
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 8,
+      "maxStateBytes": 1811,
+      "source": ".private/results/20260910T134601Z-ef5691f3-8b35-41f2-9226-4d4994096ab3/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "9f0babf7f91d886b4a77dafff6a8467d6029358181ffa5a964fae09279ce4140"
+    },
+    {
+      "id": "gpt-5.6-sol/3/csv-insights",
+      "cohort": "sol",
+      "calls": 8,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 2,
+        "success": 6
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 2,
+      "maxStateBytes": 1609,
+      "source": ".private/results/20260910T134810Z-a4a23376-deaa-4fff-abb4-01b19ce122aa/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "5bc164aa6f58d68efc9697ef1d2e45b67186d00d5d7304304250bbfeb6a2779b"
+    },
+    {
+      "id": "gpt-6-astra/3/csv-insights",
+      "cohort": "astra",
+      "calls": 100,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 8,
+        "success": 92
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 96,
+      "maxStateBytes": 468,
+      "source": ".private/results/20260910T134814Z-47e15eac-880d-402d-8893-4e756dacc751/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "5a1541f4ebe9238b567535d448c8007859a3634db479105408b6b58018c883e8"
+    },
+    {
+      "id": "gpt-6-astra/4/http-kv",
+      "cohort": "astra",
+      "calls": 82,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 31,
+        "success": 51
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 79,
+      "maxStateBytes": 603,
+      "source": ".private/results/20260910T134957Z-0aed9067-e479-4fb1-b46a-94af2d4053d0/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "f055b5d79357eb2b8ef1c0f5def3171afd77e800b8b28586960d71135b4f7dfa"
+    },
+    {
+      "id": "gpt-5.6-sol/4/http-kv",
+      "cohort": "sol",
+      "calls": 36,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 9,
+        "success": 27
+      },
+      "inputPreviews": 3,
+      "resultTruncations": 30,
+      "maxStateBytes": 1989,
+      "source": ".private/results/20260910T135243Z-c0e7f972-9230-46ba-b06b-88d2f620d9dc/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "9d7673248b5df8c35e1d647577d475ac34b46dd680f05bcb765fd5d508089c9e"
+    },
+    {
+      "id": "gpt-5.6-sol/4/dependency-planner",
+      "cohort": "sol",
+      "calls": 9,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 2,
+        "success": 7
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 1,
+      "maxStateBytes": 1641,
+      "source": ".private/results/20260910T135258Z-105acc3f-fee8-4c33-8218-2fd92c4fa2bc/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "668a109a78fedf07971ea1e9e3cfb589e72c801ee1c654cd547907be6d378b3c"
+    },
+    {
+      "id": "gpt-6-astra/4/dependency-planner",
+      "cohort": "astra",
+      "calls": 69,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 2,
+        "success": 67
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 65,
+      "maxStateBytes": 928,
+      "source": ".private/results/20260910T135419Z-6b045e0d-2967-4a43-8912-f3c48df024da/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "170ea9298c3499a0f38f141113435b0f37af2a1fdc404294f5c56e6f7c8c78f3"
+    },
+    {
+      "id": "gpt-6-astra/4/taskboard-cli",
+      "cohort": "astra",
+      "calls": 75,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 7,
+        "success": 68
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 70,
+      "maxStateBytes": 733,
+      "source": ".private/results/20260910T135738Z-ba4feb8e-e6f4-413d-ad42-436235ccb1f9/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "3b82970789b00d0c4a0bffc3ad25eb252d45b3ff5c81ef8d3f59d0dfe0f6033d"
+    },
+    {
+      "id": "gpt-5.6-sol/4/taskboard-cli",
+      "cohort": "sol",
+      "calls": 23,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 5,
+        "success": 18
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 15,
+      "maxStateBytes": 1699,
+      "source": ".private/results/20260910T140322Z-09151ba6-83a6-4410-9cbe-c4010d06d236/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "64f70962c4193067e28e4aa10f658667125cf08e772f305c8113f01c86c133fd"
+    },
+    {
+      "id": "gpt-5.6-sol/4/csv-insights",
+      "cohort": "sol",
+      "calls": 5,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 5
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 1,
+      "maxStateBytes": 1187,
+      "source": ".private/results/20260910T140513Z-5a62c41f-cf5a-47e4-9503-e125d89ecdaf/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "993ecebff1ae55db651e6649c9bee1eb1c732538e661900df132852470370775"
+    },
+    {
+      "id": "gpt-6-astra/4/csv-insights",
+      "cohort": "astra",
+      "calls": 77,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 5,
+        "success": 72
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 74,
+      "maxStateBytes": 805,
+      "source": ".private/results/20260910T140803Z-5298e683-7576-4438-8c25-f8bcb4f702d7/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "2cc294d5d3a37cef7aee274e88bdf2114fbc4afce2da01205c79f25c926be349"
+    },
+    {
+      "id": "gpt-6-astra/4/mini-template",
+      "cohort": "astra",
+      "calls": 78,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 11,
+        "success": 67
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 75,
+      "maxStateBytes": 614,
+      "source": ".private/results/20260910T140842Z-7675fc5e-7748-4e0f-9794-fc36b5d1c8c2/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "4433a49bd58882ad1e462f1de2b89bdb38c57ec40c3a77de65554bc9ee48d19a"
+    },
+    {
+      "id": "gpt-5.6-sol/4/mini-template",
+      "cohort": "sol",
+      "calls": 8,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 2,
+        "success": 6
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 1,
+      "maxStateBytes": 1784,
+      "source": ".private/results/20260910T140927Z-05d95ab5-5ade-4a74-ab24-8d8365e24a05/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "1b23437f7a01e036a9d454c32caeffb8cdb067d38ff5427ea719b954819f7a1c"
+    },
+    {
+      "id": "gpt-5.6-sol/5/dependency-planner",
+      "cohort": "sol",
+      "calls": 29,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 6,
+        "success": 23
+      },
+      "inputPreviews": 5,
+      "resultTruncations": 12,
+      "maxStateBytes": 3367,
+      "source": ".private/results/20260910T141247Z-ecad7ec6-edf9-488f-8719-b0466fc9f9ae/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "b063a327cde35ac199cecbc4f493b3aa113de19a6d19fd83babdfc4ca01894aa"
+    },
+    {
+      "id": "gpt-6-astra/5/dependency-planner",
+      "cohort": "astra",
+      "calls": 85,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 8,
+        "success": 77
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 80,
+      "maxStateBytes": 713,
+      "source": ".private/results/20260910T141258Z-56c0022c-6bf0-40a3-ae36-57b0acd2d5d0/skill-state-paper2/dependency-planner/rollout.jsonl",
+      "sha256": "719bdd6324cf2f48dc185a046f69ee16af0f3f2ad033120fc69dce7c8f0b7d9a"
+    },
+    {
+      "id": "gpt-6-astra/5/taskboard-cli",
+      "cohort": "astra",
+      "calls": 78,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 4,
+        "success": 74
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 72,
+      "maxStateBytes": 637,
+      "source": ".private/results/20260910T141420Z-93f8e6d3-2557-4400-bc82-5af7be297950/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "d1b06d3c1318e468299eef93a4f9c33c229c32d362a3ea7c69198676fac5af60"
+    },
+    {
+      "id": "gpt-5.6-sol/5/taskboard-cli",
+      "cohort": "sol",
+      "calls": 27,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 6,
+        "success": 21
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 15,
+      "maxStateBytes": 2346,
+      "source": ".private/results/20260910T142312Z-8535d712-670f-4f53-8129-b1c29b170052/skill-state-paper2/taskboard-cli/rollout.jsonl",
+      "sha256": "732c8a216b0af2e2baa9845c1f5cae3fcbad73855899569cda0dea3ea7e7c2fe"
+    },
+    {
+      "id": "gpt-5.6-sol/5/csv-insights",
+      "cohort": "sol",
+      "calls": 6,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 5,
+        "error": 1
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 1,
+      "maxStateBytes": 1237,
+      "source": ".private/results/20260910T142350Z-4729d922-eb3a-4f6a-a4b2-1c2df1dcdca9/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "6663b16371fbfc74914f7fccfe062fa58f651973d6d455d154fb36d8b6cee83d"
+    },
+    {
+      "id": "gpt-6-astra/5/csv-insights",
+      "cohort": "astra",
+      "calls": 76,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 1,
+        "success": 75
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 73,
+      "maxStateBytes": 740,
+      "source": ".private/results/20260910T142740Z-50ad13f8-32d5-48a1-8840-84b0cfe6c74a/skill-state-paper2/csv-insights/rollout.jsonl",
+      "sha256": "d9dc5fffdfb487f39787c5857aff13343021ac271fe368c2d1714218dacbda60"
+    },
+    {
+      "id": "gpt-6-astra/5/mini-template",
+      "cohort": "astra",
+      "calls": 79,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 6,
+        "success": 73
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 76,
+      "maxStateBytes": 613,
+      "source": ".private/results/20260910T142755Z-865442b9-d105-42ba-ad2c-9fd5d7271163/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "e2ebd45a22f05df6c3aff5f848ebda3f8bd64987128e8ca0e6c1e486a1b1d57b"
+    },
+    {
+      "id": "gpt-5.6-sol/5/mini-template",
+      "cohort": "sol",
+      "calls": 11,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "success": 6,
+        "error": 5
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 3,
+      "maxStateBytes": 2063,
+      "source": ".private/results/20260910T142806Z-a1c8e151-b14a-4e1a-84db-8f5aec16ad6b/skill-state-paper2/mini-template/rollout.jsonl",
+      "sha256": "745dbc78810370219179e0f3badf030d24092ff26e35345ac87b7a39fbc340a6"
+    },
+    {
+      "id": "gpt-5.6-sol/5/http-kv",
+      "cohort": "sol",
+      "calls": 18,
+      "finishAttempts": 1,
+      "acceptedFinish": true,
+      "statuses": {
+        "error": 4,
+        "success": 14
+      },
+      "inputPreviews": 2,
+      "resultTruncations": 10,
+      "maxStateBytes": 1932,
+      "source": ".private/results/20260910T142928Z-4b2a0c65-b3d9-4d01-8c4d-ea1cd56e4517/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "0d585fb73528decd90d919f5711d9126454bf521c0e535b7dac229ca53c9978e"
+    },
+    {
+      "id": "gpt-6-astra/5/http-kv",
+      "cohort": "astra",
+      "calls": 90,
+      "finishAttempts": 0,
+      "acceptedFinish": false,
+      "statuses": {
+        "error": 48,
+        "success": 42
+      },
+      "inputPreviews": 1,
+      "resultTruncations": 87,
+      "maxStateBytes": 616,
+      "source": ".private/results/20260910T143401Z-ccd471a8-5209-486d-84ef-8fa504f88e89/skill-state-paper2/http-kv/rollout.jsonl",
+      "sha256": "3dabf7d709c0ab033492addb0b5c869765557d39e2db58385439dbfee485e3e0"
+    }
+  ],
+  "totals": [
+    {
+      "cohort": "sol",
+      "sessions": 25,
+      "finishAttempts": 20,
+      "sessionsAttemptingFinish": 20,
+      "acceptedFinishes": 20,
+      "inputPreviews": 47,
+      "resultTruncations": 253,
+      "maxStateBytes": 3367,
+      "statuses": {
+        "success": 368,
+        "error": 94
+      }
+    },
+    {
+      "cohort": "astra",
+      "sessions": 25,
+      "finishAttempts": 0,
+      "sessionsAttemptingFinish": 0,
+      "acceptedFinishes": 0,
+      "inputPreviews": 25,
+      "resultTruncations": 2002,
+      "maxStateBytes": 928,
+      "statuses": {
+        "error": 263,
+        "success": 1827
+      }
+    }
+  ],
+  "scope": "All 50 persisted main rollouts. Counts of submitted finish actions and stored transition statuses; not provider packet capture or causal attribution."
+}

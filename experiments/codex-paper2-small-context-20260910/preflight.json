@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-10",
+  "status": "passed-with-documented-host-limitation",
+  "coreTests": {
+    "command": "just test --offline -p codex-core --lib -E 'test(skill_state)'",
+    "nextestRunId": "5af26bc9-590d-45dc-8680-21ea36526318",
+    "passed": 20,
+    "failed": 0,
+    "scope": "Small state/action rejection, observation preview and UTF-8 result truncation, preserved JSON through history and prompt, Paper2 last-O and unchanged merge. Not the full Codex suite."
+  },
+  "cliTests": {
+    "command": "just test --offline -p codex-exec --test all -E 'test(~skill_state_v2)' --retries 0",
+    "nextestRunId": "f803d6da-a738-4997-b727-062733f4c592",
+    "passed": 8,
+    "failed": 0,
+    "ignoredInScope": [
+      "exec_v3_skips_remaining_actions_after_nonzero_shell_exit",
+      "exec_small_context_preserves_under_budget_state_and_observation_on_wire"
+    ],
+    "scope": "Rebuilt codex-exec against localhost mock-provider: Paper2 one-O, schema and finish, bounded feedback with intact state; previous native/Paper/V2/V3 fixtures.",
+    "limitation": "Two inherited managed-approval shell fixtures remain ignored, not counted as passed. An earlier compile attempt ended with disk exhaustion before tests; retried after cleaning only this new worktree's rebuildable incremental cache."
+  },
+  "orchestratorTests": {
+    "passed": 15,
+    "failed": 0,
+    "assertions": 67,
+    "scope": "50 unique cells, TS parse, exact four-cap runtime delta, unchanged runner except workspace namespace, five-worker pool, strict isolation and resilient restoration."
+  },
+  "format": { "command": "just fmt", "exitCode": 0 },
+  "clippy": { "run": false, "reason": "Four production constant changes only; no new Rust runtime logic. Scoped tests and formatter run; inherited large Paper2 Clippy result is not claimed as a new run." },
+  "benchmarkModelCallsDuringPreflight": 0,
+  "note": "Runtime CLI build, doctor and source hashes are checked separately before launch. Rust tests were not rerun after formatting. Old binary/source manifests remain unchanged."
+}

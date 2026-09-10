@@ -1,0 +1,325 @@
+{
+  "outcomes": [
+    {
+      "id": "gpt-5.6-sol/1/taskboard-cli",
+      "rawCheckPassed": false,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.444Z",
+      "sourceHashes": {
+        "cli": "cf1a324883d785b6faef411592886190a80cffb1d798d4c00cb57c726463da7c",
+        "package": "4ecdb6df540c760d48629a669a7ff1822ad5ae4f6c00f3df8b3002b68253e6d8"
+      }
+    },
+    {
+      "id": "gpt-6-astra/1/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.548Z",
+      "sourceHashes": {
+        "cli": "1bba07415bbdb267e5fe0c45ebfba15b1f0fd9eee5b8a94dbd24f027e134aeac",
+        "package": "56c4ad9f5a694b2ff40f64f9aca1d8fc7e144b5cb157c9909b98e0c8ebeafe68"
+      }
+    },
+    {
+      "id": "gpt-6-astra/2/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.662Z",
+      "sourceHashes": {
+        "cli": "20f43494fde3956072a531ecab948cdb69f55a61249fa0e6bf8f9e9ecc7cb136",
+        "package": "56c4ad9f5a694b2ff40f64f9aca1d8fc7e144b5cb157c9909b98e0c8ebeafe68"
+      }
+    },
+    {
+      "id": "gpt-5.6-sol/2/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.762Z",
+      "sourceHashes": {
+        "cli": "e5f54240f1cadcf4d549ddf603944d4c9fb6a345735baf025b735ce796ea86b1",
+        "package": "dfd70e6159281fcae6b0f87a78304922ee5a01200580bc4b60d21a5b393940af"
+      }
+    },
+    {
+      "id": "gpt-6-astra/3/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.858Z",
+      "sourceHashes": {
+        "cli": "a83c88eaa0da7dcbbcd670453bbfeb152ac084503ca7875890e8be711bfada5b",
+        "package": "56c4ad9f5a694b2ff40f64f9aca1d8fc7e144b5cb157c9909b98e0c8ebeafe68"
+      }
+    },
+    {
+      "id": "gpt-5.6-sol/3/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:07.959Z",
+      "sourceHashes": {
+        "cli": "58d6c7c2efc42be2bd7a67f95cc8edf7376d048c101a70729a8c91b488e8dc20",
+        "package": null
+      }
+    },
+    {
+      "id": "gpt-6-astra/4/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:08.041Z",
+      "sourceHashes": {
+        "cli": "c67c7c90987c9826140d4d456c3a26ae9aaa17bf7fe6ba83c2407d3792d4c14e",
+        "package": null
+      }
+    },
+    {
+      "id": "gpt-5.6-sol/4/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:08.143Z",
+      "sourceHashes": {
+        "cli": "d9925763d4f34bca77e936e5f0f1bd30aed8e818c0bbdf4873ddb8ba11b11100",
+        "package": null
+      }
+    },
+    {
+      "id": "gpt-6-astra/5/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:08.243Z",
+      "sourceHashes": {
+        "cli": "43f3ec293ebbd020c32bdf061e81ae98b4004c6a06702dd73a8ac8664ba164cc",
+        "package": "56c4ad9f5a694b2ff40f64f9aca1d8fc7e144b5cb157c9909b98e0c8ebeafe68"
+      }
+    },
+    {
+      "id": "gpt-5.6-sol/5/taskboard-cli",
+      "rawCheckPassed": true,
+      "supplementaryPassed": true,
+      "checks": [
+        {
+          "name": "setup with two persistent tasks",
+          "passed": true
+        },
+        {
+          "name": "delete exits zero and prints one JSON value (no prescribed keys)",
+          "passed": true
+        },
+        {
+          "name": "deleted task absent and other task retained across processes",
+          "passed": true
+        },
+        {
+          "name": "missing id fails",
+          "passed": true
+        },
+        {
+          "name": "failed delete does not replace data",
+          "passed": true
+        }
+      ],
+      "evaluatedAt": "2026-09-10T12:06:08.318Z",
+      "sourceHashes": {
+        "cli": "f0213d1fc4838fde2fe285b8fd4a45759d433f3cae9436f0ab1b8cfe82eb2a67",
+        "package": null
+      }
+    }
+  ],
+  "scope": "Same prior specification-aligned check on isolated copies of all 10 Paper2 CLI artifacts; original scores unchanged, no code fixes or model calls. Other requirements not re-evaluated."
+}

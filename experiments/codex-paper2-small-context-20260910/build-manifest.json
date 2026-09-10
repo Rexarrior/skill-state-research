@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-09-10T12:39:54.553Z",
+  "baseCommit": "85630a5b6d89465ed52cdb0ad56eec15f07fdfae",
+  "patchSha256": "02f57b6cc4f1cddb1e1d4ee440ea0422b935993ca8122c831eb812b9263a8410",
+  "files": {
+    ".private/source/codex/codex-rs/core/src/skill_state.rs": "f84752c998da5e792e2867bc488456a4c7925ec87b93a6543f45a16c483aae9a",
+    ".private/source/codex/codex-rs/core/src/skill_state_history.rs": "80a4e19c8d0d2d1f48737b86fbb1cd182a9d7f0561f17e11fd8596e62dadb4d4",
+    ".private/source/codex/codex-rs/core/src/skill_state_paper2.rs": "b34e81fab3064f44081fdc23206c25dca776125bdb227d2e1536ffc8aab19ec3",
+    ".private/source/codex/codex-rs/core/src/skill_state_tests.rs": "816ad72a56e6d4bde964a427c655515036caeb1e3fce480e1db0efad84a5e38a",
+    ".private/source/codex/codex-rs/core/src/tools/parallel.rs": "bbcbb4979dd2a35a6c66a04c6c62ba5cc7522916a7af06687458eff779623e57",
+    ".private/source/codex/codex-rs/exec/src/lib.rs": "ed76c5facab92aa541ed86621577afce6a23293a1f845411bbb42e0b5ad5e4c7",
+    ".private/source/codex/codex-rs/exec/tests/suite/skill_state_v2.rs": "2324427a7fe4acf3726475d8353265a6745256a7e1f01e1c64f9973be7d0f1cb",
+    ".private/source/codex/codex-rs/Cargo.lock": "50e3ba6763cb2ac8ce154991c757662efa65fa5d0fe529489bcc54a846aafba7",
+    ".private/source/codex/codex-rs/Cargo.toml": "d0da87a7ea903a8bd17a61d9164cbffdbab9031d00c90f90ff040cde58feca9f",
+    ".private/source/codex/codex-rs/rust-toolchain.toml": "570656042681cfd8795403a455baf9a33035331a07db0645e866bbcea89a3d64"
+  },
+  "executableSha256": "047d749f3a0e5c44fc9e90f850bd3fc8b94c7dd8eadc987d2f06c7583066dd54",
+  "codeModeHostSha256": "b5ce3a2a9d1c65389c5fb32fa2b734251b644929d039cf4867683d39a90b9630",
+  "historicalExecutableSha256": "8df4737c51e74fbdece624d3d90ea83414bdf1ee80e57f227d66b8213c9784d3",
+  "limitsBytes": {
+    "state": 32768,
+    "actionRequest": 65536,
+    "observationInput": 3072,
+    "result": 4096
+  },
+  "historyEnvelopeProtected": true,
+  "mode": "paper2",
+  "protocol": "skill.state/paper2",
+  "observationWindow": 1,
+  "comment": false,
+  "modelRevision": false,
+  "source": "Separate sparse worktree; only four field limits differ from frozen large-context Paper2 runtime. JSON-history protection retained."
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-09-10T10:16:17.770Z",
+  "restored": 18,
+  "preservedRecreated": 1,
+  "interruptedAt": "2026-09-10T09:08:58.859Z",
+  "manualRecovery": true,
+  "note": "Recreated five missing old-version parent directories, then reused the original restoration helper. All 18 original fingerprints verified. New plugin versions were not overwritten."
+}

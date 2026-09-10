@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "newOutcomes": 50,
+  "totalArticleOutcomes": 770,
+  "separatelyInterruptedAttempts": 5,
+  "checkedPoints": 30,
+  "newFigures": 2,
+  "preservedFigures": 10,
+  "localLinks": 92,
+  "articleSha256": "7e38b56cf54fc9e5bf4dffb172985a992b191ce85bb5ce076cfca1457e879b31",
+  "scope": "Paper2 source fingerprints, aggregates, corrected success, repeat points, tables, figure hashes and links. No model calls; not causal validation."
+}

@@ -12,6 +12,14 @@
 с лимитами 2 МиБ — ещё по 100 сессий Astra и Sol. Две таблицы, два рисунка и уточнённые выводы.
 [Дополнение и проверка](./update-20260909/README.md).
 
+Обновление 2026-09-10: в «Повторы Codex» добавлены 50 исходов Paper2 на Sol и Astra,
+сравнение с прежними Native/Paper, две таблицы и два рисунка. Всего 770 итоговых исходов;
+пять технически прерванных попыток раскрыты отдельно. [Дополнение и проверка](./update-20260910/README.md).
+
+Следующее обновление 2026-09-10: ещё 50 исходов Paper2 с малыми лимитами и сохранённой защитой JSON.
+Добавлены две таблицы и два графика сравнения с большим Paper2; методика и общие выводы уточнены.
+Всего теперь 820 итоговых исходов. [Дополнение и проверка](./update-20260910-small/README.md).
+
 - [Техническая статья: SKILL.state в coding-агентах](./skill-state-in-coding-agents.md).
 - [Короткий пост для LinkedIn](./linkedin-post.md).
 - [Экспериментальный пакет статьи](../experiments/article-20260904/README.md): условия, исходники, сырые журналы,
@@ -23,18 +31,23 @@
 
 ## Перенос на площадки
 
-В статье десять рисунков: общий график всех четырёх режимов и отдельные сравнения
+В статье четырнадцать рисунков: общий график всех четырёх режимов и отдельные сравнения
 [Paper / Native](./figures/input-cycles-paper-vs-native.png), [V2 / Native](./figures/input-cycles-v2-vs-native.png),
 [V3 / Native](./figures/input-cycles-v3-vs-native.png), [V3 / V2](./figures/input-cycles-v3-vs-v2.png),
 а также [десять повторов Sol](./figures/codex-sol-ten-repeats-input-cycles-time.png),
 [чистая серия Sol](./figures/codex-sol-clean-five-repeats-input-cycles-time.png),
 [чистая серия Astra](./figures/codex-astra-clean-five-repeats-input-cycles-time.png),
-[Astra с расширенными лимитами](./figures/codex-astra-large-context-five-repeats-input-cycles-time.png) и
-[Sol с расширенными лимитами](./figures/codex-sol-large-context-five-repeats-input-cycles-time.png).
-На всех десяти рисунках input и число обращений показаны рядом. На рисунках повторов добавлено фактическое время.
+[Astra с расширенными лимитами](./figures/codex-astra-large-context-five-repeats-input-cycles-time.png),
+[Sol с расширенными лимитами](./figures/codex-sol-large-context-five-repeats-input-cycles-time.png),
+[Paper2 на Sol](./figures/codex-sol-paper2-five-repeats-input-cycles-time.png),
+[Paper2 на Astra](./figures/codex-astra-paper2-five-repeats-input-cycles-time.png),
+[малый против большого Paper2 на Sol](./figures/codex-sol-paper2-small-vs-large-input-cycles-time.png) и
+[на Astra](./figures/codex-astra-paper2-small-vs-large-input-cycles-time.png).
+На всех четырнадцати рисунках input и число обращений показаны рядом. На рисунках повторов добавлено фактическое время.
 Парные графики используют абсолютный вход основной попытки; общий — отношение к Native.
 Первое дополнение PNG/SVG строилось `articles/update-20260906/build.py`; два новых рисунка создаёт
-`articles/update-20260908/build.py`, а рисунки расширенных лимитов — `articles/update-20260909/build.py`,
+`articles/update-20260908/build.py`, рисунки расширенных лимитов — `articles/update-20260909/build.py`,
+Paper2 — `articles/update-20260910/build.py`, сравнение лимитов — `articles/update-20260910-small/build.py`,
 без перезаписи старых. Прежние input-only рисунки
 и их скрипт `experiments/article-20260904/plot.py` сохранены без изменений.
 

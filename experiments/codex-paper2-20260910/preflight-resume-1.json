@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-10",
+  "passed": 12,
+  "failed": 0,
+  "command": "bun test ./resume.test.ts ../codex-sol-large-context-20260909/pool.test.ts ../codex-sol-large-context-20260909/isolation-guard.test.ts",
+  "scope": "Deleted version parent restoration; independent root failures; preservation of recreated data; checkpoint failures; four carried outcomes and five explicit replacement attempts; strict guard; parsing and separate checkpoint paths; five-worker draining.",
+  "frozenSourceFilesVerified": 33,
+  "carriedOutcomesAudited": 4,
+  "carriedInitialContextFlags": 0,
+  "carriedMalformedTransitions": 0,
+  "kernelRebuilt": false,
+  "newModelCallsDuringPreflight": 0,
+  "note": "Actual binary/model/usage checks are repeated by the resume dispatcher before isolation and after each outcome. Recorded-context audit is not a packet capture."
+}

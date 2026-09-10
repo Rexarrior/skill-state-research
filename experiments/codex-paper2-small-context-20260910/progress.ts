@@ -27,6 +27,6 @@ for (const model of run.models) {
       !s.timedOut && s.exitCode === 0 && s.acceptedFinish).length })
 }
 console.log(JSON.stringify({ status: run.status, isolation: run.isolation, stopReason: run.stopReason,
-  continuation: run.continuation ?? 0, priorInterruptedAttempts: run.priorInterruptedAttempts ?? 5,
+  continuation: run.continuation ?? 0, priorInterruptedAttempts: run.priorInterruptedAttempts ?? 0,
   startedAt: run.startedAt, endedAt: run.endedAt, groups,
   note: "Preliminary raw evaluator scores plus accepted finish; final report must audit taskboard delete separately." }, null, 2))

@@ -1,0 +1,259 @@
+{
+  "statistics": [
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "sessions": 25,
+      "input": 4602432,
+      "calls": 302,
+      "durationMs": 12068986,
+      "inputPerTask": 184097.28,
+      "callsPerTask": 12.08,
+      "minutesPerTask": 8.045990666666667,
+      "relativeInput": -0.2771927179525838,
+      "passed": 198,
+      "correctedPassed": 199,
+      "checks": 200,
+      "correctedSuccess": 23,
+      "artifactsPassing": 24,
+      "timeouts": 2
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "sessions": 25,
+      "input": 4395476,
+      "calls": 284,
+      "durationMs": 6572461,
+      "inputPerTask": 175819.04,
+      "callsPerTask": 11.36,
+      "minutesPerTask": 4.381640666666667,
+      "relativeInput": 0.6077470751864986,
+      "passed": 200,
+      "correctedPassed": 200,
+      "checks": 200,
+      "correctedSuccess": 23,
+      "artifactsPassing": 25,
+      "timeouts": 2
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "sessions": 25,
+      "input": 6955721,
+      "calls": 463,
+      "durationMs": 13168561,
+      "inputPerTask": 278228.84,
+      "callsPerTask": 18.52,
+      "minutesPerTask": 8.779040666666667,
+      "relativeInput": 0.5113142356041327,
+      "passed": 198,
+      "correctedPassed": 198,
+      "checks": 200,
+      "correctedSuccess": 18,
+      "artifactsPassing": 23,
+      "timeouts": 5
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "sessions": 25,
+      "input": 31727600,
+      "calls": 2090,
+      "durationMs": 22500762,
+      "inputPerTask": 1269104,
+      "callsPerTask": 83.6,
+      "minutesPerTask": 15.000508,
+      "relativeInput": 6.218239844785866,
+      "passed": 200,
+      "correctedPassed": 200,
+      "checks": 200,
+      "correctedSuccess": 0,
+      "artifactsPassing": 25,
+      "timeouts": 25
+    }
+  ],
+  "repeats": [
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "repetition": 1,
+      "inputPerTask": 174237.6,
+      "callsPerTask": 11.8,
+      "minutesPerTask": 6.637063333333334,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "repetition": 2,
+      "inputPerTask": 189816.8,
+      "callsPerTask": 12.6,
+      "minutesPerTask": 10.829063333333334,
+      "timeouts": 2
+    },
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "repetition": 3,
+      "inputPerTask": 185383.2,
+      "callsPerTask": 12,
+      "minutesPerTask": 7.64324,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "repetition": 4,
+      "inputPerTask": 154378.2,
+      "callsPerTask": 10.2,
+      "minutesPerTask": 6.814346666666666,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "large",
+      "repetition": 5,
+      "inputPerTask": 216670.6,
+      "callsPerTask": 13.8,
+      "minutesPerTask": 8.30624,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "repetition": 1,
+      "inputPerTask": 109914.8,
+      "callsPerTask": 7.4,
+      "minutesPerTask": 3.40164,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "repetition": 2,
+      "inputPerTask": 192423.6,
+      "callsPerTask": 12.2,
+      "minutesPerTask": 6.1927,
+      "timeouts": 1
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "repetition": 3,
+      "inputPerTask": 132840.4,
+      "callsPerTask": 8.4,
+      "minutesPerTask": 3.5362766666666667,
+      "timeouts": 0
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "repetition": 4,
+      "inputPerTask": 338146.2,
+      "callsPerTask": 22,
+      "minutesPerTask": 5.579853333333333,
+      "timeouts": 1
+    },
+    {
+      "cohort": "astra",
+      "mode": "large",
+      "repetition": 5,
+      "inputPerTask": 105770.2,
+      "callsPerTask": 6.8,
+      "minutesPerTask": 3.1977333333333333,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "repetition": 1,
+      "inputPerTask": 230652.8,
+      "callsPerTask": 15.4,
+      "minutesPerTask": 7.5779,
+      "timeouts": 0
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "repetition": 2,
+      "inputPerTask": 307014.2,
+      "callsPerTask": 20.4,
+      "minutesPerTask": 9.032456666666667,
+      "timeouts": 1
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "repetition": 3,
+      "inputPerTask": 339090.4,
+      "callsPerTask": 22.4,
+      "minutesPerTask": 10.743636666666667,
+      "timeouts": 2
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "repetition": 4,
+      "inputPerTask": 242404.2,
+      "callsPerTask": 16.2,
+      "minutesPerTask": 7.4209,
+      "timeouts": 1
+    },
+    {
+      "cohort": "sol",
+      "mode": "small",
+      "repetition": 5,
+      "inputPerTask": 271982.6,
+      "callsPerTask": 18.2,
+      "minutesPerTask": 9.12031,
+      "timeouts": 1
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "repetition": 1,
+      "inputPerTask": 1292433.8,
+      "callsPerTask": 85.2,
+      "minutesPerTask": 15.000296666666667,
+      "timeouts": 5
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "repetition": 2,
+      "inputPerTask": 1338124.2,
+      "callsPerTask": 88.2,
+      "minutesPerTask": 15.000223333333333,
+      "timeouts": 5
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "repetition": 3,
+      "inputPerTask": 1318768.2,
+      "callsPerTask": 86.8,
+      "minutesPerTask": 15.000363333333333,
+      "timeouts": 5
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "repetition": 4,
+      "inputPerTask": 1159555.8,
+      "callsPerTask": 76.2,
+      "minutesPerTask": 15.00038,
+      "timeouts": 5
+    },
+    {
+      "cohort": "astra",
+      "mode": "small",
+      "repetition": 5,
+      "inputPerTask": 1236638,
+      "callsPerTask": 81.6,
+      "minutesPerTask": 15.001276666666667,
+      "timeouts": 5
+    }
+  ],
+  "controls": "Large and small Paper2 cohorts on 10 September, sequential not interleaved. Four caps changed together; JSON-history protection retained. Cleanup overlapped early small-cap cells."
+}
