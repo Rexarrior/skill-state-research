@@ -1,0 +1,93 @@
+{
+  "source": "articles/skill-state-in-coding-agents.md",
+  "sourceSha256": "00034fbbf2fe20e6cd3268db47b807a20e2e8e52b458b9a86fae55edd88d69aa",
+  "uploadedAt": "2026-09-11T16:08:47.185Z",
+  "hosting": "Habrastorage",
+  "articleSubmitted": false,
+  "images": [
+    {
+      "file": "articles/figures/input-cycles-paper-vs-native.png",
+      "sha256": "ab0b3a90fa90415330abbff7a3b3a8059c8b1e0fef1dc396eddff77ea00fbc0a",
+      "alt": "Paper против Native: input слева и обращения к модели справа, по каждой задаче",
+      "url": "https://habrastorage.org/webt/55/a0/3d/55a03ddf1fcbff06a47944e19c55f5e1.png"
+    },
+    {
+      "file": "articles/figures/input-cycles-v2-vs-native.png",
+      "sha256": "e70e250fa8208a229d93bb75d4da7d038d9aa2ed22def8e1c22cff9411644e3c",
+      "alt": "V2 против Native: input слева и обращения к модели справа, по каждой задаче",
+      "url": "https://habrastorage.org/webt/84/5e/f2/845ef2482e748cd60288a35f1c68ad29.png"
+    },
+    {
+      "file": "articles/figures/input-cycles-v3-vs-native.png",
+      "sha256": "f55a32ce74045c5b6ee38990bce74ee75ae2467d67950ee893e38d9f4609f448",
+      "alt": "V3 против Native: input и обращения к модели по каждой задаче",
+      "url": "https://habrastorage.org/webt/96/f7/42/96f7425bfe32143a99a0733a7a302973.png"
+    },
+    {
+      "file": "articles/figures/input-cycles-v3-vs-v2.png",
+      "sha256": "2ef71e2afc510eaf3b867b74959640d7be1b85992c057291d70f0c7fd7222be4",
+      "alt": "V3 против V2: input и обращения к модели по каждой задаче основной попытки",
+      "url": "https://habrastorage.org/webt/48/b5/8c/48b58cb952f8694f7406a9a06d393d14.png"
+    },
+    {
+      "file": "articles/figures/codex-sol-ten-repeats-input-cycles-time.png",
+      "sha256": "1f6908c5766e1b2a9a72b7ef05d56d542d47a6b106f6abb840f8932b6fa4db09",
+      "alt": "Десять повторов Codex/Sol: средний input, число обращений и фактическое время на задачу",
+      "url": "https://habrastorage.org/webt/32/5e/ca/325ecaa6f63be4a44cd407b033f6db02.png"
+    },
+    {
+      "file": "articles/figures/codex-sol-clean-five-repeats-input-cycles-time.png",
+      "sha256": "8fab03667266054e6be8d511838cd77807f4d6603bbe1d8250268838d2baaf75",
+      "alt": "Пять повторов Codex/Sol без глобальных скиллов: input, циклы и наблюдаемое время на задачу",
+      "url": "https://habrastorage.org/webt/a6/dd/c9/a6ddc9d578405d5e49744f6056e3cd51.png"
+    },
+    {
+      "file": "articles/figures/codex-astra-clean-five-repeats-input-cycles-time.png",
+      "sha256": "49fbe943e93442bbe4d7823b658c48f76d7e08f1491dcf913c944d0258f72892",
+      "alt": "Пять повторов Codex/Astra без глобальных скиллов: input, циклы и наблюдаемое время на задачу",
+      "url": "https://habrastorage.org/webt/76/80/80/768080944a3aa9af5c636d655780cb72.png"
+    },
+    {
+      "file": "articles/figures/codex-astra-large-context-five-repeats-input-cycles-time.png",
+      "sha256": "196cc8849252f1033b07acc76b8ec2335f3c184b2f8086c4a35a7193a695e074",
+      "alt": "Пять повторов Codex/Astra с лимитами 2 МиБ: input, циклы и наблюдаемое время на задачу",
+      "url": "https://habrastorage.org/webt/68/97/0e/68970e87ef7b3a28ac3b9b8826310cbd.png"
+    },
+    {
+      "file": "articles/figures/codex-sol-large-context-five-repeats-input-cycles-time.png",
+      "sha256": "00840a59600ff472b67b7d1b876a6325c82222d83faac9e5f5d35f7b02226abe",
+      "alt": "Пять повторов Codex/Sol с лимитами 2 МиБ: input, циклы и наблюдаемое время на задачу",
+      "url": "https://habrastorage.org/webt/ce/03/68/ce03688f99feb9fe500ea47cfdf5485e.png"
+    },
+    {
+      "file": "articles/figures/codex-sol-paper2-five-repeats-input-cycles-time.png",
+      "sha256": "e69062ef121390140149c0e917872685b3193ad09ac5bf7a302f314cf8d1ad56",
+      "alt": "Codex/Sol: Paper2 против прежних Native и Paper — input, циклы и время на задачу",
+      "url": "https://habrastorage.org/webt/90/2c/93/902c93a9dc027500af2336b9cf8d8361.png"
+    },
+    {
+      "file": "articles/figures/codex-astra-paper2-five-repeats-input-cycles-time.png",
+      "sha256": "fc67af39a2072cd0027ec564fc39b551cb12beacf59ca231bd849f6f9ee1c89f",
+      "alt": "Codex/Astra: Paper2 против прежних Native и Paper — input, циклы и время на задачу",
+      "url": "https://habrastorage.org/webt/be/bd/9c/bebd9cf9e5282b29a517bb74e8218e7f.png"
+    },
+    {
+      "file": "articles/figures/codex-sol-paper2-small-vs-large-input-cycles-time.png",
+      "sha256": "49adbb3361ff87a5e9a6b9cccfd415079bf5d55eac53f09234e72022d89985d5",
+      "alt": "Codex/Sol: Paper2 с большими и малыми лимитами — input, циклы и время на задачу",
+      "url": "https://habrastorage.org/webt/80/28/6a/80286a5ab0e80fef701508b9c32b81b1.png"
+    },
+    {
+      "file": "articles/figures/codex-astra-paper2-small-vs-large-input-cycles-time.png",
+      "sha256": "51954c97df0a7692021ce6f1eb995d6236bb0611e6658203d5ce073ae6f37dfa",
+      "alt": "Codex/Astra: Paper2 с большими и малыми лимитами — input, циклы и время на задачу",
+      "url": "https://habrastorage.org/webt/3b/90/04/3b9004f10f35dad2ac9a0002328e77fb.png"
+    },
+    {
+      "file": "articles/figures/input-cycles-all-modes.png",
+      "sha256": "c05c9a680216183f4680479de102b79f851da8c80c438cc72bb7e2822d9603d0",
+      "alt": "Общий график четырёх режимов: input относительно Native слева, обращения на задачу справа",
+      "url": "https://habrastorage.org/webt/61/10/85/61108541b44585a432d2796ecf5883a5.png"
+    }
+  ]
+}

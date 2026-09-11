@@ -1,0 +1,10 @@
+# Обложка: вариант 2
+
+Режим: встроенный imagegen, редактирование `skill-state-cover-v1.png`.
+
+Результат: `skill-state-cover-v2.png`.
+
+## Промпт
+
+Use case: precise-object-edit. Edit the supplied editorial cover. Preserve the dark navy background, blue/turquoise/amber palette, horizontal composition, subtle 3D lighting, left transcript / right structured-memory concept, and connecting thin line. CHANGE the content and layout for immediate comprehension and LARGE LEGIBLE TEXT. This is a technical article cover, not an abstract decorative image. Wide aspect ratio about 39:22, legible when displayed 780x440. Remove the long ribbon of dozens of cards. LEFT HALF: exactly FOUR large, nearly front-facing terminal/editor cards in a short descending staggered arrangement, with very little overlap and ALL the text fully visible. Give each card only the following exact content in large high-contrast monospace. Card 1: "$ make" on first line, "build: ok" on second. Card 2: "def add(a, b):" then an indented "return a + b". Card 3: "$ curl localhost:8000" then "200 OK". Card 4: "$ pytest" then "12 tests passed". No extra microscopic text or fake abstract text lines. RIGHT HALF: a large compact agent/state block, front face with three clear compartments prominently displaying the mathematical symbols "P", "Σₙ", and "Oₙ" respectively. P is Latin capital P, Σ is Greek capital sigma with subscript n, O is Latin capital O with subscript n, not zero. Make symbols large and readable. To the right of this state block keep exactly THREE recent-action cards with large exact text: "make" / "ok"; "curl /health" / "200 OK"; "pytest" / "12 passed". Two lines per card. Enlarge these action cards enough to read. Thin connectors from these three cards to the block. Prioritize correct spelling and readable typography over dramatic perspective; minimal tilt, no text hidden behind other cards. The overall composition occupies most of the canvas with safe margins; reduce excess empty space from reference to allow comfortably large text. No headline, no logos, no watermarks, no robots or brains. Both left and right are functional alternatives, no winner/loser symbols.
+

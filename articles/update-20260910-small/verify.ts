@@ -68,7 +68,23 @@ for (const fig of figures.figures) {
 }
 const start = article.indexOf("### Paper2 с малыми лимитами\n")
 const end = article.indexOf("## Результаты")
-assert.ok(article.indexOf("## Повторы Codex") < start && start < end && end < article.indexOf("## Что видно в прогонах"))
+const resultsEnd = article.indexOf("## Токены — ещё не стоимость")
+assert.ok(article.indexOf("## Повторы Codex") < start && start < end && end < resultsEnd)
+assert.ok(!article.includes("## Что видно в прогонах"))
+const results = article.slice(end, resultsEnd)
+assert.ok(results.includes("### Сравнение\n"))
+assert.ok(!results.includes("### Первое сравнение"))
+const allModes = await read("experiments/codex-large-context-comparison-20260909/statistics.json")
+for (const cohort of ["sol", "astra"]) {
+  const cells = ["native", "paper", "paper2", "v2", "v3"].map(mode => {
+    const series = mode === "paper2" ? controls : allModes
+    const row = series.statistics.find((s: { cohort: string, mode: string }) => s.cohort === cohort && s.mode === mode)
+    assert.ok(row, `${cohort}/${mode}`)
+    return `${(row.input / 1e6).toFixed(3).replace(".", ",")}; ${row.correctedSuccess}/25`
+  })
+  const label = cohort === "sol" ? "Sol" : "Astra"
+  assert.ok(results.includes(`| ${label} | ${cells.join(" | ")} |`), label)
+}
 const section = article.slice(start, end)
 const largeSection = article.slice(article.indexOf("### Ещё один контроль: Paper2"), start)
 for (const s of controls.statistics) {

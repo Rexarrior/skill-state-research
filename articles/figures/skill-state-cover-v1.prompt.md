@@ -1,0 +1,8 @@
+# Article cover v1
+
+Generated with the built-in image generation tool. No reference images.
+Output: `skill-state-cover-v1.png`, 1672 × 941 pixels. Intended for a horizontal Habr cover; not uploaded or applied as the cover yet.
+
+## Prompt
+
+Use case: stylized-concept. Asset type: editorial cover for a technical Habr article about experiments comparing full transcript memory and explicit execution state in coding agents. Generate one polished minimalist technical illustration. Wide horizontal composition, target aspect ratio 780:440 (39:22), designed to remain clear at 780x440 pixels. Deep dark navy blue background. On the left, a long gently curving ribbon of overlapping translucent rectangular cards receding in depth, representing accumulated commands, code fragments and test outputs through short abstract line patterns, not readable text. On the right, a compact structured execution-state block with a few carefully arranged colored cells, with exactly three small recent-action cards beside it. A single thin understated line connects the two ways of organizing memory, without arrows or a winner/loser comparison. Both sides look purposeful and functional; equal visual dignity, no chaotic mess on the left, no triumphant superior glow on the right. Restrained pale blue, muted turquoise and small amber accents. Subtle depth and soft edge lighting, editorial restraint, clean large silhouettes, generous negative space, crisp finish. Main objects safely inset from edges. No words, letters, titles, numbers, labels, logos, watermarks, robots, brains, people, neural-network webs, or ornamental sci-fi clutter. Abstract horizontal code-like bars only.
