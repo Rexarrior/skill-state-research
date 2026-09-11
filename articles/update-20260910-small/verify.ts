@@ -66,7 +66,7 @@ for (const fig of figures.figures) {
   assert.ok(article.includes(`](./figures/${fig.name}.png)`))
   for (const [file, expected] of Object.entries(fig.hashes)) assert.equal(await hash(file), expected)
 }
-const start = article.indexOf("### Paper2 с малыми лимитами:")
+const start = article.indexOf("### Paper2 с малыми лимитами\n")
 const end = article.indexOf("## Результаты")
 assert.ok(article.indexOf("## Повторы Codex") < start && start < end && end < article.indexOf("## Что видно в прогонах"))
 const section = article.slice(start, end)
