@@ -11,6 +11,10 @@ This experiment compares stock OpenCode context replay with the core `SKILL.stat
 greenfield coding tasks. Each run receives exactly one user message. OpenCode materializes the task specification from
 an external attachment before the first model turn; `SPEC.md` is not present in the agent workspace.
 
+A human-readable list of all 40 black-box checks is available in
+[`CHECKS.md`](./CHECKS.md); the executable source of truth is
+[`scripts/evaluate.ts`](./scripts/evaluate.ts).
+
 ## Design
 
 - Core protocol: `OPENCODE_SKILL_STATE_MODE=baseline|paper|v2|v3` selects the native transcript loop, the original
