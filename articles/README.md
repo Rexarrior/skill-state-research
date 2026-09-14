@@ -21,6 +21,7 @@
 Всего теперь 820 итоговых исходов. [Дополнение и проверка](./update-20260910-small/README.md).
 
 - [Техническая статья: SKILL.state в coding-агентах](./skill-state-in-coding-agents.md).
+- [Короткий обзор input, кеша и output](./input-cache-output-overview.md).
 - [Короткий пост для LinkedIn](./linkedin-post.md).
 - [Экспериментальный пакет статьи](../experiments/article-20260904/README.md): условия, исходники, сырые журналы,
   созданные проекты, проверки и скрипты пересчёта.
