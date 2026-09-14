@@ -1,192 +1,137 @@
-# SKILL.state agent-runtime research
+# SKILL.state research: context engineering for coding agents
 
-This repository contains experimental kernel-level modifications of
-[OpenCode](https://github.com/anomalyco/opencode) and [OpenAI Codex](https://github.com/openai/codex), together with
-the complete artifacts from our investigation of
-[SKILL.state: Scalable Long-Horizon Agent Skills](https://arxiv.org/abs/2608.26263) by Sanket Badhe, Priyanka Tiwari,
-and Jonghyun Chung.
+An engineering experiment inspired by
+[SKILL.state: Scalable Long-Horizon Agent Skills](https://arxiv.org/abs/2608.26263).
+This repository explores what happens when coding agents keep explicit execution state
+instead of replaying their entire conversation on every step.
 
-SKILL.state replaces the growing agent transcript with explicit mutable execution state. The original-paper mode sends
-the immutable task specification (`P`), current structured state (`Sigma`), and only the latest observation (`O`). V2
-sends a bounded structured observation window. The experimental v3 keeps that window but lets one transition contain
-an unlimited array of actions, executed strictly sequentially. State modes preflight the envelope, resulting state,
-action names and basic input kinds. Full tool-specific parameter validation may still occur during dispatch;
-see the [validation-boundary audit](./experiments/PAPER-CONFORMANCE.md#validation-boundary-of-the-tested-v3-implementation).
+The experiment started with an idea familiar from building LLM workflows and agent loops:
+give the model a compact account of where the task stands, let it update that account, and
+use it to choose the next action. We adapted this approach to
+[OpenCode](https://github.com/anomalyco/opencode) and [Codex](https://github.com/openai/codex),
+tried several variations, and recorded both the improvements and the failures.
 
-Both implementations live in the OpenCode and Codex cores rather than plugins. The provider receives one
-reconstructed state message instead of being asked to read a state file itself.
+## Read the story
 
-## Technical article and fresh campaign
+**[Статья на русском](https://articles.rexarrior.online/skill-state-in-coding-agents/)**
+· **[Article in English](https://articles.rexarrior.online/skill-state-in-coding-agents/en/)**
 
-The [technical article](./articles/skill-state-in-coding-agents.md) and [short LinkedIn draft](./articles/linkedin-post.md)
-are based on a completed **120-run campaign** (September 4–5, 2026), not selected historical cells.
-OpenCode/Sol V2 passed 40/40 checks with **62.0% less full main-loop input** than Native. V3 did not provide a stable
-main-loop input advantage across three Codex attempts; auxiliary reviewer accounting can change the comparison's sign.
-The article discloses the configured-host context, instruction-role and tool differences, domain-schema choices,
-timeouts, and the distinction between input volume and monetary cost.
-See the [campaign journal](./journals/ARTICLE-20260904.md) and [complete report](./experiments/article-20260904/REPORT.md).
+The article walks through the implementations, benchmark results, corrections to the experiment,
+and questions for further research. This repository holds the code and supporting material:
 
-## Repository layout
+- [Research journal](./journals/README.md) — the history of the experiment and early model comparisons.
+- [Journal directory](./journals/) — individual investigations, audits, and plans.
+- [Article source and figures](./articles/skill-state-in-coding-agents.md).
+- [What each task's checks actually test](./experiments/skill-state/CHECKS.md).
 
-- [`journals/`](./journals/) — consolidated research journal covering the historical OpenCode plugin, both OpenCode
-  core revisions, the Codex port, cross-model results, limitations, and links to every detailed report.
-- [`articles/`](./articles/) — publication-ready local technical text, short post, and data-generated figures.
-- [`experiments/PAPER-ORIGINAL.md`](./experiments/PAPER-ORIGINAL.md) — original paper-mode contract and launch commands
-  for both core implementations.
-- [`opencode/`](./opencode/) — a source snapshot of the modified OpenCode branch at commit `78ec9a6bb`.
-- [`codex/`](./codex/) — an official Codex source snapshot plus the kernel-level SKILL.state implementations.
-- [`experiments/V3-BATCHED-ACTIONS.md`](./experiments/V3-BATCHED-ACTIONS.md) — shared v3 contract, runtime flags, and
-  verification notes.
-- [`experiments/codex-skill-state/`](./experiments/codex-skill-state/) — Codex design, build, and verification notes.
-- [`experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-luna-k3.md)
-  — Codex CLI benchmark, implementation defect found by the first run, corrected result, and interpretation.
-- [`experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-terra-k3.md)
-  — matching Codex CLI Terra benchmark and comparison with Luna.
-- [`experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md`](./experiments/codex-skill-state/REPORT-gpt-5.6-sol-k3.md)
-  — matching Codex CLI Sol benchmark and three-model comparison.
-- [`experiments/skill-state/`](./experiments/skill-state/) — benchmark harness, project specifications, evaluators,
-  plans, reports, generated workspaces metadata, raw JSONL event logs, stderr logs, and per-run summaries.
-- [`experiments/skill-state/REPORT-core.md`](./experiments/skill-state/REPORT-core.md) — implementation history and the
-  main experimental narrative.
-- [`experiments/skill-state/REPORT-glm-5.2-k3.md`](./experiments/skill-state/REPORT-glm-5.2-k3.md) — separate GLM-5.2
-  analysis and the single-runner confirmation attempt.
-- [`journals/V3-BATCHED-ACTIONS.md`](./journals/V3-BATCHED-ACTIONS.md) — consolidated OpenCode/Codex v3 benchmark and
-  links to detailed reports and raw suites.
+## The idea and our variations
 
-## Historical pilot results
+In SKILL.state, the next model request is built from the task specification `P),
+the current execution state `Σ`, and an observation `O`. The model produces a
+`state_patch` together with an action. The runtime validates and applies the patch,
+executes the action, and builds the next request. The complete transcript remains
+available locally for analysis.
 
-These are exploratory one-shot samples, not statistically powered measurements.
-The OpenCode percentages in these older reports use `input + cache.read`, which omits cache.write. See the
-[accounting correction](./journals/TOKEN-ACCOUNTING-CORRECTION.md) before interpreting them as full input.
-The [new article campaign](./experiments/article-20260904/) audits Paper and all four modes on a frozen corrected
-runtime; its report explicitly states whether the full planned matrix has completed.
+Our implementations construct this context inside the agent cores. The model receives
+its state directly in the prompt.
 
-### GPT-5.6 Terra, structured observations, `k=3`
+| Mode | Context and action policy |
+|---|---|
+| **Native** | The agent's existing transcript-based execution loop; our baseline. |
+| **Paper** | Our first core adaptation: `P + Σ` and the latest textual action result; one action per transition. |
+| **Paper2** | A revised Paper observation containing the latest action, its arguments, status, and result. Still one observation and one action. |
+| **V2** | A window of structured observations, usually `k=3`, plus an optional model-authored action comment and changes to the state contract. |
+| **V3** | V2 with sequential action batches. The patch is applied once, and the whole batch occupies one observation slot. |
 
-Across five code-generation projects, core SKILL.state reached **39/40** hidden checks versus **37/40** for baseline.
-Provider-reported prompt tokens (`input + cache.read`) fell from **1,063,814** to **426,310**, a **59.9% reduction**.
-Turns fell from 52 to 33. All five state sessions finished in-band with zero rejected transitions and no repeated
-identical actions.
+Paper and Paper2 are our interpretations of the original proposal for coding agents.
+Choices such as the state schema, observation format, instruction placement, and available
+tools affect the result. Their correspondence to the paper is documented in the
+[initial conformance audit](./experiments/PAPER-CONFORMANCE.md) and its
+[follow-up](./experiments/PAPER-CONFORMANCE-20260910.md).
 
-### GLM-5.2, structured observations, `k=3`
+The shared [Paper contract](./experiments/PAPER-ORIGINAL.md),
+[V3 contract](./experiments/V3-BATCHED-ACTIONS.md), and
+[Paper2 protocol](./experiments/codex-paper2-20260910/PROTOCOL.md) describe the details.
+Paper2 was tested on Codex; its experimental kernel patch is preserved with that campaign.
 
-GLM-5.2 is **not reliable under the tested conditions**: sequential execution, at most one active OpenCode run, and a
-15-minute per-cell limit. In the complete suite, baseline finished 5/5 cells while state finished 2/5, with 14 rejected
-transitions and partial quality of 31/40. A second single-runner attempt again produced long provider/model calls, a
-timeout, and many invalid transitions before it was stopped.
+## What we tested
 
-The richer observation record eliminated the earlier 74-command identical-action loop, but GLM replaced it with
-non-identical repeated reads, protocol violations, or very long reasoning turns. The aggregate token reduction from
-the incomplete GLM runs is not a valid efficiency win.
+Five small projects, each built from a single initial prompt in a fresh workspace:
 
-### Codex CLI, GPT-5.6 Luna, `k=3`
+- [Taskboard CLI](./experiments/skill-state/projects/taskboard-cli/SPEC.md)
+- [CSV Insights](./experiments/skill-state/projects/csv-insights/SPEC.md)
+- [Mini Template](./experiments/skill-state/projects/mini-template/SPEC.md)
+- [HTTP key-value service](./experiments/skill-state/projects/http-kv/SPEC.md)
+- [Dependency Planner](./experiments/skill-state/projects/dependency-planner/SPEC.md)
 
-The pristine Codex baseline and state fork were built from the same upstream SHA. Baseline passed **40/40** checks;
-post-fix state passed **39/40**, but used **4,482,763** input tokens versus **1,265,791**—**3.54x more**. State reduced
-input per provider sample by 20.7%, yet required 268 samples versus 60 and timed out in two of five cells. The first run
-also exposed an implementation bug: a 3 KiB incoming-action limit rejected ordinary code patches. The corrected kernel
-accepts up to 64 KiB while keeping only a bounded 3 KiB preview in observations.
+The external [evaluator](./experiments/skill-state/scripts/evaluate.ts) assigns up to
+40 checks across the five projects. Reports distinguish code passing checks from an
+agent successfully finishing its session. They also record input tokens, model calls,
+elapsed time, protocol errors, and timeouts.
 
-### Codex CLI, GPT-5.6 Terra, `k=3`
+The article covers **820 final run outcomes across multiple campaigns**: initial
+OpenCode/Codex comparisons, repeated Codex runs, runs without global skills, larger
+state/observation limits, and Paper2 with both large and small limits. Five externally
+interrupted attempts are disclosed separately. Early GLM-5.2 and Luna pilots are
+documented in the journal and excluded from that article total.
 
-Terra produced the opposite efficiency result on the same post-fix kernel: state passed **39/40** checks versus
-baseline's **38/40** and reduced input tokens from **1,588,485** to **1,243,798**, a **21.7% saving**. All five state
-cells emitted `finish` without timeout. State used more samples (71 versus 61), but average input per sample was 32.7%
-lower. Per-project results varied from an 85.9% regression to a 73.7% saving, so this exploratory `n=1` result is not a
-stable expected effect.
+These are repeated measurements on **five task specifications**. Models and runtime
+conditions changed between campaigns, so the results should be read within each campaign.
 
-### Codex CLI, GPT-5.6 Sol, `k=3`
+## What emerged
 
-Sol delivered the cleanest Codex result so far: both baseline and state passed **40/40** checks, while state reduced
-input tokens from **3,446,461** to **1,691,115**, a **50.9% saving**. Both modes used exactly 94 provider samples in
-aggregate. All five state sessions emitted `finish`, no cell timed out, and the two rejected transitions were recovered.
-Wall time increased by 4.1%, and state was more expensive on `taskboard-cli`, so the aggregate token win still should
-not be generalized beyond this exploratory `n=1` run.
+- **V2 gave promising results on Sol.** In the ten-repeat Codex comparison it used
+  49.7% less main-loop input than Native, with 48/50 fully successful sessions versus
+  49/50. Later campaigns also showed input savings, with some differences in success rates.
+- **Observation limits changed the picture on Astra.** Native was more efficient with
+  the earlier small limits. With expanded limits and a fix to transition persistence,
+  V2 and V3 used 2.9% and 14.4% less input respectively; all three modes achieved
+  25/25 fully successful sessions.
+- **Batching did not consistently help.** V3 used more tokens and more model calls than
+  V2 in the ten-repeat Sol comparison. Its later results depended on the model and limits.
+- **A more informative last observation mattered.** Paper2 improved substantially over
+  Paper with large limits. Returning to small limits brought back severe completion
+  problems, especially on Astra.
 
-### V3 batched actions, GPT-5.6 Sol and Terra, `k=3`
+Shorter individual requests can be outweighed by extra model calls, repeated work, or
+failure to finish. Input-token savings also do not directly establish monetary savings:
+cached input, output, reasoning, and auxiliary calls need separate accounting.
+See the [token-accounting correction](./journals/TOKEN-ACCOUNTING-CORRECTION.md).
 
-V3 allowed a non-empty action array with no count limit and executed it in strict order; a complete array plus its
-results occupied one observation slot. Models did not abuse the unbounded schema: observed maxima were 5–7 actions.
-OpenCode v3 remained cheaper than baseline but lost to v2 for both models. Codex/Sol was the positive case: 40/40 and
-818,113 input tokens versus v2's 990,678 (**-17.4%**). Codex/Terra rarely batched, scored 39/40, and saved only 2.1%
-against baseline. See the [consolidated v3 journal](./journals/V3-BATCHED-ACTIONS.md).
+These observations motivate further experiments. The current campaigns do not isolate
+every change: tool interfaces, context limits, and implementation fixes can interact.
+The [scientific follow-up plan](./journals/RESEARCH-ARTICLE-PLAN.md) lays out broader
+tasks and controlled ablations to separate those effects.
 
-## Running the experiment
+## Follow the evidence
 
-The harness expects the model providers configured for the included OpenCode snapshot.
+| Stage | Journal or report |
+|---|---|
+| Early plugin, core adaptations, GLM/Luna/Terra/Sol pilots | [Research journal](./journals/README.md) |
+| First article campaign on OpenCode and Codex | [Journal](./journals/ARTICLE-20260904.md) · [Report](./experiments/article-20260904/REPORT.md) |
+| V3 implementation and early comparisons | [V3 journal](./journals/V3-BATCHED-ACTIONS.md) |
+| Ten-repeat Codex/Sol comparison | [V2/V3 report](./experiments/codex-sol-repeats-20260906/REPORT.md) · [Native/Paper report](./experiments/codex-sol-controls-20260906/REPORT.md) |
+| Codex runs without global skills | [Journal](./journals/CODEX-CLEAN-20260908.md) · [Sol](./experiments/codex-clean-comparison-20260908/REPORT-sol.md) · [Astra](./experiments/codex-clean-comparison-20260908/REPORT-astra.md) |
+| Expanded context limits | [Sol journal](./journals/CODEX-SOL-LARGE-CONTEXT-20260909.md) · [Astra journal](./journals/CODEX-ASTRA-LARGE-CONTEXT-20260908.md) · [Reports and data](./experiments/codex-large-context-comparison-20260909/) |
+| Paper2 with large limits | [Protocol, report, and data](./experiments/codex-paper2-20260910/) |
+| Paper2 with small limits | [Report](./experiments/codex-paper2-small-context-20260910/REPORT.md) |
 
-```bash
-cd opencode
-bun install
+Dated journals and reports preserve the state of knowledge at the time they were written.
+The article brings those stages together, including later audits and corrections.
 
-# Full Terra A/B suite with three recent observations
-OPENCODE_SKILL_STATE_MODEL=openai-yandex-team/gpt-5.6-terra \
-OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW=3 \
-bun ../experiments/skill-state/scripts/run.ts all baseline v2
+## Explore or reproduce
 
-# Full GLM-5.2 A/B suite
-OPENCODE_SKILL_STATE_MODEL=openrouter-yandex-team/z-ai/glm-5.2 \
-OPENCODE_EXPERIMENTAL_SKILL_STATE_OBSERVATION_WINDOW=3 \
-bun ../experiments/skill-state/scripts/run.ts all baseline v2
+- [`opencode/`](./opencode/) and [`codex/`](./codex/) contain the modified agent sources.
+- [OpenCode experiment instructions](./experiments/skill-state/README.md) describe the harness and runtime modes.
+- [Codex implementation and build notes](./experiments/codex-skill-state/README.md) cover the CLI experiments.
+- Campaign directories contain their protocols, configuration, source manifests or patches,
+  per-run results, and aggregation scripts.
+- [`archives/`](./archives/README.md) contains compressed raw experiment logs and restoration instructions.
 
-# Three-way comparison in one suite
-bun ../experiments/skill-state/scripts/run.ts all baseline paper v2
+Model/provider configuration must be supplied locally. To reproduce a particular campaign,
+use its recorded source version, configuration, and evaluator; the main source tree alone
+does not identify every historical setup. Build outputs and installed dependencies have
+been removed to keep the working copy small and need to be recreated before running.
 
-# V3 comparison; actions inside each model-produced array run sequentially
-bun ../experiments/skill-state/scripts/run.ts all baseline v2 v3
-```
-
-Each cell is independent, uses one initial user prompt, and is evaluated by black-box checks outside the model-visible
-workspace. The harness runs cells sequentially and records raw events and summaries under
-`experiments/skill-state/results/<suite>/`.
-
-## Codex SKILL.state modes
-
-The Codex fork contains all four runtime paths in one binary. With no flag, or with
-`CODEX_SKILL_STATE_MODE=baseline`, `codex exec` keeps the native transcript loop. Paper and v2 rebuild every provider
-turn from state; the persisted transcript remains available for audit and resume but is not replayed to the provider.
-Paper mode exposes `skill_step({ state_patch, action })` and only the latest textual result. V2 exposes
-`skill_step({ state_revision, state_patch, comment, action })` and a structured observation window. V3 replaces the
-single action with `actions[]`; the runtime applies the patch once and executes the array strictly sequentially.
-
-```bash
-cd codex/codex-rs
-CARGO_INCREMENTAL=0 cargo build -p codex-cli --bin codex
-CARGO_INCREMENTAL=0 cargo build -p codex-code-mode-host --bin codex-code-mode-host
-
-# Native transcript mode (also the default)
-CODEX_SKILL_STATE_MODE=baseline \
-  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
-
-# Original paper mode
-CODEX_SKILL_STATE_MODE=paper \
-  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
-
-# V2; k defaults to 3 and may be set from 1 through 8.
-CODEX_SKILL_STATE_MODE=v2 \
-CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
-  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
-
-# V3; each complete sequential action batch occupies one observation slot.
-CODEX_SKILL_STATE_MODE=v3 \
-CODEX_SKILL_STATE_OBSERVATION_WINDOW=3 \
-  ./target/debug/codex exec --skip-git-repo-check "Implement the requested project"
-```
-
-OpenCode uses the matching `OPENCODE_SKILL_STATE_MODE=baseline|paper|v2|v3` runtime flag and likewise defaults to
-`baseline`. The older experimental OpenCode variables remain compatibility aliases for recorded runs.
-
-Code Mode is deliberately bypassed inside a state session: nesting its multi-call JavaScript loop would violate the
-state-transition contract and duplicate tool schemas. The wrapper exposes the underlying atomic Codex tools instead;
-v3 restores controlled batching at that wrapper layer.
-See [`experiments/codex-skill-state/DESIGN.md`](./experiments/codex-skill-state/DESIGN.md) for the exact contract and
-current verification status.
-
-## Status
-
-Research prototype. The implementations are suitable for controlled experiments, not a recommendation to replace a
-production agent runtime. The results so far suggest that bounded state can reduce cost dramatically when the model
-follows the protocol and terminates efficiently, while poor action policy or provider latency can erase the benefit.
-
-The imported sources retain their upstream licenses in [`opencode/LICENSE`](./opencode/LICENSE) and
-[`codex/LICENSE`](./codex/LICENSE).
+The imported agent sources retain their upstream licenses:
+[OpenCode](./opencode/LICENSE) and [Codex](./codex/LICENSE).
